@@ -303,3 +303,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // Init
     calculate();
 });
+
+// --- VIDEO AUTOPLAY ON SCROLL ---
+document.addEventListener('DOMContentLoaded', () => {
+    const videoObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const iframe = entry.target;
+                if (iframe.dataset.src) {
+                    iframe.src = iframe.dataset.src;
+                    iframe.removeAttribute('data-src'); // Clean up
+                    observer.unobserve(iframe); // Only trigger once
+                }
+            }
+        });
+    }, {
+        root: null, // viewport
+        rootMargin: '0px',
+        threshold: 0.1 // Trigger when 10% visible
+    });
+
+    // Observe all lazy videos
+    document.querySelectorAll('iframe.lazy-video').forEach(iframe => {
+        videoObserver.observe(iframe);
+    });
+});
+
