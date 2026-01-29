@@ -37,8 +37,8 @@ async function submitQuiz(event) {
     event.preventDefault();
 
     // SETTINGS
-    const botToken = 'ЗАМЕНИТЬ_НА_ВАШ_ТОКЕН';
-    const chatId = 'ЗАМЕНИТЬ_НА_ВАШ_ID';
+    const botToken = '7640486720:AAGKwluT4H8VbC0x_A-H_Nf4--21Zr-mIig';
+    const chatId = '183174525';
 
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
