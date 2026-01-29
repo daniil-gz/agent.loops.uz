@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система Перелидоза | Таргет + ИИ Бот</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- 1. SVG FRACTAL NOISE FILTER -->
+    <svg style="display: none;">
+        <filter id="grain">
+            <feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="3" stitchTiles="stitch" />
+        </filter>
+    </svg>
+
+    <!-- 2. NOISE OVERLAY LAYER -->
+    <div class="noise-overlay"></div>
+
+    <header>
+        <div class="container header-inner" style="justify-content: center;">
+            <div class="brand-title">СИСТЕМА ПЕРЕЛИДОЗА</div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="section hero" id="hero-section" style="overflow: hidden;">
+        <div class="glow-spot" id="glow1"
+            style="background: radial-gradient(circle, rgba(250, 193, 77, 0.4) 0%, transparent 70%); width: 800px; height: 800px;">
+        </div>
+        <div class="glow-spot" id="glow2"
+            style="background: radial-gradient(circle, rgba(250, 193, 77, 0.3) 0%, transparent 70%); width: 600px; height: 600px;">
+        </div>
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <h1>
+                    ТАРГЕТ <br>
+                    <span class="hero-title-box">+ ИИ АГЕНТ</span>
+                </h1>
+                <p class="hero-desc">
+                    Получайте теплые заявки 24/7. Бот сам квалифицирует лидов и продает, пока ваши менеджеры спят.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#footer" class="btn">Внедрить Систему</a>
+
+                    <!-- Trust Grid (Restored & Updated) -->
+                    <div class="hero-trust-grid">
+                        <div class="trust-item">
+                            <div class="trust-title">МГНОВЕННАЯ</div>
+                            <div class="trust-desc">обработка заявок 24/7</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-title">ПРОВЕРЕННАЯ</div>
+                            <div class="trust-desc">стратегия окупаемости (ROI 400%)</div>
+                        </div>
+                        <div class="trust-item">
+                            <div class="trust-title">БЕЗ РИСКА</div>
+                            <div class="trust-desc">прозрачная аналитика и отчетность</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-video">
+                <div class="video-wrapper">
+                    <!-- YouTube Video -->
+                    <iframe src="https://www.youtube.com/embed/Q-RmwcYpya0?autoplay=1&mute=1&controls=1&rel=0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="info-strip">
+        <div class="ticker">
+            <div class="ticker-item">АВТОБИЗНЕС • </div>
+            <div class="ticker-item">НЕДВИЖИМОСТЬ • </div>
+            <div class="ticker-item">МЕДИЦИНА • </div>
+            <div class="ticker-item">B2B УСЛУГИ • </div>
+            <div class="ticker-item">ОБРАЗОВАНИЕ • </div>
+            <div class="ticker-item">ПРОИЗВОДСТВО • </div>
+            <!-- Duplicate content -->
+            <div class="ticker-item">АВТОБИЗНЕС • </div>
+            <div class="ticker-item">НЕДВИЖИМОСТЬ • </div>
+            <div class="ticker-item">МЕДИЦИНА • </div>
+            <div class="ticker-item">B2B УСЛУГИ • </div>
+        </div>
+    </div>
+
+    <!-- FOR WHOM (NEW) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-60 text-center">ДЛЯ КОГО ЭТА СИСТЕМА?</h2>
+            <div class="for-whom-grid">
+                <!-- Card 1 -->
+                <div class="for-whom-card">
+                    <span class="fw-icon">💎</span>
+                    <h3>High-Ticket Услуги</h3>
+                    <p style="margin-bottom: 10px;">Клиники, Автодилеры, Недвижимость.</p>
+                    <p style="font-size: 14px;">Перестаньте терять клиентов из-за долгого ответа. Бот перехватывает
+                        заявку за 1 секунду и ведет диалог как живой ассистент, доводя до визита.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="for-whom-card">
+                    <span class="fw-icon">🏭</span>
+                    <h3>Сложный B2B и Опт</h3>
+                    <p style="margin-bottom: 10px;">Производство, Дистрибьюция, Консалтинг.</p>
+                    <p style="font-size: 14px;">Хватит сжигать ФОТ на "холодный прозвон". Система квалифицирует:
+                        выясняет бюджет и сроки. Менеджеры общаются только с ЛПР.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="for-whom-card">
+                    <span class="fw-icon">👥</span>
+                    <h3>У кого есть Отдел Продаж</h3>
+                    <p style="margin-bottom: 10px;">Чтобы менеджеры не выгорали.</p>
+                    <p style="font-size: 14px;">Бот заберет рутину: сам дозвонится, сам задаст вопросы и передаст
+                        сотруднику только тех, кто сказал: «Да, мне интересно».</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="for-whom-card">
+                    <span class="fw-icon">🚀</span>
+                    <h3>Кто хочет масштабироваться</h3>
+                    <p style="margin-bottom: 10px;">Рост без раздувания штата.</p>
+                    <p style="font-size: 14px;">Увеличьте трафик в 5 раз, не нанимая новых людей. AI-система обработает
+                        хоть 10.000 заявок одновременно без перерывов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULES / STEPS (RESTORED 4 STEPS) -->
+    <section class="section" id="modules">
+        <div class="container">
+            <h2 class="text-center mb-40">Этапы работы</h2>
+
+            <div class="tabs-header">
+                <button class="tab-btn active" onclick="openTab(0)">01. СТРАТЕГИЯ</button>
+                <button class="tab-btn" onclick="openTab(1)">02. УПАКОВКА</button>
+                <button class="tab-btn" onclick="openTab(2)">03. КОНТЕНТ</button>
+                <button class="tab-btn" onclick="openTab(3)">04. АНАЛИТИКА</button>
+            </div>
+
+            <!-- Tab 1: Strategy -->
+            <div class="tab-content active" id="tab-0">
+                <div class="tab-text">
+                    <div class="module-num">01</div>
+                    <h3>Стратегия и Оцифровка</h3>
+                    <p class="mb-20">
+                        Результат: Полная дорожная карта проекта. Определены KPI, утвержден бюджет и понятна воронка от
+                        клика до продажи.
+                    </p>
+                    <ul class="step-list">
+                        <li>• Интервью с РОПом / Директором</li>
+                        <li>• Анализ конкурентов (AdHeart)</li>
+                        <li>• Декомпозиция целей (медиаплан)</li>
+                    </ul>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Q-RmwcYpya0?autoplay=1&mute=1&controls=1&rel=0&start=5"
+                        title="Step 1 Video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Tab 2: Packaging -->
+            <div class="tab-content" id="tab-1">
+                <div class="tab-text">
+                    <div class="module-num">02</div>
+                    <h3>Техническая Упаковка</h3>
+                    <p class="mb-20">
+                        Результат: Готовая инфраструктура. Реклама ведет в бота, бот квалифицирует, CRM сохраняет
+                        данные.
+                    </p>
+                    <ul class="step-list">
+                        <li>• Настройка кабинета (Pixel, события)</li>
+                        <li>• Сборка чат-бота (логика и скрипты)</li>
+                        <li>• Интеграция с CRM и Telegram</li>
+                    </ul>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Q-RmwcYpya0?autoplay=1&mute=1&controls=1&rel=0&start=70"
+                        title="Step 2 Video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Tab 3: Content -->
+            <div class="tab-content" id="tab-2">
+                <div class="tab-text">
+                    <div class="module-num">03</div>
+                    <h3>Создание Контента и Запуск</h3>
+                    <p class="mb-20">
+                        Результат: Первые целевые заявки. Реклама запущена на нужную аудиторию.
+                    </p>
+                    <ul class="step-list">
+                        <li>• Разработка офферов (3-5 вариантов)</li>
+                        <li>• Дизайн креативов (Motion)</li>
+                        <li>• Запуск А/В тестов</li>
+                    </ul>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Q-RmwcYpya0?autoplay=1&mute=1&controls=1&rel=0&start=144"
+                        title="Step 3 Video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- Tab 4: Analytics -->
+            <div class="tab-content" id="tab-3">
+                <div class="tab-text">
+                    <div class="module-num">04</div>
+                    <h3>Аналитика и Масштабирование</h3>
+                    <p class="mb-20">
+                        Результат: Стабильный поток заявок по оптимальной цене. Перераспределение бюджета в пользу
+                        прибыльных связок.
+                    </p>
+                    <ul class="step-list">
+                        <li>• Сбор статистики (CTR, CPL)</li>
+                        <li>• Докрутка скриптов бота</li>
+                        <li>• Еженедельные отчеты</li>
+                    </ul>
+                </div>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/Q-RmwcYpya0?autoplay=1&mute=1&controls=1&rel=0&start=195"
+                        title="Step 4 Video" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASES -->
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-40 text-center">Результаты Внедрения</h2>
+
+            <!-- Dynamic Grid (Top 3) -->
+            <div class="cases-archive-grid" id="homeCasesGrid">
+                <!-- Injected via JS -->
+            </div>
+
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="cases.html" class="btn"
+                    style="background: transparent; border: 1px solid var(--accent); color: var(--accent);">
+                    Смотреть все кейсы →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULATOR -->
+    <section id="calculator" class="section">
+        <div class="container">
+            <h2 class="text-center mb-60">ПОСЧИТАЙ СВОЮ ВЫГОДУ С LOOPS</h2>
+
+            <div class="calc-card">
+                <!-- Left: Inputs -->
+                <div class="calc-inputs">
+                    <!-- Input 1: Budget -->
+                    <div class="calc-group">
+                        <label>
+                            <span>💰 Сколько тратите на рекламу в месяц ($)?</span>
+                            <span id="label-budget" class="calc-val">$1000</span>
+                        </label>
+                        <input type="range" id="input-budget" min="100" max="10000" step="100" value="1000">
+                    </div>
+
+                    <!-- Input 2: Clients -->
+                    <div class="calc-group">
+                        <label>
+                            <span>👥 Сколько клиентов получаете сейчас (чел)?</span>
+                            <span id="label-clients" class="calc-val">50</span>
+                        </label>
+                        <input type="range" id="input-clients" min="5" max="500" step="5" value="50">
+                    </div>
+                </div>
+
+                <!-- Right: Result -->
+                <div class="calc-result">
+                    <p class="text-muted mb-20" style="font-size: 14px;">Ваша ежемесячная выгода:</p>
+                    <div id="calc-total" class="calc-total-num">+$1,300</div>
+
+                    <div class="calc-note">
+                        <div style="margin-bottom: 5px;">* Оптимизация трафика (+30%)</div>
+                        <div>* Автоматизация менеджеров ($1000/мес)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING (NEW REPLACEMENT) -->
+    <section class="section" id="pricing" style="position: relative; overflow: hidden;">
+        <!-- Background Glow for Section -->
+        <div class="glow-spot" style="top: 20%; left: 50%; transform: translateX(-50%); opacity: 0.3;"></div>
+
+        <div class="container">
+            <h2 class="text-center mb-60">ТАРИФЫ И ГАРАНТИИ</h2>
+
+            <div class="pricing-grid">
+                <!-- TIER 1 -->
+                <div class="price-card glass-panel">
+                    <h3>AI-ФИЛЬТР</h3>
+                    <div class="price-num">9 000 000 <span
+                            style="font-size: 16px; font-weight: 400; color: var(--text-muted);">UZS</span></div>
+                    <p class="mb-20" style="font-size: 14px;">Для старта и фильтрации спама.</p>
+                    <ul class="price-list gold-checks">
+                        <!-- ACTIVE: BLOCK C -->
+                        <div class="list-category">AI-СИСТЕМА И АВТОМАТИЗАЦИЯ</div>
+                        <li>Внедрение квалифицирующего чат-бота (Ig/Tg)</li>
+                        <li>Глубокий анализ продукта и скриптов продаж</li>
+                        <li>Индивидуальные сценарии квалификации лидов</li>
+                        <li>Интеллектуальный скоринг и сбор контактов 24/7</li>
+                        <li>Связка с CRM (Bitrix/Amo) и Google Sheets</li>
+
+                        <!-- INACTIVE: BLOCK A & B -->
+                        <div class="list-category unavailable">СТРАТЕГИЯ И УПРАВЛЕНИЕ</div>
+                        <li class="unavailable">Интерактивный BI-Dashboard аналитики продаж</li>
+                        <li class="unavailable">Формирование фин. и опер. планов для отдела продаж</li>
+                        <li class="unavailable">Разработка жестких регламентов и скриптов для менеджеров</li>
+                        <li class="unavailable">Глубокий аудит отдела маркетинга и всех активностей</li>
+
+                        <div class="list-category unavailable">РЕКЛАМА И ТРАФИК</div>
+                        <li class="unavailable">Комплексный аудит текущей рекламы и поиск точек роста</li>
+                        <li class="unavailable">Стратегия захвата рынка (JTBD)</li>
+                        <li class="unavailable">Разработка баннеров: Дизайн + Продающий текст</li>
+                        <li class="unavailable">Запуск и управление рекламой (Meta Ads)</li>
+                    </ul>
+                    <a href="#footer" class="btn"
+                        style="background: transparent; border: 1px solid var(--accent); color: var(--accent); width: 100%;">ВНЕДРИТЬ
+                        СИСТЕМУ</a>
+                </div>
+
+                <!-- TIER 2 (POPULAR) -->
+                <div class="price-card glass-panel popular">
+                    <div class="sticker-badge guarantee">
+                        <span class="sticker-text">ГАРАНТИЯ</span>
+                    </div>
+                    <h3>СИСТЕМА ПЕРЕЛИДОЗА</h3>
+                    <div class="price-num">12 000 000 <span
+                            style="font-size: 16px; font-weight: 400; color: var(--text-muted);">UZS</span></div>
+                    <p class="mb-20" style="font-size: 14px;">Комплексное решение "под ключ".</p>
+                    <ul class="price-list gold-checks">
+                        <!-- ACTIVE: BLOCK B & C -->
+                        <div class="list-category">РЕКЛАМА И ТРАФИК</div>
+                        <li>Комплексный аудит текущей рекламы и поиск точек роста</li>
+                        <li>Стратегия захвата рынка (JTBD)</li>
+                        <li>Разработка баннеров: Дизайн + Продающий текст</li>
+                        <li>Запуск и управление рекламой (Meta Ads)</li>
+
+                        <div class="list-category">AI-СИСТЕМА И АВТОМАТИЗАЦИЯ</div>
+                        <li>Внедрение квалифицирующего чат-бота (Ig/Tg)</li>
+                        <li>Глубокий анализ продукта и скриптов продаж</li>
+                        <li>Индивидуальные сценарии квалификации лидов</li>
+                        <li>Интеллектуальный скоринг и сбор контактов 24/7</li>
+                        <li>Связка с CRM (Bitrix/Amo) и Google Sheets</li>
+
+                        <!-- INACTIVE: BLOCK A -->
+                        <div class="list-category unavailable">СТРАТЕГИЯ И УПРАВЛЕНИЕ</div>
+                        <li class="unavailable">Интерактивный BI-Dashboard аналитики продаж</li>
+                        <li class="unavailable">Формирование фин. и опер. планов для отдела продаж</li>
+                        <li class="unavailable">Разработка жестких регламентов и скриптов для менеджеров</li>
+                        <li class="unavailable">Глубокий аудит отдела маркетинга и всех активностей</li>
+                    </ul>
+                    <a href="#footer" class="btn"
+                        style="width: 100%; box-shadow: 0 0 20px rgba(250, 193, 77, 0.4);">ВНЕДРИТЬ СИСТЕМУ</a>
+                </div>
+
+                <!-- TIER 3 -->
+                <div class="price-card glass-panel">
+                    <div class="sticker-badge guarantee">
+                        <span class="sticker-text">ГАРАНТИЯ</span>
+                    </div>
+                    <h3>МАСШТАБ И КОНТРОЛЬ</h3>
+                    <div class="price-num">24 000 000 <span
+                            style="font-size: 16px; font-weight: 400; color: var(--text-muted);">UZS</span></div>
+                    <p class="mb-20" style="font-size: 14px;">Для крупных отделов продаж.</p>
+                    <ul class="price-list gold-checks">
+                        <!-- ACTIVE: ALL BLOCKS -->
+                        <div class="list-category">СТРАТЕГИЯ И УПРАВЛЕНИЕ</div>
+                        <li>Интерактивный BI-Dashboard аналитики продаж</li>
+                        <li>Формирование фин. и опер. планов для отдела продаж</li>
+                        <li>Разработка жестких регламентов и скриптов для менеджеров</li>
+                        <li>Глубокий аудит отдела маркетинга и всех активностей</li>
+
+                        <div class="list-category">РЕКЛАМА И ТРАФИК</div>
+                        <li>Комплексный аудит текущей рекламы и поиск точек роста</li>
+                        <li>Стратегия захвата рынка (JTBD)</li>
+                        <li>Разработка баннеров: Дизайн + Продающий текст</li>
+                        <li>Запуск и управление рекламой (Meta Ads)</li>
+
+                        <div class="list-category">AI-СИСТЕМА И АВТОМАТИЗАЦИЯ</div>
+                        <li>Внедрение квалифицирующего чат-бота (Ig/Tg)</li>
+                        <li>Глубокий анализ продукта и скриптов продаж</li>
+                        <li>Индивидуальные сценарии квалификации лидов</li>
+                        <li>Интеллектуальный скоринг и сбор контактов 24/7</li>
+                        <li>Связка с CRM (Bitrix/Amo) и Google Sheets</li>
+                    </ul>
+                    <a href="#footer" class="btn" style="background: #fff; color: #000; width: 100%;">ВНЕДРИТЬ
+                        СИСТЕМУ</a>
+                </div>
+            </div>
+
+            <!-- GUARANTEE TRIAD -->
+            <div class="guarantee-triple-bar glass-panel mt-60">
+                <div class="g-item">
+                    <div class="g-icon">⚡️</div>
+                    <div class="g-content">
+                        <div class="g-title">СКОРОСТЬ</div>
+                        <div class="g-desc">Запуск за 14 дней. Не успеем — месяц ведения бесплатно.</div>
+                    </div>
+                </div>
+                <div class="g-item">
+                    <div class="g-icon">💎</div>
+                    <div class="g-content">
+                        <div class="g-title">КАЧЕСТВО</div>
+                        <div class="g-desc">Минимум 20% конверсия в лида. Или перенастройка за наш счет.</div>
+                    </div>
+                </div>
+                <div class="g-item">
+                    <div class="g-icon">🤝</div>
+                    <div class="g-content">
+                        <div class="g-title">РЕЗУЛЬТАТ</div>
+                        <div class="g-desc">Повышаем конверсию либо работаем бесплатно до результата</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ (NEW) -->
+    <section class="section">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="mb-40 text-center">Частые вопросы</h2>
+
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-question">Почему так дорого?</summary>
+                    <div class="faq-answer">
+                        Вы покупаете не просто "чат-бота", а готовый бизнес-процесс. Один этот бот заменяет двух
+                        менеджеров с зарплатой по 5–7 млн сум. Посчитайте экономию ФОТ за полгода — и вы поймете, что
+                        система стоит дешево.
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">Подойдет ли это для моей ниши?</summary>
+                    <div class="faq-answer">
+                        Это работает везде, где есть общение перед продажей (недвижимость, авто, медицина, кухни,
+                        услуги). Если вы продаете чехлы на телефон за 10к сум — вам это не нужно.
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">Как быстро я увижу результат?</summary>
+                    <div class="faq-answer">
+                        Техническая сборка занимает до 14 дней. Первые целевые заявки (а не просто клики) пойдут в день
+                        запуска трафика.
+                    </div>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-question">Что, если у меня нет CRM?</summary>
+                    <div class="faq-answer">
+                        В тариф Setup входит построение архитектуры: мы сами настроим вам CRM, подключим телефонию и
+                        научим менеджеров работать. Мы наводим порядок, прежде чем пустить трафик.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <div style="margin-top: 40px;">
+                    <div class="social-links" style="display: flex;">
+                        <!-- Telegram -->
+                        <a href="https://t.me/dani_gzv" target="_blank" class="social-btn"
+                            style="width: 44px; height: 44px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; border: 1px solid var(--border);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M20.665 3.333L2.833 10.333L8.333 13.083L17.5 7.166L10.5 15.249L10.333 19.416L13.791 16.083L17.958 19.166L20.665 3.333Z"
+                                    stroke="#fff" stroke-width="2" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/danii_gzv/" target="_blank" class="social-btn"
+                            style="width: 44px; height: 44px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; border: 1px solid var(--border);">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
+                                    stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                                    stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M17.5 6.5H17.51" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-form"
+                style="background: var(--bg-card); padding: 40px; border-radius: var(--radius-m); border: 1px solid var(--border); position: relative; overflow: hidden;">
+                <!-- Quiz Progress -->
+                <div class="quiz-progress" style="margin-bottom: 30px;">
+                    <div
+                        style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; font-weight: 600; color: var(--text-muted);">
+                        <span id="step-label">Шаг 1 из 3</span>
+                        <span id="step-percent">33%</span>
+                    </div>
+                    <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
+                        <div id="progress-bar"
+                            style="width: 33%; height: 100%; background: var(--accent); border-radius: 3px; transition: 0.3s ease;">
+                        </div>
+                    </div>
+                </div>
+
+                <form id="quizForm" onsubmit="submitQuiz(event)">
+                    <!-- STEP 1: Niche -->
+                    <div class="quiz-step active" id="step1">
+                        <h3 class="mb-20">Ваша ниша?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="niche" value="Автобизнес" checked>
+                                <span>🚗 Автобизнес</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="niche" value="Недвижимость">
+                                <span>🏠 Недвижимость</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="niche" value="B2B Услуги">
+                                <span>🤝 B2B Услуги</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="niche" value="Другое">
+                                <span>🚀 Другое</span>
+                            </label>
+                        </div>
+                        <button type="button" class="btn" style="width: 100%; margin-top: 20px;"
+                            onclick="nextStep(2)">Далее →</button>
+                    </div>
+
+                    <!-- STEP 2: Budget -->
+                    <div class="quiz-step" id="step2" style="display: none;">
+                        <h3 class="mb-20">Рекламный бюджет?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option">
+                                <input type="radio" name="budget" value="До $500" checked>
+                                <span>📉 До $500</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="budget" value="$500 - $2000">
+                                <span>💵 $500 - $2.000</span>
+                            </label>
+                            <label class="quiz-option">
+                                <input type="radio" name="budget" value="$2000+">
+                                <span>💰 От $2.000</span>
+                            </label>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <button type="button" class="btn"
+                                style="background: transparent; border: 1px solid var(--border); color: #fff;"
+                                onclick="prevStep(1)">←</button>
+                            <button type="button" class="btn" style="width: 100%;" onclick="nextStep(3)">Далее
+                                →</button>
+                        </div>
+                    </div>
+
+                    <!-- STEP 3: Contacts -->
+                    <div class="quiz-step" id="step3" style="display: none;">
+                        <h3 class="mb-20">Куда отправить стратегию?</h3>
+                        <input id="name" type="text" placeholder="Ваше Имя" required
+                            style="width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; margin-bottom: 15px; border-radius: 8px;">
+                        <input id="phone" type="tel" placeholder="Телефон / Telegram" required
+                            style="width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; margin-bottom: 20px; border-radius: 8px;">
+                        <div style="display: flex; gap: 10px;">
+                            <button type="button" class="btn"
+                                style="background: transparent; border: 1px solid var(--border); color: #fff;"
+                                onclick="prevStep(2)">←</button>
+                            <button type="submit" class="btn" style="width: 100%;">Получить разбор</button>
+                        </div>
+                        <div id="statusMessage" style="margin-top: 15px; text-align: center; font-size: 14px;"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AI WIDGET -->
+    <div class="ai-widget">
+        <div class="ai-icon">🤖</div>
+        <div class="ai-bubble">
+            Есть вопросы? Я онлайн! ⚡️
+        </div>
+    </div>
+
+    <script src="js/cases-data.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!window.casesData) return;
+
+            const grid = document.getElementById('homeCasesGrid');
+            if (!grid) return;
+
+            // Take top 3
+            const topCases = window.casesData.slice(0, 3);
+
+            topCases.forEach(item => {
+                const accentClass = item.stats[1].isAccent ? 'text-accent' : '';
+
+                const html = `
+                    <a href="${item.url}" class="case-archive-card" style="display: block;">
+                        <div class="archive-img">
+                            <img src="${item.image}" alt="${item.title}" loading="lazy">
+                        </div>
+                        <div class="archive-content">
+                            <div class="archive-meta">${item.niche}</div>
+                            <h3 class="archive-title">${item.title}</h3>
+                            <p class="archive-desc">${item.desc}</p>
+                            <div class="archive-stats">
+                                <div class="stat-item">
+                                    <div class="stat-val">${item.stats[0].val}</div>
+                                    <div class="stat-label">${item.stats[0].label}</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-val ${accentClass}">${item.stats[1].val}</div>
+                                    <div class="stat-label">${item.stats[1].label}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                `;
+                grid.insertAdjacentHTML('beforeend', html);
+            });
+        });
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

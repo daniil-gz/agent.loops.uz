@@ -1,0 +1,21 @@
+# Инструкция по запуску
+
+Эта папка `loops-landing` полностью готова к загрузке.
+
+## Шаг 1: Настройка формы (Telegram)
+1. Откройте файл [index.html](file:///Users/daniilgazizov/.gemini/antigravity/brain/65fa9d0d-0626-4dce-ad05-48e39511924e/index.html) (Пр. кнопка -> Открыть в TextEdit или Блокноте).
+2. Пролистайте в самый низ до строки `// TELEGRAM SETTINGS`.
+3. Вставьте ваши данные вместо "ЗАМЕНИТЬ_НА_..."
+   * `const botToken = 'ЗАМЕНИТЬ_НА_ВАШ_ТОКЕН';`
+   * `const chatId = 'ЗАМЕНИТЬ_НА_ВАШ_ID';`
+4. Сохраните файл.
+
+## Шаг 2: Публикация
+1. Откройте [app.netlify.com](https://app.netlify.com).
+2. Перетащите **всю эту папку** `loops-landing` в окно браузера.
+3. Сайт запустится.
+
+## Шаг 3: Домен
+1. В Netlify перейдите в `Domain Settings` -> `Add custom domain`.
+2. Введите `promo.loops.uz`.
+3. У регистратора домена добавьте CNAME запись (см. [netlify_setup_guide.md](file:///Users/daniilgazizov/.gemini/antigravity/brain/65fa9d0d-0626-4dce-ad05-48e39511924e/netlify_setup_guide.md) в основной папке проекта).
