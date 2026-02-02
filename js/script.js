@@ -32,47 +32,53 @@ function updateProgress() {
     document.getElementById('step-label').innerText = `Шаг ${currentStep} из 3`;
 }
 
-// --- TELEGRAM SEND ---
+
+// --- TELEGRAM UTILS ---
+const TG_BOT_TOKEN = '7640486720:AAGKwluT4H8VbC0x_A-H_Nf4--21Zr-mIig';
+const TG_CHAT_ID = '183174525';
+
+async function sendTelegramMessage(text) {
+    if (TG_BOT_TOKEN.includes('ЗАМЕНИТЬ')) {
+        console.error('Telegram Token missing');
+        return false;
+    }
+    const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage?chat_id=${TG_CHAT_ID}&text=${encodeURIComponent(text)}`;
+    try {
+        const response = await fetch(url);
+        return response.ok;
+    } catch (error) {
+        console.error('TG Send Error:', error);
+        return false;
+    }
+}
+
+// --- QUIZ LOGIC ---
 async function submitQuiz(event) {
     event.preventDefault();
 
-    // SETTINGS
-    const botToken = '7640486720:AAGKwluT4H8VbC0x_A-H_Nf4--21Zr-mIig';
-    const chatId = '183174525';
-
     const name = document.getElementById('name').value;
     const phone = document.getElementById('phone').value;
-
-    // Get selected options
     const niche = document.querySelector('input[name="niche"]:checked')?.value || 'Не выбрано';
     const budget = document.querySelector('input[name="budget"]:checked')?.value || 'Не выбрано';
 
     const statusDiv = document.getElementById('statusMessage');
     const btn = event.target.querySelector('button[type="submit"]');
 
-    if (botToken.includes('ЗАМЕНИТЬ')) {
-        alert('Ошибка! Вставьте токен бота в код.');
-        return;
-    }
-
     btn.textContent = 'Отправка...';
     btn.disabled = true;
 
     const text = `🔥 ЗАЯВКА (КВИЗ)\n\n👤 Имя: ${name}\n📱 Контакты: ${phone}\n\n📊 Ниша: ${niche}\n💰 Бюджет: ${budget}`;
-    const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(text)}`;
 
-    try {
-        const response = await fetch(url);
-        if (response.ok) {
-            statusDiv.innerHTML = '<span style="color: var(--accent)">Успешно! Мы свяжемся с вами.</span>';
-            btn.style.display = 'none';
-        } else {
-            statusDiv.innerText = 'Ошибка отправки.';
-            btn.disabled = false;
-        }
-    } catch (error) {
-        console.error(error);
-        statusDiv.innerText = 'Ошибка сети.';
+    const success = await sendTelegramMessage(text);
+
+    if (success) {
+        statusDiv.innerHTML = '<span style="color: var(--accent)">Успешно! Мы свяжемся с вами.</span>';
+        btn.style.display = 'none';
+
+        // Optional: Redirect to success page
+        // window.location.href = 'thank-you.html';
+    } else {
+        statusDiv.innerText = 'Ошибка отправки.';
         btn.disabled = false;
     }
 }
@@ -327,5 +333,262 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('iframe.lazy-video').forEach(iframe => {
         videoObserver.observe(iframe);
     });
+});
+
+// --- CUSTOMER JOURNEY LINES DRAWING ---
+function drawJourneyLines() {
+    const svg = document.querySelector('.journey-lines');
+    const cards = document.querySelectorAll('.journey-card');
+
+    if (!svg || cards.length === 0 || window.innerWidth < 960) {
+        if (svg) svg.innerHTML = ''; // Clear lines on mobile
+        return;
+    }
+
+    // Clear previous lines
+    svg.innerHTML = '';
+
+    // Draw lines between cards: 0->1, 1->2, 2->3, etc.
+    // Or zig-zag: 0->1->2 (row 1), 3->4->5 (row 2), and connect 2->3 (down)
+
+    // Grid is 3 cols. 
+    // Row 1: 0, 1, 2
+    // Row 2: 3, 4, 5
+
+    // Connections:
+    // 0 -> 1
+    // 1 -> 2
+    // 2 -> 5 (Down curve at end? Or 2 -> 3 diagonal? Let's do 2 -> 5 (straight down) then 5 -> 4 -> 3 ? No, flow is 1,2,3...6)
+    // Flow: 0 -> 1 -> 2 -> (down-left?) -> 3 -> 4 -> 5 ?
+    // Or Logical flow: 0(Traffic) -> 1(Speed) -> 2(Filter) -> 3(Warmup) -> 4(Handshake) -> 5(Order)
+    // Standard Z pattern: 0->1->2, then 2->(diagonal)->3, then 3->4->5
+    // Or Snake pattern: 0->1->2, then 2->5 (down), then 5->4 (left), then 4->3 (left) ??
+    // The numbers are 01, 02, 03... 
+    // 0(01), 1(02), 2(03)
+    // 3(04), 4(05), 5(06)
+
+    // Let's do simple connections: 
+    // 0 -> 1
+    // 1 -> 2
+    // 2 -> 5 (Vertical connection? No, 2 is top right, 5 is bottom right)
+    //  Let's check indices:
+    //  0  1  2
+    //  3  4  5
+
+    // We want path: 0->1->2->3->4->5 ?
+    //  0 -> 1 (Right)
+    //  1 -> 2 (Right)
+    //  2 -> 5 (Down) ?? No, 3 is usually next step.
+    //  Snake:
+    //  0 -> 1 -> 2
+    //            |
+    //  5 <- 4 <- 3   <-- Snake pattern.
+    //  Let's try: 0->1, 1->2, 2->3(diagonal), 3->4, 4->5
+    //  Or Snake: 0->1->2, 2->5(down), 5->4(left), 4->3(left)? No, order is 1..6.
+
+    //  Let's stick to simple "Next Step" logic.
+    //  0->1, 1->2 
+    //  2->3 (Diagonal long line)
+    //  3->4, 4->5
+
+    const connections = [
+        { from: 0, to: 1 },
+        { from: 1, to: 2 },
+        { from: 2, to: 3 }, // Diagonal
+        { from: 3, to: 4 },
+        { from: 4, to: 5 }
+    ];
+
+    connections.forEach(conn => {
+        const rect1 = cards[conn.from].getBoundingClientRect();
+        const rect2 = cards[conn.to].getBoundingClientRect();
+        const containerRect = svg.getBoundingClientRect();
+
+        // Calculate centers relative to SVG container
+        const x1 = rect1.left + rect1.width / 2 - containerRect.left;
+        const y1 = rect1.top + rect1.height / 2 - containerRect.top;
+        const x2 = rect2.left + rect2.width / 2 - containerRect.left;
+        const y2 = rect2.top + rect2.height / 2 - containerRect.top;
+
+        // Create Path
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+
+        // Curved line? Bezier?
+        // Simple Line: M x1 y1 L x2 y2
+        // Let's add slight curve for diagonal (2->3)
+
+        let d = `M ${x1} ${y1} L ${x2} ${y2}`;
+
+        // If row change (2->3), maybe a generic curve?
+        // Let's keep it straight dotted glowing line for now.
+
+        path.setAttribute("d", d);
+        path.setAttribute("stroke", "rgba(250, 193, 77, 0.2)"); // Base color
+        path.setAttribute("stroke-width", "2");
+        path.setAttribute("fill", "none");
+        path.classList.add('j-line-path'); // Adds animation
+
+        // Dashed?
+        // path.setAttribute("stroke-dasharray", "5,5");
+
+        svg.appendChild(path);
+    });
+}
+
+// Redraw on resize
+window.addEventListener('resize', () => {
+    // Debounce?
+    drawJourneyLines();
+});
+
+// Init after load (wait for layout)
+window.addEventListener('load', () => {
+    setTimeout(drawJourneyLines, 500); // Small delay to ensure AOS or layout settled
+});
+
+// --- AI CHAT DEMO LOGIC ---
+// --- AI CHAT LOGIC (Real Backend + Streaming) ---
+document.addEventListener('DOMContentLoaded', () => {
+    const chatForm = document.getElementById('chatForm');
+    const chatInput = document.getElementById('chatInput');
+    const messagesContainer = document.getElementById('chatMessages');
+    const typingIndicator = document.getElementById('typingIndicator');
+
+    if (!chatForm) return;
+
+    let chatHistory = []; // Stores {role, content}
+
+    // 1. Load History from LocalStorage
+    const savedHistory = localStorage.getItem('loops_chat_history');
+    if (savedHistory) {
+        try {
+            chatHistory = JSON.parse(savedHistory);
+            // Clear default welcome message if history exists, or append history
+            messagesContainer.innerHTML = '';
+            chatHistory.forEach(msg => addMessageToUI(msg.content, msg.role === 'user', false));
+        } catch (e) { console.error('History Error', e); }
+    } else {
+        // Initial Message if no history
+        chatHistory.push({ role: 'assistant', content: 'Привет! 👋 Я ИИ-консультант Loops. Готов ответить на ваши вопросы о нашей системе.' });
+    }
+
+    function scrollToBottom() {
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    // Format Markdown (Bold, List)
+    function formatMessage(text) {
+        let html = text
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
+            .replace(/\n/g, '<br>'); // Newlines
+        return html;
+    }
+
+    function addMessageToUI(text, isUser = false, animate = true) {
+        const msgDiv = document.createElement('div');
+        msgDiv.classList.add('message');
+        msgDiv.classList.add(isUser ? 'user-msg' : 'ai-msg');
+        if (animate) msgDiv.style.animation = 'fadeInUp 0.3s ease';
+
+        const bubble = document.createElement('div');
+        bubble.classList.add('msg-bubble');
+        bubble.innerHTML = formatMessage(text); // Apply formatting
+
+        const time = document.createElement('div');
+        time.classList.add('msg-time');
+        const now = new Date();
+        time.innerText = `${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`;
+
+        msgDiv.appendChild(bubble);
+        msgDiv.appendChild(time);
+        messagesContainer.appendChild(msgDiv);
+        scrollToBottom();
+
+        return bubble; // Return for streaming updates
+    }
+
+    // Save state
+    function saveHistory() {
+        localStorage.setItem('loops_chat_history', JSON.stringify(chatHistory));
+    }
+
+    // Check for Lead (Phone Number)
+    function checkForLead(text) {
+        // Regex for phone: +998... or 9 digits, simplified visual check
+        const phoneRegex = /(\+?\d{9,15})|(998\d{9})|(\d{2}\s\d{3}\s\d{2}\s\d{2})/;
+        if (phoneRegex.test(text)) {
+            sendTelegramMessage(`🔥 ЗАЯВКА (ИИ-ЧАТ)\n📱 Сообщение: "${text}"`);
+        }
+    }
+
+    window.handleChatSubmit = async function (e) {
+        e.preventDefault();
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        // 1. Update UI & History
+        addMessageToUI(text, true);
+        chatHistory.push({ role: 'user', content: text });
+        saveHistory();
+        checkForLead(text);
+
+        chatInput.value = '';
+        typingIndicator.style.display = 'flex';
+        scrollToBottom();
+
+        try {
+            // 2. Call Backend API
+            const response = await fetch('api/chat.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ messages: chatHistory })
+            });
+
+            if (!response.ok) throw new Error('Network error');
+
+            // 3. Handle Streaming
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder('utf-8');
+            typingIndicator.style.display = 'none';
+
+            // Create empty AI bubble
+            let aiText = '';
+            const aiBubble = addMessageToUI('', false);
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+
+                const chunk = decoder.decode(value, { stream: true });
+                // Parse lines (SSE format: data: {...})
+                const lines = chunk.split('\n');
+
+                for (const line of lines) {
+                    if (line.startsWith('data: ')) {
+                        const jsonStr = line.slice(6);
+                        if (jsonStr === '[DONE]') break;
+                        try {
+                            const data = JSON.parse(jsonStr);
+                            const content = data.choices?.[0]?.delta?.content || '';
+                            if (content) {
+                                aiText += content;
+                                aiBubble.innerHTML = formatMessage(aiText);
+                                scrollToBottom();
+                            }
+                        } catch (e) { }
+                    }
+                }
+            }
+
+            // 4. Update History with full AI response
+            chatHistory.push({ role: 'assistant', content: aiText });
+            saveHistory();
+
+        } catch (error) {
+            console.error(error);
+            typingIndicator.style.display = 'none';
+            addMessageToUI('Извините, произошла ошибка. Попробуйте позже.', false);
+        }
+    };
 });
 
