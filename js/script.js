@@ -557,41 +557,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let buffer = '';
 
-            let buffer = '';
-
             while (true) {
                 const { done, value } = await reader.read();
                 if (done) break;
 
+                // Decode chunk and append to buffer
                 const chunk = decoder.decode(value, { stream: true });
                 buffer += chunk;
 
-                // Split by double newline (Standard SSE event delimiter)
-                const events = buffer.split('\n\n');
-                buffer = events.pop(); // Keep partial event in buffer
+                // Process buffer looking for double newlines
+                let boundary = buffer.indexOf('\n\n');
 
-                for (const event of events) {
-                    if (!event.trim()) continue; // Skip empty
+                while (boundary !== -1) {
+                    const eventData = buffer.slice(0, boundary).trim();
+                    // Remove processed part from buffer, +2 for \n\n
+                    buffer = buffer.slice(boundary + 2);
 
-                    const lines = event.split('\n');
-                    for (const line of lines) {
-                        if (line.trim().startsWith('data: ')) {
-                            const jsonStr = line.trim().slice(6);
-                            if (jsonStr === '[DONE]') break;
+                    if (eventData.startsWith('data: ')) {
+                        const jsonStr = eventData.slice(6);
+                        if (jsonStr === '[DONE]') break;
 
-                            try {
-                                const data = JSON.parse(jsonStr);
-                                const content = data.choices?.[0]?.delta?.content || '';
-                                if (content) {
-                                    aiText += content;
-                                    aiBubble.innerHTML = formatMessage(aiText);
-                                    scrollToBottom();
-                                }
-                            } catch (e) {
-                                console.error('JSON Parse Error', e);
+                        try {
+                            const data = JSON.parse(jsonStr);
+                            const content = data.choices?.[0]?.delta?.content || '';
+                            if (content) {
+                                aiText += content;
+                                aiBubble.innerHTML = formatMessage(aiText);
+                                scrollToBottom();
                             }
+                        } catch (e) {
+                            console.warn('Dropped Frame:', jsonStr);
                         }
                     }
+
+                    // Look for next boundary
+                    boundary = buffer.indexOf('\n\n');
                 }
             }
 
