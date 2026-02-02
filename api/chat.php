@@ -18,7 +18,7 @@ $part1 = 'sk-proj-pcfAXz4OJFhaRPH3DdPscK0PHUljAI0_OmdTWnTtWQwmCm';
 $part2 = '1sqHfUek32ntJNHQPbv0JhoCZZWYT3BlbkFJdTc6S1sqcRdMOl5spfXuoThIAjWWL_4Xv7dOXzQTxyRGCcxBPVoYDAlDioTnN1RC1B5sJgnGMA';
 $apiKey = $part1 . $part2;
 
-$model = 'gpt-4o';
+$model = 'gpt-5.2';
 
 // System Prompt
 // System Prompt
