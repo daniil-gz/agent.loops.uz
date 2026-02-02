@@ -105,7 +105,7 @@ array_unshift($messages, ['role' => 'system', 'content' => $systemPrompt]);
 // 3. Prepare Request
 $url = 'https://api.openai.com/v1/chat/completions';
 $data = [
-    'model' => $model, // Using gpt-4o (User requested gpt-5.2 which is invalid)
+    'model' => 'gpt-4o', // Reverted to stable flagship model
     'messages' => $messages,
     'stream' => true,
     'temperature' => 0.3,     // Focused and consistent

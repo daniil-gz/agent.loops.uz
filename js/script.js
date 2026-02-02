@@ -555,17 +555,22 @@ document.addEventListener('DOMContentLoaded', () => {
             let aiText = '';
             const aiBubble = addMessageToUI('', false);
 
+            let buffer = '';
+
             while (true) {
                 const { done, value } = await reader.read();
                 if (done) break;
 
                 const chunk = decoder.decode(value, { stream: true });
-                // Parse lines (SSE format: data: {...})
-                const lines = chunk.split('\n');
+                buffer += chunk;
+
+                const lines = buffer.split('\n');
+                // Keep the last part in buffer (it might be incomplete)
+                buffer = lines.pop();
 
                 for (const line of lines) {
-                    if (line.startsWith('data: ')) {
-                        const jsonStr = line.slice(6);
+                    if (line.trim().startsWith('data: ')) {
+                        const jsonStr = line.trim().slice(6);
                         if (jsonStr === '[DONE]') break;
                         try {
                             const data = JSON.parse(jsonStr);
@@ -575,7 +580,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                 aiBubble.innerHTML = formatMessage(aiText);
                                 scrollToBottom();
                             }
-                        } catch (e) { }
+                        } catch (e) {
+                            console.error('JSON Parse Error', e, jsonStr);
+                        }
                     }
                 }
             }
