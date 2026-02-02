@@ -2482,6 +2482,8 @@ input[type=range]::-webkit-slider-thumb:hover {
     color: #fff;
     outline: none;
     transition: 0.3s;
+    font-size: 16px;
+    /* Prevent iOS Zoom */
 }
 
 #chatInput::placeholder {
@@ -2493,6 +2495,21 @@ input[type=range]::-webkit-slider-thumb:hover {
     border-color: var(--accent);
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0 0 10px rgba(250, 193, 77, 0.1);
+}
+
+/* Fix for mobile keyboard pushing content */
+@media screen and (max-width: 768px) {
+    #chatInput {
+        font-size: 16px !important;
+        /* Force 16px on mobile to prevent zoom */
+    }
+
+    .chat-interface {
+        height: 80vh;
+        /* Fallback */
+        height: 80dvh;
+        /* Dynamic container height */
+    }
 }
 
 .send-btn {
