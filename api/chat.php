@@ -105,10 +105,11 @@ array_unshift($messages, ['role' => 'system', 'content' => $systemPrompt]);
 // 3. Prepare Request
 $url = 'https://api.openai.com/v1/chat/completions';
 $data = [
-    'model' => $model,
+    'model' => $model, // Using gpt-4o (User requested gpt-5.2 which is invalid)
     'messages' => $messages,
     'stream' => true,
-    'temperature' => 0.7
+    'temperature' => 0.3,     // Focused and consistent
+    'max_tokens' => 250       // Concise answers
 ];
 
 $ch = curl_init($url);
