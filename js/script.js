@@ -158,8 +158,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const bubble = document.querySelector('.ai-bubble');
     const widget = document.querySelector('.ai-widget');
 
+    // Guard clause
+    if (!bubble || !widget) return;
+
     // Low-volume pop sound base64 (very short beep)
     const audio = new Audio("data:audio/wav;base64,UklGRl9vT19XQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YU");
+
+    let inactivityTimer = null;
+    let cleanupListeners = null;
 
     // Helper to close bubble
     const closeBubble = (e) => {
@@ -167,6 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
         bubble.style.opacity = '0';
         bubble.style.transform = 'translateY(10px)';
         bubble.style.pointerEvents = 'none';
+
+        if (cleanupListeners) cleanupListeners();
+        if (inactivityTimer) clearTimeout(inactivityTimer);
     };
 
     // 1. Wait 2.5s after load
@@ -206,6 +215,12 @@ document.addEventListener('DOMContentLoaded', () => {
             audio.volume = 0.2;
             audio.play().catch(() => { }); // Catch autoplay errors
 
+            // --- AUTO CLOSE LOGIC ---
+            // Always close after 3 seconds
+            inactivityTimer = setTimeout(() => {
+                closeBubble();
+            }, 3000);
+
         }, 2000); // Typing time
 
     }, 2500); // Initial Delay
@@ -216,7 +231,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target.closest('.ai-bubble')) return;
 
         closeBubble();
-        document.getElementById('footer').scrollIntoView({ behavior: 'smooth' });
+        const leadForm = document.getElementById('lead-form');
+        if (leadForm) {
+            leadForm.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            // Fallback if lead form is missing (e.g. inner pages), maybe go to index?
+            window.location.href = 'index.html#lead-form';
+        }
+
     });
 });
 
