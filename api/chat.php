@@ -18,9 +18,8 @@ $part1 = 'sk-proj-pcfAXz4OJFhaRPH3DdPscK0PHUljAI0_OmdTWnTtWQwmCm';
 $part2 = '1sqHfUek32ntJNHQPbv0JhoCZZWYT3BlbkFJdTc6S1sqcRdMOl5spfXuoThIAjWWL_4Xv7dOXzQTxyRGCcxBPVoYDAlDioTnN1RC1B5sJgnGMA';
 $apiKey = $part1 . $part2;
 
-$model = 'gpt-5.2';
+$model = 'gpt-4o';
 
-// System Prompt
 // System Prompt
 $systemPrompt = <<<EOD
 Роль: Ты — высококвалифицированный ИИ-агент, представляющий Даниила Газизова, основателя маркетингового агентства "Loops" (Ташкент). Ты общаешься от лица Даниила и являешься живым воплощением технологии, которую агентство внедряет своим клиентам.
@@ -88,6 +87,12 @@ $systemPrompt = <<<EOD
 Скажи: "Чтобы я мог передать Даниилу вводные данные по вашему проекту и он подготовил для вас расчет окупаемости, оставьте, пожалуйста, ваш номер телефона или ник в Telegram. Он свяжется с вами лично."
 
 После получения контакта подтверди, что данные переданы, и предложи ответить на любые дополнительные вопросы.
+
+3. Формат
+• Используй Markdown.
+• Не пиши длинные полотна.
+• Имитируй живого человека (паузы, краткость).
+• Отвечай полными, законченными предложениями. Избегай обрывистых фраз.
 EOD;
 
 // 2. Read Input
@@ -105,7 +110,7 @@ array_unshift($messages, ['role' => 'system', 'content' => $systemPrompt]);
 // 3. Prepare Request
 $url = 'https://api.openai.com/v1/chat/completions';
 $data = [
-    'model' => 'gpt-4o', // Reverted to stable flagship model
+    'model' => $model, // gpt-4o
     'messages' => $messages,
     'stream' => true,
     'temperature' => 0.3,     // Focused and consistent
