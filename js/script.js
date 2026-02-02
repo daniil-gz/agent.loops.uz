@@ -557,6 +557,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let buffer = '';
 
+            let buffer = '';
+
             while (true) {
                 const { done, value } = await reader.read();
                 if (done) break;
@@ -564,24 +566,30 @@ document.addEventListener('DOMContentLoaded', () => {
                 const chunk = decoder.decode(value, { stream: true });
                 buffer += chunk;
 
-                const lines = buffer.split('\n');
-                // Keep the last part in buffer (it might be incomplete)
-                buffer = lines.pop();
+                // Split by double newline (Standard SSE event delimiter)
+                const events = buffer.split('\n\n');
+                buffer = events.pop(); // Keep partial event in buffer
 
-                for (const line of lines) {
-                    if (line.trim().startsWith('data: ')) {
-                        const jsonStr = line.trim().slice(6);
-                        if (jsonStr === '[DONE]') break;
-                        try {
-                            const data = JSON.parse(jsonStr);
-                            const content = data.choices?.[0]?.delta?.content || '';
-                            if (content) {
-                                aiText += content;
-                                aiBubble.innerHTML = formatMessage(aiText);
-                                scrollToBottom();
+                for (const event of events) {
+                    if (!event.trim()) continue; // Skip empty
+
+                    const lines = event.split('\n');
+                    for (const line of lines) {
+                        if (line.trim().startsWith('data: ')) {
+                            const jsonStr = line.trim().slice(6);
+                            if (jsonStr === '[DONE]') break;
+
+                            try {
+                                const data = JSON.parse(jsonStr);
+                                const content = data.choices?.[0]?.delta?.content || '';
+                                if (content) {
+                                    aiText += content;
+                                    aiBubble.innerHTML = formatMessage(aiText);
+                                    scrollToBottom();
+                                }
+                            } catch (e) {
+                                console.error('JSON Parse Error', e);
                             }
-                        } catch (e) {
-                            console.error('JSON Parse Error', e, jsonStr);
                         }
                     }
                 }
