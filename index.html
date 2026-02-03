@@ -31,6 +31,35 @@
     <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Schema.org / JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Loops System",
+      "url": "https://loops.uz/",
+      "logo": "https://loops.uz/images/og-main.jpg",
+      "description": "Автоматизация продаж с помощью ИИ-агентов и таргетированной рекламы.",
+      "sameAs": [
+        "https://t.me/dani_gzv",
+        "https://www.instagram.com/danii_gzv/"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Loops System",
+      "url": "https://loops.uz/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://loops.uz/articles?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 </head>
 
 <body>
@@ -48,10 +77,10 @@
     <header>
         <div class="container header-inner" style="justify-content: center;">
             <div class="brand-container">
-                <a href="index.html" class="brand-title">СИСТЕМА ПЕРЕЛИДОЗА</a>
+                <a href="index" class="brand-title">СИСТЕМА ПЕРЕЛИДОЗА</a>
                 <div class="brand-menu">
-                    <a href="cases.html">Кейсы</a>
-                    <a href="articles.html">Контент</a>
+                    <a href="cases">Кейсы</a>
+                    <a href="articles">Контент</a>
                     <a href="#lead-form">Контакты</a>
                 </div>
             </div>
@@ -252,7 +281,7 @@
                 <div class="chat-header">
                     <div class="chat-avatar">
                         <div class="avatar-img">
-                            <img src="images/daniil.jpg" alt="Даниил"
+                            <img src="images/daniil.jpg" alt="Даниил - Основатель Loops System"
                                 style="width: 100%; height: 100%; object-fit: cover;">
                         </div>
                         <div class="status-dot"></div>
@@ -472,7 +501,7 @@
             </div>
 
             <div style="text-align: center; margin-top: 40px;">
-                <a href="cases.html" class="btn"
+                <a href="cases" class="btn"
                     style="background: transparent; border: 1px solid var(--accent); color: var(--accent);">
                     Смотреть все кейсы →
                 </a>
@@ -825,7 +854,7 @@
     <!-- GLOBAL GLASS FOOTER -->
     <footer class="site-footer">
         <div class="container">
-            <a href="index.html" class="footer-logo">LOOPS</a>
+            <a href="index" class="footer-logo">LOOPS</a>
             <div class="footer-copyright">© 2026 LOOPS SYSTEM. All rights reserved.</div>
         </div>
     </footer>

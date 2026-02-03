@@ -5,7 +5,7 @@ window.casesData = [
     {
         id: 'feedup',
         category: 'services',
-        url: 'cases/case-feedup.html',
+        url: 'cases/case-feedup',
         image: 'images/feedup-main.png',
         niche: 'Фастфуд / HoReCa',
         title: 'FeedUp',
@@ -18,7 +18,7 @@ window.casesData = [
     {
         id: 'izzy',
         category: 'services',
-        url: 'cases/case-izzy.html',
+        url: 'cases/case-izzy',
         image: 'images/izzy-main.png',
         niche: 'Кикшеринг',
         title: 'IZZY Scooters',
@@ -31,7 +31,7 @@ window.casesData = [
     {
         id: 'dco',
         category: 'b2b',
-        url: 'cases/case-dco.html',
+        url: 'cases/case-dco',
         image: 'images/dco-main.png',
         niche: 'Сантехника',
         title: 'DCO Euroluxe',
@@ -44,7 +44,7 @@ window.casesData = [
     {
         id: 'basalt',
         category: 'b2b',
-        url: 'cases/case-basalt.html',
+        url: 'cases/case-basalt',
         image: 'images/basalt-main.png',
         niche: 'Производство / B2B',
         title: 'Basalt Uzbekistan',
@@ -57,7 +57,7 @@ window.casesData = [
     {
         id: 'chery',
         category: 'auto',
-        url: 'cases/case-chery.html',
+        url: 'cases/case-chery',
         image: 'images/chery-main.png',
         niche: 'Автобизнес',
         title: 'Дилерский центр Chery',
@@ -70,7 +70,7 @@ window.casesData = [
     {
         id: 'rebar',
         category: 'b2b',
-        url: 'cases/case-rebar.html',
+        url: 'cases/case-rebar',
         image: 'https://placehold.co/600x400/222/555?text=Composite+Rebar',
         niche: 'Производство / B2B',
         title: 'Композитная Арматура',
@@ -83,7 +83,7 @@ window.casesData = [
     {
         id: 'estate',
         category: 'estate',
-        url: 'cases/case-estate.html',
+        url: 'cases/case-estate',
         image: 'https://placehold.co/600x400/333/666?text=Luxury+Estate',
         niche: 'Недвижимость',
         title: 'ЖК "Premium Garden"',
@@ -96,7 +96,7 @@ window.casesData = [
     {
         id: 'legal',
         category: 'b2b',
-        url: 'cases/case-legal.html',
+        url: 'cases/case-legal',
         image: 'https://placehold.co/600x400/444/777?text=Legal+Consulting',
         niche: 'Консалтинг',
         title: 'Юридические Услуги',
@@ -109,7 +109,7 @@ window.casesData = [
     {
         id: 'clinic',
         category: 'b2b',
-        url: 'cases/clinic.html',
+        url: 'cases/clinic',
         image: 'https://placehold.co/600x400/555/888?text=Clinic',
         niche: 'Медицина',
         title: 'Стоматология "Smile"',
