@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Dreamer | Планируйте свою карьеру с ИИ от Google | Полезные Материалы</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Google Career Dreamer — экспериментальная платформа на базе Gemini. Узнайте, как ИИ помогает строить карьерные пути и находить скрытые таланты.">
+    <meta name="keywords"
+        content="Career Dreamer, Google Career, ИИ карьера, Gemini, поиск работы, планирование карьеры">
+    <link rel="canonical" href="https://loops.uz/articles/career-dreamer.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://loops.uz/articles/career-dreamer.html">
+    <meta property="og:title" content="Career Dreamer: Ваша карьера в мире ИИ">
+    <meta property="og:description"
+        content="Бесплатная платформа от Google для автоматического планирования карьерного пути.">
+    <meta property="og:image" content="../images/career-dreamer-cover.png">
+
+    <link rel="icon" href="../images/favicon.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="../css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        .cta-button-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .btn-external {
+            display: inline-block;
+            padding: 18px 45px;
+            background: var(--accent);
+            color: #000;
+            text-decoration: none;
+            font-weight: 800;
+            border-radius: 50px;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(250, 193, 77, 0.3);
+        }
+
+        .btn-external:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(250, 193, 77, 0.5);
+        }
+
+        .article-content h2 {
+            margin-top: 50px;
+            margin-bottom: 25px;
+            color: var(--accent);
+            font-size: 28px;
+        }
+
+        .article-content h3 {
+            margin-top: 35px;
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 24px;
+        }
+
+        .article-content p {
+            margin-bottom: 25px;
+        }
+
+        .article-content blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 20px 30px;
+            background: rgba(250, 193, 77, 0.05);
+            margin: 30px 0;
+            font-style: italic;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .article-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            overflow: hidden;
+            display: block;
+            overflow-x: auto;
+        }
+
+        .article-content th,
+        .article-content td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            min-width: 150px;
+        }
+
+        .article-content th {
+            background: rgba(250, 193, 77, 0.1);
+            color: var(--accent);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 15px;
+        }
+
+        /* MOBILE REFINEMENTS */
+        @media (max-width: 768px) {
+            .section {
+                padding-top: 60px !important;
+            }
+
+            h1 {
+                font-size: 36px !important;
+                line-height: 1.1 !important;
+            }
+
+            .article-hero-img {
+                border-radius: 15px !important;
+                margin-left: -15px;
+                margin-right: -15px;
+                width: calc(100% + 30px);
+            }
+
+            .article-content {
+                font-size: 17px !important;
+                padding: 0 5px;
+            }
+
+            .article-content h2 {
+                font-size: 22px !important;
+                margin-top: 35px;
+            }
+
+            .btn-external {
+                width: 100%;
+                padding: 15px 20px;
+                font-size: 16px;
+            }
+
+            .cta-button-container {
+                margin: 30px 0;
+            }
+
+            .breadcrumbs {
+                font-size: 12px;
+                white-space: nowrap;
+                overflow-x: auto;
+                padding-bottom: 10px;
+            }
+        }
+
+        /* READ MORE GRID */
+        .read-more-section {
+            margin-top: 100px;
+            padding-top: 60px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .read-more-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .read-more-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+
+    <header>
+        <div class="container header-inner" style="justify-content: center;">
+            <div class="brand-container">
+                <a href="../index.html" class="brand-title">СИСТЕМА ПЕРЕЛИДОЗА</a>
+                <div class="brand-menu">
+                    <a href="../cases.html">Кейсы</a>
+                    <a href="../index.html">Главная</a>
+                    <a href="../index.html#lead-form">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container" style="padding-top: 100px;">
+            <div class="breadcrumbs mb-40">
+                <a href="../index.html">Главная</a> <span class="sep">></span>
+                <a href="../articles.html">Полезные материалы</a> <span class="sep">></span>
+                <span class="current">Career Dreamer</span>
+            </div>
+
+            <!-- Article Header -->
+            <div class="text-center mb-60">
+                <h1
+                    style="font-size: clamp(40px, 10vw, 100px); letter-spacing: -2px; margin-bottom: 10px; text-transform: uppercase;">
+                    CAREER DREAMER
+                </h1>
+                <p style="font-size: 24px; color: var(--text-muted); font-weight: 300;">Как ИИ от Google помогает
+                    планировать будущее</p>
+            </div>
+
+            <div class="article-hero-img mb-60"
+                style="border-radius: 30px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+                <img src="../images/career-dreamer-cover.png" alt="Career Dreamer Cover"
+                    style="width: 100%; height: auto; display: block;">
+            </div>
+
+            <div class="cta-button-container">
+                <a href="https://grow.google/career-dreamer" target="_blank" class="btn-external">Попробовать Career
+                    Dreamer</a>
+            </div>
+
+            <!-- Content Body -->
+            <article class="article-content"
+                style="max-width: 900px; margin: 0 auto; line-height: 1.8; font-size: 20px; color: #eee; font-family: 'Inter', sans-serif;">
+
+                <h2>Что такое Career Dreamer?</h2>
+                <p>
+                    Google запустила <strong>Career Dreamer</strong> — экспериментальную платформу, которая помогает
+                    принимать карьерные решения самым простым способом. Это полностью бесплатно и работает на основе
+                    искусственного интеллекта Gemini от Google.
+                </p>
+                <p>
+                    Вместо того, чтобы часами блуждать по LinkedIn или Indeed в поисках идеальной работы, вы отвечаете
+                    на несколько простых вопросов — и ИИ анализирует вашу карьеру, выявляет скрытые навыки и показывает
+                    вам дорожные карты развития, которые вы даже не рассматривали.
+                </p>
+
+                <h2>Как работает платформа? Мой опыт</h2>
+                <p>Я сам протестировал Career Dreamer, и вот что происходит:</p>
+
+                <h3>Шаг 1: Start</h3>
+                <p>
+                    Вы заходите на платформу и нажимаете <strong>Start</strong>. Первое, что платформа вас спрашивает —
+                    опишите вашу текущую роль или роль вашей мечты.
+                </p>
+
+                <h3>Шаг 2: Описание задач и навыков</h3>
+                <p>
+                    Дальше Career Dreamer предлагает вам отметить задачи, которые вы выполняли в этой роли. После этого
+                    вы выбираете навыки, в которых вы сильны. Платформа предлагает вам список, но вы также можете
+                    добавить свои собственные.
+                </p>
+
+                <h3>Шаг 3: Career Identity Statement</h3>
+                <p>
+                    После того, как вы ответили на вопросы, Career Dreamer формирует ваше <strong>Career Identity
+                        Statement</strong> — краткое, но мощное описание вашей карьерной идентичности. Это
+                    профессиональная история, которая говорит работодателям не только кто вы, но и почему вы ценны.
+                </p>
+                <blockquote>
+                    "Опытный специалист с глубокой специализацией. Владею полным циклом работы: от планирования до
+                    внедрения. Особенно силен в оптимизации процессов."
+                </blockquote>
+
+                <h3>Шаг 4: Explore Career Paths</h3>
+                <p>
+                    Когда профиль готов, Career Dreamer показывает вам несколько рекомендованных карьерных путей. Это
+                    интерактивная <strong>визуализация в виде сети</strong> — вы видите, как одна роль может
+                    трансформироваться в другую.
+                </p>
+
+                <h2>Deep Dive: Обзор возможностей</h2>
+                <p>Внутри каждой выбранной роли вы найдете:</p>
+                <ol>
+                    <li><strong>Зарплата и требования</strong>: Реальные данные по рынку и уровню образования.</li>
+                    <li><strong>The "Sweet Spot"</strong>: На каких конкретно навыках нужно сфокусироваться для
+                        максимального роста.</li>
+                    <li><strong>"День из жизни"</strong>: Реалистичное описание рабочих будней.</li>
+                    <li><strong>Зоны роста</strong>: Над чем нужно работать, чтобы вырасти.</li>
+                    <li><strong>Learning Path</strong>: Прямые ссылки на курсы в Google AI Skills.</li>
+                </ol>
+
+                <h2>Как Career Dreamer помогает разным людям?</h2>
+                <ul>
+                    <li><strong>Студенты</strong>: Помогает выбрать востребованное направление.</li>
+                    <li><strong>Профессионалы</strong>: Облегчает смену карьеры через анализ трансферируемых навыков.
+                    </li>
+                    <li><strong>Руководители</strong>: Помогает строить планы развития для команд.</li>
+                </ul>
+
+                <h2>Интеграция с Gemini</h2>
+                <p>Платформа интегрирована с <strong>Gemini</strong>, что позволяет:</p>
+                <ul>
+                    <li>Писать Cover Letters.</li>
+                    <li>Оптимизировать резюме под конкретные роли.</li>
+                    <li>Готовиться к собеседованиям.</li>
+                </ul>
+
+                <h2>Главные выводы</h2>
+                <ol>
+                    <li><strong>Career Dreamer решает реальную проблему</strong>: Делает карьерное планирование
+                        прозрачным.</li>
+                    <li><strong>Это не просто тест</strong>: Это полная экосистема от анализа до обучения.</li>
+                    <li><strong>Данные + ИИ</strong>: Рекомендации основаны на реальных данных Lightcast и BLS.</li>
+                </ol>
+
+                <p>Если вы тратите часы на раздумья о будущем — Career Dreamer поможет структурировать хаос и найти
+                    верный путь.</p>
+            </article>
+
+            <!-- READ MORE SECTION -->
+            <div class="read-more-section">
+                <h2 style="font-size: 40px; text-transform: uppercase;">Читать еще</h2>
+                <div class="read-more-grid" id="readMoreGrid">
+                    <!-- Loaded by JS -->
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- LEAD FORM -->
+    <section class="footer" id="lead-form" style="padding-top: 100px;">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h2 style="font-size: 48px; margin-bottom: 20px;">Готовы к <span class="text-accent">взрывному
+                        росту?</span></h2>
+                <p style="color: var(--text-muted); font-size: 18px; margin-bottom: 40px;">Пройдите тест из 3 вопросов и
+                    получите индивидуальное предложение по автоматизации вашего бизнеса.</p>
+                <div class="social-links" style="display: flex; gap: 15px;">
+                    <a href="https://t.me/dani_gzv" target="_blank" class="social-btn"
+                        style="width: 44px; height: 44px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M20.665 3.333L2.833 10.333L8.333 13.083L17.5 7.166L10.5 15.249L10.333 19.416L13.791 16.083L17.958 19.166L20.665 3.333Z"
+                                stroke="#fff" stroke-width="2" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/danii_gzv/" target="_blank" class="social-btn"
+                        style="width: 44px; height: 44px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
+                                stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z"
+                                stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M17.5 6.5H17.51" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-form"
+                style="background: var(--bg-card); padding: 40px; border-radius: var(--radius-m); border: 1px solid var(--border); position: relative; overflow: hidden;">
+                <div class="quiz-progress" style="margin-bottom: 30px;">
+                    <div
+                        style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; font-weight: 600; color: var(--text-muted);">
+                        <span id="step-label">Шаг 1 из 3</span>
+                        <span id="step-percent">33%</span>
+                    </div>
+                    <div style="width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px;">
+                        <div id="progress-bar"
+                            style="width: 33%; height: 100%; background: var(--accent); border-radius: 3px; transition: 0.3s ease;">
+                        </div>
+                    </div>
+                </div>
+
+                <form id="quizForm" onsubmit="submitQuiz(event)">
+                    <div class="quiz-step active" id="step1">
+                        <h3 class="mb-20">Ваша ниша?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="niche" value="Автобизнес"
+                                    checked><span>🚗 Автобизнес</span></label>
+                            <label class="quiz-option"><input type="radio" name="niche" value="Недвижимость"><span>🏠
+                                    Недвижимость</span></label>
+                            <label class="quiz-option"><input type="radio" name="niche" value="B2B Услуги"><span>🤝 B2B
+                                    Услуги</span></label>
+                            <label class="quiz-option"><input type="radio" name="niche" value="Другое"><span>🚀
+                                    Другое</span></label>
+                        </div>
+                        <button type="button" class="btn" style="width: 100%; margin-top: 20px;"
+                            onclick="nextStep(2)">Далее →</button>
+                    </div>
+
+                    <div class="quiz-step" id="step2" style="display: none;">
+                        <h3 class="mb-20">Рекламный бюджет?</h3>
+                        <div class="quiz-options">
+                            <label class="quiz-option"><input type="radio" name="budget" value="До $500"
+                                    checked><span>📉 До $500</span></label>
+                            <label class="quiz-option"><input type="radio" name="budget" value="$500 - $2000"><span>💵
+                                    $500 - $2.000</span></label>
+                            <label class="quiz-option"><input type="radio" name="budget" value="$2000+"><span>💰 От
+                                    $2.000</span></label>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 20px;">
+                            <button type="button" class="btn"
+                                style="background: transparent; border: 1px solid var(--border); color: #fff;"
+                                onclick="prevStep(1)">←</button>
+                            <button type="button" class="btn" style="width: 100%;" onclick="nextStep(3)">Далее
+                                →</button>
+                        </div>
+                    </div>
+
+                    <div class="quiz-step" id="step3" style="display: none;">
+                        <h3 class="mb-20">Как с вами связаться?</h3>
+                        <input id="name" type="text" placeholder="Ваше Имя" required
+                            style="width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; margin-bottom: 15px; border-radius: 8px;">
+                        <input id="phone" type="tel" placeholder="Телефон / Telegram" required
+                            style="width: 100%; padding: 15px; background: #000; border: 1px solid #333; color: #fff; margin-bottom: 20px; border-radius: 8px;">
+                        <div style="display: flex; gap: 10px;">
+                            <button type="button" class="btn"
+                                style="background: transparent; border: 1px solid var(--border); color: #fff;"
+                                onclick="prevStep(2)">←</button>
+                            <button type="submit" class="btn" style="width: 100%;">Получить разбор</button>
+                        </div>
+                        <div id="statusMessage" style="margin-top: 15px; text-align: center; font-size: 14px;"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <a href="../index.html" class="footer-logo">LOOPS</a>
+            <div class="footer-copyright">© 2026 LOOPS SYSTEM. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="../js/articles-data.js"></script>
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.initReadMore) {
+                window.initReadMore('career-dreamer');
+            }
+        });
+    </script>
+</body>
+
+</html>

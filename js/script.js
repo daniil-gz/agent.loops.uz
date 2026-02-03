@@ -629,3 +629,33 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 });
 
+
+// --- ARTICLE DISCOVERY (READ MORE) ---
+window.initReadMore = function (currentId) {
+    const grid = document.getElementById('readMoreGrid');
+    if (!grid || !window.articlesData) return;
+
+    // Filter out current article and take last 3
+    const others = window.articlesData
+        .filter(item => item.id !== currentId)
+        .slice(-3);
+
+    const getImagePath = (path) => {
+        if (!path) return '';
+        if (path.startsWith('http')) return path;
+        // Assume relative to root
+        return '../' + path;
+    };
+
+    grid.innerHTML = others.map(item => `
+        <a href="../${item.url}" class="case-archive-card" style="display: block;">
+            <div class="archive-img">
+                <img src="${getImagePath(item.image)}" alt="${item.title}" loading="lazy">
+            </div>
+            <div class="archive-content">
+                <h3 class="archive-title">${item.title}</h3>
+                <p class="archive-desc" style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${item.desc}</p>
+            </div>
+        </a>
+    `).join('');
+};
