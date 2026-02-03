@@ -2620,16 +2620,19 @@ input[type=range]::-webkit-slider-thumb:hover {
     }
 }
 
-/* Interactive Header */
+/* Interactive Header - Robust Grid Layout */
 .brand-container {
+    display: grid;
+    place-items: center;
     position: relative;
-    display: inline-block;
-    cursor: default;
-    /* Height determined by content (brand-title) */
+    width: fit-content;
+    margin: 0 auto;
 }
 
 /* Original Title */
 .brand-title {
+    grid-area: 1 / 1;
+    /* Force overlap */
     font-weight: 300;
     font-size: 12px;
     letter-spacing: 0.3em;
@@ -2637,25 +2640,34 @@ input[type=range]::-webkit-slider-thumb:hover {
     text-decoration: none;
     text-transform: uppercase;
     transition: 0.3s;
-    display: block;
-    /* Changed from absolute to relative to give container width */
-    position: relative;
+    white-space: nowrap;
     opacity: 1;
     pointer-events: auto;
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
 }
 
 /* Hidden Menu */
 .brand-menu {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    grid-area: 1 / 1;
+    /* Force overlap */
     display: flex;
     gap: 20px;
+    /* Center text within flex container */
+    justify-content: center;
+    align-items: center;
+
     opacity: 0;
     pointer-events: none;
     transition: 0.3s;
     white-space: nowrap;
+
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
 }
 
 .brand-menu a {
@@ -2678,11 +2690,23 @@ header.scrolled .brand-title {
     opacity: 0;
     pointer-events: none;
     transform: translateY(-5px);
-    /* Simple up move since it's relative now */
 }
 
 .brand-container:hover .brand-menu,
 header.scrolled .brand-menu {
     opacity: 1;
     pointer-events: auto;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 480px) {
+    .brand-menu {
+        gap: 10px;
+    }
+
+    .brand-menu a,
+    .brand-title {
+        font-size: 10px;
+        letter-spacing: 0.1em;
+    }
 }
