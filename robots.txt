@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /main/
 
-Sitemap: https://agent.loops.uz/sitemap.xml
+Sitemap: https://loops.uz/sitemap.xml

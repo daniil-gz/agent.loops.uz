@@ -26,6 +26,13 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
+    <style>
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -44,11 +51,11 @@
     <header>
         <div class="container header-inner" style="justify-content: center;">
             <div class="brand-container">
-                <a href="/main/" class="brand-title">СИСТЕМА ПЕРЕЛИДОЗА</a>
+                <a href="/" class="brand-title">СИСТЕМА ПЕРЕЛИДОЗА</a>
                 <div class="brand-menu">
                     <a href="/articles/">Полезное</a>
-                    <a href="/main/">Главная</a>
-                    <a href="/main/#lead-form">Контакты</a>
+                    <a href="/">Главная</a>
+                    <a href="/#lead-form">Контакты</a>
                 </div>
             </div>
         </div>
@@ -63,7 +70,7 @@
         <div class="container text-center">
             <!-- Breadcrumbs -->
             <div class="breadcrumbs mb-20">
-                <a href="/main/">Главная</a> <span class="sep">></span> <span class="current">Кейсы</span>
+                <a href="/">Главная</a> <span class="sep">></span> <span class="current">Кейсы</span>
             </div>
 
             <!-- Headline -->
@@ -80,7 +87,7 @@
     </section>
 
     <!-- CASES GRID CONTAINER -->
-    <section class="section" style="padding-top: 0;">
+    <section class="section" style="padding-top: 0;" aria-label="Архив кейсов">
         <div class="container">
             <div class="cases-archive-grid" id="casesGrid">
                 <!-- Content will be injected by JS -->
@@ -98,7 +105,7 @@
             <div class="bento-cta">
                 <h2>Станете нашим<br><span class="text-accent">следующим кейсом?</span></h2>
                 <p>Давайте обсудим, как получить такие же результаты в вашем проекте.</p>
-                <a href="/main/#lead-form" class="btn btn-primary" style="padding: 18px 40px; font-size: 16px;">Оставить
+                <a href="/#lead-form" class="btn btn-primary" style="padding: 18px 40px; font-size: 16px;">Оставить
                     заявку</a>
             </div>
 
@@ -176,94 +183,94 @@
                 </div>
             </div>
         </div>
-        </footer>
+    </section>
 
-        <!-- GLOBAL GLASS FOOTER -->
-        <footer class="site-footer">
-            <div class="container">
-                <a href="/main/" class="footer-logo">LOOPS</a>
-                <div class="footer-copyright">© 2026 LOOPS SYSTEM. All rights reserved.</div>
-            </div>
-        </footer>
-
-        <!-- AI WIDGET -->
-        <div class="ai-widget">
-            <div class="ai-icon">🤖</div>
-            <div class="ai-bubble">
-                Смотрите кейсы? Я могу подобрать похожий для вас!
-            </div>
+    <!-- GLOBAL GLASS FOOTER -->
+    <footer class="site-footer">
+        <div class="container">
+            <a href="/" class="footer-logo">LOOPS</a>
+            <div class="footer-copyright">© 2026 LOOPS SYSTEM. All rights reserved.</div>
         </div>
+    </footer>
 
-        <!-- SCRIPTS -->
-        <script src="/js/cases-data.js"></script>
-        <script src="/js/script.js"></script>
+    <!-- AI WIDGET -->
+    <div class="ai-widget">
+        <div class="ai-icon">🤖</div>
+        <div class="ai-bubble">
+            Смотрите кейсы? Я могу подобрать похожий для вас!
+        </div>
+    </div>
 
-        <script>
-            // Static Case Renderer (Fail-safe)
-            document.addEventListener('DOMContentLoaded', () => {
-                const grid = document.getElementById('casesGrid');
-                const filterContainer = document.querySelector('.filter-buttons');
+    <!-- SCRIPTS -->
+    <script src="/js/cases-data.js"></script>
+    <script src="/js/script.js"></script>
 
-                if (!window.casesData) {
-                    grid.innerHTML = '<p>Ошибка: данные не найдены.</p>';
-                    return;
-                }
+    <script>
+        // Static Case Renderer (Fail-safe)
+        document.addEventListener('DOMContentLoaded', () => {
+            const grid = document.getElementById('casesGrid');
+            const filterContainer = document.querySelector('.filter-buttons');
 
-                // 1. GENERATE DYNAMIC FILTERS
-                const categories = ['all', ...new Set(window.casesData.map(c => c.category))];
-                const categoryMap = {
-                    'all': 'Все',
-                    'auto': 'Автобизнес',
-                    'b2b': 'B2B',
-                    'estate': 'Недвижимость',
-                    'services': 'Услуги'
-                };
+            if (!window.casesData) {
+                grid.innerHTML = '<p>Ошибка: данные не найдены.</p>';
+                return;
+            }
 
-                filterContainer.innerHTML = categories.map(cat => {
-                    const label = categoryMap[cat] || cat.charAt(0).toUpperCase() + cat.slice(1);
-                    // Default 'all' is active
-                    const activeClass = cat === 'all' ? 'active' : '';
-                    return `<button class="filter-btn ${activeClass}" onclick="filterCases('${cat}')">${label}</button>`;
-                }).join('');
+            // 1. GENERATE DYNAMIC FILTERS
+            const categories = ['all', ...new Set(window.casesData.map(c => c.category))];
+            const categoryMap = {
+                'all': 'Все',
+                'auto': 'Автобизнес',
+                'b2b': 'B2B',
+                'estate': 'Недвижимость',
+                'services': 'Услуги'
+            };
 
-                // 2. RENDER CARDS
-                grid.innerHTML = '';
+            filterContainer.innerHTML = categories.map(cat => {
+                const label = categoryMap[cat] || cat.charAt(0).toUpperCase() + cat.slice(1);
+                // Default 'all' is active
+                const activeClass = cat === 'all' ? 'active' : '';
+                return `<button class="filter-btn ${activeClass}" onclick="filterCases('${cat}')">${label}</button>`;
+            }).join('');
 
-                window.casesData.forEach(item => {
-                    grid.insertAdjacentHTML('beforeend', createCardHTML(item));
-                });
+            // 2. RENDER CARDS
+            grid.innerHTML = '';
 
-                if (window.casesData.length === 0) {
-                    grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">Нет кейсов.</div>';
-                }
+            window.casesData.forEach(item => {
+                grid.insertAdjacentHTML('beforeend', createCardHTML(item));
             });
 
-            function createCardHTML(item) {
-                const accentClass = item.stats[1].isAccent ? 'text-accent' : '';
-                // Handle missing stats gracefully
-                const stat1HTML = item.stats[0].val ? `
+            if (window.casesData.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; color: var(--text-muted);">Нет кейсов.</div>';
+            }
+        });
+
+        function createCardHTML(item) {
+            const accentClass = item.stats[1].isAccent ? 'text-accent' : '';
+            // Handle missing stats gracefully
+            const stat1HTML = item.stats[0].val ? `
                  <div class="stat-item">
                      <div class="stat-val">${item.stats[0].val}</div>
                      <div class="stat-label">${item.stats[0].label}</div>
                  </div>` : '';
 
-                const stat2HTML = item.stats[1].val ? `
+            const stat2HTML = item.stats[1].val ? `
                  <div class="stat-item">
                      <div class="stat-val ${accentClass}">${item.stats[1].val}</div>
                      <div class="stat-label">${item.stats[1].label}</div>
                  </div>` : '';
 
-                // Auto-detect relative path
-                // If we are in /cases/, we want 'case-feedup/' (remove /cases/)
-                // If we are in root or main, we might want absolute or ../cases/
+            // Auto-detect relative path
+            // If we are in /cases/, we want 'case-feedup/' (remove /cases/)
+            // If we are in root or main, we might want absolute or ../cases/
 
-                // For cases/index.html specifically:
-                let finalUrl = item.url;
-                if (finalUrl.startsWith('/cases/')) {
-                    finalUrl = finalUrl.replace('/cases/', ''); // content: 'case-feedup/'
-                }
+            // For cases/index.html specifically:
+            let finalUrl = item.url;
+            if (finalUrl.startsWith('/cases/')) {
+                finalUrl = finalUrl.replace('/cases/', ''); // content: 'case-feedup/'
+            }
 
-                return `
+            return `
                  <a href="${finalUrl}" class="case-archive-card" data-category="${item.category}" style="display: block; opacity: 0; animation: fadeIn 0.5s forwards;">
                      <div class="archive-img">
                          <img src="${item.image}" alt="${item.title}" loading="lazy">
@@ -279,35 +286,29 @@
                      </div>
                  </a>
              `;
-            }
+        }
 
-            // Filter Logic
-            window.filterCases = function (category) {
-                // Buttons
-                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-                event.target.classList.add('active');
+        // Filter Logic
+        window.filterCases = function (category) {
+            // Buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
 
-                // Cards
-                const cards = document.querySelectorAll('.case-archive-card');
-                cards.forEach(card => {
-                    if (category === 'all' || card.dataset.category === category) {
-                        card.style.display = 'block';
-                        setTimeout(() => card.style.opacity = '1', 50);
-                    } else {
-                        card.style.display = 'none';
-                        card.style.opacity = '0';
-                    }
-                });
-            }
-        </script>
-
-        <style>
-            @keyframes fadeIn {
-                to {
-                    opacity: 1;
+            // Cards
+            const cards = document.querySelectorAll('.case-archive-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 50);
+                } else {
+                    card.style.display = 'none';
+                    card.style.opacity = '0';
                 }
-            }
-        </style>
+            });
+        }
+    </script>
+
+
 </body>
 
 </html>
