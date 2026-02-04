@@ -30,8 +30,9 @@ function logToGoogleSheets($webhookUrl, $userId, $userMessage, $botResponse)
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 5); // 5 second timeout
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // Follow redirects (Google uses them)
+    curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_exec($ch);
     curl_close($ch);
 }
@@ -153,8 +154,8 @@ $data = [
     'max_tokens' => 250       // Concise answers
 ];
 
-// Variable to collect full response for logging
-$fullResponse = '';
+// Variable to collect full response for logging (global scope)
+$GLOBALS['fullResponse'] = '';
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
@@ -164,7 +165,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_WRITEFUNCTION, function ($ch, $chunk) use (&$fullResponse) {
+curl_setopt($ch, CURLOPT_WRITEFUNCTION, function ($ch, $chunk) {
     echo $chunk;
     flush();
 
@@ -174,9 +175,9 @@ curl_setopt($ch, CURLOPT_WRITEFUNCTION, function ($ch, $chunk) use (&$fullRespon
         if (strpos($line, 'data: ') === 0) {
             $jsonStr = substr($line, 6);
             if ($jsonStr !== '[DONE]') {
-                $data = json_decode($jsonStr, true);
-                if (isset($data['choices'][0]['delta']['content'])) {
-                    $fullResponse .= $data['choices'][0]['delta']['content'];
+                $parsed = json_decode($jsonStr, true);
+                if (isset($parsed['choices'][0]['delta']['content'])) {
+                    $GLOBALS['fullResponse'] .= $parsed['choices'][0]['delta']['content'];
                 }
             }
         }
@@ -197,7 +198,8 @@ curl_close($ch);
 echo "\n\n"; // Ensure stream closes
 
 // 5. Log to Google Sheets (after streaming is done)
-if (!empty($lastUserMessage) && !empty($fullResponse)) {
-    logToGoogleSheets($googleSheetsWebhook, $userId, $lastUserMessage, $fullResponse);
+$collectedResponse = $GLOBALS['fullResponse'];
+if (!empty($lastUserMessage) && !empty($collectedResponse)) {
+    logToGoogleSheets($googleSheetsWebhook, $userId, $lastUserMessage, $collectedResponse);
 }
 ?>
