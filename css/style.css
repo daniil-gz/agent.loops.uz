@@ -563,6 +563,293 @@ header.scrolled {
     margin-bottom: 10px;
 }
 
+/* === NEW STAGES DESIGN (GLASSMORPHISM) === */
+.stages-header {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 60px;
+}
+
+.stage-btn {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-muted);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 20px 24px;
+    border-radius: var(--radius-m);
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.stage-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(250, 193, 77, 0.1) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.stage-btn:hover {
+    border-color: rgba(250, 193, 77, 0.5);
+    color: var(--text-main);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stage-btn:hover::before {
+    opacity: 1;
+}
+
+.stage-btn.active {
+    background: linear-gradient(135deg, var(--accent) 0%, #e5a835 100%);
+    color: #000;
+    border-color: var(--accent);
+    box-shadow: 0 0 30px rgba(250, 193, 77, 0.4);
+}
+
+.stage-btn.active::before {
+    opacity: 0;
+}
+
+.stage-content {
+    display: none;
+}
+
+.stage-content.active {
+    display: block;
+    animation: fadeInUp 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stage-title {
+    font-size: clamp(26px, 3.5vw, 40px);
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.stage-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.stage-left {
+    position: sticky;
+    top: 120px;
+}
+
+.stage-left .video-wrapper {
+    margin-bottom: 30px;
+    border-radius: var(--radius-l);
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 80px rgba(250, 193, 77, 0.1);
+}
+
+.stage-result {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-m);
+    position: relative;
+    overflow: hidden;
+}
+
+.stage-result::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(250, 193, 77, 0.5), transparent);
+}
+
+.stage-result h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stage-result h4::before {
+    content: '';
+    width: 4px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.stage-result p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    max-width: none;
+}
+
+.stage-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.accordion-title {
+    font-size: 18px;
+    color: var(--accent);
+    margin-bottom: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.stage-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.accordion-item {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-m);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.accordion-item[open] {
+    border-color: rgba(250, 193, 77, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(250, 193, 77, 0.05);
+}
+
+.accordion-item summary {
+    padding: 22px 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    transition: all 0.3s ease;
+    line-height: 1.4;
+}
+
+.accordion-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordion-item summary::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid var(--text-muted);
+    border-bottom: 2px solid var(--text-muted);
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 15px;
+}
+
+.accordion-item[open] summary::after {
+    transform: rotate(-135deg);
+}
+
+.accordion-item summary:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.acc-num {
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.acc-body {
+    padding: 0 25px 22px 25px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-muted);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 18px;
+    margin-top: -5px;
+}
+
+/* Stages Mobile */
+@media (max-width: 960px) {
+    .stages-header {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .stage-btn {
+        padding: 16px 18px;
+        font-size: 14px;
+    }
+
+    .stage-layout {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .stage-left {
+        position: static;
+    }
+
+    .stage-title {
+        font-size: 22px;
+        margin-bottom: 30px;
+    }
+
+    .accordion-item summary {
+        padding: 18px 20px;
+    }
+
+    .acc-body {
+        padding: 0 20px 18px 20px;
+    }
+}
+
 /* Cases Grid */
 .cases-grid {
     display: grid;

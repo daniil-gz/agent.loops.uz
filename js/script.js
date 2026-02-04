@@ -8,6 +8,16 @@ function openTab(index) {
     if (btns[index]) btns[index].classList.add('active');
 }
 
+// Stage Functionality (New Design)
+function openStage(index) {
+    const contents = document.querySelectorAll('.stage-content');
+    contents.forEach(el => el.classList.remove('active'));
+    const btns = document.querySelectorAll('.stage-btn');
+    btns.forEach(el => el.classList.remove('active'));
+    if (contents[index]) contents[index].classList.add('active');
+    if (btns[index]) btns[index].classList.add('active');
+}
+
 // --- QUIZ LOGIC ---
 let currentStep = 1;
 
