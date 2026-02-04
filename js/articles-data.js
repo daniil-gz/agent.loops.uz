@@ -3,39 +3,39 @@ window.articlesData = [
     {
         id: 'antigravity',
         category: 'ai-tools',
-        url: 'articles/antigravity/',
-        image: 'images/antigravity-cover.png',
+        url: '/articles/antigravity/',
+        image: '/images/antigravity-cover.png',
         title: 'Antigravity',
         desc: 'Google Antigravity: Революция в разработке кода с ИИ. VS Code на стероидах, который работает сам.'
     },
     {
         id: 'google-skills',
         category: 'marketing',
-        url: 'articles/google-skills/',
-        image: 'images/google-skills-cover.png',
+        url: '/articles/google-skills/',
+        image: '/images/google-skills-cover.png',
         title: 'Google Skills',
         desc: 'Google Skills: Как освоить ИИ за 10 минут бесплатно. Обзор платформы с 3000+ курсов от экспертов.'
     },
     {
         id: 'career-dreamer',
         category: 'ai-tools',
-        url: 'articles/career-dreamer/',
-        image: 'images/career-dreamer-cover.png',
+        url: '/articles/career-dreamer/',
+        image: '/images/career-dreamer-cover.png',
         title: 'Career Dreamer',
         desc: 'Career Dreamer: Как ИИ от Google помогает находить скрытые таланты и строить маршрут в карьере.'
     },
     {
         id: 'manus',
         category: 'ai-tools',
-        url: 'articles/manus/',
-        image: 'images/manus-cover.png',
+        url: '/articles/manus/',
+        image: '/images/manus-cover.png',
         title: 'Manus',
         desc: 'Manus AI Browser Operator: Как превратить любой браузер в ИИ-агент. Полная автоматизация рутины.'
     },
     {
         id: 'sample-article',
         category: 'marketing',
-        url: 'articles/sample-article/',
+        url: '/articles/sample-article/',
         image: 'images/og-articles.jpg',
         title: 'Sample Article',
         desc: 'This is a sample article description for SEO testing and layout verification.'
