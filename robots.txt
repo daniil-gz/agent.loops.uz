@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://loops.uz/sitemap.xml
+Sitemap: https://agent.loops.uz/sitemap.xml

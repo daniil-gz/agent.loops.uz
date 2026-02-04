@@ -80,43 +80,5 @@ window.casesData = [
             { val: '$250k', label: 'Сумма Сделки', isAccent: true }
         ]
     },
-    {
-        id: 'estate',
-        category: 'estate',
-        url: '/cases/case-estate/',
-        image: 'https://placehold.co/600x400/333/666?text=Luxury+Estate',
-        niche: 'Недвижимость',
-        title: 'ЖК "Premium Garden"',
-        desc: 'Отсев нецелевых звонков и прогрев до визита в офис.',
-        stats: [
-            { val: '+38%', label: 'Конверсия' },
-            { val: '34', label: 'Продажи', isAccent: true }
-        ]
-    },
-    {
-        id: 'legal',
-        category: 'b2b',
-        url: '/cases/case-legal/',
-        image: 'https://placehold.co/600x400/444/777?text=Legal+Consulting',
-        niche: 'Консалтинг',
-        title: 'Юридические Услуги',
-        desc: 'Автоматическая запись клиентов 24/7 без секретаря.',
-        stats: [
-            { val: '24/7', label: 'Запись' },
-            { val: 'X3', label: 'Рост Выручки', isAccent: true }
-        ]
-    },
-    {
-        id: 'clinic',
-        category: 'b2b',
-        url: '/cases/clinic/',
-        image: 'https://placehold.co/600x400/555/888?text=Clinic',
-        niche: 'Медицина',
-        title: 'Стоматология "Smile"',
-        desc: 'Заполнение расписания врачей на 100% через чат-бота.',
-        stats: [
-            { val: '100%', label: 'Загрузка' },
-            { val: '-40%', label: 'Неявки', isAccent: true }
-        ]
-    }
+
 ];

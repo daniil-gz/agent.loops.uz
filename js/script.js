@@ -34,18 +34,25 @@ function updateProgress() {
 
 
 // --- TELEGRAM UTILS ---
-const TG_BOT_TOKEN = '7640486720:AAGKwluT4H8VbC0x_A-H_Nf4--21Zr-mIig';
-const TG_CHAT_ID = '183174525';
+// Token removed for security. Using server-side proxy.
 
 async function sendTelegramMessage(text) {
-    if (TG_BOT_TOKEN.includes('ЗАМЕНИТЬ')) {
-        console.error('Telegram Token missing');
-        return false;
-    }
-    const url = `https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage?chat_id=${TG_CHAT_ID}&text=${encodeURIComponent(text)}`;
     try {
-        const response = await fetch(url);
-        return response.ok;
+        const response = await fetch('api/telegram.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ text: text })
+        });
+
+        if (!response.ok) {
+            console.error('Telegram Server Error');
+            return false;
+        }
+
+        const data = await response.json();
+        return data.success;
     } catch (error) {
         console.error('TG Send Error:', error);
         return false;
