@@ -185,8 +185,8 @@
             const others = window.casesData.filter(c => c.id !== currentCaseId).slice(0, 3);
 
             others.forEach(item => {
-                const siblingUrl = item.url.replace('cases/', '');
-                const relativeImage = '../' + item.image;
+                const siblingUrl = item.url;
+                const relativeImage = item.image;
                 const accentClass = item.stats[1].isAccent ? 'text-accent' : '';
 
                 const html = `

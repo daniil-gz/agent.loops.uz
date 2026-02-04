@@ -206,10 +206,10 @@
                 // PAGE CONTEXT: 'cases/' folder.
                 // TARGET URL: 'case-rebar.html' (sibling) or '../cases/case-rebar.html'
                 // Let's replace 'cases/' with nothing to get sibling path
-                const siblingUrl = item.url.replace('cases/', '');
+                const siblingUrl = item.url;
 
                 // IMAGE PATH: 'images/foo.png' -> '../images/foo.png'
-                const relativeImage = '../' + item.image;
+                const relativeImage = item.image;
 
                 const accentClass = item.stats[1].isAccent ? 'text-accent' : '';
 

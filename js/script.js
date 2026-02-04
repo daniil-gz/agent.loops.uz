@@ -631,6 +631,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // --- ARTICLE DISCOVERY (READ MORE) ---
+// --- ARTICLE DISCOVERY (READ MORE) ---
 window.initReadMore = function (currentId) {
     const grid = document.getElementById('readMoreGrid');
     if (!grid || !window.articlesData) return;
@@ -643,12 +644,12 @@ window.initReadMore = function (currentId) {
     const getImagePath = (path) => {
         if (!path) return '';
         if (path.startsWith('http')) return path;
-        // Assume relative to root
-        return '../' + path;
+        // Absolute logic: path already starts with / or is http
+        return path;
     };
 
     grid.innerHTML = others.map(item => `
-        <a href="../${item.url}" class="case-archive-card" style="display: block;">
+        <a href="${item.url}" class="case-archive-card" style="display: block;">
             <div class="archive-img">
                 <img src="${getImagePath(item.image)}" alt="${item.title}" loading="lazy">
             </div>
