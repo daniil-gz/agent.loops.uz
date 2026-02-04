@@ -253,8 +253,18 @@
                      <div class="stat-label">${item.stats[1].label}</div>
                  </div>` : '';
 
+                // Auto-detect relative path
+                // If we are in /cases/, we want 'case-feedup/' (remove /cases/)
+                // If we are in root or main, we might want absolute or ../cases/
+
+                // For cases/index.html specifically:
+                let finalUrl = item.url;
+                if (finalUrl.startsWith('/cases/')) {
+                    finalUrl = finalUrl.replace('/cases/', ''); // content: 'case-feedup/'
+                }
+
                 return `
-                 <a href="${item.url}" class="case-archive-card" data-category="${item.category}" style="display: block; opacity: 0; animation: fadeIn 0.5s forwards;">
+                 <a href="${finalUrl}" class="case-archive-card" data-category="${item.category}" style="display: block; opacity: 0; animation: fadeIn 0.5s forwards;">
                      <div class="archive-img">
                          <img src="${item.image}" alt="${item.title}" loading="lazy">
                      </div>

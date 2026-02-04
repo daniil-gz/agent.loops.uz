@@ -226,8 +226,14 @@
         });
 
         function createCardHTML(item) {
+            // Auto-detect relative path for articles
+            let finalUrl = item.url;
+            if (finalUrl.startsWith('/articles/')) {
+                finalUrl = finalUrl.replace('/articles/', ''); // content: 'career-dreamer/'
+            }
+
             return `
-                <a href="${item.url}" class="case-archive-card" data-category="${item.category}" style="display: block; opacity: 0; animation: fadeIn 0.5s forwards;">
+                <a href="${finalUrl}" class="case-archive-card" data-category="${item.category}" style="display: block; opacity: 0; animation: fadeIn 0.5s forwards;">
                     <div class="archive-img">
                         <img src="${item.image}" alt="${item.title}" loading="lazy">
                     </div>
