@@ -12,6 +12,30 @@ header('Cache-Control: no-cache');
 header('Connection: keep-alive');
 header('X-Accel-Buffering: no'); // Nginx-specific fix
 
+// Google Sheets Webhook URL
+$googleSheetsWebhook = 'https://script.google.com/macros/s/AKfycby3C5dVSGN8sh3kSyNolkz0E667n2wYMbzH6R1Fxfz4XI196RcJiDs3Yg8DXus2gfTb/exec';
+
+// Function to log to Google Sheets (non-blocking)
+function logToGoogleSheets($webhookUrl, $userId, $userMessage, $botResponse)
+{
+    $data = json_encode([
+        'user_id' => $userId,
+        'user_message' => $userMessage,
+        'bot_response' => $botResponse
+    ]);
+
+    // Use curl with very short timeout to not block streaming
+    $ch = curl_init($webhookUrl);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5); // 5 second timeout
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // Follow redirects (Google uses them)
+    curl_exec($ch);
+    curl_close($ch);
+}
+
 // 1. SETTINGS
 // Split key to avoid simple regex scanners on git push
 $part1 = 'sk-proj-pcfAXz4OJFhaRPH3DdPscK0PHUljAI0_OmdTWnTtWQwmCm';
@@ -104,6 +128,18 @@ if (empty($messages)) {
     exit;
 }
 
+// Get the last user message for logging
+$lastUserMessage = '';
+foreach (array_reverse($messages) as $msg) {
+    if ($msg['role'] === 'user') {
+        $lastUserMessage = $msg['content'];
+        break;
+    }
+}
+
+// Generate unique user ID from session (or IP as fallback)
+$userId = substr(md5($_SERVER['REMOTE_ADDR'] . date('Y-m-d')), 0, 8);
+
 // Prepend System Message
 array_unshift($messages, ['role' => 'system', 'content' => $systemPrompt]);
 
@@ -117,6 +153,9 @@ $data = [
     'max_tokens' => 250       // Concise answers
 ];
 
+// Variable to collect full response for logging
+$fullResponse = '';
+
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_HTTPHEADER, [
     'Content-Type: application/json',
@@ -125,15 +164,28 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, [
 curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_WRITEFUNCTION, function ($ch, $chunk) {
+curl_setopt($ch, CURLOPT_WRITEFUNCTION, function ($ch, $chunk) use (&$fullResponse) {
     echo $chunk;
     flush();
+
+    // Parse chunk to extract content for logging
+    $lines = explode("\n", $chunk);
+    foreach ($lines as $line) {
+        if (strpos($line, 'data: ') === 0) {
+            $jsonStr = substr($line, 6);
+            if ($jsonStr !== '[DONE]') {
+                $data = json_decode($jsonStr, true);
+                if (isset($data['choices'][0]['delta']['content'])) {
+                    $fullResponse .= $data['choices'][0]['delta']['content'];
+                }
+            }
+        }
+    }
+
     return strlen($chunk);
 });
 
-// 4. Manual Error Handling check (Basic)
-// Note: curl_exec returns true/false, actual HTTP code needs checking if not streaming instantly.
-// But with writefunction, we catch stream.
+// 4. Execute request
 curl_exec($ch);
 
 if (curl_errno($ch)) {
@@ -143,4 +195,9 @@ if (curl_errno($ch)) {
 
 curl_close($ch);
 echo "\n\n"; // Ensure stream closes
+
+// 5. Log to Google Sheets (after streaming is done)
+if (!empty($lastUserMessage) && !empty($fullResponse)) {
+    logToGoogleSheets($googleSheetsWebhook, $userId, $lastUserMessage, $fullResponse);
+}
 ?>
