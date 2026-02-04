@@ -8,13 +8,13 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://loops.uz/cases</loc>
+        <loc>https://loops.uz/cases/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://loops.uz/articles</loc>
+        <loc>https://loops.uz/articles/</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
@@ -22,31 +22,31 @@
 
     <!-- Articles -->
     <url>
-        <loc>https://loops.uz/articles/career-dreamer</loc>
+        <loc>https://loops.uz/articles/career-dreamer/</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://loops.uz/articles/antigravity</loc>
+        <loc>https://loops.uz/articles/antigravity/</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://loops.uz/articles/google-skills</loc>
+        <loc>https://loops.uz/articles/google-skills/</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://loops.uz/articles/manus</loc>
+        <loc>https://loops.uz/articles/manus/</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
-        <loc>https://loops.uz/articles/sample-article</loc>
+        <loc>https://loops.uz/articles/sample-article/</loc>
         <lastmod>2026-02-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
@@ -54,55 +54,55 @@
 
     <!-- Case Studies (High Priority) -->
     <url>
-        <loc>https://loops.uz/cases/case-rebar</loc>
+        <loc>https://loops.uz/cases/case-rebar/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://loops.uz/cases/case-feedup</loc>
+        <loc>https://loops.uz/cases/case-feedup/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://loops.uz/cases/case-izzy</loc>
+        <loc>https://loops.uz/cases/case-izzy/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://loops.uz/cases/case-chery</loc>
+        <loc>https://loops.uz/cases/case-chery/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://loops.uz/cases/case-basalt</loc>
+        <loc>https://loops.uz/cases/case-basalt/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://loops.uz/cases/case-dco</loc>
+        <loc>https://loops.uz/cases/case-dco/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://loops.uz/cases/case-estate</loc>
+        <loc>https://loops.uz/cases/case-estate/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://loops.uz/cases/case-legal</loc>
+        <loc>https://loops.uz/cases/case-legal/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://loops.uz/cases/clinic</loc>
+        <loc>https://loops.uz/cases/clinic/</loc>
         <lastmod>2026-01-29</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
