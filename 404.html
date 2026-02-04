@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Страница не найдена | LOOPS</title>
+    <meta name="robots" content="noindex, follow">
+
+    <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="/css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        .error-hero {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .error-code {
+            font-size: clamp(100px, 20vw, 250px);
+            font-weight: 800;
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 2px rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-code::after {
+            content: '404';
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: var(--accent);
+            opacity: 0.1;
+            filter: blur(20px);
+            z-index: -1;
+        }
+
+        .error-nav {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 15px 30px;
+            border-radius: var(--radius-s);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 0 20px rgba(250, 193, 77, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="noise-overlay"></div>
+
+    <header>
+        <div class="container header-inner" style="justify-content: center;">
+            <div class="brand-container">
+                <a href="/main/" class="brand-title">СИСТЕМА ПЕРЕЛИДОЗА</a>
+                <div class="brand-menu">
+                    <a href="/cases/">Кейсы</a>
+                    <a href="/articles/">Контент</a>
+                    <a href="/main/#lead-form">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section error-hero">
+        <div class="glow-spot"
+            style="top: 50%; left: 50%; transform: translate(-50%, -50%); width: 600px; height: 600px; opacity: 0.3;">
+        </div>
+
+        <div class="container">
+            <h1 class="error-code">404</h1>
+            <h2 class="mb-20">СТРАНИЦА НЕ НАЙДЕНА</h2>
+            <p class="mb-40" style="margin-left: auto; margin-right: auto;">
+                Возможно, она была перемещена или удалена. <br>
+                Но не переживайте, наша AI-система все еще работает стабильно.
+            </p>
+
+            <div class="error-nav">
+                <a href="/main/" class="btn">На Главную</a>
+                <a href="/cases/" class="btn-outline">Смотреть Кейсы</a>
+                <a href="/articles/" class="btn-outline">Читать Статьи</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <a href="/main/" class="footer-logo">LOOPS</a>
+            <div class="footer-copyright">© 2026 LOOPS SYSTEM. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script src="/js/script.js"></script>
+</body>
+
+</html>
