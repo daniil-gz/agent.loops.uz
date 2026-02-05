@@ -3887,3 +3887,12 @@ header.scrolled .brand-menu {
         font-size: 18px;
     }
 }
+
+/* Hide Yandex Metrika Informer */
+img[src*="mc.yandex.ru/watch"],
+img[src*="informer.yandex.ru"],
+.ym-advanced-informer {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
