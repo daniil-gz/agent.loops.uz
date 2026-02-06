@@ -3,6 +3,19 @@
 // We must define the card data here.
 window.casesData = [
     {
+        id: 'bts',
+        category: 'b2b',
+        url: '/cases/case-bts/',
+        image: '/images/bts-card.png',
+        niche: 'Банковское оборудование',
+        title: 'BTS Group',
+        desc: 'С нуля подписчиков до 58 оптовых лидов за первый месяц. Cold Start → B2B продажи.',
+        stats: [
+            { val: '58', label: 'B2B-лидов' },
+            { val: '$7', label: 'За клиента', isAccent: true }
+        ]
+    },
+    {
         id: 'nwl',
         category: 'b2b',
         url: '/cases/case-nwl/',
