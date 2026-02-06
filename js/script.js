@@ -48,7 +48,7 @@ function updateProgress() {
 
 async function sendTelegramMessage(text) {
     try {
-        const response = await fetch('api/telegram.php', {
+        const response = await fetch('/api/telegram.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -515,9 +515,16 @@ document.addEventListener('DOMContentLoaded', () => {
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
 
-    // Format Markdown (Bold, List)
+    // Escape HTML to prevent XSS
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    // Format Markdown (Bold, List) with XSS protection
     function formatMessage(text) {
-        let html = text
+        let html = escapeHtml(text)
             .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
             .replace(/\n/g, '<br>'); // Newlines
         return html;
@@ -577,7 +584,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             // 2. Call Backend API
-            const response = await fetch('api/chat.php', {
+            const response = await fetch('/api/chat.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ messages: chatHistory })
