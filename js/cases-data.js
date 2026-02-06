@@ -3,6 +3,19 @@
 // We must define the card data here.
 window.casesData = [
     {
+        id: 'tak',
+        category: 'b2b',
+        url: '/cases/case-tak/',
+        image: '/images/tak-card.png',
+        niche: 'E-commerce логистика',
+        title: '!TAK Fulfillment',
+        desc: 'Обработали 2,831 запрос за месяц без расширения штата. AI-агент стал лучшим сотрудником года.',
+        stats: [
+            { val: '2,831', label: 'Диалогов' },
+            { val: '$4.8', label: 'За SQL', isAccent: true }
+        ]
+    },
+    {
         id: 'bts',
         category: 'b2b',
         url: '/cases/case-bts/',
