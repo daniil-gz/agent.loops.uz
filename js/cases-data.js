@@ -3,6 +3,32 @@
 // We must define the card data here.
 window.casesData = [
     {
+        id: 'nwl',
+        category: 'b2b',
+        url: '/cases/case-nwl/',
+        image: '/images/nwl-card.png',
+        niche: '3PL Логистика',
+        title: 'NWL Operations',
+        desc: 'Отсеяли 90% мусорного трафика и снизили стоимость B2B-контракта в 10 раз через AI-фильтр.',
+        stats: [
+            { val: '88', label: 'B2B-лидов' },
+            { val: '$21', label: 'За клиента', isAccent: true }
+        ]
+    },
+    {
+        id: 'viamed',
+        category: 'services',
+        url: '/cases/case-viamed/',
+        image: '/images/viamed-card.png',
+        niche: 'Медицина',
+        title: 'Клиника ViaMed',
+        desc: 'С нуля до 150 пациентов за первый месяц. AI-агент обработал 1000+ заявок при бюджете всего $500.',
+        stats: [
+            { val: '150', label: 'Пациентов' },
+            { val: '$3.3', label: 'За пациента', isAccent: true }
+        ]
+    },
+    {
         id: 'feedup',
         category: 'services',
         url: '/cases/case-feedup/',
@@ -79,6 +105,5 @@ window.casesData = [
             { val: 'ROI 400%', label: 'Окупаемость' },
             { val: '$250k', label: 'Сумма Сделки', isAccent: true }
         ]
-    },
-
+    }
 ];
