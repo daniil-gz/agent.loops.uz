@@ -119,17 +119,5 @@ window.casesData = [
             { val: '$4.5', label: 'Цена Лида', isAccent: true }
         ]
     },
-    {
-        id: 'rebar',
-        category: 'b2b',
-        url: '/cases/case-rebar/',
-        image: 'https://placehold.co/600x400/222/555?text=Composite+Rebar',
-        niche: 'Производство / B2B',
-        title: 'Композитная Арматура',
-        desc: 'Квалификация оптовых покупателей на автомате.',
-        stats: [
-            { val: 'ROI 400%', label: 'Окупаемость' },
-            { val: '$250k', label: 'Сумма Сделки', isAccent: true }
-        ]
-    }
+
 ];
