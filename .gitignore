@@ -1,1 +1,10 @@
 .DS_Store
+# local backups / old versions
+*.backup-*
+index.old.html
+index.html.backup-*
+# agent working/handoff scratch
+_handoff/
+*.resolved
+*.resolved.[0-9]
+*.metadata.json
