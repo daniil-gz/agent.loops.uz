@@ -109,10 +109,13 @@
     );
   };
 
-  // Render all cases into a container.
+  // Render cases into a container. opts.limit = show only last N (preview).
   window.renderCases = function (container, opts) {
     if (!container) return;
-    container.innerHTML = window.LOOPS_CASES
+    opts = opts || {};
+    var list = window.LOOPS_CASES;
+    if (opts.limit) list = list.slice(-opts.limit);
+    container.innerHTML = list
       .map(function (c) { return window.caseCardHTML(c, opts); })
       .join("");
   };

@@ -255,7 +255,7 @@
   (function () {
     var grid = document.getElementById("casesGrid");
     if (grid && window.renderCases) {
-      window.renderCases(grid);
+      window.renderCases(grid, { limit: 3 });
       grid.insertAdjacentHTML(
         "beforeend",
         '<a class="card hoverable case-card case-cta reveal" href="cases.html" aria-label="Все кейсы">' +
