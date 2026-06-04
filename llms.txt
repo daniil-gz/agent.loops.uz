@@ -41,6 +41,7 @@ Loops — личный бренд Даниила Газизова. Я выстр
 
 ## Основные страницы
 - Главная: https://loops.uz/
+- Обо мне (Даниил Газизов): https://loops.uz/about/
 - Таргет + ИИ-агент: https://loops.uz/target/
 - Кейсы: https://loops.uz/cases.html
 - Блог: https://loops.uz/articles/
