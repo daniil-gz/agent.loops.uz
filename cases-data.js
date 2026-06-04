@@ -20,6 +20,7 @@
   window.LOOPS_CASES = [
     {
       id: "tak",
+      img: "tak-card.png",
       client: "TAK Fulfillment",
       cat: "E-comm логистика",
       niche: ICON.box,
@@ -30,6 +31,7 @@
     },
     {
       id: "chery",
+      img: "chery-main.png",
       client: "Chery",
       cat: "Автобизнес",
       niche: ICON.car,
@@ -40,6 +42,7 @@
     },
     {
       id: "viamed",
+      img: "viamed-card.png",
       client: "ViaMed",
       cat: "Клиника",
       niche: ICON.heart,
@@ -50,6 +53,7 @@
     },
     {
       id: "basalt",
+      img: "basalt-main.png",
       client: "Basalt",
       cat: "Производство · B2B",
       niche: ICON.factory,
@@ -60,6 +64,7 @@
     },
     {
       id: "nwl",
+      img: "nwl-card.png",
       client: "NWL",
       cat: "3PL-логистика",
       niche: ICON.truck,
@@ -89,8 +94,7 @@
     return (
       '<div class="card hoverable case-card reveal" id="case-' + c.id + '">' +
         '<div class="case-photo">' +
-          '<image-slot id="caseimg-' + c.id + '" shape="rect" fit="cover" ' +
-            'placeholder="фото · ' + c.client + '"></image-slot>' +
+          '<img class="case-img" src="images/' + c.img + '" alt="' + c.client + '" loading="lazy" />' +
           '<span class="case-niche">' + (c.niche || "") + c.cat + "</span>" +
         "</div>" +
         '<div class="case-body">' +

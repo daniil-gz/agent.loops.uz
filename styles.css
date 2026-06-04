@@ -847,3 +847,6 @@ html.anim .reveal.in { opacity: 1; transform: none; }
   .header-cta { display: none; }
   .contact-card { padding: 30px 22px; }
 }
+
+/* case card real images (replaces editor image-slot) */
+.case-photo img.case-img{display:block;width:100%;height:100%;object-fit:cover}
