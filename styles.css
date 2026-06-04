@@ -855,6 +855,48 @@ html.anim .reveal.in { opacity: 1; transform: none; }
 /* honeypot anti-spam field — hidden from humans, visible to bots */
 .hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
 
+/* ---------- FAQ (native details, no JS) ---------- */
+.faq-list { display: grid; gap: 12px; max-width: 860px; }
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: border-color 0.3s var(--ease);
+}
+.faq-item[open], .faq-item:hover { border-color: var(--border-hover); }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 24px;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 1.35;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+";
+  flex: none;
+  color: var(--gold);
+  font-size: 24px;
+  line-height: 1;
+  transition: transform 0.3s var(--ease);
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item .faq-a {
+  padding: 0 24px 22px;
+  color: var(--text-dim);
+  font-size: 15.5px;
+  line-height: 1.62;
+}
+.faq-item .faq-a a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold-line); }
+.faq-item .faq-a a:hover { border-color: var(--gold); }
+.faq-item .faq-a b { color: var(--text); font-weight: 700; }
+
 /* ---------- Talks / выступления ---------- */
 .talks-grid {
   display: grid;
