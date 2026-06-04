@@ -1033,3 +1033,97 @@ a.talk-title:hover,
   .faq-item summary { padding: 18px 20px; font-size: 16px; }
   .faq-item .faq-a { padding: 0 20px 20px; }
 }
+
+/* ===========================================================
+   Consulting page (/consulting/) — built on the shared system
+   =========================================================== */
+
+/* generic grids */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+
+/* compare «обычно vs с нами» */
+.cmp-good { border-color: var(--gold-line); background: linear-gradient(160deg, var(--gold-soft), transparent 60%); }
+.cmp-list { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-direction: column; gap: 13px; }
+.cmp-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15.5px; line-height: 1.45; color: var(--text-dim); }
+.cmp-list .ic { width: 20px; height: 20px; flex: none; margin-top: 1px; }
+.cmp-list.bad .ic { color: var(--text-faint); }
+.cmp-list.good { color: var(--text); }
+.cmp-list.good .ic { color: var(--gold); }
+
+/* iceberg */
+.ice-tip { display: flex; flex-direction: column; gap: 10px; }
+.ice-tip-row { color: var(--text-dim); font-size: 15.5px; line-height: 1.5; }
+.ice-water {
+  position: relative;
+  height: 1px;
+  margin: 20px 0 6px;
+  background: linear-gradient(90deg, transparent, var(--gold-line), transparent);
+}
+.ice-water span {
+  position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+  background: var(--bg); padding: 0 12px;
+  font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--text-faint);
+}
+.ice-deep-label { display: block; }
+.ice-tip .cat { color: var(--text); }
+
+/* numbered steps */
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.step-card { display: flex; flex-direction: column; }
+.step-num {
+  display: inline-grid; place-items: center;
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--gold); color: #1a1408;
+  font-weight: 800; font-size: 18px; letter-spacing: -0.02em;
+}
+.step-card h3 { font-size: 21px; margin-top: 16px; letter-spacing: -0.02em; }
+.step-card .desc { color: var(--text-dim); margin-top: 12px; font-size: 15.5px; line-height: 1.55; }
+
+/* tariffs */
+.tariff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+.tariff-card { position: relative; display: flex; flex-direction: column; }
+.tariff-card.is-premium {
+  border-color: var(--gold-line);
+  background: linear-gradient(165deg, var(--gold-soft), transparent 55%);
+}
+.tariff-badge {
+  position: absolute; right: 22px; top: 22px;
+  padding: 6px 12px; border-radius: 99px;
+  background: var(--gold); color: #1a1408;
+  font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em;
+}
+.tariff-emoji { font-size: 30px; line-height: 1; }
+.tariff-name { font-size: clamp(22px, 2.2vw, 27px); margin-top: 12px; letter-spacing: -0.03em; }
+.tariff-term { display: block; margin-top: 8px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-faint); }
+.tariff-price { margin-top: 14px; font-size: 32px; font-weight: 800; letter-spacing: -0.035em; }
+.tariff-price .from { font-size: 15px; font-weight: 600; color: var(--text-dim); letter-spacing: 0; }
+.tariff-price.req { color: var(--gold); font-size: 26px; }
+.tariff-card .feat-list { margin-top: 22px; }
+.tariff-result {
+  margin-top: 22px; padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim); font-size: 14.5px; line-height: 1.55;
+}
+.tariff-result b { color: var(--text); font-weight: 700; }
+.tariff-card .btn { margin-top: 24px; }
+
+/* client roster */
+.roster { display: flex; flex-wrap: wrap; gap: 10px; }
+.roster span {
+  padding: 9px 16px; border-radius: 99px;
+  border: 1px solid var(--border); background: var(--surface);
+  color: var(--text-dim); font-weight: 600; font-size: 14.5px;
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
+}
+.roster span:hover { border-color: var(--gold-line); color: var(--text); }
+
+/* ---------- Mobile overrides for consulting grids (must be last) ---------- */
+@media (max-width: 900px) {
+  .grid-3, .steps-grid, .tariff-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 680px) {
+  .grid-3, .grid-2, .steps-grid, .tariff-grid { grid-template-columns: 1fr; }
+  .tariff-badge { right: 18px; top: 18px; }
+}
