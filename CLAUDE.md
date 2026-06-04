@@ -83,7 +83,7 @@ Server tar backups are in `/root/backups/loops-www-*.tar.gz` on the VPS.
 
 - **Server:** VPS `95.130.227.146`, site dir `/var/www/loops`, served by nginx (`/etc/nginx/sites-available/loops`). Reach it only via `ssh adstat-deploy` (Cloudflare Tunnel + Access service token) — **never** `ssh root@95.130.227.146` (port 22 is firewalled; direct attempts hang).
 - **DNS / CDN:** Cloudflare zone `loops.uz` (id `f41fb8f4fbfda243650e27e0f7db5bc8`), proxied, Flexible SSL, self-signed origin cert. Cache-purge token в `~/.cloudflare-loops.env` (`CF_LOOPS_TOKEN`, права Zone→Cache Purge + DNS Edit). ⚠️ У токена включён **Client IP filtering** — он работает только с разрешённых IP. Если деплой/purge падает с `9109 (location ...)` или `Authentication error` — добавь текущий IP в фильтр токена (CF → My Profile → API Tokens → этот токен → Client IP Address Filtering). Домашний IP динамический, так что это будет повторяться; можно вообще убрать фильтр.
-- **Кэш-заголовки (nginx, `/etc/nginx/sites-available/loops`):** CSS/JS → `Cache-Control: private, no-cache` (Cloudflare пропускает без перезаписи, browser ревалидирует по ETag); картинки/шрифты → `public, immutable, max-age=30d`. Менял картинку под тем же именем — переименуй или сделай purge. Бэкапы конфига: `/etc/nginx/sites-available/loops.bak-*`.
+- **Кэш-заголовки (nginx, `/etc/nginx/sites-available/loops`):** CSS/JS → `Cache-Control: private, no-cache` (Cloudflare пропускает без перезаписи, browser ревалидирует по ETag); картинки/шрифты → `public, immutable, max-age=30d`. Менял картинку под тем же именем — переименуй или сделай purge. Бэкапы конфига: `/etc/nginx/sites-available/loops.bak-*`. Правка nginx: `ssh adstat-deploy` → бэкап → `nginx -t` → `systemctl reload nginx`. Несуществующие URL → честный 404 (`error_page 404 /404.html`).
 - **GitHub:** `github.com/daniil-gz/agent.loops.uz`, branch `main`. Branch `backup/downloads-copy` holds an old divergent dev line (already merged into main — reference only).
 
 ---
@@ -101,6 +101,9 @@ Server tar backups are in `/root/backups/loops-www-*.tar.gz` on the VPS.
    - Сменить токен бота: `printf '%s' '<TOKEN>' | npx wrangler secret put TG_TOKEN` (токен — Worker secret, **никогда** не в репо/в коде сайта). Сменить чат: правка `TG_CHAT` в `wrangler.toml` → `wrangler deploy`.
    - Тест: `curl -X POST https://loops.uz/api/lead -H 'Content-Type: application/json' -d '{"name":"t","contact":"t"}'` → `{"ok":true}` + сообщение в TG.
    - Бот сейчас `@isikava_bot` («Ассистент Loop`s»), чат `183174525`. `worker/` + `wrangler.toml` исключены из `deploy.sh` (не попадают на статик-сервер).
+8. **styles.css: базовые правила в КОНЦЕ файла** (после медиа-запросов ~стр.825). Мобильный override для селектора, объявленного в конце (напр. `.talks-grid`), НЕЛЬЗЯ класть в `@media` выше по файлу — базовое правило ниже его перебьёт. Клади такие override в `@media` в самом конце. (Так словили баг: talks-grid стоял 2-в-ряд на мобиле.)
+9. **Картинки кейсов квадратные (640×640).** `.case-photo` = `aspect-ratio: 1/1` + `object-fit: cover` (фото заполняет карточку край-в-край, без полей). Новые картинки делай ~квадратными, иначе обрежет.
+10. **Визуальная проверка — локально.** chrome-devtools MCP даёт `ERR_QUIC_PROTOCOL_ERROR` на проде loops.uz. Проверяй через `python3 -m http.server` в репо (файлы идентичны деплою), мобайл — через resize вьюпорта. На проде сверяй `curl`-ом (статусы/заголовки/контент).
 
 ## Rules
 
