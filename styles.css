@@ -931,11 +931,31 @@ html.anim .reveal.in { opacity: 1; transform: none; }
   padding: 24px 26px 26px;
 }
 .talk-title {
-  font-size: 20px;
+  display: block;
+  font-size: 19px;
   font-weight: 700;
-  line-height: 1.28;
+  line-height: 1.3;
   letter-spacing: -0.01em;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s var(--ease);
 }
+a.talk-title:hover,
+.talk-card:hover .talk-title { color: var(--gold); }
+
+/* autoplay (live) variant */
+.talk-thumb iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  z-index: 2;
+}
+.talk-thumb img { transition: opacity 0.4s var(--ease); }
+.talk-thumb.yt-loaded img { opacity: 0; }
+.talk-card.is-live .talk-thumb::after { display: none; }
+.talk-card.is-live { cursor: default; }
 .talk-note {
   margin-top: 10px;
   color: var(--text-dim);
