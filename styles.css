@@ -845,7 +845,7 @@ html.anim .reveal.in { opacity: 1; transform: none; }
   .cases-grid { grid-template-columns: 1fr; }
   .talks-grid { grid-template-columns: 1fr; }
   .about-side { flex-direction: column; }
-  .header-cta { display: none; }
+  .header-cta { padding: 9px 15px; font-size: 13.5px; }
   .contact-card { padding: 30px 22px; }
 }
 
@@ -1021,3 +1021,15 @@ a.talk-title:hover,
 .talk-go svg { width: 18px; height: 18px; transition: transform 0.3s var(--ease); }
 .talk-card:hover .talk-go { color: var(--gold); gap: 11px; }
 .talk-card:hover .talk-go svg { transform: translateX(2px); }
+
+/* ---------- Mobile overrides for late-defined grids ----------
+   These must come AFTER the base .talks-grid rule (defined above),
+   otherwise the desktop 2-col rule wins on small screens. */
+@media (max-width: 760px) {
+  .talks-grid { grid-template-columns: 1fr; }
+  .talk-title { font-size: 18px; }
+}
+@media (max-width: 620px) {
+  .faq-item summary { padding: 18px 20px; font-size: 16px; }
+  .faq-item .faq-a { padding: 0 20px 20px; }
+}
