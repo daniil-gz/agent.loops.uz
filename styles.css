@@ -852,6 +852,9 @@ html.anim .reveal.in { opacity: 1; transform: none; }
 /* case card real images (replaces editor image-slot) */
 .case-photo img.case-img{display:block;width:100%;height:100%;object-fit:cover}
 
+/* honeypot anti-spam field — hidden from humans, visible to bots */
+.hp{position:absolute!important;left:-9999px!important;width:1px;height:1px;opacity:0;pointer-events:none}
+
 /* ---------- Talks / выступления ---------- */
 .talks-grid {
   display: grid;

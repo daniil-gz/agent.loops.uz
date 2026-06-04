@@ -8,3 +8,5 @@ _handoff/
 *.resolved
 *.resolved.[0-9]
 *.metadata.json
+node_modules/
+.wrangler/

@@ -1,0 +1,16 @@
+# Cloudflare Worker: lead form → Telegram bot for loops.uz
+# Deploy:  npx wrangler deploy
+# Secret:  npx wrangler secret put TG_TOKEN   (bot token — NEVER commit it)
+# The chat id is not sensitive, kept as a plain var below.
+
+name = "loops-lead"
+main = "worker/index.js"
+compatibility_date = "2024-11-01"
+
+# Intercept the form endpoint at the edge (same-origin as the site)
+routes = [
+  { pattern = "loops.uz/api/lead", zone_name = "loops.uz" }
+]
+
+[vars]
+TG_CHAT = "183174525"

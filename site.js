@@ -82,20 +82,21 @@
     img.addEventListener("error", miss);
   });
 
-  /* ---- lead form (demo, no backend) ---- */
+  /* ---- lead form → Telegram (via edge Worker at /api/lead) ---- */
   var form = document.getElementById("leadForm");
   if (form) {
     form.addEventListener("submit", function (ev) {
       ev.preventDefault();
       var name = form.name.value.trim();
       var contact = form.contact.value.trim();
+      var company = form.company ? form.company.value.trim() : "";
       if (!name || !contact) {
         (!name ? form.name : form.contact).focus();
         return;
       }
-      fetch('https://api.adstat.uz/api/public/leads', {
+      fetch('/api/lead', {
         method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: name, contact: contact, source: 'loops.uz' }),
+        body: JSON.stringify({ name: name, contact: contact, source: 'loops.uz', company: company }),
         keepalive: true
       }).catch(function () {});
       var btn = form.querySelector('button[type="submit"]');

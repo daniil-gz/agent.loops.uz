@@ -15,6 +15,8 @@ EXCLUDES=(
   --exclude='README*' --exclude='DNS_SETUP.md' --exclude='*.md'
   --exclude='CLAUDE.md' --exclude='netlify.toml' --exclude='vercel.json' --exclude='.htaccess'
   --exclude='scripts/' --exclude='.agent/' --exclude='_handoff/'
+  --exclude='worker/' --exclude='wrangler.toml' --exclude='node_modules/'
+  --exclude='.wrangler/' --exclude='package.json' --exclude='package-lock.json'
   --exclude='*.backup-*' --exclude='index.old.html'
   --exclude='*.resolved' --exclude='*.resolved.*' --exclude='*.metadata.json'
   --exclude='api/'        # secrets live server-side; PHP not executed. Deploy api manually.
