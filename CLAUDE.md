@@ -56,7 +56,7 @@ Files NOT shipped to the server (dev-only, auto-excluded by deploy): `README*`, 
 bash scripts/deploy.sh --dry-run   # see what would change
 bash scripts/deploy.sh             # backup server → rsync → purge CF cache
 ```
-The script: (1) tars the current server site into `/root/backups/`, (2) rsyncs repo→server excluding dev files, (3) purges Cloudflare cache. ⚠️ Шаг 3 сейчас падает (`Authentication error` — токен в `~/.cloudflare-loops.env` протух). И покупка edge-кэша всё равно не чистит браузерный immutable-кэш — поэтому при правке `styles.css`/`site.js`/`cases-data.js` **обязательно бампай `?v=`** (см. Gotchas).
+The script: (1) tars the current server site into `/root/backups/`, (2) rsyncs repo→server excluding dev files, (3) purges Cloudflare cache. CSS/JS отдаются как `private, no-cache` (revalidate по ETag, на edge НЕ кэшируются) — правки видны сразу после деплоя, **никакого `?v=` не нужно**. Purge на деплое нужен только для картинок (см. Gotchas).
 
 After deploying, verify:
 ```bash
@@ -82,16 +82,17 @@ Server tar backups are in `/root/backups/loops-www-*.tar.gz` on the VPS.
 ## Access / infrastructure
 
 - **Server:** VPS `95.130.227.146`, site dir `/var/www/loops`, served by nginx (`/etc/nginx/sites-available/loops`). Reach it only via `ssh adstat-deploy` (Cloudflare Tunnel + Access service token) — **never** `ssh root@95.130.227.146` (port 22 is firewalled; direct attempts hang).
-- **DNS / CDN:** Cloudflare zone `loops.uz` (id `f41fb8f4fbfda243650e27e0f7db5bc8`), proxied, Flexible SSL, self-signed origin cert. Cache-purge token expected at `~/.cloudflare-loops.env` (`CF_LOOPS_TOKEN=...`).
+- **DNS / CDN:** Cloudflare zone `loops.uz` (id `f41fb8f4fbfda243650e27e0f7db5bc8`), proxied, Flexible SSL, self-signed origin cert. Cache-purge token в `~/.cloudflare-loops.env` (`CF_LOOPS_TOKEN`, права Zone→Cache Purge + DNS Edit). ⚠️ У токена включён **Client IP filtering** — он работает только с разрешённых IP. Если деплой/purge падает с `9109 (location ...)` или `Authentication error` — добавь текущий IP в фильтр токена (CF → My Profile → API Tokens → этот токен → Client IP Address Filtering). Домашний IP динамический, так что это будет повторяться; можно вообще убрать фильтр.
+- **Кэш-заголовки (nginx, `/etc/nginx/sites-available/loops`):** CSS/JS → `Cache-Control: private, no-cache` (Cloudflare пропускает без перезаписи, browser ревалидирует по ETag); картинки/шрифты → `public, immutable, max-age=30d`. Менял картинку под тем же именем — переименуй или сделай purge. Бэкапы конфига: `/etc/nginx/sites-available/loops.bak-*`.
 - **GitHub:** `github.com/daniil-gz/agent.loops.uz`, branch `main`. Branch `backup/downloads-copy` holds an old divergent dev line (already merged into main — reference only).
 
 ---
 
 ## Gotchas (важно — не наступи)
 
-1. **Версионирование ассетов из-за immutable-кэша.** `styles.css` / `site.js` / `cases-data.js` отдаются с `Cache-Control: immutable, max-age=30d` — кэш сидит и в браузере у вернувшихся посетителей (CF-purge его НЕ чистит). После правки любого из них **подними `?v=N` в `index.html` И `cases.html`** (`styles.css?v=2` → `?v=3` и т.д.), иначе изменения не увидят. HTML отдаётся `cf-cache-status: DYNAMIC` (не кэшируется) — поэтому новый `?v=` подхватывается сразу.
-2. **CF cache-purge токен протух** (`~/.cloudflare-loops.env`, `Authentication error`) — авто-очистка edge на деплое не работает. Чинить токен (CF → My Profile → API Tokens; права Zone → Cache Purge + DNS Edit для loops.uz) или чистить вручную (CF → Caching → Purge Everything).
-3. **Добавить кейс:** объект в `cases-data.js` (`LOOPS_CASES`) + картинка в `images/` + бамп `?v=` → появляется на главной и `/cases.html`. Иконки ниш: `ICON.box/car/heart/factory/truck`. Подробный чек-лист — в Obsidian: `25_Loops/site/how-to-add-case.md`.
+1. **НЕ добавляй `?v=` к CSS/JS.** Раньше был костыль `styles.css?v=N` поверх `immutable`-кэша. Теперь nginx отдаёт CSS/JS как `private, no-cache` → браузер ревалидирует по ETag, edge не кэширует (`cf-cache: BYPASS`), правки видны сразу после деплоя. Версионировать URL больше не нужно — ссылайся на голые `styles.css` / `site.js` / `cases-data.js`.
+2. **Картинки кэшируются на 30 дней (`immutable`).** Поменял картинку под тем же именем — либо переименуй файл, либо сделай purge: `. ~/.cloudflare-loops.env && curl -X POST -H "Authorization: Bearer $CF_LOOPS_TOKEN" https://api.cloudflare.com/client/v4/zones/f41fb8f4fbfda243650e27e0f7db5bc8/purge_cache -d '{"purge_everything":true}'` (или CF → Caching → Purge Everything). Если purge даёт `9109/Authentication error` — IP-фильтр токена (см. Access).
+3. **Добавить кейс:** объект в `cases-data.js` (`LOOPS_CASES`) + картинка в `images/` → появляется на главной и `/cases.html`. Иконки ниш: `ICON.box/car/heart/factory/truck`. **Без `?v=`.** Подробный чек-лист — в Obsidian: `25_Loops/site/how-to-add-case.md`.
 4. **Домен:** всё каноническое на `loops.uz`. `agent.loops.uz` → **301** → `loops.uz` (CF Redirect Rule, Dynamic `concat("https://loops.uz", http.request.uri.path)`). Не плодить ссылки на agent.
 5. **ИИ-краулеры РАЗРЕШЕНЫ** (CF «Managed robots.txt» выключен) — нужно для GEO (цитирование в ChatGPT/Gemini/Perplexity). **Не включай обратно.**
 6. **`/target/` = старая агентская страница** (полный таргет+бот контент с прежней главной). Карточка «Трафик + ИИ» на главной ведёт сюда. Не путать с новой главной-зонтиком.
