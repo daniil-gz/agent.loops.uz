@@ -843,6 +843,7 @@ html.anim .reveal.in { opacity: 1; transform: none; }
   .hero-text { padding: 30px 24px; }
   .hero-actions .btn { flex: 1; }
   .cases-grid { grid-template-columns: 1fr; }
+  .talks-grid { grid-template-columns: 1fr; }
   .about-side { flex-direction: column; }
   .header-cta { display: none; }
   .contact-card { padding: 30px 22px; }
@@ -850,3 +851,108 @@ html.anim .reveal.in { opacity: 1; transform: none; }
 
 /* case card real images (replaces editor image-slot) */
 .case-photo img.case-img{display:block;width:100%;height:100%;object-fit:cover}
+
+/* ---------- Talks / выступления ---------- */
+.talks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.talk-card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+.talk-thumb {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+.talk-thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s var(--ease), filter 0.4s var(--ease);
+  filter: saturate(0.92) brightness(0.94);
+}
+.talk-card:hover .talk-thumb img { transform: scale(1.04); filter: none; }
+.talk-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(7, 7, 7, 0.55));
+}
+.talk-badge {
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  z-index: 2;
+  padding: 6px 11px;
+  border-radius: 9px;
+  background: rgba(10, 10, 9, 0.62);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(245, 243, 235, 0.14);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.talk-play {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 62px;
+  height: 62px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #1a1408;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.4);
+  transition: transform 0.35s var(--ease), background 0.3s var(--ease);
+}
+.talk-play svg { width: 26px; height: 26px; margin-left: 2px; }
+.talk-card:hover .talk-play { transform: translate(-50%, -50%) scale(1.08); background: color-mix(in oklab, var(--gold) 82%, white); }
+.talk-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 24px 26px 26px;
+}
+.talk-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.28;
+  letter-spacing: -0.01em;
+}
+.talk-note {
+  margin-top: 10px;
+  color: var(--text-dim);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.talk-go {
+  margin-top: auto;
+  padding-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14.5px;
+  color: var(--text-dim);
+  transition: color 0.3s var(--ease), gap 0.3s var(--ease);
+}
+.talk-go svg { width: 18px; height: 18px; transition: transform 0.3s var(--ease); }
+.talk-card:hover .talk-go { color: var(--gold); gap: 11px; }
+.talk-card:hover .talk-go svg { transform: translateX(2px); }
