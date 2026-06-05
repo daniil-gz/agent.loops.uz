@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Iceberg LAB — dive v3 — Loops</title>
+<meta name="robots" content="noindex,nofollow" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+<style>
+body{ position:relative; }
+main{ position:relative; z-index:1; }
+
+.ib-intro{ text-align:center; padding:60px 0 0; }
+.ib-intro .kick{ display:inline-flex; gap:9px; align-items:center; font-size:12.5px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); }
+.ib-intro .kick::before{ content:""; width:26px; height:2px; background:var(--gold); }
+.ib-intro h2{ font-size:clamp(28px,6vw,52px); margin-top:14px; }
+.ib-intro .mk{ background:var(--gold); color:#1a1408; padding:.02em .2em; border-radius:6px; }
+.ib-intro p{ color:var(--text-dim); margin:13px auto 0; max-width:520px; padding:0 20px; }
+.ib-intro .cue-scroll{ margin-top:18px; font-size:13px; font-weight:700; color:var(--text-faint); }
+.ib-intro .cue-scroll span{ display:inline-block; animation:bob 1.7s ease-in-out infinite; }
+@keyframes bob{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(5px)} }
+
+/* ===== dive ===== */
+.dive{ position:relative; height:560vh; }
+.dive-pin{ position:sticky; top:0; height:100svh; overflow:hidden;
+  transition:background .9s var(--ease); background:radial-gradient(90vw 60vw at 50% -10%, rgba(243,200,102,.10), transparent 60%); }
+/* underwater ambiance */
+.amb{ position:absolute; inset:0; pointer-events:none; z-index:0; opacity:0; transition:opacity 1s var(--ease); }
+.amb.deep{ background:
+   linear-gradient(180deg, rgba(6,26,38,0) 28%, rgba(5,22,34,.6) 78%, rgba(4,16,26,.85) 100%),
+   radial-gradient(70vw 50vw at 50% 120%, rgba(40,150,180,.22), transparent 70%); }
+.amb.deep::after{ content:""; position:absolute; inset:0; opacity:.5; mix-blend-mode:screen;
+   background:repeating-linear-gradient(8deg, rgba(120,210,235,.05) 0 2px, transparent 2px 80px);
+   animation:rays 9s linear infinite; }
+@keyframes rays{ to{ transform:translateX(60px) } }
+.dive-pin.underwater .amb.deep{ opacity:1; }
+
+/* big iceberg, anchored to top so lower zones stay above the card */
+.berg-stage{ position:absolute; inset:0; display:flex; align-items:flex-start; justify-content:center; padding-top:78px; z-index:1; }
+.berg-hold{ position:relative; display:inline-block; transition:transform .7s var(--ease); }
+.berg-hold img{ display:block; height:74svh; width:auto;
+  filter:drop-shadow(0 30px 70px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(120,200,40,.14)); }
+
+/* numbered markers on the berg (all visible, active glows) */
+.mk6{ position:absolute; transform:translate(-50%,-50%); z-index:4; }
+.mk6 .b{ width:26px; height:26px; border-radius:50%; display:grid; place-items:center; font-size:12px; font-weight:800;
+  background:rgba(8,8,7,.66); backdrop-filter:blur(4px); border:1.5px solid rgba(245,243,235,.4); color:var(--text-dim);
+  transition:transform .4s var(--ease), background .4s, color .4s, box-shadow .4s, border-color .4s; }
+.mk6.active .b{ transform:scale(1.35); background:var(--gold); color:#1a1408; border-color:var(--gold);
+  box-shadow:0 0 0 8px rgba(243,200,102,.16), 0 0 26px rgba(243,200,102,.55); }
+.mk6.up.active .b{ background:#ff7a1a; border-color:#ff7a1a; box-shadow:0 0 0 8px rgba(255,122,26,.16), 0 0 26px rgba(255,122,26,.55); }
+.mk6.loss.active .b{ background:#ff6a5a; border-color:#ff6a5a; box-shadow:0 0 0 8px rgba(255,106,90,.16), 0 0 26px rgba(255,106,90,.55); }
+
+/* card (rectangle over the berg) */
+.card-slot{ position:absolute; left:50%; bottom:5svh; transform:translateX(-50%); width:min(560px,92vw); z-index:5; min-height:172px; }
+.dcard{ position:absolute; left:0; right:0; bottom:0;
+  background:rgba(9,9,8,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(245,243,235,.14); border-top:2px solid var(--gold); border-radius:18px; padding:20px 22px 22px;
+  box-shadow:0 26px 70px rgba(0,0,0,.6); opacity:0; transform:translateY(18px); pointer-events:none;
+  transition:opacity .45s var(--ease), transform .45s var(--ease); }
+.dcard.up{ border-top-color:#ff7a1a } .dcard.loss{ border-top-color:#ff6a5a }
+.dcard.active{ opacity:1; transform:none; pointer-events:auto; }
+.dcard .top{ display:flex; align-items:center; gap:10px; }
+.dcard .num{ width:26px; height:26px; flex:none; border-radius:50%; display:grid; place-items:center; font-size:12px; font-weight:800; background:var(--gold); color:#1a1408; }
+.dcard.up .num{ background:#ff7a1a } .dcard.loss .num{ background:#ff6a5a; color:#1a0a08 }
+.dcard .tag{ font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint); }
+.dcard .h{ font-weight:800; font-size:clamp(18px,4.6vw,22px); letter-spacing:-.02em; margin-top:12px; line-height:1.15; color:var(--gold); }
+.dcard.up .h{ color:#ff9a4a } .dcard.loss .h{ color:#ff8a7a }
+.dcard ul{ list-style:none; margin:13px 0 0; padding:0; }
+.dcard li{ position:relative; color:var(--text-dim); font-size:14px; line-height:1.45; padding-left:17px; margin-top:7px; }
+.dcard li::before{ content:""; position:absolute; left:0; top:8px; width:6px; height:6px; border-radius:50%; background:currentColor; opacity:.55; }
+.dcard .depth{ position:absolute; right:20px; top:18px; font-size:12px; font-weight:800; color:var(--text-faint); font-variant-numeric:tabular-nums; }
+
+/* progress segments under the card */
+.dive-rail{ position:absolute; left:50%; bottom:1.6svh; transform:translateX(-50%); display:flex; gap:7px; z-index:6; }
+.dive-rail i{ width:18px; height:4px; border-radius:99px; background:rgba(245,243,235,.18); transition:.3s; }
+.dive-rail i.on{ background:var(--gold); }
+
+@media (max-width:760px){
+  .berg-stage{ padding-top:66px; align-items:flex-start; }
+  .berg-hold img{ height:auto; width:90vw; }
+  .card-slot{ width:93vw; bottom:6svh; }
+  .dcard{ padding:16px 17px 18px; }
+  .mk6 .b{ width:23px; height:23px; font-size:11px; }
+}
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap nav">
+    <a href="/" class="logo"><img class="logo-img" src="/images/loops-logo.png" alt="Loops" /></a>
+    <nav class="nav-links"><a href="/consulting/lab.html">← В LAB</a></nav>
+    <span class="btn btn-ghost header-cta">Iceberg</span>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap ib-intro">
+    <span class="kick">Что определяет продажи</span>
+    <h2>Продажи — это&nbsp;<span class="mk">айсберг</span></h2>
+    <p>Сверху видно только бюджет и&nbsp;подрядчиков. Но&nbsp;результат определяет то, что под&nbsp;водой.</p>
+    <div class="cue-scroll"><span>↓ листай и&nbsp;погружайся</span></div>
+  </div>
+
+  <section class="dive" id="dive">
+    <div class="dive-pin" id="pin">
+      <div class="amb deep"></div>
+
+      <div class="berg-stage">
+        <div class="berg-hold" id="bergHold">
+          <img src="/images/iceberg.svg" alt="Айсберг продаж" />
+          <div class="mk6 up"   style="left:35%; top:16%"><div class="b">1</div></div>
+          <div class="mk6 up"   style="left:60%; top:23%"><div class="b">2</div></div>
+          <div class="mk6 deep" style="left:30%; top:46%"><div class="b">3</div></div>
+          <div class="mk6 deep" style="left:66%; top:52%"><div class="b">4</div></div>
+          <div class="mk6 loss" style="left:40%; top:70%"><div class="b">5</div></div>
+          <div class="mk6 deep" style="left:62%; top:76%"><div class="b">6</div></div>
+        </div>
+      </div>
+
+      <div class="card-slot">
+        <div class="dcard up"><div class="top"><span class="num">1</span><span class="tag">Над водой · что видно</span></div><span class="depth">0 м</span><div class="h">Бюджет на&nbsp;рекламу</div><ul><li>Контекст, соцсети</li></ul></div>
+        <div class="dcard up"><div class="top"><span class="num">2</span><span class="tag">Над водой · что видно</span></div><span class="depth">0 м</span><div class="h">Оплата подрядчиков</div><ul><li>За&nbsp;SMM, блогеров, таргет</li></ul></div>
+        <div class="dcard deep"><div class="top"><span class="num">3</span><span class="tag">Под водой · что решает</span></div><span class="depth">−20 м</span><div class="h">Управление и&nbsp;методология</div><ul><li>Настройка бизнес-процессов и&nbsp;инструкций</li><li>Модели компетенций и&nbsp;функции ролей</li><li>Планёрки, отчётность, внутренние коммуникации</li></ul></div>
+        <div class="dcard deep"><div class="top"><span class="num">4</span><span class="tag">Под водой · что решает</span></div><span class="depth">−40 м</span><div class="h">Организация системы продаж</div><ul><li>Разработка и&nbsp;внедрение скриптов</li><li>Обучение РОПа и&nbsp;менеджеров</li><li>Воронка, CRM-процессы и&nbsp;система KPI</li></ul></div>
+        <div class="dcard loss"><div class="top"><span class="num">5</span><span class="tag">Под водой · скрытые потери</span></div><span class="depth">−60 м</span><div class="h">Потери при&nbsp;плохой координации</div><ul><li>Дублирующие бюджеты</li><li>Потеря лидов между этапами</li><li>Несогласованность и&nbsp;ручной контроль</li></ul></div>
+        <div class="dcard deep"><div class="top"><span class="num">6</span><span class="tag">Под водой · что решает</span></div><span class="depth">−80 м</span><div class="h">Технологии и&nbsp;интеграции</div><ul><li>Внедрение CRM и&nbsp;IP-телефонии</li><li>Аналитика и&nbsp;дашборды</li><li>Напоминания, уведомления, post-sale</li></ul></div>
+      </div>
+
+      <div class="dive-rail" id="rail"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <div class="wrap" style="padding:24px 0 90px; text-align:center; color:var(--text-faint);">
+    Пометь разметкой, что доделать → «💾 Отправить».
+  </div>
+</main>
+
+<script>
+(function(){
+  var dive=document.getElementById("dive");
+  var pin=document.getElementById("pin");
+  var berg=document.getElementById("bergHold");
+  var marks=Array.prototype.slice.call(document.querySelectorAll(".mk6"));
+  var cards=Array.prototype.slice.call(document.querySelectorAll(".dcard"));
+  var rail=Array.prototype.slice.call(document.querySelectorAll(".dive-rail i"));
+  var N=cards.length, cur=-1;
+
+  function setStation(i){
+    if(i===cur) return; cur=i;
+    marks.forEach(function(m,idx){ m.classList.toggle("active",idx===i); });
+    cards.forEach(function(c,idx){ c.classList.toggle("active",idx===i); });
+    rail.forEach(function(r,idx){ r.classList.toggle("on",idx<=i); });
+    pin.classList.toggle("underwater", i>=2);
+    // gentle camera dive: drift berg up as we go deeper so lower zones rise above the card
+    berg.style.transform="translateY("+(-i*1.6)+"vh)";
+  }
+  function onScroll(){
+    var total=dive.offsetHeight-window.innerHeight;
+    var p=Math.min(0.999,Math.max(0,(-dive.getBoundingClientRect().top)/total));
+    setStation(Math.floor(p*N));
+  }
+  window.addEventListener("scroll",onScroll,{passive:true});
+  window.addEventListener("resize",onScroll);
+  onScroll();
+})();
+</script>
+<script src="/site.js"></script>
+<script src="/consulting/annotate.js"></script>
+</body>
+</html>

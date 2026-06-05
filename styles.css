@@ -1127,3 +1127,145 @@ a.talk-title:hover,
   .grid-3, .grid-2, .steps-grid, .tariff-grid { grid-template-columns: 1fr; }
   .tariff-badge { right: 18px; top: 18px; }
 }
+
+/* ===========================================================
+   Consulting — iceberg dive (pinned scrollytelling)
+   =========================================================== */
+.ib-intro .ib-mk{ background: var(--gold); color:#1a1408; padding:.02em .2em; border-radius:6px; }
+.dive{ position:relative; height:480vh; }
+.dive-pin{ position:sticky; top:0; height:100svh; overflow:hidden; background:transparent; }
+.dive .amb{ position:absolute; inset:0; pointer-events:none; z-index:0; opacity:0; transition:opacity 1s var(--ease);
+  -webkit-mask:linear-gradient(180deg, transparent, #000 16%, #000 84%, transparent);
+  mask:linear-gradient(180deg, transparent, #000 16%, #000 84%, transparent); }
+.dive .amb.deep{ background:
+   linear-gradient(180deg, rgba(6,26,38,0) 28%, rgba(5,22,34,.6) 78%, rgba(4,16,26,.85) 100%),
+   radial-gradient(70vw 50vw at 50% 120%, rgba(40,150,180,.22), transparent 70%); }
+.dive .amb.deep::after{ content:""; position:absolute; inset:0; opacity:.5; mix-blend-mode:screen;
+   background:repeating-linear-gradient(8deg, rgba(120,210,235,.05) 0 2px, transparent 2px 80px);
+   animation:ibRays 9s linear infinite; }
+@keyframes ibRays{ to{ transform:translateX(60px) } }
+.dive-pin.underwater .amb.deep{ opacity:1; }
+
+.dive .berg-stage{ position:absolute; inset:0; display:flex; align-items:flex-start; justify-content:center; padding-top:30px; z-index:1; }
+.dive .berg-hold{ position:relative; display:inline-block; transition:transform .7s var(--ease); }
+.dive .berg-hold > img{ display:block; height:72svh; width:auto;
+  filter:drop-shadow(0 30px 70px rgba(0,0,0,.6)) drop-shadow(0 0 60px rgba(120,200,40,.14)); }
+
+.dive .mk6{ position:absolute; transform:translate(-50%,-50%); z-index:4; }
+.dive .mk6 .b{ width:26px; height:26px; border-radius:50%; display:grid; place-items:center; font-size:12px; font-weight:800;
+  background:rgba(8,8,7,.66); backdrop-filter:blur(4px); border:1.5px solid rgba(245,243,235,.4); color:var(--text-dim);
+  transition:transform .4s var(--ease), background .4s, color .4s, box-shadow .4s, border-color .4s; }
+.dive .mk6.active .b{ transform:scale(1.35); background:var(--gold); color:#1a1408; border-color:var(--gold);
+  box-shadow:0 0 0 8px rgba(243,200,102,.16), 0 0 26px rgba(243,200,102,.55); }
+.dive .mk6.up.active .b{ background:#ff7a1a; border-color:#ff7a1a; box-shadow:0 0 0 8px rgba(255,122,26,.16), 0 0 26px rgba(255,122,26,.55); }
+.dive .mk6.loss.active .b{ background:#ff6a5a; border-color:#ff6a5a; box-shadow:0 0 0 8px rgba(255,106,90,.16), 0 0 26px rgba(255,106,90,.55); }
+
+.dive .card-slot{ position:absolute; left:50%; bottom:5svh; transform:translateX(-50%); width:min(720px,92vw); z-index:5; min-height:172px; }
+.dive .dcard{ position:absolute; left:0; right:0; bottom:0;
+  background:rgba(9,9,8,.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(245,243,235,.14); border-top:2px solid var(--gold); border-radius:18px; padding:20px 22px 22px;
+  box-shadow:0 26px 70px rgba(0,0,0,.6); opacity:0; transform:translateY(18px); pointer-events:none;
+  transition:opacity .45s var(--ease), transform .45s var(--ease); }
+.dive .dcard.up{ border-top-color:#ff7a1a } .dive .dcard.loss{ border-top-color:#ff6a5a }
+.dive .dcard.active{ opacity:1; transform:none; pointer-events:auto; }
+.dive .dcard .top{ display:flex; align-items:center; gap:10px; }
+.dive .dcard .num{ width:26px; height:26px; flex:none; border-radius:50%; display:grid; place-items:center; font-size:12px; font-weight:800; background:var(--gold); color:#1a1408; }
+.dive .dcard.up .num{ background:#ff7a1a } .dive .dcard.loss .num{ background:#ff6a5a; color:#1a0a08 }
+.dive .dcard .tag{ font-size:11px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; color:var(--text-faint); }
+.dive .dcard .h{ font-weight:800; font-size:clamp(18px,4.6vw,22px); letter-spacing:-.02em; margin-top:12px; line-height:1.15; color:var(--gold); }
+.dive .dcard.up .h{ color:#ff9a4a } .dive .dcard.loss .h{ color:#ff8a7a }
+.dive .dcard ul{ list-style:none; margin:13px 0 0; padding:0; }
+.dive .dcard li{ position:relative; color:var(--text-dim); font-size:14px; line-height:1.45; padding-left:17px; margin-top:7px; }
+.dive .dcard li::before{ content:""; position:absolute; left:0; top:8px; width:6px; height:6px; border-radius:50%; background:currentColor; opacity:.55; }
+.dive .dcard .depth{ position:absolute; right:20px; top:18px; font-size:12px; font-weight:800; color:var(--text-faint); font-variant-numeric:tabular-nums; }
+
+.dive .dive-rail{ position:absolute; left:50%; bottom:1.6svh; transform:translateX(-50%); display:flex; gap:7px; z-index:6; }
+.dive .dive-rail i{ width:18px; height:4px; border-radius:99px; background:rgba(245,243,235,.18); transition:.3s; }
+.dive .dive-rail i.on{ background:var(--gold); }
+
+@media (max-width:760px){
+  .dive .berg-stage{ padding-top:18px; }
+  .dive .berg-hold > img{ height:auto; width:90vw; }
+  .dive .card-slot{ width:94vw; bottom:6svh; }
+  .dive .dcard{ padding:16px 17px 18px; }
+  .dive .mk6 .b{ width:23px; height:23px; font-size:11px; }
+}
+
+/* ---------- client logo wall (marquee) ---------- */
+.logos-row{ overflow:hidden; -webkit-mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
+.logos-row + .logos-row{ margin-top:26px; }
+.logos-track{ display:flex; align-items:center; gap:58px; width:max-content; animation:logosScroll 46s linear infinite; }
+.logos-track.rev{ animation-direction:reverse; animation-duration:54s; }
+.logos-row:hover .logos-track{ animation-play-state:paused; }
+.logos-track img{ height:26px; width:auto; max-width:132px; object-fit:contain; flex:none;
+  filter:brightness(0) invert(1); opacity:.42; transition:opacity .3s var(--ease), transform .3s var(--ease); }
+.logos-track img:hover{ opacity:1; transform:scale(1.14); }
+@keyframes logosScroll{ to{ transform:translateX(-50%); } }
+@media (prefers-reduced-motion: reduce){ .logos-track{ animation:none; } }
+
+/* ===========================================================
+   Consulting — lab blocks (hero/steps/tariffs)
+   =========================================================== */
+:root{ --gold2:#ffd97a; }
+.mk{ background:var(--gold); color:#1a1408; padding:.02em .2em; border-radius:6px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+
+/* hero */
+.lab-hero{ padding:46px 0 24px; }
+.lab-hero .grid{ display:grid; grid-template-columns:1.12fr .88fr; gap:44px; align-items:center; }
+.lab-hero h1{ font-size:clamp(38px,5.6vw,76px); line-height:1; letter-spacing:-.04em; margin:0; }
+.lab-hero .lead{ color:var(--text-dim); font-size:18px; line-height:1.55; margin-top:22px; max-width:560px; }
+.hero-actions2{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
+.hero-trust{ display:flex; gap:30px; margin-top:32px; flex-wrap:wrap; }
+.hero-trust div{ display:flex; flex-direction:column; }
+.hero-trust b{ font-size:26px; font-weight:800; letter-spacing:-.03em; color:var(--text); }
+.hero-trust span{ font-size:13px; color:var(--text-faint); }
+.portrait{ position:relative; }
+.portrait .frame{ position:relative; border-radius:22px; overflow:hidden; border:1px solid var(--border-hover);
+  box-shadow:0 30px 80px rgba(0,0,0,.5); aspect-ratio:4/5; background:var(--surface-2); }
+.portrait .frame img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.96) contrast(1.02); }
+.portrait::before{ content:""; position:absolute; inset:auto -16px -16px auto; width:78%; height:78%;
+  border:2px solid var(--gold); border-radius:22px; z-index:0; }
+
+/* steps with ghost numbers */
+.steps2{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.step2{ position:relative; overflow:hidden; }
+.step2 .ghost{ position:absolute; right:14px; top:-18px; font-size:120px; font-weight:800; line-height:1;
+  color:var(--gold); opacity:.07; letter-spacing:-.05em; }
+.step2 h3{ font-size:20px; margin-top:8px; }
+.step2 .desc{ color:var(--text-dim); font-size:15px; line-height:1.55; margin-top:12px; }
+.step2 .sn{ display:inline-grid; place-items:center; width:34px; height:34px; border-radius:9px;
+  background:var(--gold); color:#1a1408; font-weight:800; }
+
+/* tariffs with gantt */
+.tariffs2{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch; }
+.tar{ position:relative; display:flex; flex-direction:column; }
+.tar.prem{ border-color:var(--gold-line); background:linear-gradient(168deg,var(--gold-soft),transparent 52%); box-shadow:0 0 0 1px var(--gold-line), 0 24px 70px rgba(243,200,102,.08); }
+.tar .badge{ position:absolute; right:20px; top:20px; background:var(--gold); color:#1a1408; font-size:11.5px; font-weight:800; padding:6px 12px; border-radius:99px; }
+.tar .emoji{ font-size:30px; }
+.tar h3{ font-size:25px; margin-top:12px; letter-spacing:-.03em; }
+.tar .term{ display:block; margin-top:8px; font-size:12.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-faint); }
+.tar .price{ margin-top:14px; font-size:20px; font-weight:800; }
+.tar .price .from{ font-size:15px; font-weight:600; color:var(--text-dim); }
+.tar .price .big{ font-size:34px; letter-spacing:-.03em; }
+.tar .price.req .big{ color:var(--gold); }
+.gantt{ margin-top:18px; }
+.gantt .row{ display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:center; margin-top:8px; }
+.gantt .rl{ font-size:12.5px; color:var(--text-dim); }
+.gantt .bar{ height:8px; border-radius:99px; background:var(--surface-2); position:relative; overflow:hidden; }
+.gantt .bar i{ position:absolute; top:0; bottom:0; border-radius:99px; background:linear-gradient(90deg,var(--gold),var(--gold2)); }
+.tar .feat-list{ margin-top:18px; }
+.tar .res{ margin-top:18px; padding-top:18px; border-top:1px solid var(--border); color:var(--text-dim); font-size:14px; line-height:1.55; }
+.tar .res b{ color:var(--text); }
+.tar .btn{ margin-top:20px; }
+
+@media (max-width:980px){
+  .lab-hero .grid{ grid-template-columns:1fr; gap:32px; }
+  .portrait{ max-width:420px; }
+  .steps2,.tariffs2{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:680px){
+  .steps2,.tariffs2{ grid-template-columns:1fr; }
+  .lab-hero h1{ font-size:clamp(34px,9vw,52px); }
+  .hero-trust{ gap:22px; }
+}

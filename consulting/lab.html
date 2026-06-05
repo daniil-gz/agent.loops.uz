@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LAB — Консалтинг (showcase) — Loops</title>
+<meta name="robots" content="noindex,nofollow" />
+<link rel="icon" type="image/png" href="/images/favicon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="/styles.css" />
+<style>
+/* =========================================================
+   LAB — bold consulting showcase (self-contained extras)
+   Brand: gold #f3c866, dark, Manrope. Все смелые идеи здесь.
+   ========================================================= */
+:root{ --gold2:#ffd97a; --glow: color-mix(in oklab, var(--gold) 22%, transparent); }
+
+/* atmosphere: grain + radial gold glows */
+body.lab{ position:relative; }
+body.lab::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(60vw 60vw at 85% -10%, var(--glow), transparent 60%),
+    radial-gradient(50vw 50vw at -10% 30%, color-mix(in oklab, var(--gold) 10%, transparent), transparent 60%);
+  opacity:.55;
+}
+body.lab::after{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.05; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+main, header, footer{ position:relative; z-index:1; }
+
+/* marker highlight (КП signature) */
+.mk{ background:var(--gold); color:#1a1408; padding:.02em .22em; border-radius:5px;
+  -webkit-box-decoration-break:clone; box-decoration-break:clone; font-weight:800; }
+.mk-soft{ background:linear-gradient(transparent 62%, var(--gold-soft) 0); padding:0 .06em; color:var(--gold); font-weight:800; }
+
+/* section kicker */
+.kick{ display:inline-flex; align-items:center; gap:9px; font-size:12.5px; font-weight:800;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--gold); }
+.kick::before{ content:""; width:26px; height:2px; background:var(--gold); }
+
+/* ---------- HERO ---------- */
+.lab-hero{ padding:48px 0 24px; }
+.lab-hero .grid{ display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center; }
+.lab-hero h1{ font-size:clamp(40px,6.2vw,84px); line-height:.98; letter-spacing:-.04em; margin:18px 0 0; }
+.lab-hero .lead{ color:var(--text-dim); font-size:18px; line-height:1.55; margin-top:22px; max-width:560px; }
+.hero-actions2{ display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
+.hero-trust{ display:flex; gap:26px; margin-top:30px; flex-wrap:wrap; }
+.hero-trust div{ display:flex; flex-direction:column; }
+.hero-trust b{ font-size:26px; font-weight:800; letter-spacing:-.03em; color:var(--text); }
+.hero-trust span{ font-size:13px; color:var(--text-faint); }
+
+/* portrait frame */
+.portrait{ position:relative; }
+.portrait .frame{ position:relative; border-radius:22px; overflow:hidden; border:1px solid var(--border-hover);
+  box-shadow:0 30px 80px rgba(0,0,0,.5); aspect-ratio:4/5; background:var(--surface-2); }
+.portrait .frame img{ width:100%; height:100%; object-fit:cover; display:block; filter:saturate(.96) contrast(1.02); }
+.portrait::before{ content:""; position:absolute; inset:auto -16px -16px auto; width:78%; height:78%;
+  border:2px solid var(--gold); border-radius:22px; z-index:-0; }
+.portrait .chip{ position:absolute; backdrop-filter:blur(10px); background:rgba(10,10,9,.66);
+  border:1px solid rgba(245,243,235,.14); border-radius:13px; padding:11px 14px; font-weight:700; font-size:14px; }
+.portrait .chip small{ display:block; color:var(--text-faint); font-weight:600; font-size:11.5px; }
+.portrait .c1{ left:-18px; top:26px; }
+.portrait .c2{ right:-14px; bottom:90px; }
+.portrait .chip b{ color:var(--gold); }
+
+/* ---------- LOGO MARQUEE ---------- */
+.marquee-wrap{ padding:30px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.marquee-lab-title{ text-align:center; color:var(--text-faint); font-size:13px; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase; margin-bottom:26px; }
+.marquee{ overflow:hidden; -webkit-mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
+.marquee + .marquee{ margin-top:26px; }
+.mtrack{ display:flex; align-items:center; gap:58px; width:max-content; animation:scrollx 46s linear infinite; }
+.mtrack.rev{ animation-direction:reverse; animation-duration:54s; }
+.marquee:hover .mtrack{ animation-play-state:paused; }
+.mtrack img{ height:26px; width:auto; max-width:132px; object-fit:contain; flex:none;
+  filter:brightness(0) invert(1); opacity:.42;
+  transition:opacity .3s var(--ease), transform .3s var(--ease); }
+.mtrack img:hover{ opacity:1; transform:scale(1.14); }
+@keyframes scrollx{ to{ transform:translateX(-50%); } }
+
+/* static logo grid (alt variant) */
+.logo-grid{ display:grid; grid-template-columns:repeat(5,1fr); gap:1px; background:var(--border);
+  border:1px solid var(--border); border-radius:16px; overflow:hidden; }
+.logo-grid .cell{ background:var(--surface); display:grid; place-items:center; padding:30px 22px; min-height:104px; }
+.logo-grid img{ height:28px; max-width:74%; object-fit:contain; filter:brightness(0) invert(1); opacity:.5; transition:.3s; }
+.logo-grid .cell:hover img{ opacity:1; transform:scale(1.06); }
+.logo-grid .cell:hover{ background:var(--surface-2); }
+
+/* ---------- icon chips ---------- */
+.ichip{ width:50px; height:50px; border-radius:14px; display:grid; place-items:center; font-size:24px;
+  background:var(--gold-soft); border:1px solid var(--gold-line); }
+.ichip svg{ width:24px; height:24px; color:var(--gold); }
+
+/* ---------- stat counters ---------- */
+.stat-strip{ display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.stat{ border-left:2px solid var(--gold-line); padding:6px 0 6px 20px; }
+.stat .n{ font-size:clamp(38px,5vw,62px); font-weight:800; letter-spacing:-.04em; line-height:1;
+  color:var(--text); font-variant-numeric:tabular-nums; }
+.stat .n .u{ color:var(--gold); }
+.stat .l{ color:var(--text-dim); font-size:14.5px; margin-top:10px; line-height:1.4; }
+
+/* ---------- compare chip band ---------- */
+.chipband{ display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:20px; border-radius:16px; overflow:hidden; border:1px solid var(--border); }
+.chipband > div{ padding:24px 26px; }
+.chipband .bad{ background:#100f0e; }
+.chipband .good{ background:linear-gradient(160deg, var(--gold-soft), transparent 70%); }
+.chipband h4{ margin:0 0 14px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; }
+.chipband .bad h4{ color:var(--text-faint); }
+.chipband .good h4{ color:var(--gold); }
+.chips{ display:flex; flex-wrap:wrap; gap:8px; }
+.chips span{ font-size:13.5px; font-weight:600; padding:7px 12px; border-radius:99px; border:1px solid var(--border-hover); color:var(--text-dim); }
+.chipband .good .chips span{ border-color:var(--gold-line); color:var(--text); }
+
+/* ---------- iceberg ---------- */
+.berg{ position:relative; border-radius:20px; overflow:hidden; border:1px solid var(--border);
+  background:linear-gradient(180deg,#0c0c0b, #0a0a09); padding:34px; }
+.berg .above{ text-align:center; color:var(--text-dim); font-size:15.5px; padding-bottom:26px; }
+.berg .above .lbl{ display:block; color:var(--text-faint); font-size:12px; letter-spacing:.14em; text-transform:uppercase; margin-bottom:10px; }
+.berg .line{ position:relative; height:1px; background:linear-gradient(90deg,transparent,var(--gold-line),transparent); margin:6px 0 30px; }
+.berg .line span{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:#0b0b0a; padding:0 14px;
+  font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--text-faint); }
+.berg .deep-lbl{ text-align:center; color:var(--gold); font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase; margin-bottom:18px; }
+/* SVG iceberg layout */
+.berg-layout{ display:grid; grid-template-columns:.82fr 1.18fr; gap:46px; align-items:center; }
+.berg-vis{ position:relative; display:flex; justify-content:center; }
+.berg-vis img{ width:100%; max-width:330px; height:auto; display:block; filter:drop-shadow(0 30px 70px rgba(0,0,0,.55)) drop-shadow(0 0 50px rgba(120,200,40,.12)); }
+.berg-wl{ position:absolute; right:-6px; font-size:11px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--text-faint); }
+.berg-wl.above{ top:26%; }
+.berg-wl.below{ top:42%; color:#aee23a; }
+.berg-side{ display:flex; flex-direction:column; gap:14px; }
+.berg-note{ color:var(--text-dim); font-size:15.5px; line-height:1.55; padding-bottom:6px; }
+.berg-note b{ color:var(--text); }
+.berg-deep-lbl{ color:var(--gold); font-size:12.5px; font-weight:800; letter-spacing:.12em; text-transform:uppercase; margin-top:6px; }
+.berg-side .dir-card{ min-height:auto; }
+.berg-side .dir-card h3{ font-size:19px; }
+.berg-side .feat-list{ margin-top:12px; }
+@media (max-width:760px){ .berg-layout{ grid-template-columns:1fr; gap:26px; } .berg-vis img{ max-width:240px; } .berg-wl{ display:none; } }
+
+/* ---------- steps with ghost numbers ---------- */
+.steps2{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.step2{ position:relative; overflow:hidden; }
+.step2 .ghost{ position:absolute; right:14px; top:-18px; font-size:120px; font-weight:800; line-height:1;
+  color:var(--gold); opacity:.07; letter-spacing:-.05em; }
+.step2 h3{ font-size:20px; margin-top:8px; }
+.step2 .desc{ color:var(--text-dim); font-size:15px; line-height:1.55; margin-top:12px; }
+.step2 .sn{ display:inline-grid; place-items:center; width:34px; height:34px; border-radius:9px;
+  background:var(--gold); color:#1a1408; font-weight:800; }
+
+/* ---------- tariffs with gantt ---------- */
+.tariffs2{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; align-items:stretch; }
+.tar{ position:relative; display:flex; flex-direction:column; }
+.tar.prem{ border-color:var(--gold-line); background:linear-gradient(168deg,var(--gold-soft),transparent 52%); box-shadow:0 0 0 1px var(--gold-line), 0 24px 70px rgba(243,200,102,.08); }
+.tar .badge{ position:absolute; right:20px; top:20px; background:var(--gold); color:#1a1408; font-size:11.5px; font-weight:800; padding:6px 12px; border-radius:99px; }
+.tar .emoji{ font-size:30px; }
+.tar h3{ font-size:25px; margin-top:12px; letter-spacing:-.03em; }
+.tar .term{ display:block; margin-top:8px; font-size:12.5px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--text-faint); }
+.tar .price{ margin-top:14px; font-size:20px; font-weight:800; }
+.tar .price .big{ font-size:34px; letter-spacing:-.03em; }
+.tar .price.req .big{ color:var(--gold); }
+/* gantt */
+.gantt{ margin-top:18px; }
+.gantt .row{ display:grid; grid-template-columns:auto 1fr; gap:10px; align-items:center; margin-top:8px; }
+.gantt .rl{ font-size:12.5px; color:var(--text-dim); }
+.gantt .bar{ height:8px; border-radius:99px; background:var(--surface-2); position:relative; overflow:hidden; }
+.gantt .bar i{ position:absolute; top:0; bottom:0; border-radius:99px; background:linear-gradient(90deg,var(--gold),var(--gold2)); }
+.tar .feat-list{ margin-top:18px; }
+.tar .res{ margin-top:18px; padding-top:18px; border-top:1px solid var(--border); color:var(--text-dim); font-size:14px; line-height:1.55; }
+.tar .res b{ color:var(--text); }
+.tar .btn{ margin-top:20px; }
+
+/* ---------- responsive ---------- */
+@media (max-width:980px){
+  .lab-hero .grid{ grid-template-columns:1fr; }
+  .portrait{ max-width:440px; }
+  .stat-strip{ grid-template-columns:1fr 1fr; }
+  .logo-grid{ grid-template-columns:repeat(4,1fr); }
+}
+@media (max-width:760px){
+  .steps2,.tariffs2{ grid-template-columns:1fr; }
+  .chipband{ grid-template-columns:1fr; }
+  .logo-grid{ grid-template-columns:repeat(3,1fr); }
+  .stat-strip{ grid-template-columns:1fr 1fr; }
+}
+</style>
+</head>
+<body class="lab">
+
+<header id="site-header">
+  <div class="wrap nav">
+    <a href="/" class="logo" aria-label="Loops — на главную"><img class="logo-img" src="/images/loops-logo.png" alt="Loops" /></a>
+    <nav class="nav-links" aria-label="Основная навигация">
+      <a href="/#directions">Чем занимаюсь</a>
+      <a href="/cases.html">Кейсы</a>
+      <a href="/#talks">Выступаю</a>
+      <a href="/about/">Обо мне</a>
+      <a href="/#contact">Контакты</a>
+    </nav>
+    <a href="#contact" class="btn btn-ghost header-cta">Оставить заявку</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="lab-hero">
+    <div class="wrap">
+      <div class="grid">
+        <div class="reveal">
+          <h1>Отдел продаж,<br />который доводит<br />заявки до&nbsp;<span class="mk">денег</span></h1>
+          <p class="lead">Если трафик есть, а&nbsp;продаж нет&nbsp;— дело не&nbsp;в&nbsp;клиентах, а&nbsp;в&nbsp;разрыве между рекламой, отделом продаж и&nbsp;аналитикой. Захожу как <b style="color:var(--text)">внешний коммерческий директор</b> и&nbsp;собираю систему: аудит → CRM под&nbsp;ключ → обучение команды → регулярный менеджмент.</p>
+          <div class="hero-actions2">
+            <a href="https://t.me/dani_gzv" target="_blank" rel="noopener" class="btn btn-gold btn-lg">
+              <svg class="icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.5 3.5 2.8 10.7c-1.1.4-1.1 1.6 0 1.9l4.8 1.5 1.8 5.6c.3.9 1.1 1 1.7.4l2.7-2.6 4.8 3.5c.7.5 1.6.2 1.8-.7L23 5c.3-1.2-.5-1.9-1.5-1.5Z" fill="currentColor"/></svg>
+              Написать в Telegram
+            </a>
+            <a href="#tariffs" class="btn btn-ghost btn-lg">Смотреть тарифы</a>
+          </div>
+          <div class="hero-trust">
+            <div><b>20+</b><span>компаний доверяют</span></div>
+            <div><b>2&nbsp;мес</b><span>до системных продаж</span></div>
+            <div><b>×3</b><span>дешевле лид в&nbsp;кейсах</span></div>
+          </div>
+        </div>
+
+        <div class="portrait reveal">
+          <div class="frame"><img src="/images/daniil.jpg" alt="Даниил Газизов — внешний комдир" /></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ LOGO MARQUEE ============ -->
+  <section class="marquee-wrap">
+    <div class="wrap">
+      <p class="marquee-lab-title">Нам доверяют</p>
+    </div>
+    <div class="marquee">
+      <div class="mtrack">
+        <img src="/images/clients/chery.png" alt="Chery"><img src="/images/clients/jetour.png" alt="Jetour"><img src="/images/clients/basalt.png" alt="Basalt"><img src="/images/clients/nwl.png" alt="NWL"><img src="/images/clients/tak.png" alt="TAK"><img src="/images/clients/qwatt.png" alt="q.watt"><img src="/images/clients/dco.png" alt="DCO"><img src="/images/clients/stark.png" alt="STARK"><img src="/images/clients/ks-group.png" alt="KS Group"><img src="/images/clients/tmz.png" alt="ТМЗ">
+        <img src="/images/clients/chery.png" alt=""><img src="/images/clients/jetour.png" alt=""><img src="/images/clients/basalt.png" alt=""><img src="/images/clients/nwl.png" alt=""><img src="/images/clients/tak.png" alt=""><img src="/images/clients/qwatt.png" alt=""><img src="/images/clients/dco.png" alt=""><img src="/images/clients/stark.png" alt=""><img src="/images/clients/ks-group.png" alt=""><img src="/images/clients/tmz.png" alt="">
+      </div>
+    </div>
+    <div class="marquee">
+      <div class="mtrack rev">
+        <img src="/images/clients/impactmints.png" alt="Impact Mints"><img src="/images/clients/driada.png" alt="Дриада"><img src="/images/clients/regen.png" alt="ReGen Tashkent"><img src="/images/clients/hsnavigator.png" alt="HS Navigator"><img src="/images/clients/ig.png" alt="IG"><img src="/images/clients/auto-v.png" alt="Авто"><img src="/images/clients/just.png" alt="JUST"><img src="/images/clients/stark.png" alt="STARK"><img src="/images/clients/dco.png" alt="DCO"><img src="/images/clients/tmz.png" alt="ТМЗ">
+        <img src="/images/clients/impactmints.png" alt=""><img src="/images/clients/driada.png" alt=""><img src="/images/clients/regen.png" alt=""><img src="/images/clients/hsnavigator.png" alt=""><img src="/images/clients/ig.png" alt=""><img src="/images/clients/auto-v.png" alt=""><img src="/images/clients/just.png" alt=""><img src="/images/clients/stark.png" alt=""><img src="/images/clients/dco.png" alt=""><img src="/images/clients/tmz.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VALUE CARDS (icon chips) ============ -->
+  <section class="sec-pad" style="padding-top:64px;">
+    <div class="wrap">
+      <div class="grid-3">
+        <div class="card dir-card reveal">
+          <span class="ichip" aria-hidden="true">🚀</span>
+          <h3 style="margin-top:18px;">Понимаю воронку</h3>
+          <p class="desc">Выстраиваю цепочку от&nbsp;первого клика до&nbsp;сделки и&nbsp;повторной покупки&nbsp;— а&nbsp;не&nbsp;латаю отдельные дыры.</p>
+        </div>
+        <div class="card dir-card reveal">
+          <span class="ichip" aria-hidden="true">📈</span>
+          <h3 style="margin-top:18px;">Продажи, не&nbsp;трафик</h3>
+          <p class="desc">Строю систему, где каждый лид обрабатывается и&nbsp;доходит до&nbsp;кассы. Отвечаю за&nbsp;цифры, а&nbsp;не&nbsp;за&nbsp;охваты.</p>
+        </div>
+        <div class="card dir-card reveal">
+          <span class="ichip" aria-hidden="true">🔄</span>
+          <h3 style="margin-top:18px;">Постпродажный цикл</h3>
+          <p class="desc">Триггерные коммуникации для&nbsp;повторных продаж и&nbsp;роста лояльности&nbsp;— клиент возвращается.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STAT COUNTERS ============ -->
+  <section class="sec-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 class="sec-title">Результаты, <span class="mk">которые считаются</span></h2></div>
+      <div class="stat-strip">
+        <div class="stat reveal"><div class="n">$<span data-to="3.3" data-dec="1">0</span></div><div class="l">цена пациента, ViaMed</div></div>
+        <div class="stat reveal"><div class="n"><span data-to="75">0</span><span class="u">%</span></div><div class="l">конверсия в&nbsp;продажу, TAK</div></div>
+        <div class="stat reveal"><div class="n"><span data-to="2831">0</span></div><div class="l">диалогов в&nbsp;месяц, TAK</div></div>
+        <div class="stat reveal"><div class="n"><span class="u">×</span><span data-to="3">0</span></div><div class="l">дешевле лид, Chery</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAIN + COMPARE + CHIP BAND ============ -->
+  <section class="sec-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <h2 class="sec-title">Почему «лиды&nbsp;есть,<br />а&nbsp;продаж нет»</h2>
+        <p class="sec-sub">Чтобы построить систему продаж, бизнес обычно нанимает 8–10&nbsp;подрядчиков и&nbsp;платит за&nbsp;хаос. Я&nbsp;собираю всё в&nbsp;одну систему «под&nbsp;ключ».</p>
+      </div>
+      <div class="chipband reveal">
+        <div class="bad">
+          <h4>Как обычно</h4>
+          <div class="chips">
+            <span>8–10 подрядчиков</span><span>каждый на&nbsp;своём участке</span><span>несовместимые инструменты</span><span>ручная координация</span><span>лиды теряются на&nbsp;стыках</span><span>×2–3 за&nbsp;хаос</span>
+          </div>
+        </div>
+        <div class="good">
+          <h4>Со&nbsp;мной — под&nbsp;ключ</h4>
+          <div class="chips">
+            <span>1 команда</span><span>единая стратегия</span><span>всё интегрировано</span><span>один контакт</span><span>прозрачная цена</span><span>рост на&nbsp;2-й месяц</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ICEBERG ============ -->
+  <section class="sec-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 class="sec-title">Продажи — это&nbsp;<span class="mk">айсберг</span></h2>
+        <p class="sec-sub">Сверху видно только бюджет и&nbsp;подрядчиков. Но&nbsp;результат определяет то, что под&nbsp;водой.</p></div>
+      <div class="berg-layout reveal">
+        <div class="berg-vis">
+          <img src="/images/iceberg.svg" alt="Айсберг продаж: над водой — бюджет и подрядчики, под водой — система продаж" />
+          <span class="berg-wl above">Над&nbsp;водой</span>
+          <span class="berg-wl below">Под&nbsp;водой</span>
+        </div>
+        <div class="berg-side">
+          <div class="berg-note"><b>🧊 Над водой</b> — то, на&nbsp;что обычно смотрят: бюджет на&nbsp;рекламу и&nbsp;оплата подрядчиков за&nbsp;SMM, блогеров, таргет.</div>
+          <div class="berg-deep-lbl">Под водой — то, что реально решает:</div>
+          <div class="card dir-card">
+            <h3>Управление и&nbsp;методология</h3>
+            <ul class="feat-list">
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Бизнес-процессы, модель компетенций, роли, планёрки и&nbsp;отчётность</li>
+            </ul>
+          </div>
+          <div class="card dir-card">
+            <h3>Организация системы продаж</h3>
+            <ul class="feat-list">
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Скрипты, обучение РОПа, воронка и&nbsp;CRM-процессы, система KPI</li>
+            </ul>
+          </div>
+          <div class="card dir-card">
+            <h3>Технологии и&nbsp;интеграции</h3>
+            <ul class="feat-list">
+              <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Внедрение CRM, IP-телефония, аналитика, дашборды, post-sale</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STEPS (ghost numbers) ============ -->
+  <section class="sec-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 class="sec-title">Как я&nbsp;работаю</h2><p class="sec-sub">Пошаговый процесс запуска системы продаж.</p></div>
+      <div class="steps2">
+        <div class="card step2 reveal"><span class="ghost">1</span><span class="sn">1</span><h3>Анализ продаж</h3><p class="desc">Аудит CRM и&nbsp;базы, проверка воронки и&nbsp;точек потери, тайный покупатель, анализ команды.</p></div>
+        <div class="card step2 reveal"><span class="ghost">2</span><span class="sn">2</span><h3>Стратегия</h3><p class="desc">Позиционирование, сегментация и&nbsp;RFM-портреты, Traffic&nbsp;Map, триггерные коммуникации.</p></div>
+        <div class="card step2 reveal"><span class="ghost">3</span><span class="sn">3</span><h3>Настройка процессов</h3><p class="desc">CRM и&nbsp;цепочки, скрипты, КП и&nbsp;презентации, карта взаимодействия, лояльность и&nbsp;возвраты.</p></div>
+        <div class="card step2 reveal"><span class="ghost">4</span><span class="sn">4</span><h3>Команда и&nbsp;регламенты</h3><p class="desc">РОП: планы, CRM, совещания, KPI. Менеджеры: демо, оформление сделок, постпродажа.</p></div>
+        <div class="card step2 reveal"><span class="ghost">5</span><span class="sn">5</span><h3>Документы</h3><p class="desc">Модель компетенций, должностные, KPI с&nbsp;прозрачной отчётностью, бизнес-календарь.</p></div>
+        <div class="card step2 reveal"><span class="ghost">6</span><span class="sn">6</span><h3>Результат</h3><p class="desc">Система, в&nbsp;которой работают и&nbsp;инструменты, и&nbsp;люди. Всё задокументировано под&nbsp;рост.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TARIFFS (gantt) ============ -->
+  <section class="sec-pad" id="tariffs" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 class="sec-title">Тарифы</h2><p class="sec-sub">От&nbsp;быстрого запуска CRM до&nbsp;внешнего комдира на&nbsp;холдинг.</p></div>
+      <div class="tariffs2">
+
+        <div class="card tar reveal">
+          <span class="emoji" aria-hidden="true">🚀</span>
+          <h3>Быстрый запуск</h3>
+          <span class="term">Срок — 1&nbsp;месяц</span>
+          <div class="price"><span style="color:var(--text-dim);font-weight:600;">от</span> <span class="big">24&nbsp;млн</span> сум</div>
+          <div class="gantt">
+            <div class="row"><span class="rl">Техн. надстройка</span><div class="bar"><i style="left:0;width:34%"></i></div></div>
+            <div class="row"><span class="rl">Обучение</span><div class="bar"><i style="left:34%;width:33%"></i></div></div>
+            <div class="row"><span class="rl">Докрутка</span><div class="bar"><i style="left:67%;width:33%"></i></div></div>
+          </div>
+          <ul class="feat-list">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Экспресс-аудит отдела продаж</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>CRM «под&nbsp;ключ»</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Живое обучение (узб/рус)</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>14 дней поддержки</li>
+          </ul>
+          <p class="res"><b>Итог:</b> CRM работает, ни&nbsp;одна заявка не&nbsp;теряется.</p>
+          <a href="#contact" class="btn btn-ghost">Обсудить запуск</a>
+        </div>
+
+        <div class="card tar reveal">
+          <span class="emoji" aria-hidden="true">📈</span>
+          <h3>Системные продажи</h3>
+          <span class="term">Срок — 2&nbsp;месяца</span>
+          <div class="price"><span style="color:var(--text-dim);font-weight:600;">от</span> <span class="big">32&nbsp;млн</span> сум</div>
+          <div class="gantt">
+            <div class="row"><span class="rl">Архитектура</span><div class="bar"><i style="left:0;width:50%"></i></div></div>
+            <div class="row"><span class="rl">Оцифровка</span><div class="bar"><i style="left:50%;width:50%"></i></div></div>
+          </div>
+          <ul class="feat-list">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Стандарты, KPI, финплан</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Оргструктура и&nbsp;скоринг</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Дашборды (План/Факт, маржа)</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Регулярный менеджмент</li>
+          </ul>
+          <p class="res"><b>Итог:</b> прогнозируемая выручка, управление по&nbsp;цифрам.</p>
+          <a href="#contact" class="btn btn-ghost">Построить систему</a>
+        </div>
+
+        <div class="card tar prem reveal">
+          <span class="badge">Всё включено</span>
+          <span class="emoji" aria-hidden="true">🧑‍💻</span>
+          <h3>Ком.дир в&nbsp;аренду</h3>
+          <span class="term">Контракт от&nbsp;6&nbsp;месяцев</span>
+          <div class="price req"><span class="big">По запросу</span></div>
+          <div class="gantt">
+            <div class="row"><span class="rl">1 день/нед в&nbsp;офисе</span><div class="bar"><i style="left:0;width:100%;opacity:.9"></i></div></div>
+            <div class="row"><span class="rl">Сопровождение 6+ мес</span><div class="bar"><i style="left:0;width:100%"></i></div></div>
+          </div>
+          <ul class="feat-list">
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Всё из&nbsp;тарифов выше</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Я&nbsp;— часть вашей команды</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>HR: аттестация, наём РОПа</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Масштаб на&nbsp;холдинг</li>
+          </ul>
+          <p class="res"><b>Итог:</b> компетенции комдира без затрат на&nbsp;штат, гарантия приживаемости, выход из&nbsp;операционки.</p>
+          <a href="#contact" class="btn btn-gold">Обсудить контракт</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STATIC LOGO GRID (alt variant to compare) ============ -->
+  <section class="sec-pad" style="padding-top:0;">
+    <div class="wrap">
+      <div class="sec-head reveal"><h2 class="sec-title">Нам доверяют <span style="color:var(--text-faint);font-size:.5em;font-weight:700;">(вариант: сетка)</span></h2></div>
+      <div class="logo-grid reveal">
+        <div class="cell"><img src="/images/clients/chery.png" alt="Chery"></div>
+        <div class="cell"><img src="/images/clients/jetour.png" alt="Jetour"></div>
+        <div class="cell"><img src="/images/clients/basalt.png" alt="Basalt"></div>
+        <div class="cell"><img src="/images/clients/nwl.png" alt="NWL"></div>
+        <div class="cell"><img src="/images/clients/tak.png" alt="TAK"></div>
+        <div class="cell"><img src="/images/clients/qwatt.png" alt="q.watt"></div>
+        <div class="cell"><img src="/images/clients/dco.png" alt="DCO"></div>
+        <div class="cell"><img src="/images/clients/stark.png" alt="STARK"></div>
+        <div class="cell"><img src="/images/clients/ks-group.png" alt="KS Group"></div>
+        <div class="cell"><img src="/images/clients/tmz.png" alt="ТМЗ"></div>
+        <div class="cell"><img src="/images/clients/impactmints.png" alt="Impact Mints"></div>
+        <div class="cell"><img src="/images/clients/driada.png" alt="Дриада"></div>
+        <div class="cell"><img src="/images/clients/hsnavigator.png" alt="HS Navigator"></div>
+      </div>
+      <div class="hero-actions2"><a href="/cases.html" class="btn btn-gold btn-lg">Кейсы с&nbsp;цифрами</a></div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="sec-pad" id="contact" style="padding-top:0;">
+    <div class="wrap">
+      <div class="contact-card reveal">
+        <div>
+          <h2>Расскажите про&nbsp;отдел продаж</h2>
+          <p class="lead">Напишите в&nbsp;Telegram или оставьте контакт — посмотрю, что происходит с&nbsp;вашими продажами, и&nbsp;скажу, какой тариф реально нужен.</p>
+          <div class="contact-meta">
+            <a href="https://t.me/dani_gzv" target="_blank" rel="noopener">Telegram @dani_gzv</a>
+            <a href="tel:+998900012373">+998 90 001 23 73</a>
+          </div>
+        </div>
+        <div>
+          <form id="leadForm" novalidate>
+            <div class="field"><label for="name">Как вас зовут</label><input id="name" name="name" type="text" placeholder="Имя" autocomplete="name" required /></div>
+            <div class="field"><label for="contact">Телефон или Telegram</label><input id="contact" name="contact" type="text" placeholder="@username или +998…" autocomplete="tel" required /></div>
+            <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <button type="submit" class="btn btn-gold btn-lg">Оставить заявку</button>
+            <p class="form-note">Нажимая кнопку, вы соглашаетесь на&nbsp;обработку контактов.</p>
+            <div class="form-ok" id="formOk">Спасибо! Я&nbsp;свяжусь с&nbsp;вами в&nbsp;ближайшее время.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom" style="border:none;">
+      <span>© 2026 Loops · Даниил · <b style="color:var(--gold)">LAB / showcase</b></span>
+      <span>Ташкент</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/site.js"></script>
+<script src="/consulting/annotate.js"></script>
+<script>
+/* animated counters */
+(function(){
+  var els = document.querySelectorAll('[data-to]');
+  if(!('IntersectionObserver' in window)){ els.forEach(function(e){e.textContent=e.dataset.to;}); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting) return;
+      var el = en.target, to = parseFloat(el.dataset.to), dec = parseInt(el.dataset.dec||'0',10), t0=null, dur=1300;
+      function step(ts){ if(!t0)t0=ts; var p=Math.min((ts-t0)/dur,1); var e=1-Math.pow(1-p,3);
+        el.textContent=(to*e).toFixed(dec); if(p<1) requestAnimationFrame(step); else el.textContent=to.toFixed(dec); }
+      requestAnimationFrame(step); io.unobserve(el);
+    });
+  }, {threshold:.6});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+</body>
+</html>
