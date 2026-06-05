@@ -20,16 +20,20 @@ styles.css      все стили сайта (Manrope, акцент --gold #f3c8
 site.js         общее поведение: reveal, sticky-header, форма → api.adstat.uz/api/public/leads
 cases-data.js   данные кейсов + рендер (window.LOOPS_CASES) — общий для index.html и cases.html
 cases.html      полная страница кейсов (рендерит cases-data.js)
+about/          страница «Обо мне» (E-E-A-T, Person/BreadcrumbList schema)
+consulting/     консалтинг (отдел продаж/CRM): hero+портрет, айсберг-скроллителлинг, тарифы с гантом, лента лого
 target/         СТАРАЯ богатая агентская страница (таргет+ИИ-агент) — перенесена сюда с прежней главной
-ai-bot/         агентский лендинг (более старый клон)
+ai-bot/         агентский лендинг (более старый клон) — canonical → /target/
 cases/*         legacy — теперь 301-редирект-заглушки → /cases.html (контента нет)
 articles/       блог (контент пока офф-топик/заглушки)
+images/iceberg.svg, images/clients/*   ← ассеты консалтинга (айсберг + лого клиентов, вытащены из КП)
+consulting/{lab,iceberg-lab}.html, consulting/annotate.js   ← ЛОКАЛЬНАЯ дизайн-песочница (noindex, исключены из deploy)
 404.html  images/  api/  llms.txt  robots.txt  sitemap.xml
 scripts/deploy.sh   ← деплой статики
 worker/index.js  wrangler.toml   ← Cloudflare Worker формы (НЕ деплоится статикой; деплой через wrangler)
 ```
 
-Files NOT shipped to the server (dev-only, auto-excluded by deploy): `README*`, `*.md`, `CLAUDE.md`, `netlify.toml`, `vercel.json`, `.htaccess`, `scripts/`, `.agent/`, `_handoff/`, backups, `api/`.
+Files NOT shipped to the server (dev-only, auto-excluded by deploy): `README*`, `*.md`, `CLAUDE.md`, `netlify.toml`, `vercel.json`, `.htaccess`, `scripts/`, `.agent/`, `_handoff/`, backups, `api/`, `consulting/{lab,iceberg-lab}.html`, `consulting/annotate.js`, `.lab-feedback.json`.
 
 ---
 
@@ -104,6 +108,9 @@ Server tar backups are in `/root/backups/loops-www-*.tar.gz` on the VPS.
 8. **styles.css: базовые правила в КОНЦЕ файла** (после медиа-запросов ~стр.825). Мобильный override для селектора, объявленного в конце (напр. `.talks-grid`), НЕЛЬЗЯ класть в `@media` выше по файлу — базовое правило ниже его перебьёт. Клади такие override в `@media` в самом конце. (Так словили баг: talks-grid стоял 2-в-ряд на мобиле.)
 9. **Картинки кейсов квадратные (640×640).** `.case-photo` = `aspect-ratio: 1/1` + `object-fit: cover` (фото заполняет карточку край-в-край, без полей). Новые картинки делай ~квадратными, иначе обрежет.
 10. **Визуальная проверка — локально.** chrome-devtools MCP даёт `ERR_QUIC_PROTOCOL_ERROR` на проде loops.uz. Проверяй через `python3 -m http.server` в репо (файлы идентичны деплою), мобайл — через resize вьюпорта. На проде сверяй `curl`-ом (статусы/заголовки/контент).
+11. **Локальный дизайн-ревью с разметкой:** `python3 scripts/lab-serve.py` (статика на :8765 + POST `/feedback` → `.lab-feedback.json`). Страница с `consulting/annotate.js` даёт клик-разметку (кнопка «✏️ Разметка»), «Отправить» пишет заметки в `.lab-feedback.json` — Claude читает оттуда. annotate.js само-отключается вне localhost.
+12. **lab-страницы держат CSS инлайн, боевые тянут внешний `/styles.css`.** При переносе lab→прод стили уезжают в styles.css, а браузер агрессивно кэширует `/styles.css` на localhost → если после правок «вёрстка поехала», это почти всегда старый CSS: **Cmd+Shift+R**. (lab-serve уже отдаёт `no-store`.)
+13. **Ассеты из КП/PDF:** растровые лого — `pdfimages -png` (пары image+smask склеить через Pillow: `alpha = smask`); векторное (айсберг) — экспорт SVG из исходника либо `pdftoppm -r 300` + кроп. Лого на тёмном фоне подаём **моно-белыми** (CSS `filter:brightness(0) invert(1)`, по наведению — ярче, НЕ возврат в цвет: тёмные лого исчезают). Готовое — в `images/clients/*`, `images/iceberg.svg`.
 
 ## Rules
 
