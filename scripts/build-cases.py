@@ -266,7 +266,7 @@ def build_page(c):
       </div>
       <div class="foot-cols">
         <div class="foot-col">
-          <h4>Навигация</h4>
+          <h3>Навигация</h3>
           <a href="/#directions">Чем занимаюсь</a>
           <a href="/cases.html">Кейсы</a>
           <a href="/clinics/">Клиники</a>
@@ -274,7 +274,7 @@ def build_page(c):
           <a href="/about/">Обо мне</a>
         </div>
         <div class="foot-col">
-          <h4>Связь</h4>
+          <h3>Связь</h3>
           <a href="https://t.me/dani_gzv" target="_blank" rel="noopener">Telegram</a>
           <a href="https://instagram.com/danii_gzv" target="_blank" rel="noopener">Instagram</a>
           <a href="tel:+998900012373">+998 90 001 23 73</a>
