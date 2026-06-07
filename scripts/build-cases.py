@@ -274,6 +274,7 @@ def build_page(c):
     }}).join("");
   }})();
 </script>
+<script src="/site.js"></script>
 
 </body>
 </html>
