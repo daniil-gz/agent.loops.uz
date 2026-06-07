@@ -68,13 +68,34 @@
       <img class="logo-img" src="/images/loops-logo.png" alt="Loops" />
     </a>
     <nav class="nav-links" aria-label="Основная навигация">
-      <a href="/#directions">Чем занимаюсь</a>
+      <div class="nav-dd">
+        <button type="button" class="nav-dd-btn" aria-haspopup="true" aria-expanded="false">Направления
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="nav-dd-menu">
+          <a href="/target/">Лидогенерация + ИИ-агент</a>
+          <a href="/clinics/">Маркетинг для клиник</a>
+          <a href="/consulting/">Построение отделов продаж</a>
+          <a href="https://adstat.uz" target="_blank" rel="noopener">Сквозная аналитика Adstat</a>
+        </div>
+      </div>
       <a href="/cases.html">Кейсы</a>
-      <a href="/clinics/">Клиники</a>
       <a href="/about/">Обо мне</a>
       <a href="/#contact">Контакты</a>
     </nav>
     <a href="/#contact" class="btn btn-ghost header-cta">Оставить заявку</a>
+    <button type="button" class="nav-burger" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" aria-label="Мобильное меню">
+    <div class="nav-mobile-group">Направления</div>
+    <a class="nav-sub" href="/target/">Лидогенерация + ИИ-агент</a>
+    <a class="nav-sub" href="/clinics/">Маркетинг для клиник</a>
+    <a class="nav-sub" href="/consulting/">Построение отделов продаж</a>
+    <a class="nav-sub" href="https://adstat.uz" target="_blank" rel="noopener">Сквозная аналитика Adstat</a>
+    <a href="/cases.html">Кейсы</a>
+    <a href="/about/">Обо мне</a>
+    <a href="/#contact">Контакты</a>
+    <a href="/#contact" class="btn btn-gold btn-lg nav-mobile-cta">Оставить заявку</a>
   </div>
 </header>
 

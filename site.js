@@ -20,6 +20,37 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
+  /* ---- mobile burger menu ---- */
+  var burger = document.querySelector(".nav-burger");
+  if (header && burger) {
+    var closeMenu = function () {
+      header.classList.remove("menu-open");
+      document.body.classList.remove("nav-lock");
+      burger.setAttribute("aria-expanded", "false");
+    };
+    burger.addEventListener("click", function () {
+      var open = header.classList.toggle("menu-open");
+      document.body.classList.toggle("nav-lock", open);
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    Array.prototype.slice.call(header.querySelectorAll(".nav-mobile a")).forEach(function (a) {
+      a.addEventListener("click", closeMenu);
+    });
+    window.addEventListener("resize", function () { if (window.innerWidth > 980) closeMenu(); });
+  }
+
+  /* ---- highlight current page in nav ---- */
+  if (header) {
+    var here = location.pathname.replace(/index\.html$/, "") || "/";
+    Array.prototype.slice.call(header.querySelectorAll("a[href]")).forEach(function (a) {
+      var u;
+      try { u = new URL(a.href); } catch (e) { return; }
+      if (u.hostname !== location.hostname) return;
+      var ap = u.pathname.replace(/index\.html$/, "") || "/";
+      if (ap !== "/" && ap === here) a.setAttribute("aria-current", "page");
+    });
+  }
+
   /* ---- reveal on scroll (safe: content visible unless .anim is on <html>) ---- */
   var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
   var animOn = document.documentElement.classList.contains("anim");
