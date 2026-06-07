@@ -1,6 +1,6 @@
 /* ===========================================================
    Loops — shared case data + unified card renderer
-   Used by both index.html (preview) and cases.html (full list)
+   Used by index.html (preview), cases.html (full list), case pages (see-also)
    =========================================================== */
 (function () {
   // niche line-icons (drawn-in on reveal, gold)
@@ -18,6 +18,17 @@
   };
 
   window.LOOPS_CASES = [
+    {
+      id: "viamed",
+      img: "viamed-card.png",
+      client: "ViaMed",
+      cat: "Клиника",
+      niche: ICON.heart,
+      metric: "150",
+      unit: "пациентов за месяц при бюджете $500",
+      tags: ["$3.3 за пациента"],
+      note: "Воронка: <b>1000+ заявок → 320 лидов → 150 пациентов.</b>"
+    },
     {
       id: "tak",
       img: "tak-card.png",
@@ -41,15 +52,26 @@
       note: ""
     },
     {
-      id: "viamed",
-      img: "viamed-card.png",
-      client: "ViaMed",
-      cat: "Клиника",
-      niche: ICON.heart,
-      metric: "150",
-      unit: "пациентов за месяц при бюджете $500",
-      tags: ["$3.3 за пациента"],
-      note: "Воронка: <b>1000+ заявок → 320 лидов → 150 пациентов.</b>"
+      id: "nwl",
+      img: "nwl-card.png",
+      client: "NWL",
+      cat: "3PL-логистика",
+      niche: ICON.truck,
+      metric: "88",
+      unit: "целевых B2B-лидов по $21",
+      tags: ["70% в квалификацию"],
+      note: "Было: <b>1000 заявок → 3 продажи.</b>"
+    },
+    {
+      id: "bts",
+      img: "bts-card.png",
+      client: "BTS Group",
+      cat: "B2B · оборудование",
+      niche: ICON.factory,
+      metric: "58",
+      unit: "B2B-лидов в первый месяц",
+      tags: ["$7 за лид", "cold start"],
+      note: "С нуля подписчиков — до оптовых продаж."
     },
     {
       id: "basalt",
@@ -63,15 +85,37 @@
       note: ""
     },
     {
-      id: "nwl",
-      img: "nwl-card.png",
-      client: "NWL",
-      cat: "3PL-логистика",
-      niche: ICON.truck,
-      metric: "88",
-      unit: "целевых B2B-лидов по $21",
-      tags: ["70% в квалификацию"],
-      note: "Было: <b>1000 заявок → 3 продажи.</b>"
+      id: "dco",
+      img: "dco-main.png",
+      client: "DCO Euroluxe",
+      cat: "Сантехника · B2B",
+      niche: ICON.box,
+      metric: "45,9 млн",
+      unit: "сум выручки при бюджете $200",
+      tags: ["обучение сотрудника с нуля"],
+      note: ""
+    },
+    {
+      id: "izzy",
+      img: "izzy-main.png",
+      client: "IZZY",
+      cat: "Кикшеринг",
+      niche: ICON.car,
+      metric: "+97%",
+      unit: "рост базы пользователей",
+      tags: ["100 000+ новых юзеров", "+20% время аренды"],
+      note: ""
+    },
+    {
+      id: "feedup",
+      img: "feedup-main.png",
+      client: "FeedUp",
+      cat: "HoReCa · фастфуд",
+      niche: ICON.box,
+      metric: "100%",
+      unit: "жалоб закрыто, реакция за 10 минут",
+      tags: ["ORM-система"],
+      note: ""
     }
   ];
 
@@ -85,7 +129,7 @@
   //   goLabel  — footer link label
   window.caseCardHTML = function (c, opts) {
     opts = opts || {};
-    var href = (opts.href || "cases.html#case-{id}").replace("{id}", c.id);
+    var href = (opts.href || "/cases/case-{id}/").replace("{id}", c.id);
     var goLabel = opts.goLabel || "Смотреть кейс";
     var tags = (c.tags || [])
       .map(function (t) { return '<span class="case-tag">' + t + "</span>"; })
@@ -109,12 +153,12 @@
     );
   };
 
-  // Render cases into a container. opts.limit = show only last N (preview).
+  // Render cases into a container. opts.limit = show only first N (preview).
   window.renderCases = function (container, opts) {
     if (!container) return;
     opts = opts || {};
     var list = window.LOOPS_CASES;
-    if (opts.limit) list = list.slice(-opts.limit);
+    if (opts.limit) list = list.slice(0, opts.limit);
     container.innerHTML = list
       .map(function (c) { return window.caseCardHTML(c, opts); })
       .join("");

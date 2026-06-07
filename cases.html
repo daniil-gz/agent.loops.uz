@@ -136,7 +136,7 @@
   (function () {
     var grid = document.getElementById("casesGrid");
     if (grid && window.renderCases) {
-      window.renderCases(grid, { href: "index.html#contact", goLabel: "Обсудить задачу" });
+      window.renderCases(grid, { href: "/cases/case-{id}/", goLabel: "Смотреть кейс" });
     }
   })();
 </script>

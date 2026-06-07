@@ -44,5 +44,5 @@ Loops — личный бренд Даниила Газизова. Я выстр
 - Обо мне (Даниил Газизов): https://loops.uz/about/
 - Консалтинг (отдел продаж / CRM / внешний комдир): https://loops.uz/consulting/
 - Таргет + ИИ-агент: https://loops.uz/target/
-- Кейсы: https://loops.uz/cases.html
+- Кейсы: https://loops.uz/cases.html (детальные разборы с цифрами: /cases/case-viamed/, /cases/case-tak/, /cases/case-chery/, /cases/case-nwl/, /cases/case-bts/, /cases/case-basalt/, /cases/case-dco/, /cases/case-izzy/, /cases/case-feedup/)
 - Блог: https://loops.uz/articles/

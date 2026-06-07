@@ -22,6 +22,7 @@ EXCLUDES=(
   --exclude='api/'        # secrets live server-side; PHP not executed. Deploy api manually.
   --exclude='consulting/lab.html' --exclude='consulting/iceberg-lab.html'
   --exclude='consulting/annotate.js' --exclude='.lab-feedback.json'
+  --exclude='_recovered/'
 )
 
 RSYNC_OPTS=(-rcv --delete-after --no-perms --no-owner --no-group)

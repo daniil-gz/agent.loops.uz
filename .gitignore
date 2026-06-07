@@ -10,3 +10,4 @@ _handoff/
 *.metadata.json
 node_modules/
 .wrangler/
+_recovered/
