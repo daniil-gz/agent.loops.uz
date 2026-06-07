@@ -129,8 +129,9 @@
 
       <div class="talks-grid">
         <div class="card talk-card is-live reveal">
-          <div class="talk-thumb" data-yt="9pc6ZV1ZQrI">
+          <div class="talk-thumb" data-yt="9pc6ZV1ZQrI" role="button" tabindex="0" aria-label="Воспроизвести видео: CRM-маркетинг и автоматизация продаж">
             <img src="https://i.ytimg.com/vi/9pc6ZV1ZQrI/hqdefault.jpg" alt="Выступление: CRM-маркетинг и автоматизация продаж" loading="lazy" />
+            <span class="talk-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M9 8.2v7.6l6.4-3.8z" fill="currentColor"/></svg></span>
           </div>
           <div class="talk-body">
             <a class="talk-title" href="https://youtu.be/9pc6ZV1ZQrI" target="_blank" rel="noopener">CRM-маркетинг и&nbsp;автоматизация продаж через&nbsp;Instagram и&nbsp;чат-боты</a>
@@ -360,28 +361,26 @@
   })();
 </script>
 <script>
-  // autoplay (muted, looped) the first talk when it scrolls into view
+  // click-to-play talk video facade (no third-party cookies until user interaction)
   (function () {
     var box = document.querySelector(".talk-thumb[data-yt]");
     if (!box) return;
     function load() {
+      if (box.classList.contains("yt-loaded")) return;
       var id = box.getAttribute("data-yt");
       var f = document.createElement("iframe");
-      f.src = "https://www.youtube.com/embed/" + id +
-        "?autoplay=1&mute=1&loop=1&playlist=" + id +
-        "&controls=0&modestbranding=1&playsinline=1&rel=0";
-      f.allow = "autoplay; encrypted-media; picture-in-picture";
+      f.src = "https://www.youtube-nocookie.com/embed/" + id +
+        "?autoplay=1&rel=0&modestbranding=1&playsinline=1";
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
       f.setAttribute("frameborder", "0");
       f.title = "Выступление";
       box.appendChild(f);
       box.classList.add("yt-loaded");
     }
-    if ("IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) { if (e.isIntersecting) { load(); io.disconnect(); } });
-      }, { rootMargin: "200px" });
-      io.observe(box);
-    } else { load(); }
+    box.addEventListener("click", load);
+    box.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); load(); }
+    });
   })();
 </script>
 <script src="site.js"></script>

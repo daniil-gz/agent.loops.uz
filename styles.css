@@ -8,6 +8,7 @@
   --border: rgba(245, 243, 235, 0.08);
   --border-hover: rgba(245, 243, 235, 0.18);
   --text: #f3f2ec;
+  --text-muted: #c9c7c0;
   --text-dim: #9a978e;
   --text-faint: #8e8b82;
   --gold: #f3c866;
@@ -1388,3 +1389,10 @@ a.talk-title:hover,
   .nav-mobile .nav-mobile-cta{ margin-top:20px; text-align:center; border-bottom:0; color:#1a1408; }
   body.nav-lock{ overflow:hidden; }
 }
+
+/* ============ TALK VIDEO FACADE (click-to-play, no 3rd-party cookies on load) ============ */
+.talk-thumb[data-yt]{ cursor:pointer; }
+.talk-thumb iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; z-index:3; }
+.talk-thumb.yt-loaded img,
+.talk-thumb.yt-loaded .talk-play,
+.talk-thumb.yt-loaded::after{ display:none; }
