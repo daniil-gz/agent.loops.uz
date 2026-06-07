@@ -23,6 +23,7 @@ EXCLUDES=(
   --exclude='consulting/lab.html' --exclude='consulting/iceberg-lab.html'
   --exclude='consulting/annotate.js' --exclude='.lab-feedback.json'
   --exclude='_recovered/'
+  --exclude='cases/_bodies/' --exclude='cases/cases.json'
 )
 
 RSYNC_OPTS=(-rcv --delete-after --no-perms --no-owner --no-group)
