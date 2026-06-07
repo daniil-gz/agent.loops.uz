@@ -31,13 +31,5 @@ window.articlesData = [
         image: '/images/manus-cover.png',
         title: 'Manus',
         desc: 'Manus AI Browser Operator: Как превратить любой браузер в ИИ-агент. Полная автоматизация рутины.'
-    },
-    {
-        id: 'sample-article',
-        category: 'marketing',
-        url: '/articles/sample-article/',
-        image: 'images/og-articles.jpg',
-        title: 'Sample Article',
-        desc: 'This is a sample article description for SEO testing and layout verification.'
     }
 ];
