@@ -18,14 +18,16 @@ Lead form posts (same-origin) to **`/api/lead`** → handled by a **Cloudflare W
 index.html      homepage-зонтик (~22 KB) — подключает styles.css + site.js + cases-data.js
 styles.css      все стили сайта (Manrope, акцент --gold #f3c866)
 site.js         общее поведение: reveal, sticky-header, форма → api.adstat.uz/api/public/leads
-cases-data.js   данные кейсов + рендер (window.LOOPS_CASES) — общий для index.html и cases.html
+cases-data.js   ГЕНЕРИРУЕТСЯ scripts/build-cases.py из cases/cases.json — НЕ править руками. Карточки (window.LOOPS_CASES) для index.html, cases.html, блока «Другие кейсы»
 cases.html      полная страница кейсов (рендерит cases-data.js)
+cases/cases.json + cases/_bodies/<id>.html   ← ЕДИНЫЙ ИСТОЧНИК кейсов (реестр + тексты). dev-only, исключены из deploy
+cases/case-<id>/index.html   ГЕНЕРИРУЮТСЯ build-cases.py (9 реальных кейсов на основной дизайн-системе). estate/legal — старые редирект-заглушки
+clinics/        нишевый лендинг «Маркетинг для клиник» (Service+Person+FAQPage schema, голос «я»), ссылается на /cases/case-viamed/
 about/          страница «Обо мне» (E-E-A-T, Person/BreadcrumbList schema)
 consulting/     консалтинг (отдел продаж/CRM): hero+портрет, айсберг-скроллителлинг, тарифы с гантом, лента лого
-target/         СТАРАЯ богатая агентская страница (таргет+ИИ-агент) — перенесена сюда с прежней главной
+target/         СТАРАЯ богатая агентская страница (таргет+ИИ-агент); JSON-LD Person+Service+FAQPage
 ai-bot/         агентский лендинг (более старый клон) — canonical → /target/
-cases/*         legacy — теперь 301-редирект-заглушки → /cases.html (контента нет)
-articles/       блог (контент пока офф-топик/заглушки)
+articles/       блог. 3 клиниковые статьи на ОСНОВНОЙ системе (.art-* в styles.css, голос «я»); старые 4 (antigravity/google-skills/career-dreamer/manus) на LEGACY /css/style.css
 images/iceberg.svg, images/clients/*   ← ассеты консалтинга (айсберг + лого клиентов, вытащены из КП)
 consulting/{lab,iceberg-lab}.html, consulting/annotate.js   ← ЛОКАЛЬНАЯ дизайн-песочница (noindex, исключены из deploy)
 404.html  images/  api/  llms.txt  robots.txt  sitemap.xml
@@ -33,7 +35,7 @@ scripts/deploy.sh   ← деплой статики
 worker/index.js  wrangler.toml   ← Cloudflare Worker формы (НЕ деплоится статикой; деплой через wrangler)
 ```
 
-Files NOT shipped to the server (dev-only, auto-excluded by deploy): `README*`, `*.md`, `CLAUDE.md`, `netlify.toml`, `vercel.json`, `.htaccess`, `scripts/`, `.agent/`, `_handoff/`, backups, `api/`, `consulting/{lab,iceberg-lab}.html`, `consulting/annotate.js`, `.lab-feedback.json`.
+Files NOT shipped to the server (dev-only, auto-excluded by deploy): `README*`, `*.md`, `CLAUDE.md`, `netlify.toml`, `vercel.json`, `.htaccess`, `scripts/`, `.agent/`, `_handoff/`, backups, `api/`, `consulting/{lab,iceberg-lab}.html`, `consulting/annotate.js`, `.lab-feedback.json`, `_recovered/`, `cases/_bodies/`, `cases/cases.json`.
 
 ---
 
@@ -96,7 +98,7 @@ Server tar backups are in `/root/backups/loops-www-*.tar.gz` on the VPS.
 
 1. **НЕ добавляй `?v=` к CSS/JS.** Раньше был костыль `styles.css?v=N` поверх `immutable`-кэша. Теперь nginx отдаёт CSS/JS как `private, no-cache` → браузер ревалидирует по ETag, edge не кэширует (`cf-cache: BYPASS`), правки видны сразу после деплоя. Версионировать URL больше не нужно — ссылайся на голые `styles.css` / `site.js` / `cases-data.js`.
 2. **Картинки кэшируются на 30 дней (`immutable`).** Поменял картинку под тем же именем — либо переименуй файл, либо сделай purge: `. ~/.cloudflare-loops.env && curl -X POST -H "Authorization: Bearer $CF_LOOPS_TOKEN" https://api.cloudflare.com/client/v4/zones/f41fb8f4fbfda243650e27e0f7db5bc8/purge_cache -d '{"purge_everything":true}'` (или CF → Caching → Purge Everything). Если purge даёт `9109/Authentication error` — IP-фильтр токена (см. Access).
-3. **Добавить кейс:** объект в `cases-data.js` (`LOOPS_CASES`) + картинка в `images/` → появляется на главной и `/cases.html`. Иконки ниш: `ICON.box/car/heart/factory/truck`. **Без `?v=`.** Подробный чек-лист — в Obsidian: `25_Loops/site/how-to-add-case.md`.
+3. **Добавить/править кейс = ЕДИНЫЙ ИСТОЧНИК + генератор.** Правишь `cases/cases.json` (карточка+мета+KPI) и `cases/_bodies/<id>.html` (текст) → `python3 scripts/build-cases.py` → генерит `cases-data.js` + `cases/case-<id>/index.html`. Синхронизируется везде (главная, /cases.html, детальная, «Другие кейсы»). **НЕ редактируй `cases-data.js` и `cases/case-*/index.html` руками — перезатрёт генератор.** Картинка в `images/`. Иконки ниш: `box/car/heart/factory/truck`.
 4. **Домен:** всё каноническое на `loops.uz`. `agent.loops.uz` → **301** → `loops.uz` (CF Redirect Rule, Dynamic `concat("https://loops.uz", http.request.uri.path)`). Не плодить ссылки на agent.
 5. **ИИ-краулеры РАЗРЕШЕНЫ** (CF «Managed robots.txt» выключен) — нужно для GEO (цитирование в ChatGPT/Gemini/Perplexity). **Не включай обратно.**
 6. **`/target/` = старая агентская страница** (полный таргет+бот контент с прежней главной). Карточка «Трафик + ИИ» на главной ведёт сюда. Не путать с новой главной-зонтиком.
@@ -107,10 +109,11 @@ Server tar backups are in `/root/backups/loops-www-*.tar.gz` on the VPS.
    - Бот сейчас `@isikava_bot` («Ассистент Loop`s»), чат `183174525`. `worker/` + `wrangler.toml` исключены из `deploy.sh` (не попадают на статик-сервер).
 8. **styles.css: базовые правила в КОНЦЕ файла** (после медиа-запросов ~стр.825). Мобильный override для селектора, объявленного в конце (напр. `.talks-grid`), НЕЛЬЗЯ класть в `@media` выше по файлу — базовое правило ниже его перебьёт. Клади такие override в `@media` в самом конце. (Так словили баг: talks-grid стоял 2-в-ряд на мобиле.)
 9. **Картинки кейсов квадратные (640×640).** `.case-photo` = `aspect-ratio: 1/1` + `object-fit: cover` (фото заполняет карточку край-в-край, без полей). Новые картинки делай ~квадратными, иначе обрежет.
-10. **Визуальная проверка — локально.** chrome-devtools MCP даёт `ERR_QUIC_PROTOCOL_ERROR` на проде loops.uz. Проверяй через `python3 -m http.server` в репо (файлы идентичны деплою), мобайл — через resize вьюпорта. На проде сверяй `curl`-ом (статусы/заголовки/контент).
+10. **Визуальная проверка.** chrome-devtools-mcp (`new_page`/`navigate_page` + `resize_page` для мобайла + `take_screenshot fullPage`) РАБОТАЕТ на проде loops.uz (этой сессией снимал главную/clinics/кейсы). Мобайл-ширина 390×844 — основной трафик с телефонов. На проде также сверяй `curl`-ом (статусы/заголовки/контент).
 11. **Локальный дизайн-ревью с разметкой:** `python3 scripts/lab-serve.py` (статика на :8765 + POST `/feedback` → `.lab-feedback.json`). Страница с `consulting/annotate.js` даёт клик-разметку (кнопка «✏️ Разметка»), «Отправить» пишет заметки в `.lab-feedback.json` — Claude читает оттуда. annotate.js само-отключается вне localhost.
 12. **lab-страницы держат CSS инлайн, боевые тянут внешний `/styles.css`.** При переносе lab→прод стили уезжают в styles.css, а браузер агрессивно кэширует `/styles.css` на localhost → если после правок «вёрстка поехала», это почти всегда старый CSS: **Cmd+Shift+R**. (lab-serve уже отдаёт `no-store`.)
-13. **Ассеты из КП/PDF:** растровые лого — `pdfimages -png` (пары image+smask склеить через Pillow: `alpha = smask`); векторное (айсберг) — экспорт SVG из исходника либо `pdftoppm -r 300` + кроп. Лого на тёмном фоне подаём **моно-белыми** (CSS `filter:brightness(0) invert(1)`, по наведению — ярче, НЕ возврат в цвет: тёмные лого исчезают). Готовое — в `images/clients/*`, `images/iceberg.svg`.
+13. **Ассеты из КП/PDF:** растровые лого — `pdfimages -png` (пары image+smask склеить через Pillow: `alpha = smask`); векторное (айсберг) — экспорт SVG из исходника либо `pdftoppm -r 300` + кроп. Лого на тёмном фоне подаём **моно-белыми** (CSS `filter:brightness(0) invert(1)`, по наведению — ярче, НЕ возврат в цвет: тёмные лого исчезают). Готовое — в `images/clients/*`, `images/iceberg.svg`. Pillow живёт в `/usr/bin/python3` (не в дефолтном — там dylib-конфликт в iCloud-воркетри).
+14. **Подстраницы ДОЛЖНЫ подключать `/site.js`** — иначе `.reveal`-элементы (hero-карточка, вставляемые карточки кейсов) остаются `opacity:0` у пользователей с включёнными анимациями (`.anim` на `<html>`), хотя в headless-браузере (reduced-motion) видны. Порядок в конце `<body>`: `cases-data.js` → инлайн-скрипт, вставляющий `.reveal`-карточки → **потом** `site.js` (его IntersectionObserver один раз сканит `.reveal`, поэтому карточки должны быть в DOM до него). Кейс-генератор это уже делает.
 
 ## Rules
 
