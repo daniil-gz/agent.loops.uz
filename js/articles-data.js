@@ -1,6 +1,30 @@
 // Registry of Articles (Useful Materials)
 window.articlesData = [
     {
+        id: 'leady-ne-pacienty',
+        category: 'marketing',
+        url: '/articles/leady-ne-pacienty/',
+        image: '/images/og-articles.jpg',
+        title: 'Лиды ≠ пациенты',
+        desc: 'Почему реклама клиники не окупается и что считать вместо количества лидов: доходимость, стоимость пациента, повторные визиты, ROMI.'
+    },
+    {
+        id: 'stoimost-pacienta-tashkent',
+        category: 'marketing',
+        url: '/articles/stoimost-pacienta-tashkent/',
+        image: '/images/og-articles.jpg',
+        title: 'Сколько стоит пациент в Ташкенте',
+        desc: 'Ориентиры стоимости привлечения пациента по нишам в 2026 и почему дешёвый лид не равно дешёвый пациент.'
+    },
+    {
+        id: 'pochemu-pacienty-ne-vozvrashayutsya',
+        category: 'marketing',
+        url: '/articles/pochemu-pacienty-ne-vozvrashayutsya/',
+        image: '/images/og-articles.jpg',
+        title: 'Почему пациенты не возвращаются',
+        desc: 'Где клиника теряет деньги после первого визита и как выстроить повторные визиты и удержание.'
+    },
+    {
         id: 'antigravity',
         category: 'ai-tools',
         url: '/articles/antigravity/',

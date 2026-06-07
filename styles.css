@@ -1328,3 +1328,14 @@ a.talk-title:hover,
   .case-meta .m-logo{ margin-left:0; }
   .case-prose{ font-size:16px; }
 }
+
+/* ============ ARTICLE PAGES ============ */
+.art-meta{ display:flex; gap:18px; flex-wrap:wrap; color:var(--text-faint); font-size:13px; margin-top:16px; }
+.art-lede{ font-size:19px; line-height:1.6; color:var(--text); margin:22px 0 0; padding:18px 22px;
+  background:var(--surface); border:1px solid var(--border); border-radius:14px; }
+.art-author{ display:flex; gap:16px; align-items:center; background:var(--surface); border:1px solid var(--border);
+  border-radius:16px; padding:18px 22px; margin:38px 0 0; }
+.art-author img{ width:56px; height:56px; border-radius:50%; object-fit:cover; flex:0 0 auto; }
+.art-author .a-n{ font-weight:700; color:var(--text); }
+.art-author .a-r{ font-size:13px; color:var(--text-faint); margin-top:2px; }
+.art-related{ display:flex; gap:14px; flex-wrap:wrap; margin-top:18px; }
