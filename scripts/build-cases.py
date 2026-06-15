@@ -16,6 +16,20 @@ CASES = json.load(open(os.path.join(ROOT, "cases/cases.json"), encoding="utf-8")
 def plain(s):
     return html.unescape(re.sub("<[^>]+>", "", s)).replace("\xa0", " ").strip()
 
+YM = '''<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js', 'ym');
+
+    ym(101239870, 'init', {webvisor:true, trackHash:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/101239870" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->'''
+
 # ---------- cases-data.js (cards) ----------
 ICON = {
  "box":'<svg viewBox="0 0 24 24" aria-hidden="true"><path pathLength="1" d="M3 7.5 12 3l9 4.5-9 4.5z"/><path pathLength="1" d="M3 7.5V16l9 4.5 9-4.5V7.5"/><path pathLength="1" d="M12 12v8.5"/></svg>',
@@ -141,6 +155,7 @@ def build_page(c):
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+{YM}
 <title>{c['title']}</title>
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <meta name="description" content="{c['desc']}" />
