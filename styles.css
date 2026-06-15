@@ -1400,3 +1400,10 @@ a.talk-title:hover,
 .talk-thumb.yt-loaded img,
 .talk-thumb.yt-loaded .talk-play,
 .talk-thumb.yt-loaded::after{ display:none; }
+
+/* ============ HIDE YANDEX METRIKA WIDGETS (informer / data-collection notice) ============ */
+a[href*="metrika.yandex.ru"],
+img[src*="informer.yandex"],
+[id*="yandex_metrika_informer"],
+[class*="ym-notification"], [class*="ymNotification"], [class*="ym-notice"],
+[class*="metrika-informer"] { display: none !important; }
