@@ -214,8 +214,6 @@ main{display:contents}
 
   /* filler content — чтобы видеть sticky при scroll */
   main{position:relative;z-index:1;padding:120px 28px 40px;max-width:1240px;margin:0 auto}
-  .lbl{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:var(--glass);font-family:var(--fm);font-size:10px;letter-spacing:.15em;color:var(--muted);text-transform:uppercase;margin-bottom:16px}
-  .lbl .d{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent)}
   h1.demo{font-family:var(--fd);font-weight:800;font-size:clamp(36px,5vw,64px);line-height:1;letter-spacing:-.03em;margin-bottom:20px}
   h1.demo em{font-style:normal;background:linear-gradient(180deg,#FAC14D,#FFE8B8 70%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
   p.demo{color:var(--muted);max-width:620px;margin-bottom:32px;font-size:17px;line-height:1.55}
@@ -1187,6 +1185,23 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
 #casesGrid .case-card:hover .case-go{color:var(--gold);gap:11px}
 #casesGrid .case-card:hover .case-go svg{transform:translateX(2px)}
 @media (prefers-reduced-motion:reduce){#casesGrid .case-card:hover{transform:none}}
+
+/* ===== Mobile-first responsive polish (audit fixes) ===== */
+/* «наведите курсор» — подсказка только для мыши; прячем на тач-устройствах */
+@media (hover:none){ .hint{display:none!important} }
+/* плотнее вертикальный ритм и читаемые заголовки на телефонах */
+@media (max-width:620px){
+  .sec{padding:64px 20px}
+  .lbl{padding:44px 20px 4px;gap:12px}
+  .tk{margin:14px 0 30px;padding:22px 0}
+  .hint{display:none}
+  h2{font-size:clamp(29px,8.2vw,40px)}
+  .sh{margin-bottom:36px;gap:20px}
+}
+@media (max-width:380px){
+  .sec{padding:54px 16px}
+  h2{font-size:clamp(26px,7.8vw,34px)}
+}
 </style>
 </head>
 <body>
