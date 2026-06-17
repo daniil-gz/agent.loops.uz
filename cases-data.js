@@ -134,7 +134,7 @@
     return (
       '<div class="card hoverable case-card reveal" id="case-' + c.id + '">' +
         '<div class="case-photo">' +
-          '<img class="case-img" src="images/' + c.img + '" alt="' + c.client + '" loading="lazy" />' +
+          '<img class="case-img" src="/images/' + c.img + '" alt="' + c.client + '" loading="lazy" />' +
           '<span class="case-niche">' + (c.niche || "") + c.cat + "</span>" +
         "</div>" +
         '<div class="case-body">' +

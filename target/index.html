@@ -1159,6 +1159,34 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
 @media (max-width:520px){.sf-bottom{flex-direction:column;gap:8px;text-align:center}}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}}
+
+/* ===== CASES — unified site-wide cards (rendered from cases-data.js) ===== */
+#casesGrid{--gold:#f3c866;--ease:cubic-bezier(.22,.61,.36,1);--border:rgba(245,243,235,.08);--border-hover:rgba(245,243,235,.18);--surface:#0e0e0d;--surface-2:#141413;--text:#f3f2ec;--text-dim:#9a978e;--text-faint:#8e8b82;--radius:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:980px){#casesGrid{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){#casesGrid{grid-template-columns:1fr}}
+#casesGrid .case-card{display:flex;flex-direction:column;padding:0;position:relative;overflow:hidden;color:inherit;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);backdrop-filter:none;-webkit-backdrop-filter:none;cursor:pointer;transition:border-color .3s var(--ease),transform .3s var(--ease),background .3s var(--ease)}
+#casesGrid .case-card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),color-mix(in oklab,var(--gold) 10%,transparent),transparent 60%);opacity:0;transition:opacity .4s var(--ease);pointer-events:none;z-index:0}
+#casesGrid .case-card:hover::before{opacity:1}
+#casesGrid .case-card>*{position:relative;z-index:1}
+#casesGrid .case-card:hover{border-color:var(--border-hover);transform:translateY(-3px);background:var(--surface-2)}
+#casesGrid .case-photo{position:relative;width:100%;aspect-ratio:1/1;background:var(--surface-2);overflow:hidden}
+#casesGrid .case-photo img.case-img{display:block;width:100%;height:100%;object-fit:cover}
+#casesGrid .case-niche{position:absolute;left:14px;bottom:14px;z-index:2;display:inline-flex;align-items:center;gap:7px;padding:7px 11px;border-radius:9px;background:rgba(10,10,9,.62);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(245,243,235,.14);font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text)}
+#casesGrid .case-niche svg{width:15px;height:15px;flex:none;color:var(--gold);fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#casesGrid .case-body{display:flex;flex-direction:column;flex:1;padding:26px 28px 28px}
+#casesGrid .case-client{font-size:14px;font-weight:700;color:var(--text);letter-spacing:-.01em}
+#casesGrid .case-metric{margin-top:14px}
+#casesGrid .case-num{display:block;font-size:clamp(34px,3.4vw,46px);font-weight:800;letter-spacing:-.04em;line-height:.98;color:var(--gold)}
+#casesGrid .case-num .unit{display:block;font-size:15px;font-weight:600;letter-spacing:-.01em;color:var(--text-dim);margin-top:11px;line-height:1.35}
+#casesGrid .case-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+#casesGrid .case-tag{padding:7px 12px;border-radius:9px;border:1px solid var(--border);font-size:13px;font-weight:600;color:var(--text-dim);background:rgba(255,255,255,.015);white-space:nowrap}
+#casesGrid .case-note{margin-top:16px;font-size:13.5px;color:var(--text-faint);line-height:1.45}
+#casesGrid .case-note b{color:var(--text-dim);font-weight:600}
+#casesGrid .case-go{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:24px;font-weight:700;font-size:14.5px;color:var(--text-dim);transition:color .2s var(--ease),gap .2s var(--ease)}
+#casesGrid .case-go svg{width:16px;height:16px;transition:transform .2s var(--ease)}
+#casesGrid .case-card:hover .case-go{color:var(--gold);gap:11px}
+#casesGrid .case-card:hover .case-go svg{transform:translateX(2px)}
+@media (prefers-reduced-motion:reduce){#casesGrid .case-card:hover{transform:none}}
 </style>
 </head>
 <body>
@@ -1451,7 +1479,7 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
     <div class="sh-l">
       <div class="eye"><span class="d"></span>Секция 06 — Кейсы</div>
       <h2>Результаты, которые <em>можно посчитать</em></h2>
-      <div class="sh-sub">Каждый проект — отдельная связка продукта, аудитории и воронки. Ниже — выборка бизнесов, которым мы выстроили систему за последние 18 месяцев.</div>
+      <div class="sh-sub">Каждый проект — отдельная связка продукта, аудитории и воронки. Ниже — бизнесы, которым мы выстроили систему за последние 18 месяцев.</div>
     </div>
     <a class="all" href="/cases/">
       Все кейсы
@@ -1459,141 +1487,7 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
     </a>
   </div>
 
-  <div class="kpibar" data-rv>
-    <div class="kpi"><div class="kpi-v">2,831</div><div class="kpi-l">Диалогов · TAK Fulfillment</div></div>
-    <div class="kpi"><div class="kpi-v">9+</div><div class="kpi-l">Ниш в портфолио</div></div>
-    <div class="kpi"><div class="kpi-v">×3</div><div class="kpi-l">Снижение цены лида · Chery</div></div>
-    <div class="kpi"><div class="kpi-v">$3.3</div><div class="kpi-l">Цена пациента · ViaMed</div></div>
-  </div>
-
-  <div class="grid">
-    
-    <!-- HERO CASE: TAK -->
-    <a class="card card--hero" data-rv data-tilt href="/cases/case-tak/">
-      <div class="card-media">
-        <div class="card-media-bg mb-auto"></div>
-        <div class="media-fg"><div class="big">2<span style="-webkit-text-fill-color:currentColor">831</span></div></div>
-        <div class="tag-grid">
-          <span class="tag tag-accent">E-commerce логистика</span>
-          <span class="tag">Ташкент</span>
-        </div>
-        <div class="date">B2B · 2024</div>
-      </div>
-      <div class="card-body">
-        <div class="card-title">TAK Fulfillment: 2 831 диалог за месяц без расширения штата</div>
-        <div class="card-excerpt">ИИ-агент обработал поток обращений без найма людей — стал «лучшим сотрудником года». Вся квалификация и routing клиентов автоматизированы.</div>
-        <div class="metrics">
-          <div class="m"><div class="m-v">2 831<span>/мес</span></div><div class="m-l">Диалогов</div></div>
-          <div class="m"><div class="m-v">$4.8<span></span></div><div class="m-l">Цена SQL</div></div>
-          <div class="m"><div class="m-v">0<span></span></div><div class="m-l">Новых сотрудников</div></div>
-        </div>
-        <div class="card-cta">
-          <div class="card-cta-t">В работе сейчас</div>
-          <span class="card-cta-btn">Смотреть кейс <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
-      </div>
-    </a>
-
-    <!-- SMALL: Chery -->
-    <a class="card card--sm" data-rv data-tilt href="/cases/case-chery/">
-      <div class="card-media">
-        <div class="card-media-bg mb-auto"></div>
-        <div class="media-fg"><div class="big big-mini">$4.5</div></div>
-        <div class="tag-grid"><span class="tag tag-accent">Автобизнес</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title">Chery: цена лида упала в 3 раза</div>
-        <div class="card-excerpt">Автоворонка для дилерского центра — 450+ заявок в месяц.</div>
-        <div class="metrics">
-          <div class="m"><div class="m-v">450+<span>/мес</span></div><div class="m-l">Заявок</div></div>
-          <div class="m"><div class="m-v">$4.5<span></span></div><div class="m-l">Цена лида</div></div>
-        </div>
-        <div class="card-cta">
-          <div class="card-cta-t">Дилерский центр</div>
-          <span class="card-cta-btn">Читать <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
-      </div>
-    </a>
-
-    <!-- SMALL: ViaMed -->
-    <a class="card card--sm" data-rv data-tilt href="/cases/case-viamed/">
-      <div class="card-media">
-        <div class="card-media-bg mb-dent"></div>
-        <div class="media-fg"><div class="big big-mini">150<sup>×</sup></div></div>
-        <div class="tag-grid"><span class="tag tag-accent">Медицина</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title">ViaMed: 150 пациентов за месяц при бюджете $500</div>
-        <div class="card-excerpt">С нуля до загруженного расписания клиники. 1 000+ заявок обработано ботом.</div>
-        <div class="metrics">
-          <div class="m"><div class="m-v">150<span>пац.</span></div><div class="m-l">За месяц</div></div>
-          <div class="m"><div class="m-v">$3.3<span></span></div><div class="m-l">Цена пациента</div></div>
-        </div>
-        <div class="card-cta">
-          <div class="card-cta-t">Клиника ViaMed</div>
-          <span class="card-cta-btn">Читать <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
-      </div>
-    </a>
-
-    <!-- SMALL: Basalt -->
-    <a class="card card--sm" data-rv data-tilt href="/cases/case-basalt/">
-      <div class="card-media">
-        <div class="card-media-bg mb-real"></div>
-        <div class="media-fg"><div class="big big-mini">3<sup>млрд</sup></div></div>
-        <div class="tag-grid"><span class="tag tag-accent">Производство · B2B</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title">Basalt: 3 млрд с одной сделки через LinkedIn</div>
-        <div class="card-excerpt">Крупный опт и выход на экспорт — 4+ встречи с ЛПР в месяц.</div>
-        <div class="metrics">
-          <div class="m"><div class="m-v">3 млрд<span></span></div><div class="m-l">Сделка</div></div>
-          <div class="m"><div class="m-v">4+<span>/мес</span></div><div class="m-l">Встречи</div></div>
-        </div>
-        <div class="card-cta">
-          <div class="card-cta-t">Выход на экспорт</div>
-          <span class="card-cta-btn">Читать <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
-      </div>
-    </a>
-
-    <!-- SMALL: NWL -->
-    <a class="card card--sm" data-rv data-tilt href="/cases/case-nwl/">
-      <div class="card-media">
-        <div class="card-media-bg mb-real"></div>
-        <div class="media-fg"><div class="big big-mini">×10<sup></sup></div></div>
-        <div class="tag-grid"><span class="tag tag-accent">3PL · B2B</span></div>
-      </div>
-      <div class="card-body">
-        <div class="card-title">NWL: стоимость B2B-контракта ↓ в 10 раз</div>
-        <div class="card-excerpt">AI-фильтр отсёк 90% мусорного трафика — только целевые клиенты дошли до менеджеров.</div>
-        <div class="metrics">
-          <div class="m"><div class="m-v">88<span></span></div><div class="m-l">B2B-лидов</div></div>
-          <div class="m"><div class="m-v">$21<span></span></div><div class="m-l">Цена клиента</div></div>
-        </div>
-        <div class="card-cta">
-          <div class="card-cta-t">3PL Логистика</div>
-          <span class="card-cta-btn">Читать <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 8L8 2M8 2H3M8 2V7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-        </div>
-      </div>
-    </a>
-    
-  </div>
-
-  <div class="logos" data-rv>
-    <div class="logos-lbl"><span class="d"></span>Доверяют · 9+ компаний в портфолио</div>
-    <div class="logos-row">
-      <span class="logo"><span class="dot"></span>TAK</span>
-      <span class="logo">BTS Group</span>
-      <span class="logo"><span class="dot"></span>NWL</span>
-      <span class="logo">ViaMed</span>
-      <span class="logo"><span class="dot"></span>FeedUp</span>
-      <span class="logo">IZZY</span>
-      <span class="logo"><span class="dot"></span>DCO</span>
-      <span class="logo">Basalt</span>
-      <span class="logo"><span class="dot"></span>Chery</span>
-    </div>
-  </div>
+  <div class="cases-grid" id="casesGrid" data-rv aria-label="Кейсы Loops"></div>
 </section>
 <!-- /CASES -->
 
@@ -2552,5 +2446,14 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
   ym(101239870, 'init', { ssr: true, webvisor: true, clickmap: true, ecommerce: "dataLayer" });
 </script>
 <noscript><div><img src="https://mc.yandex.ru/watch/101239870" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+<!-- CASES — single source of truth (cases.json → build-cases.py → cases-data.js) -->
+<script src="/cases-data.js"></script>
+<script>
+  (function () {
+    var grid = document.getElementById("casesGrid");
+    if (grid && window.renderCases) window.renderCases(grid);
+  })();
+</script>
 </body>
 </html>
