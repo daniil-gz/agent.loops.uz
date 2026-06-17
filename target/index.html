@@ -480,94 +480,6 @@ main{display:contents}
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
   }
-/* ===== CHAT (Чатбот.html) ===== */
-input,textarea{font-family:inherit;color:inherit;background:none;border:none;outline:none}
-
-  .sec{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:100px 28px}
-  .chat-row{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
-  @media (max-width:1040px){.chat-row{grid-template-columns:1fr;gap:40px}}
-
-  /* LEFT */
-  .eye{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:999px;border:1px solid var(--border2);background:var(--glass);backdrop-filter:blur(12px);font-family:var(--fm);font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;margin-bottom:20px}
-  .eye .d{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pu 1.8s infinite}
-  @keyframes pu{50%{opacity:.4}}
-  h2{font-family:var(--fd);font-weight:800;font-size:clamp(36px,5.2vw,66px);line-height:.95;letter-spacing:-.035em;text-transform:uppercase;margin-bottom:22px}
-  h2 em{font-style:normal;background:linear-gradient(180deg,#FAC14D 0%,#FFE8B8 60%,#fff);-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lead{font-size:17px;color:var(--muted);line-height:1.55;max-width:500px;margin-bottom:28px}
-  .lead b{color:var(--text);font-weight:500}
-  .lead .hl{color:var(--accent);font-weight:500}
-
-  .badges{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px}
-  .b{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-size:13px;color:var(--muted)}
-  .b svg{color:var(--accent);flex-shrink:0}
-
-  .suggests{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
-  .sg-l{font-family:var(--fm);font-size:11px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-bottom:10px;display:block}
-  .sg{padding:9px 14px;border-radius:999px;border:1px solid var(--border2);background:rgba(255,255,255,.03);font-size:13px;color:var(--text);transition:all .2s;display:inline-flex;align-items:center;gap:6px}
-  .sg:hover{border-color:rgba(250,193,77,.4);background:rgba(250,193,77,.06);color:var(--accent)}
-  .sg svg{opacity:.6}
-
-  /* CHAT */
-  .cc{position:relative;background:rgba(15,15,17,.72);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid var(--border2);border-radius:28px;padding:20px;box-shadow:0 40px 100px -20px rgba(0,0,0,.7);display:flex;flex-direction:column;min-height:580px;max-height:640px}
-  .cc::before{content:'';position:absolute;inset:-1px;border-radius:inherit;background:linear-gradient(135deg,rgba(250,193,77,.35),transparent 40%,transparent 60%,rgba(250,193,77,.1));-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;padding:1px;pointer-events:none}
-  .cfl{position:absolute;top:-14px;right:24px;padding:6px 12px;border-radius:999px;background:rgba(15,15,17,.92);backdrop-filter:blur(12px);border:1px solid var(--border2);font-family:var(--fm);font-size:10px;letter-spacing:.1em;color:var(--muted);display:inline-flex;align-items:center;gap:6px;text-transform:uppercase;z-index:3}
-  .cfl .dg{width:6px;height:6px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:pu 1.6s infinite}
-
-  .ch-h{display:flex;align-items:center;gap:12px;padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:0;flex-shrink:0}
-  .av{position:relative;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#FAC14D,#8B5E22);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;color:#0a0a0a;font-size:17px;flex-shrink:0;overflow:hidden}
-  .av::after{content:'';position:absolute;bottom:-1px;right:-1px;width:13px;height:13px;border-radius:50%;background:#4ade80;border:2px solid #0d0d0d;box-shadow:0 0 8px #4ade80}
-  .ch-n{font-weight:600;font-size:15px;letter-spacing:-.005em;display:flex;align-items:center;gap:6px}
-  .ch-n .vrf{width:14px;height:14px;color:var(--accent)}
-  .ch-r{font-size:12px;color:var(--muted);margin-top:2px}
-  .ch-m{margin-left:auto;font-family:var(--fm);font-size:10px;color:var(--dim);letter-spacing:.08em;text-transform:uppercase}
-
-  .str-wrap{flex:1;overflow-y:auto;overflow-x:hidden;padding:20px 4px;scroll-behavior:smooth;min-height:0}
-  .str-wrap::-webkit-scrollbar{width:4px}
-  .str-wrap::-webkit-scrollbar-track{background:transparent}
-  .str-wrap::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
-  .str{display:flex;flex-direction:column;gap:14px}
-  .msg{max-width:88%;padding:12px 16px;border-radius:18px;font-size:14.5px;line-height:1.5;word-wrap:break-word;opacity:0;transform:translateY(10px);animation:mi .5s cubic-bezier(.22,.9,.2,1) forwards}
-  @keyframes mi{to{opacity:1;transform:translateY(0)}}
-  .msg.u{align-self:flex-end;background:rgba(255,255,255,.07);border:1px solid var(--border);border-bottom-right-radius:6px}
-  .msg.b{align-self:flex-start;background:linear-gradient(135deg,rgba(250,193,77,.09),rgba(250,193,77,.02));border:1px solid rgba(250,193,77,.18);border-bottom-left-radius:6px}
-  .msg.b strong{color:var(--accent);font-weight:600}
-  .meta{font-family:var(--fm);font-size:10px;color:var(--dim);margin-top:4px;letter-spacing:.04em}
-  .msg.b+.meta{align-self:flex-start;margin-left:4px}
-  .msg.u+.meta{align-self:flex-end;margin-right:4px}
-
-  .typ{align-self:flex-start;display:inline-flex;gap:5px;padding:14px 18px;border-radius:18px;background:rgba(250,193,77,.05);border:1px solid rgba(250,193,77,.12);border-bottom-left-radius:6px;opacity:0;animation:mi .4s forwards}
-  .typ span{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:td 1.2s infinite ease-in-out}
-  .typ span:nth-child(2){animation-delay:.15s}
-  .typ span:nth-child(3){animation-delay:.3s}
-  @keyframes td{0%,60%,100%{opacity:.3;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
-
-  .cur{display:inline-block;width:2px;height:1em;background:var(--accent);vertical-align:-2px;margin-left:2px;animation:bl 1s steps(2) infinite;border-radius:1px}
-  @keyframes bl{50%{opacity:0}}
-
-  .ch-f{flex-shrink:0;padding-top:14px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px;margin-top:10px}
-  .inp-wrap{flex:1;display:flex;align-items:center;gap:10px;padding:12px 16px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid var(--border2);transition:border-color .2s}
-  .inp-wrap:focus-within{border-color:rgba(250,193,77,.4);background:rgba(250,193,77,.04)}
-  .inp{flex:1;font-size:14px;line-height:1.4;min-width:0}
-  .inp::placeholder{color:var(--dim)}
-  .snd{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#0a0a0a;display:inline-flex;align-items:center;justify-content:center;transition:transform .2s,box-shadow .2s,opacity .2s}
-  .snd:hover:not(:disabled){transform:scale(1.05);box-shadow:0 0 0 6px rgba(250,193,77,.15)}
-  .snd:disabled{opacity:.3;cursor:not-allowed}
-
-  .hint{position:absolute;right:-22px;top:44%;display:flex;align-items:center;gap:10px;pointer-events:none}
-  @media (max-width:1040px){.hint{display:none}}
-  .hint-tx{font-family:var(--fd);font-size:12px;color:var(--accent);letter-spacing:.02em;writing-mode:vertical-rl;transform:rotate(180deg);opacity:.8}
-  .ar-curve{color:var(--accent);opacity:.7}
-
-  /* Welcome overlay (first-time state) */
-  .welcome{text-align:center;padding:60px 20px;display:flex;flex-direction:column;align-items:center;gap:16px}
-  .welcome-av{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,#FAC14D,#8B5E22);display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:700;color:#0a0a0a;font-size:24px;box-shadow:0 0 40px rgba(250,193,77,.25);margin-bottom:4px;position:relative}
-  .welcome-av::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(250,193,77,.25);animation:pulseRing 2.4s ease-out infinite}
-  @keyframes pulseRing{0%{transform:scale(.9);opacity:.6}100%{transform:scale(1.3);opacity:0}}
-  .welcome-t{font-family:var(--fd);font-weight:700;font-size:20px;letter-spacing:-.01em}
-  .welcome-s{color:var(--muted);font-size:14px;line-height:1.55;max-width:360px}
-  .welcome-tip{margin-top:20px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;border:1px solid var(--border);background:rgba(255,255,255,.02);font-family:var(--fm);font-size:10px;letter-spacing:.1em;color:var(--dim);text-transform:uppercase}
-
-  @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}}
 /* ===== TICKER (Чатбот Ticker.html) ===== */
 .lbl{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:80px 28px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
   .eye{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:999px;border:1px solid var(--border2);background:rgba(255,255,255,.03);font-family:var(--fm);font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
@@ -1476,76 +1388,12 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
 </section>
 <!-- /FEATURES -->
 
-<!-- ========== SECTION: CHAT ========== -->
 <div class="dots"></div></div>
-<section class="sec">
-  <div class="chat-row">
-    <div class="col">
-      <div class="eye"><span class="d"></span>Секция 04 — Живой агент</div>
-      <h2>Проверь мощь ИИ <em>в деле</em></h2>
-      <p class="lead">Попробуйте пообщаться с нашим демо-агентом прямо сейчас. Он обучен на реальных скриптах, <b>понимает свободный текст</b> и <b>держит контекст диалога</b>.</p>
-
-      <div class="badges">
-        <span class="b"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M9 1L2 9h5l-1 6 7-8H8l1-6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>Мгновенный ответ</span>
-        <span class="b"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 2a3 3 0 0 0-3 3v.5A2.5 2.5 0 0 0 4 10V11a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1a2.5 2.5 0 0 0-1-4.5V5a3 3 0 0 0-3-3z" stroke="currentColor" stroke-width="1.6"/><path d="M8 2v11" stroke="currentColor" stroke-width="1.6"/></svg>Умный диалог</span>
-        <span class="b"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.6"/><path d="M8 4v4l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>24 / 7</span>
-        <span class="b"><svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 11V5a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6"/><path d="M6 8h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>RU / UZ</span>
-      </div>
-
-      <div>
-        <span class="sg-l">Или попробуйте:</span>
-        <div class="suggests" id="suggests">
-          <button class="sg" data-sg="Сколько стоит внедрение?"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6m-3-3v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Сколько стоит?</button>
-          <button class="sg" data-sg="Как работает система?"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6m-3-3v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Как это работает?</button>
-          <button class="sg" data-sg="Какие сроки внедрения?"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6m-3-3v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Сроки</button>
-          <button class="sg" data-sg="Подойдёт ли для недвижимости?"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M3 6h6m-3-3v6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>Подойдёт для моей ниши?</button>
-        </div>
-      </div>
-    </div>
-
-    <div class="col" style="position:relative">
-      <aside class="cc" id="cc" aria-label="Демо чат с ИИ">
-        <div class="cfl"><span class="dg"></span>LIVE · GPT-4</div>
-        <div class="ch-h">
-          <div class="av" aria-hidden="true">Д</div>
-          <div>
-            <div class="ch-n">Daniil · ИИ-агент
-              <svg class="vrf" viewBox="0 0 14 14" fill="none" aria-label="verified"><path d="M7 1l1.5 1.2 1.9-.3.5 1.8 1.8.5-.3 1.9L13.6 7l-1.2 1.5.3 1.9-1.8.5-.5 1.8-1.9-.3L7 13.6l-1.5-1.2-1.9.3-.5-1.8-1.8-.5.3-1.9L.4 7l1.2-1.5L1.3 3.6l1.8-.5L3.6.3l1.9.3L7 1z" fill="currentColor"/><path d="M4.5 7l2 2 3-4" stroke="#0a0a0a" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="ch-r">Loops · отвечает мгновенно</div>
-          </div>
-          <div class="ch-m">Online</div>
-        </div>
-
-        <div class="str-wrap" id="strWrap">
-          <div class="str" id="str">
-            <div class="welcome" id="welcome">
-              <div class="welcome-av" aria-hidden="true">Д</div>
-              <div class="welcome-t">Привет 👋 Я ИИ-агент Loops</div>
-              <div class="welcome-s">Готов ответить на ваши вопросы о системе автоматизации продаж, сроках, стоимости и интеграциях.</div>
-              <div class="welcome-tip">↓ напишите ниже или выберите слева</div>
-            </div>
-          </div>
-        </div>
-
-        <form class="ch-f" id="frm" autocomplete="off">
-          <div class="inp-wrap">
-            <input class="inp" id="inp" type="text" placeholder="Напишите сообщение…" aria-label="Сообщение" />
-          </div>
-          <button class="snd" id="snd" type="submit" disabled aria-label="Отправить">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8l12-6-4 14-2.5-5.5L2 8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
-          </button>
-        </form>
-      </aside>
-    </div>
-  </div>
-</section>
-<!-- /CHAT -->
 
 <!-- ========== SECTION: TICKER ========== -->
 </div>
 <div class="lbl">
-  <div class="eye"><span class="d"></span>Секция 05 — Ниши</div>
+  <div class="eye"><span class="d"></span>Секция 04 — Ниши</div>
   <div class="lbl-r">Где работает система</div>
 </div>
 
@@ -1574,7 +1422,7 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
 <div class="dots"></div></div>
 <section class="sec">
   <div class="sh">
-    <div class="eye"><span class="d"></span>Секция 06 — Процесс</div>
+    <div class="eye"><span class="d"></span>Секция 05 — Процесс</div>
     <h2>Этапы <em>работы</em></h2>
   </div>
 
@@ -1601,7 +1449,7 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
 <section class="sec" id="cases">
   <div class="sh" data-rv>
     <div class="sh-l">
-      <div class="eye"><span class="d"></span>Секция 07 — Кейсы</div>
+      <div class="eye"><span class="d"></span>Секция 06 — Кейсы</div>
       <h2>Результаты, которые <em>можно посчитать</em></h2>
       <div class="sh-sub">Каждый проект — отдельная связка продукта, аудитории и воронки. Ниже — выборка бизнесов, которым мы выстроили систему за последние 18 месяцев.</div>
     </div>
@@ -1966,7 +1814,7 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
 <section class="sec" id="content">
   <div class="grid">
     <aside class="left" data-rv>
-      <div class="eye"><span class="d"></span>Секция 09 — Вопросы</div>
+      <div class="eye"><span class="d"></span>Секция 08 — Вопросы</div>
       <h2>Часто <em>спрашивают</em></h2>
       <div class="lead">Собрали то, что слышим на первой встрече каждую неделю. Не нашли свой вопрос — напишите нам напрямую, отвечаем за 4 часа.</div>
 
@@ -2018,7 +1866,7 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
   <div class="leadform-wrap">
     <!-- LEFT -->
     <aside class="left" data-rv>
-      <span class="eye"><span class="d"></span>Секция 10 — Заявка</span>
+      <span class="eye"><span class="d"></span>Секция 09 — Заявка</span>
       <h2>Давайте <em>познакомимся</em></h2>
       <div class="lead">Ответьте на 4 вопроса — и мы подготовим индивидуальный сценарий внедрения системы под ваш бизнес. Без навязчивых звонков.</div>
 
@@ -2156,7 +2004,7 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
         <div class="succ" id="succ">
           <div class="succ-ic"><svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M9 18l6 6 12-14" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div class="succ-t">Готово! Заявка отправлена</div>
-          <div class="succ-s">Свяжемся с вами в течение 4 часов в рабочее время. А пока — можно посмотреть демо ИИ-агента или почитать кейсы.</div>
+          <div class="succ-s">Свяжемся с вами в течение 4 часов в рабочее время. А пока — можно почитать наши кейсы.</div>
           <div class="succ-meta">
             <div>Заявка · <b id="succ-id">#A-2419</b></div>
             <div>Отклик до · <b id="succ-eta">18:40</b></div>
@@ -2337,135 +2185,6 @@ button,a,input,select,textarea{font-family:inherit;color:inherit}
       });
     });
   }
-
-})();
-</script>
-<!-- CHAT scripts -->
-<script>
-(function(){
-"use strict";
-
-  const str=document.getElementById('str');
-  const wrap=document.getElementById('strWrap');
-  const welcome=document.getElementById('welcome');
-  const frm=document.getElementById('frm');
-  const inp=document.getElementById('inp');
-  const snd=document.getElementById('snd');
-  const rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  inp.addEventListener('input',()=>{snd.disabled=!inp.value.trim()});
-
-  const hist=[];
-  let busy=false;
-
-  // pattern-matching fallback
-  const FALLBACKS=[
-    {k:['стоимост','цен','сколько стоит','сколько стоит внедр','тариф','прайс'],
-     a:'Внедрение начинается от **9 000 000 сум/мес** — это пакет «AI-Фильтр»: бот + CRM. Самый популярный — **«Система»** за **12 000 000 сум/мес**: под ключ, с рекламой. А для лидеров рынка — **«Масштаб»** за **24 000 000 сум/мес**. Под какую нишу считаем?'},
-    {k:['как работ','что дела','схема','процесс','что внутри'],
-     a:'Схема такая: **таргет** приводит лида → **ИИ-агент** принимает его в мессенджере, квалифицирует, отвечает на вопросы → **передаёт тёплую заявку** менеджеру в CRM. Результат — менеджер звонит только тем, кто уже готов покупать.'},
-    {k:['срок','когда','как быстро','за сколько','time'],
-     a:'**До 14 дней** — техсборка: интервью с вами, прописание скриптов, интеграция. В день запуска трафика — первые целевые заявки. Окупаемость **6–8 недель**.'},
-    {k:['недвиж','квартир','риэлтор','застройщик'],
-     a:'Недвижимость — наш **ключевой** сегмент. Работаем с застройщиками и агентствами в Ташкенте и Алматы. Средний результат: цена лида **↓ 60%**, конверсия в встречу **× 3**. Покажу кейс?'},
-    {k:['авто','машин','салон','дилер'],
-     a:'Автосалоны — частый кейс. Типовой результат: **ROI 420%**, 180+ квалифицированных заявок в месяц. ИИ отвечает на вопросы по моделям, ценам, trade-in — менеджер получает только горячих.'},
-    {k:['b2b','опт','производ','дистрибуц','корпоратив'],
-     a:'B2B и опт — да, работаем. Важно: цикл дольше, зато чеки выше. ИИ квалифицирует по нише, объёму, срочности. Передаём менеджеру с готовым брифом.'},
-    {k:['узбек','uzbek','русский','язык','двуязыч','мультиязыч'],
-     a:'Да, ИИ **полностью двуязычен** — русский и узбекский (и кириллица, и латиница). Голосовые распознаёт. Автоматически отвечает на том языке, на котором к нему обратились.'},
-    {k:['гаранти','возврат','риск','не получит'],
-     a:'Прозрачная аналитика с первого дня + KPI прописываем в договор. Если в оговоренный срок не выходим на показатели — **продолжаем работу бесплатно** до результата.'},
-    {k:['crm','bitrix','амо','amocrm','интеграц','подключ'],
-     a:'Интегрируемся с **Bitrix24, amoCRM, Google Sheets**, Telegram, WhatsApp Business, Instagram Direct. CRM у вас нет? Настроим с нуля.'},
-    {k:['отличи','чат-бот','обычн','чем лучш','за 200','за 300'],
-     a:'Обычный бот — дерево кнопок: «Жми 1, чтобы узнать цену». Наш агент — **нейросеть на GPT**, обученная на ваших скриптах. Понимает свободный текст, держит контекст, импровизирует в рамках сценария.'},
-    {k:['демо','посмотреть','увидеть','показ','пример'],
-     a:'Мы сейчас и есть демо 🙂 Или — листайте вверх, там видео на 3 минуты. Хотите разбор под вашу нишу? Оставьте контакт внизу страницы — соберу стратегию за 2 дня.'},
-    {k:['привет','здравст','hi','hello','добрый','салам'],
-     a:'Привет 👋 Я ИИ-агент Loops. Расскажите, чем занимаетесь? Подскажу, как система поможет именно вам.'},
-    {k:['спасиб','thx','благодар'],
-     a:'Всегда пожалуйста 🙂 Если захотите разбор под вашу задачу — оставьте контакт внизу, соберём персональный план.'},
-  ];
-
-  function match(q){
-    const low=q.toLowerCase();
-    for(const f of FALLBACKS){if(f.k.some(k=>low.includes(k)))return f.a}
-    return 'Хороший вопрос. Чтобы ответить точно — расскажите о вашем бизнесе: ниша, средний чек, откуда сейчас идут заявки. На этих данных я смогу прикинуть стратегию и посчитать окупаемость.';
-  }
-
-  function addUser(text){
-    const el=document.createElement('div');
-    el.className='msg u';
-    el.textContent=text;
-    str.appendChild(el);
-    const m=document.createElement('div');
-    m.className='meta';
-    m.textContent='Вы · '+time();
-    str.appendChild(m);
-    scroll();
-  }
-  function addTyping(){
-    const el=document.createElement('div');
-    el.className='typ';el.id='_typ';
-    el.innerHTML='<span></span><span></span><span></span>';
-    str.appendChild(el);scroll();
-    return el;
-  }
-  async function addBot(text){
-    const el=document.createElement('div');
-    el.className='msg b';str.appendChild(el);
-    const m=document.createElement('div');
-    m.className='meta';
-    m.textContent='Daniil · ИИ-агент · '+time();
-    str.appendChild(m);
-    if(rm){el.innerHTML=fmt(text);scroll();return}
-    // typewriter
-    let i=0;
-    return new Promise(res=>{
-      (function tk(){
-        el.innerHTML=fmt(text.slice(0,i))+(i<text.length?'<span class="cur"></span>':'');
-        scroll();
-        if(i<=text.length){i++;setTimeout(tk,14+Math.random()*18)}
-        else{el.innerHTML=fmt(text);res()}
-      })();
-    });
-  }
-  function fmt(t){return t.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>')}
-  function time(){const d=new Date();return d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0')}
-  function scroll(){requestAnimationFrame(()=>{wrap.scrollTop=wrap.scrollHeight})}
-  function killWelcome(){if(welcome&&welcome.parentNode){welcome.style.transition='opacity .3s';welcome.style.opacity='0';setTimeout(()=>welcome.remove(),300)} const sg=document.getElementById('suggests'),sgl=document.querySelector('.sg-l');if(sg){sg.style.transition='opacity .3s,max-height .4s,margin .3s';sg.style.maxHeight=sg.scrollHeight+'px';requestAnimationFrame(()=>{sg.style.opacity='0';sg.style.maxHeight='0px';sg.style.marginTop='0';sg.style.pointerEvents='none';setTimeout(()=>sg.remove(),420)})}if(sgl){sgl.style.transition='opacity .3s';sgl.style.opacity='0';setTimeout(()=>sgl.remove(),320)}}
-
-  async function send(text){
-    if(busy||!text.trim())return;
-    busy=true;snd.disabled=true;inp.disabled=true;
-    killWelcome();
-    addUser(text);
-    hist.push({role:'user',content:text});
-    inp.value='';
-    await sleep(400+Math.random()*300);
-    const typ=addTyping();
-    let answer;
-    try{
-      if(window.claude&&window.claude.complete){
-        const sys='Ты — дружелюбный ИИ-агент Loops (loops.uz) из Ташкента. Отвечай коротко (2–3 предложения), на русском, без лишних вежливостей. Формат: можешь выделять ключевое через **жирный** (двойные звёздочки). Знание о продукте: автоматизация продаж через таргет + ИИ-чат-бота. Тарифы: AI-Фильтр 9 000 000 сум/мес (бот+CRM), Система 12 000 000 сум/мес (под ключ с рекламой), Масштаб 24 000 000 сум/мес (для лидеров рынка). Внедрение 14 дней, окупаемость 6–8 недель. Работаем с недвижимостью, авто, медициной, B2B, опт в Узбекистане и Казахстане. Интеграции: Bitrix24, amoCRM, Google Sheets, Telegram, WhatsApp, Instagram. ИИ двуязычен: русский/узбекский. В конце ответа мягко предложи оставить контакт или задать уточняющий вопрос.';
-        const resp=await window.claude.complete({messages:[{role:'user',content:sys+'\n\n---\nИстория диалога и текущий вопрос:\n'+hist.map(h=>(h.role==='user'?'Клиент: ':'Агент: ')+h.content).join('\n')}]});
-        answer=(resp||'').trim()||match(text);
-      }else{
-        answer=match(text);
-      }
-    }catch(e){answer=match(text)}
-    typ.remove();
-    await addBot(answer);
-    hist.push({role:'assistant',content:answer});
-    busy=false;inp.disabled=false;snd.disabled=!inp.value.trim();
-    inp.focus();
-  }
-
-  function sleep(ms){return new Promise(r=>setTimeout(r,ms))}
-
-  frm.addEventListener('submit',e=>{e.preventDefault();send(inp.value)});
-  document.querySelectorAll('.sg').forEach(b=>b.addEventListener('click',()=>{inp.value=b.dataset.sg;snd.disabled=false;send(b.dataset.sg)}));
 
 })();
 </script>
