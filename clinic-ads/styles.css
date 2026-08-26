@@ -46,11 +46,13 @@ img { display: block; max-width: 100%; }
   top: 0;
   left: 0;
   right: 0;
+  width: min(100% - 36px, 1120px);
+  margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 72px;
-  padding: 14px 18px;
+  padding: 14px 0;
 }
 
 .brand img { width: 88px; height: auto; }
@@ -127,16 +129,17 @@ p { margin-top: 0; }
 h1 {
   max-width: 920px;
   margin-bottom: 24px;
-  font-family: "Oswald", sans-serif;
-  font-size: clamp(58px, 16vw, 124px);
-  font-weight: 700;
+  font-size: clamp(49px, 13.8vw, 112px);
+  font-weight: 800;
   line-height: 0.92;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.05em;
+  word-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-h1 span,
-h1 strong { display: block; }
+h1 > span,
+h1 strong,
+h1 strong span { display: block; }
 h1 strong { color: var(--gold); }
 
 .hero-copy {
@@ -217,10 +220,11 @@ h1 strong { color: var(--gold); }
 .section-intro h2,
 .diagnostic h2 {
   margin-bottom: 14px;
-  font-family: "Oswald", sans-serif;
-  font-size: clamp(38px, 10.2vw, 72px);
-  line-height: 1.02;
-  letter-spacing: -0.025em;
+  font-size: clamp(34px, 8.8vw, 64px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  word-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -259,11 +263,10 @@ h1 strong { color: var(--gold); }
 .metric-value {
   margin: 0 0 4px;
   color: var(--gold);
-  font-family: "Oswald", sans-serif;
-  font-size: clamp(68px, 19vw, 112px);
-  font-weight: 700;
+  font-size: clamp(62px, 17vw, 104px);
+  font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.06em;
 }
 
 .metric-value sup { font-size: 0.42em; vertical-align: top; }
@@ -285,7 +288,7 @@ h1 strong { color: var(--gold); }
   align-items: center;
   gap: 14px;
   color: var(--muted);
-  font-family: "Oswald", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 28px;
 }
 
@@ -375,31 +378,89 @@ h1 strong { color: var(--gold); }
 
 .steps li > span {
   color: var(--gold);
-  font-family: "Oswald", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-size: 18px;
+  font-weight: 800;
 }
 
 .steps h3 { margin-bottom: 7px; font-size: 20px; }
 .steps p { margin: 0; color: var(--muted); font-size: 14px; }
 
-.plan { padding: 26px; }
+.plan {
+  display: flex;
+  flex-direction: column;
+  padding: 26px;
+}
+
 .plan-featured { border-color: var(--gold); background: var(--panel-soft); }
 .plan-name,
 .plan-badge { margin-bottom: 10px; }
-.plan-price { margin-bottom: 24px; font-family: "Oswald", sans-serif; font-size: 42px; font-weight: 700; line-height: 1; }
-.plan-price span { display: block; margin-top: 8px; color: var(--muted); font-family: "Manrope", sans-serif; font-size: 13px; font-weight: 600; }
+.plan h3 { margin-bottom: 10px; font-size: 28px; line-height: 1.1; letter-spacing: -0.035em; }
+.plan-summary { min-height: 68px; margin: 0; color: var(--muted); font-size: 14px; }
 
 .plan ul {
   display: grid;
   gap: 0;
-  margin: 0 0 26px;
+  margin: 24px 0 26px;
   padding: 0;
   list-style: none;
 }
 
-.plan li { padding: 11px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.09); color: #d8d4ca; font-size: 14px; }
-.plan .button { width: 100%; }
-.budget { margin: 18px 0 0; color: var(--muted); font-size: 13px; text-align: center; }
+.plan li { padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.09); color: #d8d4ca; font-size: 14px; }
+
+.plan-action {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(120px, 0.85fr);
+  margin-top: auto;
+  overflow: hidden;
+  border-radius: 11px;
+  box-shadow: 0 14px 36px rgba(243, 200, 102, 0.13);
+}
+
+.plan-action .button {
+  min-width: 0;
+  min-height: 72px;
+  padding-inline: 12px;
+  border-radius: 0;
+  font-size: 13px;
+}
+
+.plan-price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  margin: 0;
+  padding: 10px 8px;
+  background: var(--white);
+  color: var(--black);
+  text-align: center;
+}
+
+.plan-price strong {
+  font-size: clamp(21px, 6vw, 30px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.055em;
+  white-space: nowrap;
+}
+
+.plan-price span { margin-top: 5px; color: #4d4b46; font-size: 9px; font-weight: 700; white-space: nowrap; }
+
+.budget {
+  max-width: 720px;
+  margin: 20px auto 0;
+  padding: 14px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+
+.budget strong { color: var(--white); }
 
 .more-links {
   display: flex;
@@ -447,13 +508,13 @@ h1 strong { color: var(--gold); }
 .faq details[open] { border-color: var(--line); }
 
 footer {
-  display: grid;
-  gap: 16px;
-  padding: 38px 18px 110px;
+  padding: 38px 0 110px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--muted);
   font-size: 12px;
 }
+
+.footer-inner { display: grid; gap: 16px; }
 
 footer img { width: 80px; }
 footer p { margin: 8px 0 0; }
@@ -487,7 +548,6 @@ footer p { margin: 8px 0 0; }
 .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
 @media (min-width: 680px) {
-  .topbar { padding-inline: 32px; }
   .brand img { width: 104px; }
   .topbar-link { padding: 11px 16px; font-size: 13px; }
   .hero { min-height: 850px; }
@@ -502,10 +562,12 @@ footer p { margin: 8px 0 0; }
 }
 
 @media (min-width: 980px) {
-  .hero { min-height: 900px; align-items: center; }
+  .hero { min-height: 720px; align-items: center; }
   .hero-photo img { object-position: center; opacity: 0.64; }
   .hero-shade { background: rgba(5, 5, 5, 0.2); box-shadow: inset 680px 0 300px -180px #050505, inset 0 -260px 170px -100px #050505; }
-  .hero-content { padding-top: 160px; padding-bottom: 110px; }
+  .hero-content { padding-top: 120px; padding-bottom: 50px; }
+  h1 { max-width: 880px; font-size: 76px; }
+  .hero-copy { max-width: 660px; margin-bottom: 20px; font-size: 18px; }
   .proof,
   .cases,
   .system,
@@ -516,12 +578,13 @@ footer p { margin: 8px 0 0; }
   .metric { min-height: 220px; padding: 32px; }
   .case-card,
   .plan { padding: 34px; }
+  .plan-action .button { font-size: 14px; }
   .steps li { grid-template-columns: 70px 1fr; padding: 30px 0; }
   .mobile-cta { display: none; }
-  footer {
+  footer { padding: 46px 0; }
+  .footer-inner {
     grid-template-columns: 1fr auto;
     align-items: end;
-    padding: 46px max(32px, calc((100vw - 1120px) / 2));
   }
   .footer-brand { display: block; }
   .footer-brand p { text-align: left; }

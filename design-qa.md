@@ -2,53 +2,53 @@
 
 ## Evidence
 
-- Source visual truth: `/Users/daniilgazizov/.codex/generated_images/01a03d66-c1b1-7452-84f4-5f8784f2fd5f/exec-59c0f5cb-306a-4087-82fc-cf7f1cac6b58.png`
-- Source pixels: `853 × 1844`. The source is a tall concept board rather than a browser capture, so it is used as the art-direction and hero-composition target.
-- Browser-rendered implementation: `http://127.0.0.1:8765/clinic-ads/`
-- Mobile implementation screenshot: `_handoff/clinic-ads/mobile-top-pass-2.png`
-- Desktop implementation screenshot: `_handoff/clinic-ads/desktop-top.png`
-- Mobile viewport and implementation pixels: `390 × 844` CSS px and `390 × 844` screenshot pixels.
-- Desktop viewport and implementation pixels: `1440 × 900` CSS px and `1440 × 900` screenshot pixels.
-- Density normalization: the source was scaled proportionally to 390 px width for the comparison board; no browser or device frame was included.
-- State: initial hero after entry animation; mobile sticky CTA hidden while the hero CTA is visible.
-- Full-view comparison: `_handoff/clinic-ads/comparison-pass-2.jpg`
-- Focused evidence: `_handoff/clinic-ads/mobile-metrics.png`, `_handoff/clinic-ads/mobile-roi.png`, `_handoff/clinic-ads/mobile-offer.png`, `_handoff/clinic-ads/mobile-faq-open.png`.
+- Primary source visual: `/Users/daniilgazizov/.codex/generated_images/01a03d66-c1b1-7452-84f4-5f8784f2fd5f/exec-59c0f5cb-306a-4087-82fc-cf7f1cac6b58.png` (`853 × 1844`).
+- Pricing reference: `https://potapovfx.com/`, captured at `_handoff/clinic-ads-audit2/04-potapov-price.png`.
+- Implementation: `http://127.0.0.1:8765/clinic-ads/`.
+- Mobile viewport: `390 × 844` CSS px; screenshot `_handoff/clinic-ads-audit2/05-revised-hero.png`.
+- Desktop viewport: `1280 × 720` CSS px; screenshot `_handoff/clinic-ads-audit2/08-revised-desktop-hero.png`.
+- Revised pricing evidence: `_handoff/clinic-ads-audit2/07-revised-plan-action.png` and `_handoff/clinic-ads-audit2/10-revised-desktop-plan-actions.png`.
+- Normalized comparisons: `_handoff/clinic-ads-audit2/11-hero-comparison.jpg` and `_handoff/clinic-ads-audit2/12-pricing-comparison.jpg`.
+- State: entry animation complete; counters tested after entering viewport; mobile sticky CTA hidden while the hero CTA is visible.
 
 ## Required fidelity surfaces
 
-- Fonts and typography: Oswald reproduces the condensed uppercase display treatment; Manrope preserves the existing Loops body system. Weight, line height, wrapping, and hierarchy remain readable at 390 px.
-- Spacing and layout rhythm: mobile gutters are 18 px, controls meet touch-size expectations, cards and section spacing are consistent. Desktop layout has no horizontal overflow at 1440 px.
-- Colors and visual tokens: black, ivory, and restrained gold match the selected direction. Contrast remains strong across body copy and controls.
-- Image quality and asset fidelity: a dedicated 1800 × 1126 generated clinic-reception photograph is used, compressed to a 361 KB JPEG. The subject, warm lighting, and black/gold art direction match the reference; no placeholder imagery or code-drawn asset substitutes remain.
-- Copy and content: the approved clinic promise, accumulated performance metrics, two current clinic projects, monthly prices, separate Meta budget, free diagnostic, and Telegram-bot path are present.
+- Fonts and typography: every rendered element uses `Manrope, sans-serif`. Display hierarchy comes from weights 400–800, scale, line height, and tracking rather than a second font. Mobile and desktop headings retain the black/gold reference character.
+- Spacing and layout rhythm: header, hero, every section, cards, pricing, diagnostic, FAQ, and footer share one container. Left edge is exactly `18 px` at `390 px` and `80 px` at `1280 px`. Plan cards are equal at `552 × 516 px` on desktop; price/action bands are both `72 px` high.
+- Colors and visual tokens: black, ivory, and restrained gold match the selected direction. The pricing band borrows the reference’s gold-action/white-price contrast without copying its discount device.
+- Image quality and asset fidelity: dedicated `1800 × 1126` clinic-reception photograph, compressed to a `361 KB` JPEG, with the approved warm black/gold art direction.
+- Copy and content: approved clinic promise, metrics, two clinic projects, monthly prices, separate Meta budget, diagnostic, and Telegram route are preserved.
 
 ## Comparison history
 
-### Pass 1
+### Initial build
 
-- [P2] The fixed mobile CTA duplicated the main CTA in the initial hero viewport.
-  - Fix: the sticky CTA now starts hidden, appears only after the hero leaves view, and hides again when the final diagnostic section is visible.
-  - Post-fix evidence: `_handoff/clinic-ads/mobile-top-pass-2.png`.
+- [P2] Sticky mobile CTA duplicated the hero CTA on load.
+  - Fixed by hiding it while the hero or final diagnostic CTA is visible.
 
-### Pass 2
+### Typography and pricing revision
 
-- No actionable P0/P1/P2 differences remain.
-- The source concept places more proof content into the same tall board. The implementation intentionally treats that board as art direction, keeps the first mobile viewport legible, and presents the animated proof immediately on the next scroll. This is an acceptable conversion/readability constraint rather than unresolved drift.
+- [P2] Mixed Oswald and Manrope made headings and body feel like two systems.
+  - Fixed by removing Oswald and using Manrope weights and optical spacing everywhere.
+- [P2] Header and footer did not share the exact section grid.
+  - Fixed by applying the same `1120 px` shell and responsive gutters to all regions.
+- [P2] Pricing cards buried the price below a long feature list and did not use the reference’s strongest price treatment.
+  - Fixed with a single action/price band on both plans, equal card heights, clearer plan summaries, and an explicit Meta-budget panel.
+- [P1] The first desktop font pass pushed the hero CTA below a `1280 × 720` viewport.
+  - Fixed by tuning the desktop hero to a `720 px` composition and reducing display scale while keeping the selected hierarchy.
+- [P2] Tight headline tracking visually collapsed the space in `Без пустых` on mobile.
+  - Fixed with explicit line grouping and word spacing.
 
 ## Interaction and technical checks
 
-- Hero, pricing, diagnostic, and sticky CTA links resolve to the Telegram bot with source-specific `start` parameters.
-- Logo resolves to `/`; service and case links resolve to `/target/` and `/cases.html`.
-- Animated counters reached `1 000`, `250`, `200`, and `7` once the proof section entered view.
-- FAQ disclosure opened and exposed its answer.
-- Mobile and desktop screenshots were captured in the in-app browser.
+- All CTA links resolve to the Telegram bot with source-specific `start` parameters.
+- Logo, service, and case links resolve correctly.
+- Animated counters reach `1 000`, `250`, `200`, and `7`.
+- FAQ disclosure opens and shows its answer.
 - Browser console errors: none.
 - Broken images: none.
 - Empty links: none.
-- Mobile horizontal overflow: none (`390 = 390`).
-
-## Follow-up polish
-
-- [P3] Replace the temporary bot username if the final scoring bot receives a different public handle.
+- Horizontal overflow: none at `390 px` or `1280 px`.
+- Accessibility limit: screenshots and DOM checks confirm hierarchy, focus styling, contrast, and touch sizing, but do not establish full WCAG compliance.
 
 final result: passed
