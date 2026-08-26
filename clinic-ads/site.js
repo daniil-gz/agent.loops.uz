@@ -76,6 +76,24 @@
     stickyObserver.observe(finalCta);
   }
 
+  const faqItems = [...document.querySelectorAll("[data-faq-item]")];
+  faqItems.forEach((item) => {
+    const button = item.querySelector(".faq-question");
+    button?.addEventListener("click", () => {
+      const willOpen = !item.classList.contains("is-open");
+
+      faqItems.forEach((otherItem) => {
+        otherItem.classList.remove("is-open");
+        otherItem.querySelector(".faq-question")?.setAttribute("aria-expanded", "false");
+      });
+
+      if (willOpen) {
+        item.classList.add("is-open");
+        button.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+
   document.querySelectorAll('a[href*="t.me/"]').forEach((link) => {
     link.addEventListener("click", () => {
       if (typeof window.datafast === "function") {

@@ -52,3 +52,15 @@
 - Accessibility limit: screenshots and DOM checks confirm hierarchy, focus styling, contrast, and touch sizing, but do not establish full WCAG compliance.
 
 final result: passed
+
+## FAQ refinement — 2026-08-26
+
+- User-provided before state: `_handoff/clinic-ads-faq/00-faq-before.png`.
+- Accepted mobile state: `_handoff/clinic-ads-faq/01-faq-mobile.png` at the default in-app browser viewport (`448 × 934`).
+- Accepted desktop state: `_handoff/clinic-ads-faq/02-faq-desktop.png` at `1280 × 900`.
+- Replaced the oversized stack of rounded disclosure cards with an editorial layout: a dedicated heading column and a numbered accordion column on desktop, with a single clean reading column on mobile.
+- Increased question and answer readability, removed the browser-default triangle marker, and made the first useful answer visible by default.
+- Added an accessible one-at-a-time accordion with real buttons, `aria-expanded`, matching `aria-controls`, keyboard focus styling, and a reduced-motion fallback.
+- Verified accordion state transitions, `Manrope` typography, absence of horizontal overflow, and mobile/desktop alignment.
+
+final FAQ result: passed
