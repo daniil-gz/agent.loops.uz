@@ -1,0 +1,315 @@
+{
+  "checked": "2026-09-08",
+  "total": 44,
+  "withLogo": 38,
+  "projects": [
+    {
+      "sector": "Медицина и здоровье",
+      "name": "Dental’s Kingdom",
+      "logo": "dental",
+      "source": "Локальный прайс Dental’s Kingdom, PDF, страница 1",
+      "note": ""
+    },
+    {
+      "sector": "Медицина и здоровье",
+      "name": "ViaMed",
+      "logo": "viamed",
+      "source": "Существующий файл Loops: images/viamed-logo.jpg",
+      "note": ""
+    },
+    {
+      "sector": "Медицина и здоровье",
+      "name": "BioRise",
+      "logo": "biorise",
+      "source": "https://tashkent.biorise.uz/wp-content/uploads/2024/11/logo.svg",
+      "note": ""
+    },
+    {
+      "sector": "Медицина и здоровье",
+      "name": "Regen",
+      "logo": "regen",
+      "source": "Существующая библиотека Loops: images/clients/regen.png",
+      "note": ""
+    },
+    {
+      "sector": "Рестораны, кафе и HoReCa",
+      "name": "Bs cafe",
+      "logo": "bscafe",
+      "source": "https://tashkent.hh.uz/employer/12568473",
+      "note": ""
+    },
+    {
+      "sector": "Рестораны, кафе и HoReCa",
+      "name": "Resto kids",
+      "logo": "restokids",
+      "source": "https://tashkent.hh.uz/employer/12568473",
+      "note": "Знак родительского бренда Resto из портфеля Centris. Отдельный логотип Kids не найден."
+    },
+    {
+      "sector": "Рестораны, кафе и HoReCa",
+      "name": "Dolcetta",
+      "logo": "dolcetta",
+      "source": "https://tashkent.hh.uz/employer/12568473",
+      "note": ""
+    },
+    {
+      "sector": "Рестораны, кафе и HoReCa",
+      "name": "Burger & Lounge",
+      "logo": null,
+      "source": null,
+      "note": ""
+    },
+    {
+      "sector": "Рестораны, кафе и HoReCa",
+      "name": "FeedUp",
+      "logo": "feedup",
+      "source": "Локальная презентация кп2026.pdf, страница 10",
+      "note": ""
+    },
+    {
+      "sector": "Автомобили и сервисы",
+      "name": "Chery Andijan",
+      "logo": "chery",
+      "source": "Существующая библиотека Loops: images/clients/chery.png",
+      "note": ""
+    },
+    {
+      "sector": "Автомобили и сервисы",
+      "name": "Jetour Andijan",
+      "logo": "jetour",
+      "source": "Существующая библиотека Loops: images/clients/jetour.png",
+      "note": ""
+    },
+    {
+      "sector": "Автомобили и сервисы",
+      "name": "KIA Andijan",
+      "logo": "kia",
+      "source": "https://worldwide.kia.com/en/brand/our-brand/brand-elements/brand-logo-story",
+      "note": ""
+    },
+    {
+      "sector": "Автомобили и сервисы",
+      "name": "Black star car wash",
+      "logo": "blackstar",
+      "source": "https://tashkent.hh.uz/employer/12568473",
+      "note": ""
+    },
+    {
+      "sector": "Фитнес, красота и уход",
+      "name": "Centris Ladies",
+      "logo": "centrisladies",
+      "source": "https://tashkent.hh.uz/employer/12568473",
+      "note": ""
+    },
+    {
+      "sector": "Фитнес, красота и уход",
+      "name": "Centris Fit",
+      "logo": "centrisfit",
+      "source": "https://centris.fit/",
+      "note": ""
+    },
+    {
+      "sector": "Фитнес, красота и уход",
+      "name": "Centris SPA",
+      "logo": "centrisfit",
+      "source": "https://centris.fit/",
+      "note": "Общий знак Centris Fit & SPA."
+    },
+    {
+      "sector": "Фитнес, красота и уход",
+      "name": "Mates",
+      "logo": "mates",
+      "source": "https://t.me/mates_tashkent",
+      "note": ""
+    },
+    {
+      "sector": "Логистика и таможня",
+      "name": "TAK Operations",
+      "logo": "tak",
+      "source": "Существующая библиотека Loops: images/clients/tak.png",
+      "note": ""
+    },
+    {
+      "sector": "Логистика и таможня",
+      "name": "NWL Operations",
+      "logo": "nwl",
+      "source": "Существующая библиотека Loops: images/clients/nwl.png",
+      "note": ""
+    },
+    {
+      "sector": "Логистика и таможня",
+      "name": "HS Navigator",
+      "logo": "hsnavigator",
+      "source": "Существующая библиотека Loops: images/clients/hsnavigator.png",
+      "note": ""
+    },
+    {
+      "sector": "Логистика и таможня",
+      "name": "InterCargo",
+      "logo": null,
+      "source": null,
+      "note": ""
+    },
+    {
+      "sector": "Полиграфия и упаковка",
+      "name": "Print uz",
+      "logo": "printuz",
+      "source": "https://t.me/s/printuztashkent",
+      "note": ""
+    },
+    {
+      "sector": "Полиграфия и упаковка",
+      "name": "Print uz express",
+      "logo": "printuz",
+      "source": "https://t.me/s/printuztashkent",
+      "note": "Знак Print.uz: официальный канал публикует услуги Print.uz Express."
+    },
+    {
+      "sector": "Полиграфия и упаковка",
+      "name": "Centris print",
+      "logo": "centrisprint",
+      "source": "https://centrisprint.uz/",
+      "note": ""
+    },
+    {
+      "sector": "Полиграфия и упаковка",
+      "name": "Centris print cup",
+      "logo": "centrisprintcup",
+      "source": "https://tashkent.hh.uz/employer/12568473",
+      "note": ""
+    },
+    {
+      "sector": "Производство и оборудование",
+      "name": "Dors Uzbekistan",
+      "logo": "dors",
+      "source": "Локальная презентация dors 2025.pdf, страница 1",
+      "note": ""
+    },
+    {
+      "sector": "Производство и оборудование",
+      "name": "Elima",
+      "logo": "elima",
+      "source": "https://elima-factory.uz/",
+      "note": ""
+    },
+    {
+      "sector": "Производство и оборудование",
+      "name": "Basalt Uzbekistan",
+      "logo": "basalt",
+      "source": "Существующая библиотека Loops: images/clients/basalt.png",
+      "note": ""
+    },
+    {
+      "sector": "Производство и оборудование",
+      "name": "DM Energy",
+      "logo": null,
+      "source": null,
+      "note": ""
+    },
+    {
+      "sector": "Дом и интерьер",
+      "name": "Driada",
+      "logo": "driada",
+      "source": "Существующая библиотека Loops: images/clients/driada.png",
+      "note": ""
+    },
+    {
+      "sector": "Дом и интерьер",
+      "name": "Heedlab",
+      "logo": "heedlab",
+      "source": "https://t.me/heedlab",
+      "note": ""
+    },
+    {
+      "sector": "Дом и интерьер",
+      "name": "DCO",
+      "logo": "dco",
+      "source": "Существующая библиотека Loops: images/clients/dco.png",
+      "note": ""
+    },
+    {
+      "sector": "Продукты и напитки",
+      "name": "Coffee Barista",
+      "logo": "barista",
+      "source": "Локальная презентация кп2026.pdf, страница 10",
+      "note": ""
+    },
+    {
+      "sector": "Продукты и напитки",
+      "name": "Impact Mints",
+      "logo": "impactmints",
+      "source": "Существующая библиотека Loops: images/clients/impactmints.png",
+      "note": ""
+    },
+    {
+      "sector": "Продукты и напитки",
+      "name": "Gastromarket",
+      "logo": "gastromarket",
+      "source": "https://tashkent.hh.uz/employer/12568473",
+      "note": ""
+    },
+    {
+      "sector": "Продукты и напитки",
+      "name": "Pervaya Chaynaya",
+      "logo": null,
+      "source": null,
+      "note": ""
+    },
+    {
+      "sector": "Образование",
+      "name": "Оренбургский госуниверситет",
+      "logo": "ogu",
+      "source": "https://www.osu.ru/",
+      "note": ""
+    },
+    {
+      "sector": "Образование",
+      "name": "Stark edu",
+      "logo": "stark",
+      "source": "Существующая библиотека Loops: images/clients/stark.png",
+      "note": ""
+    },
+    {
+      "sector": "Городские сервисы",
+      "name": "IZZY",
+      "logo": "izzy",
+      "source": "Локальная презентация кп2026.pdf, страница 10",
+      "note": ""
+    },
+    {
+      "sector": "Городские сервисы",
+      "name": "Q.watt",
+      "logo": "qwatt",
+      "source": "Существующая библиотека Loops: images/clients/qwatt.png",
+      "note": ""
+    },
+    {
+      "sector": "Другие направления",
+      "name": "Centris media",
+      "logo": "centrismedia",
+      "source": "https://centrismedia.uz/",
+      "note": ""
+    },
+    {
+      "sector": "Другие направления",
+      "name": "Traffic Legal",
+      "logo": null,
+      "source": null,
+      "note": ""
+    },
+    {
+      "sector": "Другие направления",
+      "name": "Buchet",
+      "logo": "buchet",
+      "source": "https://buchet.uz/",
+      "note": ""
+    },
+    {
+      "sector": "Другие направления",
+      "name": "Корпорация волшебства",
+      "logo": null,
+      "source": null,
+      "note": ""
+    }
+  ]
+}

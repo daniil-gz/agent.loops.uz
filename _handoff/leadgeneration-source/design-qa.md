@@ -1,66 +1,43 @@
-# Design QA — Loops /leadgeneration/
+# Design QA — Loops polish v2
 
 Date: 2026-09-08
 final result: passed
 
-## Visual truth and comparison
+## Visual target and scope
 
-Source URL: https://targeteria.ru/
-Source captures: `/Users/daniilgazizov/loops-landing-reference/targeteria/`.
-User reference: `/Users/daniilgazizov/loops-landing-reference/loops-handwriting-reference.jpg` (853 × 1280).
-Implementation: http://127.0.0.1:4187/leadgeneration/
+Polish the approved live /leadgeneration/ landing: attach yellow marks to their subjects, replace compass/sail with money collage, populate and align the industry directory. Preserve typography, page structure and working conversion flow.
 
-Full-view source and implementation were opened together in the same tool comparison input:
-- Desktop hero: source `01-desktop-top.png` and implementation `evidence/20-desktop-1280x720.png`, both 1280 × 720 pixels and CSS viewport, density 1.
-- Mobile hero: source `10-mobile-top.png` and implementation `evidence/18-mobile-final.png`, both 390 × 844 pixels and CSS viewport, density 1.
-- Process: source `04-process.png` (1280 × 720) and implementation `evidence/13-process.png` (1280 × 900). Compare structure/typography at the same width; differing screenshot height is explicitly not a spacing defect.
-- User handwriting reference and implementation case intro were opened together. The supplied full-page image and browser section have different widths/crops; this is an art-direction comparison, not a pixel equality claim. Current post-fix case intro: `evidence/21-cases-final.png`.
+Source captures from the existing implementation before edits: evidence/polish-v2/01-before-hero.png, 02-before-cases.png, 03-before-directory.png. Original art references: /Users/daniilgazizov/loops-landing-reference/targeteria/ and loops-handwriting-reference.jpg. Local preview: http://127.0.0.1:4188/leadgeneration/ (production build).
 
-Focused evidence: desktop modal `evidence/05-desktop-modal.png`, mobile modal `09-mobile-modal.png`, about `14-about.png` and `19-about-mobile.png`, contact `15-contact-desktop.png` and `17-contact-mobile.png`; later refinement widens the mobile note to keep its last line together.
+## Visual comparisons and evidence
 
-## Findings and iteration history
+Desktop CSS viewport and image: 1280 × 900, density 1. Before/after hero images 01/17 were opened together; composition, typography and approved paper palette retained, with Franklin/dollars replacing old objects. Directory captures 03/22 were opened together at the same width; their vertical scroll positions differ, so alignment was judged at matching card boundaries. Final lower rows and CTA arrow: 23-final-lower-grid.png. Article images 10/19 were opened together at identical viewport and scroll position; fixed underlines now sit below 01/03, with oval around 02.
 
-- [P1, fixed] Fonts fell back despite the CSS family name. Root stylesheet path had a doubled Vite base. Changed index link to `/assets/fonts.css`; verified the actual requested path and visibly correct TikTok Sans/Caveat in 20/18/21.
-- [P1, fixed] Initial hero compass asset showed the wrong subject. Replaced with the real compass asset from source; verified both desktop/mobile final screenshots.
-- [P2, fixed] Carousel snapped the first card to the viewport edge. Added scroll-padding matching section padding. Earlier evidence 04; corrected evidence 21.
-- [P2, fixed] Mobile handwritten contact note overlapped heading. Moved note into document flow and widened it. Evidence 07 before / 17 after positioning; final style also removes orphaned emoticon wrap.
-- [P2, fixed] Narrow hero CTA and supporting copy could overlap. Added a 380px breakpoint; evidence 16 shows separate boxes with a visible gap at 360px.
-- [P2, fixed] Rotated about portrait caused a few pixels of horizontal overflow. Reduced mobile heading size and moved note inward. Evidence 19 and document width check: 390 = 390; desktop 1280 = 1280.
-- [P2, fixed] Directory small type was too small. Increased labels and descriptions. Removed fabricated initial-letter logos; only available real marks remain.
-- [P2, fixed] Rail controls allowed clicks when no scrolling was possible. Added observed scroll bounds, disabled states and hidden desktop article controls. Browser readback confirms previous cases disabled / next enabled at start.
-- [P2, fixed] Brief edit discarded values. Preserve submitted draft state; tested name, company and message after edit, all retained.
+Focused final evidence: 09-process-arrow.png; 13-mobile-modal.png; 14-mobile-360.png; 15-tablet-hero.png; 16-tablet-grid.png; 17-final-hero.png; 19-articles-fixed.png; 22-compiled-grid.png; 23-final-lower-grid.png. Desktop full-page capture 18 and derivatives 20/21 were rejected because the browser capture stitched/scaled the page incorrectly; they are not evidence of layout quality. Individual viewport captures and DOM measurements were used instead.
 
-No actionable P0/P1/P2 findings remain for this blended test landing.
+## Findings and fixes
 
-## Required fidelity surfaces
+- P2 fixed: oversized yellow loops drifted independently of text. Added inline Mark wrappers and three distinct assets: underline, oval, short curved arrow. Photo arrow and invitation arrow use their own containing blocks.
+- P2 fixed: white image background patches in nested stacking contexts. Added appropriate multiply blending to marks and their immediate decorative parents; verified cases/articles/process.
+- P2 fixed: inherited article image top positioning crossed out 01/03. Removed obsolete generic image rules and reset underline top to auto. Compared 10 against 19 after correction.
+- P2 fixed: sector cards, names and logo columns had inconsistent alignment. Fixed header and row rhythm, permanent logo slots and equal collapsed card heights; long names wrap without clipping.
+- P2 fixed: opaque logos became solid blocks under blanket brightness filters. Added source-appropriate natural/inverted treatments, including final Buchet correction verified in 23.
+- P2 fixed: wide whitespace in ViaMed source made mark unreadable. Scaled source within its clipped logo slot, retaining the actual logo.
+- P2 fixed: mobile decoration touched viewport edge and narrow hero line wrapped awkwardly. Adjusted cash position and the smallest-width heading rule; no horizontal overflow at 360/390/768/1280.
+- P2 fixed: hidden fifth restaurant was not directly discoverable. Added an explicit +1 project button; FeedUp expands and collapses correctly.
 
-- Fonts/typography: source TikTok Sans loaded locally, Caveat for handwritten annotations. Major hierarchy and compact navigation preserved. Loops wordmark scale intentionally responds to its shorter name. Body labels, wrapping and modal metrics visually checked.
-- Spacing/layout: expansive hero, horizontal cases, dense industry directory, service rows, vertical process timeline, large personal section, dark form, FAQ/articles/footer. Checks at 360, 390, 768 and 1280 CSS widths. Source four-float/magenta composition intentionally simplified into Loops portrait, two source cut-outs and yellow marker to blend user reference.
-- Colors/tokens: warm paper/ink from user image; yellow replaces source magenta; subdued sage secondary text and dark contact/footer. No claim of a full WCAG audit.
-- Image quality: real Loops cases/client logos/person photo; source compass/sail cut-outs; generated transparent yellow raster arrow. No invented client marks, handcrafted SVG illustrations or fake team portraits. Phosphor library supplies UI icons.
-- Copy/content: Loops identity, existing case metrics with their definitions, 12 sectors from supplied screenshot; no imported Targeteria achievements or testimonials. FAQ takes the place of unverifiable third-party reviews. Specific results are not presented as guarantees.
+No remaining actionable P0/P1/P2 findings in the tested polish scope. P3 content gap: 6 of 44 projects still lack a reliable logo source. Resto Kids uses the verified parent Resto mark; dedicated Kids mark is a follow-up. See logos-inventory.md. Missing marks are not fabricated.
 
-## Interaction verification
+## Responsive and functional checks
 
-- Header anchors, mobile menu open/close, menu closes on selection, Escape.
-- B2B filter returns TAK/NWL/BTS; Education returns useful empty state; reset returns all nine cases.
-- Case rail arrows scroll, boundaries disabled; case modals open, close button/Escape, focus returned, Tab trapped.
-- Sector expansion works, direction CTA applies filter.
-- Required form fields block empty submission. Populated form prepares brief. Edit preserves values. Encoded Telegram URL includes the prepared text; no real message sent.
-- FAQ expands/collapses. Article links and existing-case links present.
-- Browser image check: no completed broken images. Earlier console error check: none. Fresh public route remains a separate deployment verification.
-- Reduced-motion CSS and scroll helper reviewed; native device motion/Telegram-app handoff not independently exercised.
+- 360 × 800, 390 × 844, 768 × 1024, 1280 × 900: no horizontal page overflow or clipped sector text. Card heights 372 px on mobile, 338 px on tablet/desktop; responsive 2/3/4 columns.
+- 38 logo assignments across 44 projects; collapsed DOM has 37 images because FeedUp is behind +1 project. No completed broken images; all assets local.
+- All 11 filters exercised: all 9; medicine 1; restaurants 1; auto 1; B2B 3; production 1; fitness 0; home 1; products 0; education 0; other 1. Empty states provide a useful action.
+- Sector expansion, +1 project and collapse passed. Mobile menu opens, navigation reaches contact and closes the menu.
+- BTS modal: visible on mobile, close works, aria-modal true, body scroll locked, close button focused.
+- Brief form: values prepared into encoded Telegram URL; editing preserves inputs. No message sent and no external test lead created.
+- FAQ price answer expands. Browser console: zero errors/warnings on fresh compiled preview.
+- TikTok Sans and Caveat loaded. Existing gentle float/parallax and reduced-motion code preserved; reduced-motion device preference was reviewed in code, not independently emulated.
+- npm run build passes. Existing runtime packaging files retained. This is not a full accessibility or SEO audit; test route remains noindex,follow.
 
-## Implementation checklist
-
-- [x] Fix observed issues and compare final hero captures at matching desktop/mobile viewports.
-- [x] Verify core interactive states in browser.
-- [x] Build succeeds; 4/4 template packaging tests pass.
-- [x] Prepare isolated route and reproducible sources.
-- [x] Verify deployed route, asset hashes and fresh public browser state (see deployment.md).
-
-P3 future polish: more unique portrait/process imagery; dedicated share cover and SEO rendering when the test design becomes a search landing. These are outside the visual test acceptance.
-
-## Public verification
-
-Final public evidence: `evidence/22-public-desktop.png`, `evidence/23-public-mobile.png`. HTTPS route loaded, B2B filter/modal/brief/mobile navigation passed. 50/50 file hashes and 17/17 existing-page links passed. Temporary network transport failures resolved on a fresh browser load; see `deployment.md`.
+Public verification and backup are recorded in deployment.md after release.

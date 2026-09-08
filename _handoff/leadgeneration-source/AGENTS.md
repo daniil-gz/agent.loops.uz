@@ -7,3 +7,6 @@ Before making substantial visual changes, use the Product Design plugin's `get-c
 When implementing from a selected generated mock, treat that image as the source of truth for layout, component anatomy, density, spacing, color, typography, visible content, and hierarchy.
 
 Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts/prepare-sites-build.mjs`, and `tests/sites-worker.test.mjs` intact so the same local prototype can be handed to Sites. Before a Sites handoff, run `npm run build` and `npm run test:sites`; the build must leave `dist/client/index.html`, `dist/server/index.js`, and `dist/.openai/hosting.json`.
+
+## Approved polish direction — 2026-09-08
+Preserve the approved paper/ink landing, typography, section order and subtle motion. User likes yellow handwritten accents, but each must attach to its actual text/photo/button with responsive local coordinates. Use separate underline, oval and short curved-arrow assets. Replace compass/sail imagery with money-themed collage; working choice Franklin and dollars unless user steers toward Scrooge/Mr Krabs. All directions must have consistent logo slots, header heights and row rhythm. Use real verified client logos; do not invent missing marks.
