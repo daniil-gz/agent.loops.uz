@@ -1,0 +1,35 @@
+@font-face{font-family:'Caveat';font-style:normal;font-weight:400 700;font-display:swap;src:url(caveat-variable.ttf) format('truetype');}
+
+
+@font-face {
+  font-family: 'TikTok Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(tiktok-sans-400.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'TikTok Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(tiktok-sans-500.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'TikTok Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(tiktok-sans-600.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'TikTok Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-stretch: normal;
+  font-display: swap;
+  src: url(tiktok-sans-700.ttf) format('truetype');
+}
