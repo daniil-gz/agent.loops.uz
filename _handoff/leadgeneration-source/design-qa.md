@@ -35,3 +35,7 @@ Full-view comparison: 02-before-grid.png and 10-compiled-desktop.png were opened
 ## Residual content gap
 
 Only Корпорация волшебства has no supplied/verified original. Separate Resto Kids artwork may replace parent Resto when provided. These are source-material gaps, not invented placeholders or blockers for this scoped update.
+
+## Published verification
+
+Public 1280 × 1000 capture `13-live-grid.png` matches the compiled layout. All 83 shipped files return 200 and match local SHA-256. `14-live-color.png` verifies native Traffic Legal artwork and selection on the public page. Public browser has no broken images, overflow, warnings or errors. Viewport restored after QA.

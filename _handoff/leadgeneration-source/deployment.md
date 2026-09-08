@@ -46,3 +46,11 @@ Dry run и deploy изменили только /leadgeneration/. Первая S
 На публичной проверке PNG из буфера обмена первоначально вернул 403: его исходные права 0600 сохранились при копировании. Права только этого публичного изображения исправлены на 0644 в каноническом исходнике, build, shipping и на VPS, затем очищен точный URL. Изображение вернуло 200; браузер подтвердил naturalWidth 1152, reflection matrix(-1,0,0,1,0,0), отсутствие битых изображений/переполнения. Никакие права каталогов или других ресурсов не менялись.
 
 Все 5 изменённых публичных файлов совпадают со сборкой по SHA-256: evidence/polish-v3/live-assets-v3.json. Свежий публичный снимок 19-live-final.png, 478 × 936. На live проверены пауза, цветной NWL и возобновление ленты, переход наверх. Консоль — без ошибок/предупреждений. Вкладка оставлена открытой, временные viewport/media overrides сброшены. Тестовый noindex,follow и способ подготовки брифа сохранены.
+
+## Unified logos v4 — 2026-09-08
+
+Published commit `073b486` to https://loops.uz/leadgeneration/ via the existing VPS deployment. Backup completed and verified: `/root/backups/loops-www-20260908-192223.tar.gz`. Dry run changed only this landing: HTML, hashed CSS/JS and five new client assets. Original source files copied exactly and set to 0644. Source registry: src/logos.json; inventory: 43/44 project assignments, 41 unique marks.
+
+CLI purge again returned code 10000; exact-page/assets purge through the connected Cloudflare API returned HTTP 200, success=true. No credential or network settings changed. Live SHA-256 verification passed **83/83** public files, all HTTP 200 (`evidence/polish-v4/live-assets-v4.json`). The five supplied files also match the clipboard originals byte for byte (`original-assets.json`).
+
+Fresh public browser capture: `13-live-grid.png`; original Traffic Legal color selected and loaded at natural width 1100: `14-live-color.png`. Correct new script `index-DbCHFY_a.js`, no broken images, no horizontal overflow, empty error/warning log. The old open IAB tab hit transient ERR_QUIC_PROTOCOL_ERROR; a fresh tab through the standard HTTP→HTTPS redirect loaded the public release successfully. Viewport override reset; working public tab kept as deliverable. GitHub main synced.

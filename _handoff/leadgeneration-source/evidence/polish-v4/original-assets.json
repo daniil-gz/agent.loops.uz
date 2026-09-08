@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Burger & Lounge",
+    "original": "codex-clipboard-411dd224-d444-403c-abd1-73197e8ad935.jpg",
+    "asset": "burgerlounge.jpg",
+    "unchanged": true,
+    "sha256": "b3fcd0b18d34aff1e185d60fad2acbfa68675af53aa3ade4a2f3ac3e939761c5"
+  },
+  {
+    "name": "InterCargo",
+    "original": "codex-clipboard-a9fab57e-411b-41d7-88e0-0f98aa95a728.jpg",
+    "asset": "intercargo.jpg",
+    "unchanged": true,
+    "sha256": "6045a69a3e71f18cae7e3ded75c5f1d3bc609724f12eede609fb42ccc11bb2ff"
+  },
+  {
+    "name": "DM Energy",
+    "original": "codex-clipboard-25f22e05-d29a-4558-b991-2d34664a2383.png",
+    "asset": "dmenergy.png",
+    "unchanged": true,
+    "sha256": "07af3250cdd620cf7270321b10fdc1a30ddb28a2b80e44e7e255b30d69b4eae7"
+  },
+  {
+    "name": "Pervaya Chaynaya",
+    "original": "codex-clipboard-bfbacf52-4c4a-49fe-8728-84fd7698048a.jpg",
+    "asset": "pervayachaynaya.jpg",
+    "unchanged": true,
+    "sha256": "5a7feffe3274fe8a233d4b326996e4edb81ccfb855a8e12f6b2e273d0335311e"
+  },
+  {
+    "name": "Traffic Legal",
+    "original": "codex-clipboard-939e407d-1261-47d7-9224-a0e7212e4650.png",
+    "asset": "trafficlegal.png",
+    "unchanged": true,
+    "sha256": "0133bedad4b903dbe529b3a17e14096dc0af14eeae855570e626a7b1ce63a01d"
+  }
+]
