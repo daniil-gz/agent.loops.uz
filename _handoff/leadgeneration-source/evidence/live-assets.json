@@ -1,0 +1,302 @@
+[
+  {
+    "file": "index.html",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/tiktok-sans-600.ttf",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/nwl-card.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/tiktok-sans-400.ttf",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/tak-card.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/ref-compass.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/tiktok-sans-500.ttf",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/ref-sail.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/loops-logo.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/index-CJW8TqGu.js",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/bts-card.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/caveat-variable.ttf",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/tiktok-sans-700.ttf",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/index-BWnPN1vd.css",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/chery-main.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/izzy-main.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/favicon.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/basalt-main.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/ref-shape.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/viamed-card.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/Caveat-OFL.txt",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/dco-main.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/compass.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/fonts.css",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/marker-loop.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/caveat-600.ttf",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/caveat-400.ttf",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/feedup-main.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/TikTokSans-OFL.txt",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/daniil.jpg",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/puremilky.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/regen.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/nwl.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/stark.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/just.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/qwatt.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/ks-group.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/driada.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/ig.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/hsnavigator.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/tmz.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/jetour.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/tak.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/chery.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/auto-v.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/impactmints.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/dco.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/basalt.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/octobank.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  },
+  {
+    "file": "assets/clients/bp.png",
+    "ok": true,
+    "hash_matches": true,
+    "error": ""
+  }
+]

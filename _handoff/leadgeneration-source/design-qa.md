@@ -57,6 +57,10 @@ No actionable P0/P1/P2 findings remain for this blended test landing.
 - [x] Verify core interactive states in browser.
 - [x] Build succeeds; 4/4 template packaging tests pass.
 - [x] Prepare isolated route and reproducible sources.
-- [ ] Verify deployed route, asset hashes and fresh public browser state (record in deployment.md).
+- [x] Verify deployed route, asset hashes and fresh public browser state (see deployment.md).
 
 P3 future polish: more unique portrait/process imagery; dedicated share cover and SEO rendering when the test design becomes a search landing. These are outside the visual test acceptance.
+
+## Public verification
+
+Final public evidence: `evidence/22-public-desktop.png`, `evidence/23-public-mobile.png`. HTTPS route loaded, B2B filter/modal/brief/mobile navigation passed. 50/50 file hashes and 17/17 existing-page links passed. Temporary network transport failures resolved on a fresh browser load; see `deployment.md`.
