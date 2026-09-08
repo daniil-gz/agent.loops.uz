@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {ArrowUpRight, ArrowRight, ArrowDown, ArrowLeft, X, List, Plus, Minus, Check, PaperPlaneTilt, Pause, Play} from '@phosphor-icons/react';
 import {cases, sectors, filters} from './data';
+import logos from './logos.json';
 
 const scrollBehavior=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth';
 const TG='https://t.me/dani_gzv';
@@ -11,18 +12,22 @@ function Mark({children,kind='underline'}) {return <span className={`ink-mark in
 function Reveal({children,className='',...props}) {const ref=useRef(); useEffect(()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return; const el=ref.current; el.classList.add('will-reveal'); const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');o.unobserve(e.target)}}),{threshold:.08});o.observe(el);return()=>o.disconnect()},[]); return <div ref={ref} className={className} {...props}>{children}</div>}
 function Modal({data,onClose}) {const close=useRef();useEffect(()=>{const old=document.activeElement;const orig=document.body.style.overflow;document.body.style.overflow='hidden';close.current?.focus();const key=e=>{if(e.key==='Escape')onClose(); if(e.key==='Tab'){const all=[...document.querySelectorAll('.case-modal button,.case-modal a')]; const first=all[0],last=all.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}};document.addEventListener('keydown',key);return()=>{document.body.style.overflow=orig;document.removeEventListener('keydown',key);old?.focus()}},[onClose]);return <div className="modal-backdrop" onClick={e=>{if(e.target===e.currentTarget)onClose()}}><section className="case-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button ref={close} className="icon-button modal-close" onClick={onClose} aria-label="Закрыть кейс"><X size={25}/></button><div className="modal-image" style={{backgroundColor:data.color}}><img src={A+data.image} alt={data.name}/><div className="modal-image-copy"><span>{data.category}</span><h2 id="modal-title">{data.name}</h2></div></div><div className="modal-content"><div className="eyebrow">КЕЙС LOOPS / {data.tools}</div><div className="modal-metrics"><div><strong>{data.result}</strong><span>{data.unit}</span></div><div><strong>{data.extra}</strong><span>{data.extraLabel}</span></div></div><h3>Задача и подход</h3><p>{data.description}</p><h3>Что получилось</h3><p>{data.detail}</p><Button href={`https://loops.uz/cases/case-${data.id}/`} target="_blank" rel="noreferrer">Полный кейс</Button><a href="#contact" onClick={onClose} className="text-link">Обсудить похожую задачу <ArrowRight size={18}/></a></div></section></div>}
 
-const lightLogos=['basalt','centrismedia','dco','driada','hsnavigator','impactmints','kia','nwl','qwatt'];
+// Keep original artwork intact; only the source canvas margins are compensated.
+function logoStyle(id){const logo=logos[id];return {'--logo-mono':logo.filter,'--logo-color-bg':logo.background};}
+function LogoArt({id,lazy=false}){
+ const {file,width,height,crop:[x,y,w,h]}=logos[id];
+ return <span className="brand-art" aria-hidden="true"><span className="brand-crop" style={{'--logo-ratio':w/h}}><img src={A+'clients/'+file} alt="" loading={lazy?'lazy':'eager'} draggable="false" style={{width:`${width/w*100}%`,height:`${height/h*100}%`,left:`${-x/w*100}%`,top:`${-y/h*100}%`}}/></span></span>;
+}
 function ProjectLogo({id,name}) {
  const [color,setColor]=useState(false);
- if(!id)return <span className="project-logo" aria-hidden="true"/>;
- const tone=['barista','izzy','feedup','mates','dors'].includes(id)?'logo-dark':['dental','viamed','heedlab','ogu','elima','buchet'].includes(id)?'logo-natural':'';
- return <button type="button" className={`project-logo ${tone} ${lightLogos.includes(id)?'logo-light-original':''} ${color?'is-color':''}`} onClick={()=>setColor(!color)} aria-label={`${name} — цветной логотип`} aria-pressed={color}><img src={A+'clients/'+id+'.png?v=polish2'} alt="" loading="lazy"/></button>;
+ if(!id)return <span className="project-logo logo-unavailable" aria-hidden="true"/>;
+ return <button type="button" className={`project-logo logo-frame ${color?'is-color':''}`} style={logoStyle(id)} onClick={()=>setColor(!color)} aria-label={`${name} — цветной логотип`} aria-pressed={color}><LogoArt id={id} lazy/></button>;
 }
 function ClientStrip(){
  const [paused,setPaused]=useState(false),[active,setActive]=useState(null);
  const stopped=paused||active!==null;
  const logos=[['tak','TAK'],['chery','Chery'],['nwl','NWL'],['basalt','Basalt'],['dco','DCO'],['qwatt','Q.watt']];
- return <section className="client-strip wrap" aria-label="Проекты, с которыми работали"><div className="client-strip-heading"><span className="eyebrow">ОПЫТ В РАЗНЫХ НИШАХ</span><button type="button" className="marquee-control" onClick={()=>{setPaused(!stopped);setActive(null)}} aria-label={stopped?'Продолжить движение логотипов':'Остановить движение логотипов'}>{stopped?<Play size={14}/>:<Pause size={14}/>}</button></div><div className="client-window" data-paused={stopped}><div className="client-track">{[0,1].map(copy=><div className="client-group" key={copy} aria-hidden={copy===1?true:undefined}>{logos.map(([id,name])=><button type="button" key={id} tabIndex={copy===1?-1:0} className={`client-logo-button ${active===id?'is-color':''} ${lightLogos.includes(id)?'logo-light-original':''}`} onMouseDown={copy===1?e=>e.preventDefault():undefined} onClick={()=>setActive(active===id?null:id)} aria-label={`${name} — цветной логотип`} aria-pressed={active===id}><img src={A+'clients/'+id+'.png?v=polish2'} alt=""/></button>)}</div>)}</div></div></section>;
+ return <section className="client-strip wrap" aria-label="Проекты, с которыми работали"><div className="client-strip-heading"><span className="eyebrow">ОПЫТ В РАЗНЫХ НИШАХ</span><button type="button" className="marquee-control" onClick={()=>{setPaused(!stopped);setActive(null)}} aria-label={stopped?'Продолжить движение логотипов':'Остановить движение логотипов'}>{stopped?<Play size={14}/>:<Pause size={14}/>}</button></div><div className="client-window" data-paused={stopped}><div className="client-track">{[0,1].map(copy=><div className="client-group" key={copy} aria-hidden={copy===1?true:undefined}>{logos.map(([id,name])=><button type="button" key={id} tabIndex={copy===1?-1:0} className={`client-logo-button logo-frame ${active===id?'is-color':''}`} style={logoStyle(id)} onMouseDown={copy===1?e=>e.preventDefault():undefined} onClick={()=>setActive(active===id?null:id)} aria-label={`${name} — цветной логотип`} aria-pressed={active===id}><LogoArt id={id}/></button>)}</div>)}</div></div></section>;
 }
 
 export function App(){

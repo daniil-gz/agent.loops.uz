@@ -14,3 +14,6 @@ Preserve the approved paper/ink landing, typography, section order and subtle mo
 
 ## Hero and logos follow-up — 2026-09-08
 Restore the original large yellow loop, anchored to the hero statement rather than viewport coordinates. Raise the complete statement including handwritten note to reduce empty space. Client strip moves continuously, pauses on interaction and exposes original colors on click; project logos and case imagery reveal original colors on hover. Preserve reduced-motion behavior. Replace lower money collage with the user-supplied pixel-art Mr Krabs, mirrored horizontally through CSS; preserve the supplied artwork.
+
+## Unified logo presentation — 2026-09-08
+User provided Traffic Legal, DM Energy, InterCargo, Burger & Lounge and Pervaya Chaynaya. Preserve original brand artwork and original interaction colors. All project and strip logos share the same frame, radius, border and neutral default palette. Compensate source canvas whitespace through src/logos.json and LogoArt; do not redraw brands. Corpus: 43 of 44 project assignments (41 unique marks); only Корпорация волшебства remains unprovided, with parent Resto still used for Resto Kids.

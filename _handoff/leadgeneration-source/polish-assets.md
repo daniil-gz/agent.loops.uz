@@ -18,3 +18,7 @@ Original directory: /Users/daniilgazizov/.codex/generated_images/01a08073-1d39-7
 - `marker-hero-loop.webp`: the user's original preferred yellow loop from commit c37ad27, source `public/assets/marker-loop.png`; resized to 1100 px width, WebP quality 95. Local hero-statement anchor and 8-degree presentation rotation.
 - `krabs-original.png`: exact copy of user attachment `/var/folders/8r/1yycq5gs161bq6v9glngmxcr0000gn/T/codex-clipboard-0f03abf8-cbd8-49bb-9051-60eb028d2d4c.png`. Pixel art not redrawn or edited. Transparent padding is framed in CSS; horizontal reflection is `scaleX(-1)` on the inner crop wrapper. Existing outer float animation retained.
 - Client color states remove only CSS monochrome filters. Native white logo versions use a dark interaction background; naturally monochrome brand originals remain monochrome.
+
+## Logo presentation v4 — 2026-09-08
+
+Five user-provided original PNG/JPEG files are stored under public/assets/clients: trafficlegal.png, dmenergy.png, intercargo.jpg, burgerlounge.jpg, pervayachaynaya.jpg. Exact clipboard source filenames are recorded in logos-inventory.json. No image regeneration, bitmap crop or recoloring was applied. Cropping empty source margins, optical fitting and monochrome/color states are CSS presentation. The same LogoArt component and frame tokens serve the directory and moving strip. Runtime screenshots and checks: evidence/polish-v4/.

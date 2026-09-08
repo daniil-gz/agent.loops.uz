@@ -53,8 +53,6 @@
 .sector-count{font-size:10px;color:#7f8376;line-height:1.6;text-align:center;font-variant-numeric:tabular-nums}
 .sector ul{display:grid;grid-auto-rows:53px;gap:2px;padding-top:12px;min-height:230px}
 .sector li{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;min-height:0;margin:0;align-items:center}
-.project-logo{display:flex;width:40px;height:40px;align-items:center;justify-content:center;overflow:hidden}
-.project-logo img{display:block;max-width:100%;max-height:100%;width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
 .sector li b{font-size:11px;line-height:1.2;font-weight:500}
 .sector li small{font-size:10px;line-height:1.25;margin-top:4px;color:#73796e}
 .sector-action,.sector-more{margin-top:auto;min-height:32px;font-size:10px;padding-top:12px}
@@ -82,7 +80,6 @@
  .sector-count{font-size:9px}
  .sector ul{grid-auto-rows:64px;gap:0;min-height:268px;padding-top:12px}
  .sector li{grid-template-columns:30px minmax(0,1fr);gap:7px;margin:0}
- .project-logo{width:30px;height:32px}
  .sector li b{font-size:10px;line-height:1.22}
  .sector li small{font-size:9px;line-height:1.25;margin-top:3px}
  .sector-more{padding-left:37px}
@@ -93,12 +90,7 @@
 .ink-mark{isolation:auto;z-index:0;mix-blend-mode:multiply}
 .hero-statement .hand-note{bottom:-27px}
 .client-logos img{filter:brightness(0);opacity:.48}
-.project-logo img{filter:brightness(0);opacity:.8}
-.project-logo.logo-natural img{filter:grayscale(1);opacity:1}
-.project-logo.logo-dark img{filter:grayscale(1) invert(1) brightness(1.14);opacity:1}
 .cases-note,.article-number,.process-sticky-label,.hero-name{mix-blend-mode:multiply}
-.project-logo img[src*="/viamed.png"]{width:130px;height:auto;max-width:none;max-height:none;flex-shrink:0}
-@media(max-width:700px){.project-logo img[src*="/viamed.png"]{width:102px}}
 .ink-mark--underline>.ink-mark-image{top:auto}
 .article-art .ink-mark--underline>.ink-mark-image{top:auto}
 .sector{min-height:338px}
@@ -134,23 +126,44 @@
 .client-window{overflow:hidden;min-width:0;mask-image:linear-gradient(to right,transparent,#000 16px,#000 calc(100% - 16px),transparent)}
 .client-track{display:flex;width:max-content;animation:client-drift 34s linear infinite}
 .client-group{display:flex;flex-shrink:0}
-.client-logo-button{flex:0 0 clamp(110px,14.58vw,186.67px);width:clamp(110px,14.58vw,186.67px);height:70px;display:grid;place-items:center;padding:15px 24px;border:0;border-radius:6px;background:transparent;transition:background-color 180ms ease-out}
-.client-logo-button img{width:100%;height:40px;object-fit:contain;filter:brightness(0);opacity:.48;transition:filter 200ms ease-out,opacity 200ms ease-out}
-.client-logo-button.is-color img{filter:none;opacity:1}
-.client-logo-button.is-color.logo-light-original{background:var(--ink)}
 .client-window[data-paused="true"] .client-track,.client-window:focus-within .client-track{animation-play-state:paused}
 @keyframes client-drift{to{transform:translateX(-50%)}}
-.project-logo{border:0;background:transparent;padding:0;border-radius:4px;transition:background-color 180ms ease-out}
-.project-logo img{transition:filter 200ms ease-out,opacity 200ms ease-out}
-.project-logo.is-color img,.project-logo:focus-visible img{filter:none;opacity:1;mix-blend-mode:normal}
-.project-logo.is-color.logo-light-original,.project-logo.logo-light-original:focus-visible{background:var(--ink)}
 @media(hover:hover) and (pointer:fine){
  .client-window:hover .client-track{animation-play-state:paused}
- .client-logo-button:hover img{opacity:1}
- .sector li:hover .project-logo img{filter:none;opacity:1;mix-blend-mode:normal}
- .sector li:hover .project-logo.logo-light-original{background:var(--ink)}
  .case-card>img{filter:grayscale(1);transition:transform .8s var(--ease),filter 250ms ease-out}
  .case-card:hover>img,.case-card:focus-visible>img{filter:grayscale(0)}
 }
 @media(max-width:760px){.client-logo-button{padding:12px 18px;height:58px}.client-logo-button img{height:34px}.client-strip{padding-bottom:24px}.client-strip-heading .eyebrow{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.client-track{animation:none}.client-window{overflow-x:auto}.client-group[aria-hidden="true"]{display:none}.marquee-control{display:none}}
+
+/* Shared logo system: one frame, original artwork, optically compensated source margins. */
+.logo-frame{--logo-w:48px;--logo-h:48px;--logo-inset:6px;position:relative;display:block;width:var(--logo-w);height:var(--logo-h);flex-shrink:0;padding:0;border:1px solid #e3e5dc;border-radius:8px;background:#f4f5ef;overflow:hidden;isolation:isolate;transition:border-color 180ms ease-out,background-color 180ms ease-out}
+.logo-frame .brand-art{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none}
+.logo-frame .brand-crop{position:relative;display:block;width:min(calc(var(--logo-w) - 2 * var(--logo-inset)),calc((var(--logo-h) - 2 * var(--logo-inset)) * var(--logo-ratio)));aspect-ratio:var(--logo-ratio);overflow:hidden;mix-blend-mode:multiply}
+.logo-frame .brand-crop img{position:absolute;display:block;max-width:none;max-height:none;object-fit:fill;filter:var(--logo-mono);opacity:.85;mix-blend-mode:normal;transition:filter 180ms ease-out,opacity 180ms ease-out}
+.logo-frame.is-color,.logo-frame:focus-visible{background:var(--logo-color-bg);border-color:#bfc4b3}
+.logo-frame.is-color .brand-crop,.logo-frame:focus-visible .brand-crop{mix-blend-mode:normal}
+.logo-frame.is-color .brand-crop img,.logo-frame:focus-visible .brand-crop img{filter:none;opacity:1}
+.logo-frame:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.logo-unavailable{width:48px;height:48px}
+.sector li{grid-template-columns:48px minmax(0,1fr);gap:10px}
+.sector ul{grid-auto-rows:56px}
+.sector-more{padding-left:58px}
+.client-group{gap:8px;padding-right:8px}
+.client-logo-button{--logo-w:clamp(110px,14vw,178px);--logo-h:70px;--logo-inset:16px;flex-basis:var(--logo-w)}
+@media(hover:hover) and (pointer:fine){
+ .sector li:hover .logo-frame{background:var(--logo-color-bg);border-color:#bfc4b3}
+ .sector li:hover .logo-frame .brand-crop{mix-blend-mode:normal}
+ .sector li:hover .logo-frame .brand-crop img{filter:none;opacity:1}
+ .client-logo-button:hover{border-color:#bfc4b3}
+ .client-logo-button:hover .brand-crop img{opacity:1}
+}
+@media(max-width:760px){.client-logo-button{--logo-h:58px;--logo-inset:12px}}
+@media(max-width:700px){
+ .project-logo{--logo-w:40px;--logo-h:40px;--logo-inset:5px}
+ .logo-unavailable{width:40px;height:40px}
+ .sector li{grid-template-columns:40px minmax(0,1fr);gap:8px}
+ .sector ul{grid-auto-rows:64px}
+ .sector-more{padding-left:48px}
+}
+@media(prefers-reduced-motion:reduce){.logo-frame,.logo-frame .brand-crop img{transition:none}}

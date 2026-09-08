@@ -1,0 +1,535 @@
+{
+  "dental": {
+    "file": "dental.png",
+    "width": 320,
+    "height": 320,
+    "crop": [
+      102,
+      51,
+      116,
+      219
+    ],
+    "filter": "grayscale(1) brightness(.7) invert(1) contrast(5)",
+    "background": "#6a9277"
+  },
+  "viamed": {
+    "file": "viamed.png",
+    "width": 320,
+    "height": 205,
+    "crop": [
+      115,
+      75,
+      76,
+      55
+    ],
+    "filter": "grayscale(1) contrast(1.15)",
+    "background": "#ffffff"
+  },
+  "biorise": {
+    "file": "biorise.png",
+    "width": 180,
+    "height": 50,
+    "crop": [
+      0,
+      0,
+      180,
+      50
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "regen": {
+    "file": "regen.png",
+    "width": 660,
+    "height": 214,
+    "crop": [
+      0,
+      0,
+      660,
+      214
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "bscafe": {
+    "file": "bscafe.png",
+    "width": 64,
+    "height": 64,
+    "crop": [
+      0,
+      0,
+      64,
+      64
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "restokids": {
+    "file": "restokids.png",
+    "width": 100,
+    "height": 64,
+    "crop": [
+      0,
+      0,
+      100,
+      64
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "dolcetta": {
+    "file": "dolcetta.png",
+    "width": 274,
+    "height": 114,
+    "crop": [
+      0,
+      21,
+      274,
+      74
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "burgerlounge": {
+    "file": "burgerlounge.jpg",
+    "width": 640,
+    "height": 640,
+    "crop": [
+      190,
+      77,
+      254,
+      469
+    ],
+    "filter": "grayscale(1) contrast(1.15)",
+    "background": "#ffffff"
+  },
+  "feedup": {
+    "file": "feedup.png",
+    "width": 270,
+    "height": 130,
+    "crop": [
+      24,
+      4,
+      230,
+      101
+    ],
+    "filter": "grayscale(1) invert(1) contrast(2)",
+    "background": "#1b1b1b"
+  },
+  "chery": {
+    "file": "chery.png",
+    "width": 539,
+    "height": 220,
+    "crop": [
+      1,
+      1,
+      537,
+      218
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "jetour": {
+    "file": "jetour.png",
+    "width": 660,
+    "height": 174,
+    "crop": [
+      0,
+      0,
+      660,
+      174
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "kia": {
+    "file": "kia.png",
+    "width": 320,
+    "height": 117,
+    "crop": [
+      23,
+      22,
+      274,
+      73
+    ],
+    "filter": "brightness(0)",
+    "background": "#191d1a"
+  },
+  "blackstar": {
+    "file": "blackstar.png",
+    "width": 146,
+    "height": 64,
+    "crop": [
+      5,
+      4,
+      141,
+      55
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "centrisladies": {
+    "file": "centrisladies.png",
+    "width": 86,
+    "height": 64,
+    "crop": [
+      0,
+      0,
+      86,
+      64
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "centrisfit": {
+    "file": "centrisfit.png",
+    "width": 320,
+    "height": 229,
+    "crop": [
+      0,
+      0,
+      320,
+      229
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "mates": {
+    "file": "mates.png",
+    "width": 320,
+    "height": 320,
+    "crop": [
+      61,
+      90,
+      198,
+      140
+    ],
+    "filter": "grayscale(1) invert(1) contrast(2)",
+    "background": "#151515"
+  },
+  "tak": {
+    "file": "tak.png",
+    "width": 282,
+    "height": 220,
+    "crop": [
+      5,
+      5,
+      272,
+      210
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "nwl": {
+    "file": "nwl.png",
+    "width": 629,
+    "height": 220,
+    "crop": [
+      0,
+      0,
+      629,
+      220
+    ],
+    "filter": "brightness(0)",
+    "background": "#191d1a"
+  },
+  "hsnavigator": {
+    "file": "hsnavigator.png",
+    "width": 660,
+    "height": 187,
+    "crop": [
+      0,
+      0,
+      660,
+      187
+    ],
+    "filter": "brightness(0)",
+    "background": "#191d1a"
+  },
+  "intercargo": {
+    "file": "intercargo.jpg",
+    "width": 640,
+    "height": 640,
+    "crop": [
+      88,
+      137,
+      464,
+      371
+    ],
+    "filter": "grayscale(1) contrast(1.15)",
+    "background": "#ffffff"
+  },
+  "printuz": {
+    "file": "printuz.png",
+    "width": 44,
+    "height": 64,
+    "crop": [
+      0,
+      0,
+      44,
+      64
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "centrisprint": {
+    "file": "centrisprint.png",
+    "width": 320,
+    "height": 78,
+    "crop": [
+      0,
+      0,
+      320,
+      78
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "centrisprintcup": {
+    "file": "centrisprintcup.png",
+    "width": 90,
+    "height": 64,
+    "crop": [
+      0,
+      0,
+      90,
+      64
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "dors": {
+    "file": "dors.png",
+    "width": 320,
+    "height": 51,
+    "crop": [
+      1,
+      0,
+      319,
+      51
+    ],
+    "filter": "grayscale(1) invert(1) contrast(2)",
+    "background": "#000000"
+  },
+  "elima": {
+    "file": "elima.png",
+    "width": 118,
+    "height": 60,
+    "crop": [
+      0,
+      0,
+      118,
+      60
+    ],
+    "filter": "grayscale(1) contrast(1.15)",
+    "background": "#ffffff"
+  },
+  "basalt": {
+    "file": "basalt.png",
+    "width": 552,
+    "height": 220,
+    "crop": [
+      0,
+      0,
+      552,
+      220
+    ],
+    "filter": "brightness(0)",
+    "background": "#191d1a"
+  },
+  "dmenergy": {
+    "file": "dmenergy.png",
+    "width": 1058,
+    "height": 530,
+    "crop": [
+      28,
+      69,
+      926,
+      391
+    ],
+    "filter": "grayscale(1) contrast(1.15)",
+    "background": "#ffffff"
+  },
+  "driada": {
+    "file": "driada.png",
+    "width": 596,
+    "height": 220,
+    "crop": [
+      0,
+      0,
+      596,
+      220
+    ],
+    "filter": "brightness(0)",
+    "background": "#191d1a"
+  },
+  "heedlab": {
+    "file": "heedlab.png",
+    "width": 320,
+    "height": 320,
+    "crop": [
+      24,
+      131,
+      272,
+      58
+    ],
+    "filter": "grayscale(1) contrast(4)",
+    "background": "#ceb193"
+  },
+  "dco": {
+    "file": "dco.png",
+    "width": 660,
+    "height": 208,
+    "crop": [
+      0,
+      0,
+      660,
+      208
+    ],
+    "filter": "brightness(0)",
+    "background": "#191d1a"
+  },
+  "barista": {
+    "file": "barista.png",
+    "width": 255,
+    "height": 120,
+    "crop": [
+      42,
+      13,
+      177,
+      72
+    ],
+    "filter": "grayscale(1) invert(1) contrast(2)",
+    "background": "#1b1b1b"
+  },
+  "impactmints": {
+    "file": "impactmints.png",
+    "width": 239,
+    "height": 220,
+    "crop": [
+      6,
+      6,
+      227,
+      208
+    ],
+    "filter": "brightness(0)",
+    "background": "#191d1a"
+  },
+  "gastromarket": {
+    "file": "gastromarket.png",
+    "width": 62,
+    "height": 64,
+    "crop": [
+      0,
+      0,
+      62,
+      64
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "pervayachaynaya": {
+    "file": "pervayachaynaya.jpg",
+    "width": 640,
+    "height": 640,
+    "crop": [
+      65,
+      165,
+      510,
+      310
+    ],
+    "filter": "grayscale(1) invert(1) contrast(2)",
+    "background": "#1a342b"
+  },
+  "ogu": {
+    "file": "ogu.png",
+    "width": 192,
+    "height": 192,
+    "crop": [
+      0,
+      0,
+      192,
+      192
+    ],
+    "filter": "grayscale(1) invert(1) contrast(3)",
+    "background": "#ffffff"
+  },
+  "stark": {
+    "file": "stark.png",
+    "width": 660,
+    "height": 203,
+    "crop": [
+      0,
+      0,
+      660,
+      203
+    ],
+    "filter": "brightness(0)",
+    "background": "#ffffff"
+  },
+  "izzy": {
+    "file": "izzy.png",
+    "width": 285,
+    "height": 90,
+    "crop": [
+      15,
+      20,
+      242,
+      48
+    ],
+    "filter": "grayscale(1) invert(1) contrast(2)",
+    "background": "#1b1b1b"
+  },
+  "qwatt": {
+    "file": "qwatt.png",
+    "width": 660,
+    "height": 205,
+    "crop": [
+      0,
+      0,
+      660,
+      205
+    ],
+    "filter": "brightness(0)",
+    "background": "#191d1a"
+  },
+  "centrismedia": {
+    "file": "centrismedia.png",
+    "width": 320,
+    "height": 78,
+    "crop": [
+      0,
+      0,
+      320,
+      78
+    ],
+    "filter": "brightness(0)",
+    "background": "#191d1a"
+  },
+  "trafficlegal": {
+    "file": "trafficlegal.png",
+    "width": 1100,
+    "height": 1100,
+    "crop": [
+      233,
+      452,
+      635,
+      197
+    ],
+    "filter": "grayscale(1) invert(1) contrast(2)",
+    "background": "#0c0a0d"
+  },
+  "buchet": {
+    "file": "buchet.png",
+    "width": 51,
+    "height": 51,
+    "crop": [
+      0,
+      0,
+      51,
+      51
+    ],
+    "filter": "grayscale(1) contrast(3)",
+    "background": "#ffffff"
+  }
+}

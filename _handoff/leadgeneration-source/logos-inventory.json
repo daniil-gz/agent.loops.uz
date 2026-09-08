@@ -1,7 +1,7 @@
 {
   "checked": "2026-09-08",
   "total": 44,
-  "withLogo": 38,
+  "withLogo": 43,
   "projects": [
     {
       "sector": "Медицина и здоровье",
@@ -55,9 +55,9 @@
     {
       "sector": "Рестораны, кафе и HoReCa",
       "name": "Burger & Lounge",
-      "logo": null,
-      "source": null,
-      "note": ""
+      "logo": "burgerlounge",
+      "source": "Предоставлен Даниилом 08.09.2026: codex-clipboard-411dd224-d444-403c-abd1-73197e8ad935.jpg",
+      "note": "Оригинальный файл без перерисовки. Поля компенсированы в CSS."
     },
     {
       "sector": "Рестораны, кафе и HoReCa",
@@ -146,9 +146,9 @@
     {
       "sector": "Логистика и таможня",
       "name": "InterCargo",
-      "logo": null,
-      "source": null,
-      "note": ""
+      "logo": "intercargo",
+      "source": "Предоставлен Даниилом 08.09.2026: codex-clipboard-a9fab57e-411b-41d7-88e0-0f98aa95a728.jpg",
+      "note": "Оригинальный файл без перерисовки. Поля компенсированы в CSS."
     },
     {
       "sector": "Полиграфия и упаковка",
@@ -202,9 +202,9 @@
     {
       "sector": "Производство и оборудование",
       "name": "DM Energy",
-      "logo": null,
-      "source": null,
-      "note": ""
+      "logo": "dmenergy",
+      "source": "Предоставлен Даниилом 08.09.2026: codex-clipboard-25f22e05-d29a-4558-b991-2d34664a2383.png",
+      "note": "Оригинальный файл без перерисовки. Поля компенсированы в CSS."
     },
     {
       "sector": "Дом и интерьер",
@@ -251,9 +251,9 @@
     {
       "sector": "Продукты и напитки",
       "name": "Pervaya Chaynaya",
-      "logo": null,
-      "source": null,
-      "note": ""
+      "logo": "pervayachaynaya",
+      "source": "Предоставлен Даниилом 08.09.2026: codex-clipboard-bfbacf52-4c4a-49fe-8728-84fd7698048a.jpg",
+      "note": "Оригинальный файл без перерисовки. Поля компенсированы в CSS."
     },
     {
       "sector": "Образование",
@@ -293,9 +293,9 @@
     {
       "sector": "Другие направления",
       "name": "Traffic Legal",
-      "logo": null,
-      "source": null,
-      "note": ""
+      "logo": "trafficlegal",
+      "source": "Предоставлен Даниилом 08.09.2026: codex-clipboard-939e407d-1261-47d7-9224-a0e7212e4650.png",
+      "note": "Оригинальный файл без перерисовки. Поля компенсированы в CSS."
     },
     {
       "sector": "Другие направления",
