@@ -103,3 +103,54 @@
 .article-art .ink-mark--underline>.ink-mark-image{top:auto}
 .sector{min-height:338px}
 @media(max-width:700px){.sector{min-height:372px}.cash{right:0}.hero-statement p>span{white-space:nowrap}}
+
+/* Hero accent belongs to the statement, so it follows wrapping and breakpoints. */
+.hero-inner{height:610px}
+.hero-statement{transform:translateY(-58px);z-index:2}
+.hero-statement p,.hero-statement .hand-note{position:relative;z-index:1}
+.hero-statement .hand-note{position:absolute;bottom:-63px;right:65px}
+.hero-loop{position:absolute;width:500px;max-width:none;height:auto;left:60px;top:-86px;pointer-events:none;z-index:0;transform:rotate(8deg);transform-origin:36% 55%}
+.cash{width:126px;height:150px;top:342px;right:-20px}
+.krabs-crop{position:relative;width:100%;height:100%;overflow:hidden;transform:scaleX(-1)}
+.krabs-crop img{position:absolute;width:168.2%;max-width:none;height:auto;left:-35.5%;top:-33.3%;image-rendering:pixelated}
+@media(min-width:1450px){.hero-inner{height:660px}}
+@media(min-width:761px) and (max-width:1050px){.hero-inner{height:580px}.hero-loop{left:31px;width:min(420px,calc(50vw - 44px));top:-58px}.hero-statement p{font-size:20px}.hero-statement{transform:translateY(-50px);padding-left:55px}.cash{right:-12px;top:329px;width:104px;height:124px}}
+@media(max-width:760px){
+ .hero-inner{height:calc(480px + 28.8vw)}
+ .hero-bottom{bottom:30px}
+ .hero-statement{left:18px;right:auto;bottom:224px;width:240px;transform:none;padding:0}
+ .hero-statement p{font-size:20px;line-height:1.2}
+ .hero-statement .hand-note{font-size:24px;right:-10px;bottom:-32px}
+ .hero-loop{width:min(370px,calc(100vw - 22px));left:-34px;top:-72px}
+ .cash{width:90px;height:107px;top:calc(150px + 28.8vw);right:0}
+}
+@media(max-width:380px){.hero-statement{left:15px;width:225px}.hero-statement p{font-size:18px}.hero-loop{width:calc(100vw - 22px);left:-28px;top:-65px}.cash{width:76px;height:91px}}
+
+/* One seamless strip, with pause on intent and a persistent original-color selection. */
+.client-strip{padding-top:16px;padding-bottom:30px}
+.client-strip-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.client-strip-heading .eyebrow{color:#96978c;font-size:9px}
+.marquee-control{border:1px solid var(--line);border-radius:50%;width:28px;height:28px;display:grid;place-items:center;background:transparent;color:var(--ink);padding:0}
+.client-window{overflow:hidden;min-width:0;mask-image:linear-gradient(to right,transparent,#000 16px,#000 calc(100% - 16px),transparent)}
+.client-track{display:flex;width:max-content;animation:client-drift 34s linear infinite}
+.client-group{display:flex;flex-shrink:0}
+.client-logo-button{flex:0 0 clamp(110px,14.58vw,186.67px);width:clamp(110px,14.58vw,186.67px);height:70px;display:grid;place-items:center;padding:15px 24px;border:0;border-radius:6px;background:transparent;transition:background-color 180ms ease-out}
+.client-logo-button img{width:100%;height:40px;object-fit:contain;filter:brightness(0);opacity:.48;transition:filter 200ms ease-out,opacity 200ms ease-out}
+.client-logo-button.is-color img{filter:none;opacity:1}
+.client-logo-button.is-color.logo-light-original{background:var(--ink)}
+.client-window[data-paused="true"] .client-track,.client-window:focus-within .client-track{animation-play-state:paused}
+@keyframes client-drift{to{transform:translateX(-50%)}}
+.project-logo{border:0;background:transparent;padding:0;border-radius:4px;transition:background-color 180ms ease-out}
+.project-logo img{transition:filter 200ms ease-out,opacity 200ms ease-out}
+.project-logo.is-color img,.project-logo:focus-visible img{filter:none;opacity:1;mix-blend-mode:normal}
+.project-logo.is-color.logo-light-original,.project-logo.logo-light-original:focus-visible{background:var(--ink)}
+@media(hover:hover) and (pointer:fine){
+ .client-window:hover .client-track{animation-play-state:paused}
+ .client-logo-button:hover img{opacity:1}
+ .sector li:hover .project-logo img{filter:none;opacity:1;mix-blend-mode:normal}
+ .sector li:hover .project-logo.logo-light-original{background:var(--ink)}
+ .case-card>img{filter:grayscale(1);transition:transform .8s var(--ease),filter 250ms ease-out}
+ .case-card:hover>img,.case-card:focus-visible>img{filter:grayscale(0)}
+}
+@media(max-width:760px){.client-logo-button{padding:12px 18px;height:58px}.client-logo-button img{height:34px}.client-strip{padding-bottom:24px}.client-strip-heading .eyebrow{font-size:8px}}
+@media(prefers-reduced-motion:reduce){.client-track{animation:none}.client-window{overflow-x:auto}.client-group[aria-hidden="true"]{display:none}.marquee-control{display:none}}

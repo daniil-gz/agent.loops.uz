@@ -10,3 +10,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 ## Approved polish direction — 2026-09-08
 Preserve the approved paper/ink landing, typography, section order and subtle motion. User likes yellow handwritten accents, but each must attach to its actual text/photo/button with responsive local coordinates. Use separate underline, oval and short curved-arrow assets. Replace compass/sail imagery with money-themed collage; working choice Franklin and dollars unless user steers toward Scrooge/Mr Krabs. All directions must have consistent logo slots, header heights and row rhythm. Use real verified client logos; do not invent missing marks.
+
+
+## Hero and logos follow-up — 2026-09-08
+Restore the original large yellow loop, anchored to the hero statement rather than viewport coordinates. Raise the complete statement including handwritten note to reduce empty space. Client strip moves continuously, pauses on interaction and exposes original colors on click; project logos and case imagery reveal original colors on hover. Preserve reduced-motion behavior. Replace lower money collage with the user-supplied pixel-art Mr Krabs, mirrored horizontally through CSS; preserve the supplied artwork.

@@ -11,3 +11,10 @@ Date: 2026-09-08. Generated with built-in ImageGen using the approved Loops hero
 | marker-underline-v2.webp | exec-18287ebf-9338-451d-aa1f-6bad06c5d47c.png | Lemon-yellow dry-marker underline with short echo at right, pure white background, 3:1; no checkerboard or paper texture. |
 
 Original directory: /Users/daniilgazizov/.codex/generated_images/01a08073-1d39-7251-bf0c-f5ebd3b88d6c/. Compressed/resized to WebP without redrawing. Oval and underline use multiply blending on the warm page background. Initial checkerboard-background candidates were rejected. Existing compass, sail and obsolete marker-loop were removed from shipping assets.
+
+
+## v3 — original loop and supplied Mr Krabs
+
+- `marker-hero-loop.webp`: the user's original preferred yellow loop from commit c37ad27, source `public/assets/marker-loop.png`; resized to 1100 px width, WebP quality 95. Local hero-statement anchor and 8-degree presentation rotation.
+- `krabs-original.png`: exact copy of user attachment `/var/folders/8r/1yycq5gs161bq6v9glngmxcr0000gn/T/codex-clipboard-0f03abf8-cbd8-49bb-9051-60eb028d2d4c.png`. Pixel art not redrawn or edited. Transparent padding is framed in CSS; horizontal reflection is `scaleX(-1)` on the inner crop wrapper. Existing outer float animation retained.
+- Client color states remove only CSS monochrome filters. Native white logo versions use a dark interaction background; naturally monochrome brand originals remain monochrome.
