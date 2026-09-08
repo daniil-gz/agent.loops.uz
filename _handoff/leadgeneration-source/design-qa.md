@@ -41,3 +41,7 @@ No remaining actionable P0/P1/P2 findings in the tested polish scope. P3 content
 - npm run build passes. Existing runtime packaging files retained. This is not a full accessibility or SEO audit; test route remains noindex,follow.
 
 Public verification and backup are recorded in deployment.md after release.
+
+## Public release readback
+
+Live https://loops.uz/leadgeneration/ verified after publication: 76/76 file hashes match, slash redirect 301, HTTPS 200. Public screenshot evidence 24/25, B2B filter and BTS modal passed, latest JS and money assets read back, no console errors/warnings or broken loaded images. Source commit c78b15d; see deployment.md for backup and transport retry details.
