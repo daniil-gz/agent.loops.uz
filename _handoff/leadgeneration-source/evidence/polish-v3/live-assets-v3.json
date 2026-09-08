@@ -1,0 +1,47 @@
+[
+  {
+    "file": "index.html",
+    "url": "https://loops.uz/leadgeneration/",
+    "status": "200",
+    "match": true,
+    "local_sha256": "75d7dab3431e57daf3ce1d832aeaa854fdf71c00d7a078a2cb6c6a7edab94e0e",
+    "live_sha256": "75d7dab3431e57daf3ce1d832aeaa854fdf71c00d7a078a2cb6c6a7edab94e0e",
+    "error": ""
+  },
+  {
+    "file": "assets/index-BEfPlCi2.js",
+    "url": "https://loops.uz/leadgeneration/assets/index-BEfPlCi2.js",
+    "status": "200",
+    "match": true,
+    "local_sha256": "5b436dfda4dfa96d956c5e363af8bf4f848c67fddfeba5c7b42eb9a2599738c5",
+    "live_sha256": "5b436dfda4dfa96d956c5e363af8bf4f848c67fddfeba5c7b42eb9a2599738c5",
+    "error": ""
+  },
+  {
+    "file": "assets/index-CVpPtQuk.css",
+    "url": "https://loops.uz/leadgeneration/assets/index-CVpPtQuk.css",
+    "status": "200",
+    "match": true,
+    "local_sha256": "b35ce405610a28386d624199426eff2f8ca4f06e092991ec7dc0bfc9232a8ed3",
+    "live_sha256": "b35ce405610a28386d624199426eff2f8ca4f06e092991ec7dc0bfc9232a8ed3",
+    "error": ""
+  },
+  {
+    "file": "assets/krabs-original.png",
+    "url": "https://loops.uz/leadgeneration/assets/krabs-original.png",
+    "status": "200",
+    "match": true,
+    "local_sha256": "f87b6e3826e69532093febc6b47a06a081f7a791b58e08d7827664c66acaabd4",
+    "live_sha256": "f87b6e3826e69532093febc6b47a06a081f7a791b58e08d7827664c66acaabd4",
+    "error": ""
+  },
+  {
+    "file": "assets/marker-hero-loop.webp",
+    "url": "https://loops.uz/leadgeneration/assets/marker-hero-loop.webp",
+    "status": "200",
+    "match": true,
+    "local_sha256": "2a8c287419c4462e506ccc1490958ce6a4621cf98872255bee726d0dec49f766",
+    "live_sha256": "2a8c287419c4462e506ccc1490958ce6a4621cf98872255bee726d0dec49f766",
+    "error": ""
+  }
+]

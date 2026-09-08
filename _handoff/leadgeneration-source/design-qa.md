@@ -40,3 +40,8 @@ The initial JSX edit caused a local Vite parser error and was corrected before a
 - No completed broken images or page overflow in checked states. New compiled assets load; production build passes.
 
 No remaining actionable P0/P1/P2 findings for this scoped revision. Public verification, backup and file hashes are appended to deployment.md.
+
+
+## Published verification
+
+Public 19-live-final.png (478 × 936) shows the corrected image, loop and compact composition; 18-live.png records the initial 403 failure before repair. Asset permissions were corrected to 0644 and the file purged. Five changed files return 200 and match local SHA-256, new JS index-BEfPlCi2.js loaded, no broken images or page overflow. Live NWL color/pause/resume passed, console empty. Public tab retained; temporary viewport/media overrides reset.
