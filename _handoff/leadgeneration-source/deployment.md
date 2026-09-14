@@ -60,3 +60,6 @@ Fresh public browser capture: `13-live-grid.png`; original Traffic Legal color s
 - Only leadgeneration shipped. CLI purge failed 10000 as before; exact-file Cloudflare MCP purge returned 200/success=true.
 - Full public asset verification: 86/86 files returned 200 and matched local SHA-256 (`evidence/polish-v5/live-assets-v5.json`). This snapshot predates the subsequent user request to remove Franklin.
 - Cases/covers/service pages deferred. YouTube iframe created on interaction; actual playback requires follow-up in a normal visitor browser because verification browser requested sign-in / did not render embed. Direct video fallback available.
+
+### Final publication — 356b3ff
+Franklin removed per latest user direction. Backup `/root/backups/loops-www-20260914-123825.tar.gz` confirmed OK. Exact MCP cache purge succeeded (200). Only index.html and new JS bundle changed; both public bytes match locally (live-final-delta.json), supplementing the prior full 86/86 verification. Public browser confirms zero Franklin, one Krabs, latest avatar and bundle index-DQHzreKc.js. Public YouTube embed successfully started and displayed advancing Russian subtitles (the earlier local IAB limitation did not reproduce after public load); screenshot video-live-playing.jpg. Final public page left open.

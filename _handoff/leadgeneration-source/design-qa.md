@@ -63,3 +63,8 @@ Remaining verification: actual YouTube playback in a normal signed-in visitor br
 
 ### Final steering: remove Franklin
 User explicitly requested keeping only Krabs. Removed the Franklin image element; layout and all other updates preserved. Final desktop evidence: `evidence/polish-v5/hero-final-desktop.jpg`; DOM has zero Franklin and one Krabs. This removal supersedes the earlier character composition in before/after comparisons.
+
+### Public verification resolved video gap
+The public embed loaded and played the supplied video, showing the YouTube player and current speech subtitles (“творчеством. Сначала мы проводим / глубокое интервью с вами или”). Captured `evidence/polish-v5/video-live-playing.jpg`. Earlier local blank/sign-in results remain historical observations; public playback now confirmed. Audio listening not separately assessed. Final public hero: live-final-desktop.jpg.
+
+final result: passed

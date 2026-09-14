@@ -1,0 +1,14 @@
+[
+  {
+    "file": "index.html",
+    "match": true,
+    "curl_exit": 0,
+    "sha256": "01e872cbacdb8695ecc22ddb15b11527d9015c6585ad19d109937a218fe8884e"
+  },
+  {
+    "file": "assets/index-DQHzreKc.js",
+    "match": true,
+    "curl_exit": 0,
+    "sha256": "c6633f4c1ea7065fcd618fdd20d75668de6fe159e547eb4ad453dac9ac5a53bc"
+  }
+]
