@@ -18,3 +18,20 @@
 
 /* Preserve supplied cover composition, including typography already in the image. */
 .cover img{aspect-ratio:var(--cover-ratio,1);object-fit:contain;height:auto;background:#eeefe5}
+
+/* Metadata and closing CTA use the same outer rails as the case body. */
+.case-meta{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px var(--case-gap);padding:24px 0 32px;align-content:start}
+.case-meta>div{align-content:start;align-items:start}
+.case-meta dt{font-size:11px;line-height:1.4}
+.case-meta dd{font-size:14px;line-height:1.5;text-wrap:pretty}
+.case-cta{position:relative;isolation:isolate;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px var(--case-gap);padding:40px 0;background:transparent;align-items:start}
+.case-cta:before{content:"";position:absolute;inset:0 -24px;background:#eeefe5;z-index:-1;border-radius:8px}
+.case-cta>.eyebrow{grid-column:1;padding-top:10px;line-height:1.5}
+.case-cta-copy{grid-column:2 / 4;min-width:0}
+.case-cta h2{font-size:48px;line-height:1.12;margin:0;text-wrap:pretty}
+.case-cta h2 span{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 12' preserveAspectRatio='none'%3E%3Cpath d='M3 8 Q155 2 397 5 M12 10 Q190 6 385 8' fill='none' stroke='%23f2df35' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") left bottom/100% 9px no-repeat;padding-bottom:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.case-cta p{max-width:600px;margin-top:24px;font-size:18px;line-height:1.5}
+.case-cta>.button{grid-column:2 / 4;justify-self:start;margin:0;width:auto}
+@media(max-width:1050px){.case-meta{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:10px}.case-meta>div:nth-child(n+3){margin-top:14px}}
+@media(max-width:900px){.case-cta{grid-template-columns:minmax(0,1fr);gap:24px;padding-block:32px}.case-cta>.eyebrow,.case-cta-copy,.case-cta>.button{grid-column:1}.case-cta>.eyebrow{padding:0}.case-cta h2{font-size:clamp(32px,5.2vw,44px)}.case-cta:before{inset-inline:-16px}}
+@media(max-width:480px){.case-meta{grid-template-columns:minmax(0,1fr);gap:0;padding:8px 0 24px}.case-meta>div{grid-row:auto;grid-template-rows:auto;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:16px 0}.case-meta>div+div{border-top:1px solid var(--line)}.case-meta>div:nth-child(n+3){margin-top:0}.case-meta dt{padding-top:3px;font-size:10px}.case-meta dd{font-size:13px}.case-cta:before{inset-inline:-12px}.case-cta p{font-size:17px}.case-cta>.button{width:100%}}
