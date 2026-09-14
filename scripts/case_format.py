@@ -3,6 +3,7 @@ import html
 import json
 import re
 from pathlib import Path
+from case_graphics import flow_diagram, funnel_diagram
 
 SECTION_KEYS = ('context', 'objective', 'work', 'results', 'measurement', 'takeaway')
 SECTION_LABELS = ('Контекст', 'Задача', 'Что сделали', 'Результаты', 'Как считали', 'Вывод')
@@ -35,6 +36,15 @@ def validate(data, known_ids):
         raise ValueError('Record source files before publication')
     if any(cid not in known_ids or cid == data['id'] for cid in data.get('related', [])):
         raise ValueError('Invalid related case')
+    funnel = data.get('results', {}).get('funnel', [])
+    for i, step in enumerate(funnel):
+        if not isinstance(step.get('count'), int) or step['count'] <= 0 or (i and step['count'] > funnel[i-1]['count']):
+            raise ValueError('Funnel requires positive, non-increasing integer counts')
+        if str(step['count']) != str(step.get('value', '')).replace(' ', '').replace('\u00a0', ''):
+            raise ValueError('Funnel display value must match numeric count')
+    for step in data.get('flow', []):
+        if not step.get('title') or not step.get('text'):
+            raise ValueError('Flow steps need title and text')
     for evidence in data.get('evidence', []):
         if not evidence.get('alt') or not evidence.get('caption') or not re.fullmatch(r'/[A-Za-z0-9_./-]+', evidence.get('src', '')) or '..' in evidence['src']:
             raise ValueError('Evidence requires a local image, alt and caption')
@@ -60,18 +70,21 @@ def render(data, registry, analytics):
     toc = ''.join(f'<a href="#{key}"><span>0{i+1}</span>{label}</a>' for i, (key, label) in enumerate(zip(SECTION_KEYS, SECTION_LABELS)))
     sections = []
     for i, key in enumerate(SECTION_KEYS):
+        heading = data['workTitle'] if key == 'work' else data[key]['title']
         if key == 'work':
-            content = f'<h2>{esc(data["workTitle"])}</h2><ol class="work-steps">' + ''.join(f'<li><h3>{esc(step["title"])}</h3><p>{esc(step["text"])}</p></li>' for step in data[key]) + '</ol>'
+            content = '<ol class="work-steps">' + ''.join(f'<li><span class="step-index" aria-hidden="true">0{index+1}</span><h3>{esc(step["title"])}</h3><p>{esc(step["text"])}</p></li>' for index, step in enumerate(data[key])) + '</ol>'
         else:
             section = data[key]
-            content = f'<h2>{esc(section["title"])}</h2>' + paragraphs(section)
-            if key == 'results' and section.get('funnel'):
-                content += '<ol class="case-funnel">' + ''.join(f'<li><strong>{esc(s["value"])}</strong><span>{esc(s["label"])}</span></li>' for s in section['funnel']) + '</ol>'
+            content = paragraphs(section)
+            if key == 'objective':
+                content += flow_diagram(data.get('flow', []))
+            if key == 'results':
+                content = funnel_diagram(section.get('funnel', [])) + content
             if key == 'measurement':
                 content += '<dl class="metric-notes">' + ''.join(f'<div><dt>{esc(m["label"])}</dt><dd>{esc(m["definition"])}</dd></div>' for m in data['metrics']) + '</dl>'
-            if key == 'work' or key == 'results':
+            if key == 'results':
                 content += ''.join(f'<figure class="evidence"><img src="{esc(e["src"])}" alt="{esc(e["alt"])}" loading="lazy"><figcaption>{esc(e["caption"])}</figcaption></figure>' for e in data.get('evidence', []))
-        sections.append(f'<section class="story-section" id="{key}"><span class="eyebrow">0{i+1} / {SECTION_LABELS[i]}</span>{content}</section>')
+        sections.append(f'<section class="story-section" id="{key}"><header class="story-heading"><span class="eyebrow">0{i+1} / {SECTION_LABELS[i]}</span><h2>{esc(heading)}</h2></header><div class="story-body">{content}</div></section>')
     related = ''.join(f'<a href="/cases/case-{c["id"]}/"><span class="eyebrow">{esc(c["cat"])}</span><h3>{esc(c["client"])}</h3><span class="related-bottom">Открыть кейс <span aria-hidden="true">↗</span></span></a>' for rid in data.get('related', []) for c in registry if c['id'] == rid)
     return f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -85,7 +98,7 @@ def render(data, registry, analytics):
 <header class="wrap case-header"><a class="wordmark" href="/leadgeneration/" aria-label="Loops — на главную">loops</a><nav aria-label="Основная навигация"><a href="/leadgeneration/#cases">Кейсы</a><a href="/leadgeneration/#services">Услуги</a><a href="/leadgeneration/#about">Обо мне</a></nav><a class="button" href="/leadgeneration/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></header>
 <main id="content"><section class="wrap case-hero"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/leadgeneration/#projects">Все проекты</a><span aria-hidden="true">/</span><span>{esc(data['client'])}</span></nav>
 <div class="hero-grid"><div><span class="eyebrow">{esc(data['client'])} / КЕЙС LOOPS</span><h1>{esc(data['headline'])}</h1><p class="case-summary">{esc(data['summary'])}</p></div><figure class="cover"><img src="{esc(data['cover'])}" alt="{esc(data['coverAlt'])}" width="640" height="640"><figcaption>За цифрами —<br>своя история.</figcaption></figure></div>
-<div class="metrics">{metrics}</div><dl class="case-meta"><div><dt>Бизнес</dt><dd>{esc(data['industry'])}</dd></div><div><dt>География</dt><dd>{esc(data['location'])}</dd></div><div><dt>Инструменты</dt><dd>{esc(' · '.join(data['services']))}</dd></div><div><dt>Период</dt><dd>{esc(data['period'])}</dd></div></dl></section>
+<div class="metrics" style="--metric-count:{len(data['metrics'])}">{metrics}</div><dl class="case-meta"><div><dt>Бизнес</dt><dd>{esc(data['industry'])}</dd></div><div><dt>География</dt><dd>{esc(data['location'])}</dd></div><div><dt>Инструменты</dt><dd>{esc(' · '.join(data['services']))}</dd></div><div><dt>Период</dt><dd>{esc(data['period'])}</dd></div></dl></section>
 <div class="wrap story-layout"><aside><nav class="toc" aria-label="Содержание кейса"><span class="eyebrow">ВНУТРИ ИСТОРИИ</span>{toc}</nav></aside><article>{''.join(sections)}</article></div>
 <section class="wrap case-cta"><div><span class="eyebrow">ЕСТЬ ПОХОЖАЯ ЗАДАЧА?</span><h2>Разберём ваш<br><span>путь к продаже.</span></h2><p>Посмотрим, что происходит от первого обращения до работы менеджера.</p></div><a class="button button-yellow" href="/leadgeneration/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></section>
 <section class="wrap related"><div class="section-heading"><h2>Другие истории.</h2><a href="/leadgeneration/#cases">Все кейсы ↗</a></div><div class="related-grid">{related}</div></section></main>

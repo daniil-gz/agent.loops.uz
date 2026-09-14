@@ -34,4 +34,18 @@ class CaseFormatTest(unittest.TestCase):
         self.data['workTitle'] = 'Обучили команду клиента.'
         out = render(self.data, self.registry, '')
         self.assertIn('<h2>Обучили команду клиента.</h2>', out)
+    def test_funnel_rejects_mismatched_labels(self):
+        self.data['results']['funnel'][1]['value'] = '127'
+        with self.assertRaises(ValueError): validate(self.data, self.ids)
+    def test_funnel_rejects_zero_denominator(self):
+        self.data['results']['funnel'][0]['count'] = 0
+        with self.assertRaises(ValueError): validate(self.data, self.ids)
+    def test_funnel_rejects_increasing_counts(self):
+        self.data['results']['funnel'][1]['count'] = 900
+        with self.assertRaises(ValueError): validate(self.data, self.ids)
+    def test_funnel_uses_distinct_denominators(self):
+        out = render(self.data, self.registry, '')
+        self.assertIn('69,8% от предыдущего этапа', out)
+        self.assertIn('13,5% от всех диалогов', out)
+        self.assertIn('width:13.4969%', out)
 if __name__ == '__main__': unittest.main()
