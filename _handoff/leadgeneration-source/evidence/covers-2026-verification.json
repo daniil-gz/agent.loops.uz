@@ -1,0 +1,152 @@
+[
+  {
+    "path": "cases-data.js",
+    "ok": true,
+    "identical": true,
+    "bytes": 7481
+  },
+  {
+    "path": "cases/case-basalt/index.html",
+    "ok": true,
+    "identical": true,
+    "bytes": 16819
+  },
+  {
+    "path": "cases/case-bts/index.html",
+    "ok": true,
+    "identical": true,
+    "bytes": 21424
+  },
+  {
+    "path": "cases/case-dco/index.html",
+    "ok": true,
+    "identical": true,
+    "bytes": 14705
+  },
+  {
+    "path": "cases/case-feedup/index.html",
+    "ok": true,
+    "identical": true,
+    "bytes": 17749
+  },
+  {
+    "path": "cases/case-izzy/index.html",
+    "ok": true,
+    "identical": true,
+    "bytes": 19426
+  },
+  {
+    "path": "cases/case-tak/index.html",
+    "ok": true,
+    "identical": true,
+    "bytes": 20572
+  },
+  {
+    "path": "cases/case-viamed/index.html",
+    "ok": true,
+    "identical": true,
+    "bytes": 21175
+  },
+  {
+    "path": "images/basalt-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 650345
+  },
+  {
+    "path": "images/bts-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 342718
+  },
+  {
+    "path": "images/dco-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 353535
+  },
+  {
+    "path": "images/feedup-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 54112
+  },
+  {
+    "path": "images/izzy-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 233074
+  },
+  {
+    "path": "images/tak-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 371819
+  },
+  {
+    "path": "images/viamed-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 73013
+  },
+  {
+    "path": "js/cases-data.js",
+    "ok": true,
+    "identical": true,
+    "bytes": 4914
+  },
+  {
+    "path": "leadgeneration/assets/basalt-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 650345
+  },
+  {
+    "path": "leadgeneration/assets/bts-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 342718
+  },
+  {
+    "path": "leadgeneration/assets/dco-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 353535
+  },
+  {
+    "path": "leadgeneration/assets/feedup-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 54112
+  },
+  {
+    "path": "leadgeneration/assets/index-DrtNBeh6.js",
+    "ok": true,
+    "identical": true,
+    "bytes": 284612
+  },
+  {
+    "path": "leadgeneration/assets/izzy-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 233074
+  },
+  {
+    "path": "leadgeneration/assets/tak-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 371819
+  },
+  {
+    "path": "leadgeneration/assets/viamed-cover-2026.jpg",
+    "ok": true,
+    "identical": true,
+    "bytes": 73013
+  },
+  {
+    "path": "leadgeneration/index.html",
+    "ok": true,
+    "identical": true,
+    "bytes": 841
+  }
+]

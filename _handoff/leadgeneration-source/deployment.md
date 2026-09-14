@@ -94,3 +94,8 @@ Published 47faf0a. Removed measurement section, exact financial totals, ROAS and
 - Cloudflare exact-URL purge succeeded (HTTP 200). All 17 public responses byte-match local committed assets. One thumbnail request initially failed; the focused retry succeeded.
 - No raw chat screenshots, personal phones/avatars/dates/cities shipped. Financial confidentiality and five-section numbering preserved. No Meta reads.
 - Evidence: `evidence/ilvi/gallery-verification.json` and gallery desktop/mobile PNGs.
+
+## 2026-09-14 — existing case covers
+- User approved publication after replacing seven covers from Downloads/Обложки: ViaMed, TAK, BTS, Basalt, DCO, FeedUp, IZZY. ILVI/BioRise already used supplied covers; NWL/Chery retained existing approved assets.
+- Updated landing cards/preview image sources, common and legacy card registries, generated case social metadata. Source commit d99696c. Supplied small images keep native resolution; large files capped at 1600px, original files untouched.
+- Vite build and 21 existing case tests passed. Local browser confirmed new card asset URLs; user approved preview. Scoped 25-file deploy after successful VPS backup, no asset deletion. Cloudflare exact-URL purge succeeded (HTTP 200), all 25 live files matched local bytes. Verification: evidence/covers-2026-verification.json.
