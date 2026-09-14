@@ -1,0 +1,32 @@
+[
+  {
+    "path": "leadgeneration/index.html",
+    "match": true,
+    "sha256": "4278d00b584fd3d9faf34d004eb4ad4434d4a824889d7307aca3bdbe561263d7"
+  },
+  {
+    "path": "leadgeneration/assets/index-B-0CtPRq.css",
+    "match": true,
+    "sha256": "0a240e24c3f2dfae019c572325e4c304415d8d5d83b484387ecdaa8037cf38b9"
+  },
+  {
+    "path": "leadgeneration/assets/index-Dqsf5KQc.js",
+    "match": true,
+    "sha256": "e5e2aa1b538adf5a57e814aa06d4c13d51e45b9341d0a257ac54f25e85a26b92"
+  },
+  {
+    "path": "cases/case-nwl/index.html",
+    "match": true,
+    "sha256": "45a7f7814aee1505e0d6318aca73918dc7cf4ac7fc99177cea3ff1fdc6983616"
+  },
+  {
+    "path": "cases/format-v2.css",
+    "match": true,
+    "sha256": "a3e4c4ff664ee9662bee7e12eb78aeebd43b245dd070cdc23c680683d02c6728"
+  },
+  {
+    "path": "cases-data.js",
+    "match": true,
+    "sha256": "dac61e9a375c0b902971d51c8950d7d681c46bca78b22206165389470225756e"
+  }
+]
