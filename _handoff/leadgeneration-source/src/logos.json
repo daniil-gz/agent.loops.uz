@@ -531,5 +531,18 @@
     ],
     "filter": "grayscale(1) contrast(3)",
     "background": "#ffffff"
+  },
+  "volshebstvo": {
+    "file": "volshebstvo.jpg",
+    "width": 640,
+    "height": 640,
+    "crop": [
+      168,
+      122,
+      336,
+      397
+    ],
+    "filter": "grayscale(1) contrast(1.4)",
+    "background": "#ffffff"
   }
 }

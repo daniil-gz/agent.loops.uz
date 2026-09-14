@@ -17,3 +17,6 @@ Restore the original large yellow loop, anchored to the hero statement rather th
 
 ## Unified logo presentation — 2026-09-08
 User provided Traffic Legal, DM Energy, InterCargo, Burger & Lounge and Pervaya Chaynaya. Preserve original brand artwork and original interaction colors. All project and strip logos share the same frame, radius, border and neutral default palette. Compensate source canvas whitespace through src/logos.json and LogoArt; do not redraw brands. Corpus: 43 of 44 project assignments (41 unique marks); only Корпорация волшебства remains unprovided, with parent Resto still used for Resto Kids.
+
+## Confirmed feedback scope — 2026-09-14
+Use the updated leadgeneration design as the source of truth. Old pages are only sources for video functionality and social URLs; do not carry over their visual system or claims. “Fix copy” means resolve text/image collisions, not rewrite wording. New supplied avatar is for the hero. Preserve existing cases/covers and service destinations: selection and other-page work are deferred. Add supplied Korporatsiya Volshebstva logo in the shared frame. Process video: Q-RmwcYpya0, responsive click-to-play with native controls and YouTube fallback. Socials in about: Telegram/Instagram/YouTube/Threads from the old homepage; remove “Больше обо мне” link.

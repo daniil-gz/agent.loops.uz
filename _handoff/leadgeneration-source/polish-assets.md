@@ -22,3 +22,9 @@ Original directory: /Users/daniilgazizov/.codex/generated_images/01a08073-1d39-7
 ## Logo presentation v4 — 2026-09-08
 
 Five user-provided original PNG/JPEG files are stored under public/assets/clients: trafficlegal.png, dmenergy.png, intercargo.jpg, burgerlounge.jpg, pervayachaynaya.jpg. Exact clipboard source filenames are recorded in logos-inventory.json. No image regeneration, bitmap crop or recoloring was applied. Cropping empty source margins, optical fitting and monochrome/color states are CSS presentation. The same LogoArt component and frame tokens serve the directory and moving strip. Runtime screenshots and checks: evidence/polish-v4/.
+
+## 2026-09-14 assets
+- Hero avatar: user PNG `codex-clipboard-e1b7d21f-19ff-4cb9-9033-bd288029fc66.png`; delivery `daniil-avatar-2026.webp`, 640×640. Same artwork, delivery resize/compression; face framed via CSS. Original color/yellow outline preserved.
+- Korporatsiya Volshebstva: user JPG `codex-clipboard-9a6f3875-1086-44c4-9f60-eb214a4ab887.jpg`, copied unchanged to `clients/volshebstvo.jpg` (640×640). CSS crop [168,122,336,397].
+- Video poster: official https://i.ytimg.com/vi/Q-RmwcYpya0/maxresdefault.jpg, supplied video “Этапы работ”, downloaded for local lazy poster. YouTube iframe only created on play; direct video link remains available.
+- Social icons: existing @phosphor-icons/react library, no hand-drawn approximations.

@@ -39,3 +39,24 @@ Only Корпорация волшебства has no supplied/verified original
 ## Published verification
 
 Public 1280 × 1000 capture `13-live-grid.png` matches the compiled layout. All 83 shipped files return 200 and match local SHA-256. `14-live-color.png` verifies native Traffic Legal artwork and selection on the public page. Public browser has no broken images, overflow, warnings or errors. Viewport restored after QA.
+
+## Feedback polish — 2026-09-14
+
+Source truth: current approved leadgeneration at HEAD 8d40186, captured before edits in `evidence/polish-v5/hero-before-desktop.jpg`, `hero-before-mobile.jpg`, `process-before-desktop.jpg`; user's annotated screenshots and explicit follow-up corrections. Old /target and homepage used only for video/social references.
+
+Full-view side-by-side evidence (before left, after right): `evidence/polish-v5/hero-desktop-comparison.jpg` (2560×720 from 1280×720 CSS captures), `hero-mobile-comparison.jpg` (780×844 from 390×844), `process-desktop-comparison.jpg` (2560×720). DPR 1; comparisons inspected together. Native-size captures also inspected for small labels, avatar, logo and social controls. Desktop comparison viewer downscaled to 2048 wide; native source captures used for focused details.
+
+Iteration findings and fixes:
+- P2 hero: portrait annotation overlapped photo; moved outside circular crop. Latest user-selected close-up replaces the initial supplied wide portrait. Existing copy retained.
+- P2 hero: 1600-wide display placement approached/overlapped service text; moved wordmark top from 115px to 83px at >=1450. `hero-after-wide.jpg` verified clear text.
+- P2 decoration: Krabs sat on arrow. Moved above it, scaled to remaining space on smaller widths. Yellow loop retained. At 320px loop crossed the final line; enlarged/shifted its vertical extent and reduced Franklin/Krabs to avoid adjacent artwork collisions.
+- P2 video: old mobile CSS hid process art; explicitly reveal video before the timeline, hide only redundant sticky display label. Final `process-after-mobile.jpg` shows poster, handwritten caption and first step together.
+- P2 socials: natural wrapping produced 3+1; now an even 2×2 grid, verified in `socials-after-desktop.jpg` and `socials-after-mobile.jpg`.
+- Missing logo supplied: 44/44 projects, native logo and shared frame. `logo-after-mobile.jpg` verifies selected native pink color, no empty slots or broken loaded logo images.
+
+Fidelity surfaces: existing font families, weights and hierarchy retained; existing section order, spacing and paper/ink/yellow tokens preserved apart from intentional local fixes. Original artwork used, avatar optimized to 640×640 WebP and CSS-framed. Copy unchanged except adding video/social controls and removing the deferred about-page CTA. Case data/cover selection and service links remain unchanged.
+
+Responsive states inspected: 320×740, 390×844, 768×1024, 1280×720, 1600×900; no horizontal page overflow observed. Video poster is lazy, iframe absent before click; native button supports keyboard and passes focus to iframe. The iframe was created with correct video URL on click, but local embedded playback did not load in IAB; standalone YouTube requested sign-in to confirm non-bot. Playback/audio is an external verification gap, not claimed as passed. Direct YouTube fallback remains available, plus a loading-state fallback instead of a blank surface. No application errors/warnings in local console.
+
+Visual final result: passed
+Remaining verification: actual YouTube playback in a normal signed-in visitor browser. No unconfirmed claims about sound or full video playback.

@@ -1,7 +1,7 @@
 {
-  "checked": "2026-09-08",
+  "checked": "2026-09-14",
   "total": 44,
-  "withLogo": 43,
+  "withLogo": 44,
   "projects": [
     {
       "sector": "Медицина и здоровье",
@@ -307,9 +307,9 @@
     {
       "sector": "Другие направления",
       "name": "Корпорация волшебства",
-      "logo": null,
-      "source": null,
-      "note": ""
+      "logo": "volshebstvo",
+      "source": "User supplied original logo, 2026-09-14",
+      "note": "Original artwork; shared frame and CSS crop"
     }
   ]
 }

@@ -21,6 +21,6 @@ export const sectors = [
  {name:'Продукты и напитки',filter:'Продукты и ритейл',projects:[['Coffee Barista','Дистрибьютор кофе','barista'],['Impact Mints','Освежающие драже','impactmints'],['Gastromarket','Поставки продуктов для бизнеса','gastromarket'],['Pervaya Chaynaya','Чайная компания','pervayachaynaya']]},
  {name:'Образование',filter:'Образование',projects:[['Оренбургский госуниверситет','Высшее образование','ogu'],['Stark edu','Образовательные услуги','stark']]},
  {name:'Городские сервисы',filter:'Другое',projects:[['IZZY','Прокат электросамокатов','izzy'],['Q.watt','Пауэрбанки и электровелосипеды','qwatt']]},
- {name:'Другие направления',filter:'Другое',projects:[['Centris media','Наружная реклама','centrismedia'],['Traffic Legal','Юридическая компания','trafficlegal'],['Buchet','Цветы и подарки','buchet'],['Корпорация волшебства','Детские праздники']]}
+ {name:'Другие направления',filter:'Другое',projects:[['Centris media','Наружная реклама','centrismedia'],['Traffic Legal','Юридическая компания','trafficlegal'],['Buchet','Цветы и подарки','buchet'],['Корпорация волшебства','Детские праздники','volshebstvo']]}
 ];
 export const filters=['Все','Медицина','Рестораны и HoReCa','Авто','B2B и логистика','Производство','Фитнес и красота','Дом и интерьер','Продукты и ритейл','Образование','Другое'];
