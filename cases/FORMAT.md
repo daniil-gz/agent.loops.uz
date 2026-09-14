@@ -79,7 +79,7 @@ ILVI — новый опубликованный v2-кейс `/cases/case-ilvi/`
 
 ## Пачка кейсов из сохранённых данных — 14.09.2026
 
-Подготовлены 13 новых страниц: printuz, centrismedia, printexpress, dental, centrisfit, centrisladies, gastromarket, dolcetta, bscafe, restokids, centrisprint, centriscup, blackstar. В этой работе они собраны локально; сетевой деплой не выполнялся. `status: published` означает включение в статическую сборку, а не подтверждение публикации на сервере.
+Подготовлены 13 новых страниц: printuz, centrismedia, printexpress, dental, centrisfit, centrisladies, gastromarket, dolcetta, bscafe, restokids, centrisprint, centriscup, blackstar. После согласования опубликованы отдельными страницами на loops.uz; каждая связана с соответствующей компанией в нижнем списке через предпросмотр. Публикация 7f7fd30: 45 публичных файлов проверены побайтно, Cloudflare purge успешен. Страница локальной подборки не публиковалась. `status: published` означает включение в статическую сборку; сетевую публикацию подтверждает отдельная проверка.
 
 Предпросмотры новых кейсов хранятся в `src/new-cases.json`, импортируются в общий массив `cases`. `featured: false` сохраняет прежний состав избранных при фильтре «Все», но показывает новые истории при выборе ниши и через нижний список проектов. `artwork: true` отображает типографскую обложку без обрезки в предпросмотре.
 
