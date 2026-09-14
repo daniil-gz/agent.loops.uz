@@ -254,3 +254,11 @@
 @media(max-width:700px){.preview-image--portrait{height:auto;width:100%;max-height:460px;background:#e7e5dd!important}.preview-image--portrait>img{object-position:center}.preview-image--portrait>div{top:24px}.preview-image--portrait:after{background:linear-gradient(#151712b3,transparent 30%)}}
 
 .case-card--portrait .case-shade{background:linear-gradient(#12171377 0%,#12171300 30%,#121713e8 66%,#121713 100%)}
+
+/* Typographic case covers remain readable in previews and filtered cards. */
+.preview-image--artwork{min-height:0;align-self:center;aspect-ratio:1;width:100%;height:auto}
+.preview-image--artwork>img{object-fit:contain}
+.preview-image--artwork:after{display:none}
+.preview-image--artwork>div{width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.case-card--artwork>img{object-fit:contain;object-position:center top;height:70%;top:52px}
+@media(max-width:700px){.preview-image--artwork{height:auto;max-height:none;aspect-ratio:1}.preview-image--artwork>div{top:0;bottom:auto;left:0}}

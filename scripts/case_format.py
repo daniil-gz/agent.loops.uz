@@ -110,7 +110,7 @@ def render(data, registry, analytics):
             if key == 'context':
                 content += markets_diagram(data.get('markets'))
             if key == 'objective':
-                content += flow_diagram(data.get('flow', []))
+                content += flow_diagram(data.get('flow', []), data.get('flowTitle', 'ПУТЬ ЗАПРОСА'))
             if key == 'results':
                 content = funnel_diagram(section.get('funnel', [])) + return_diagram(section.get('return')) + repeat_visits_diagram(section.get('repeatVisits')) + content + growth_diagram(section.get('growth'))
             if key == 'measurement':

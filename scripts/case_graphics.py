@@ -14,7 +14,7 @@ def growth_diagram(data):
     if not data: return ''
     maximum = max(100, *(100 + item['change'] for item in data['items']))
     rows = ''.join(f'<li><div class="growth-label"><span>{esc(item["label"])}</span><strong>+{item["change"]}%</strong></div><div class="growth-track" aria-hidden="true"><span style="width:{(100+item["change"])/maximum*100:.4f}%"></span><i style="left:{100/maximum*100:.4f}%"></i></div></li>' for item in data['items'])
-    return f'<figure class="growth-diagram"><figcaption><span class="eyebrow">ДИНАМИКА ПРОЕКТА</span><h3>{esc(data["title"])}</h3></figcaption><ul>{rows}</ul><p class="diagram-source">Сравнение двух соседних месяцев. Изменения округлены. Отметка на полосе — исходный уровень каждого показателя, принятый за 100.</p></figure>'
+    return f'<figure class="growth-diagram"><figcaption><span class="eyebrow">ДИНАМИКА ПРОЕКТА</span><h3>{esc(data["title"])}</h3></figcaption><ul>{rows}</ul><p class="diagram-source">{esc(data.get("comparison", "Сравнение двух соседних месяцев."))} Изменения округлены. Отметка на полосе — исходный уровень каждого показателя, принятый за 100.</p></figure>'
 
 def markets_diagram(data):
     if not data: return ''
@@ -34,10 +34,11 @@ ICON = {
  'person': '<circle cx="12" cy="7" r="4"/><path d="M4 22v-3a8 8 0 0 1 16 0v3M8 18h8"/>'
 }
 
-def flow_diagram(steps):
+def flow_diagram(steps, title="ПУТЬ ЗАПРОСА"):
+
     if not steps: return ''
     cards = ''.join(f'<li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">{ICON.get(s.get("icon"), ICON["chat"])}</svg></span><strong>{esc(s["title"])}</strong><span>{esc(s["text"])}</span></li>' for s in steps)
-    return f'<figure class="flow-diagram"><figcaption><span class="eyebrow">ПУТЬ ЗАПРОСА</span><span class="diagram-note">каждый делает своё</span></figcaption><ol>{cards}</ol></figure>'
+    return f'<figure class="flow-diagram"><figcaption><span class="eyebrow">{esc(title)}</span><span class="diagram-note">каждый делает своё</span></figcaption><ol>{cards}</ol></figure>'
 
 def funnel_diagram(steps):
     if not steps: return ''

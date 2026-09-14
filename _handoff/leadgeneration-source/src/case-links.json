@@ -9,5 +9,18 @@
   "basalt": "/cases/case-basalt/",
   "dco": "/cases/case-dco/",
   "feedup": "/cases/case-feedup/",
-  "izzy": "/cases/case-izzy/"
+  "izzy": "/cases/case-izzy/",
+  "printuz": "/cases/case-printuz/",
+  "centrismedia": "/cases/case-centrismedia/",
+  "printexpress": "/cases/case-printexpress/",
+  "dental": "/cases/case-dental/",
+  "centrisfit": "/cases/case-centrisfit/",
+  "centrisladies": "/cases/case-centrisladies/",
+  "gastromarket": "/cases/case-gastromarket/",
+  "dolcetta": "/cases/case-dolcetta/",
+  "bscafe": "/cases/case-bscafe/",
+  "restokids": "/cases/case-restokids/",
+  "centrisprint": "/cases/case-centrisprint/",
+  "centriscup": "/cases/case-centriscup/",
+  "blackstar": "/cases/case-blackstar/"
 }

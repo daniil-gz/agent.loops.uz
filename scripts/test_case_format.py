@@ -5,6 +5,20 @@ from pathlib import Path
 from case_format import validate, render
 ROOT = Path(__file__).resolve().parents[1]
 class CaseFormatTest(unittest.TestCase):
+    def test_weekly_case_diagram_labels_the_actual_comparison(self):
+        data = json.loads((ROOT/'cases/_content/dental.json').read_text())
+        registry = json.loads((ROOT/'cases/cases.json').read_text())
+        out = render(data, registry, '')
+        self.assertIn('двух соседних полных недель', out)
+        self.assertNotIn('Сравнение двух соседних месяцев', out)
+
+    def test_awareness_case_does_not_label_diagram_as_lead_funnel(self):
+        data = json.loads((ROOT/'cases/_content/dolcetta.json').read_text())
+        registry = json.loads((ROOT/'cases/cases.json').read_text())
+        out = render(data, registry, '')
+        self.assertIn('КАК УСТРОЕНО ПРОДВИЖЕНИЕ', out)
+        self.assertNotIn('ПУТЬ ЗАПРОСА', out)
+
     def test_ilvi_publishes_only_approved_rounded_financials(self):
         data = json.loads((ROOT/'cases/_content/ilvi.json').read_text())
         validate(data, self.ids)
