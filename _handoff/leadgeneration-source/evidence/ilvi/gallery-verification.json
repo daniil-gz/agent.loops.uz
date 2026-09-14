@@ -1,0 +1,104 @@
+[
+  {
+    "path": "cases/gallery.css",
+    "success": true,
+    "identical": true,
+    "bytes": 6838
+  },
+  {
+    "path": "cases/gallery.js",
+    "success": true,
+    "identical": true,
+    "bytes": 3031
+  },
+  {
+    "path": "cases/case-ilvi/index.html",
+    "success": true,
+    "identical": true,
+    "bytes": 26623
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-01-thumb.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 120682
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-01.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 358704
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-02-thumb.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 148851
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-02.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 446150
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-03-thumb.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 100212
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-03.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 291097
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-04-thumb.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 131594
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-04.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 407031
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-05-thumb.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 163394
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-05.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 504168
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-06-thumb.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 175007
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-06.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 565115
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-07-thumb.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 124760
+  },
+  {
+    "path": "images/ilvi-gallery/ilvi-07.jpg",
+    "success": true,
+    "identical": true,
+    "bytes": 379655
+  }
+]

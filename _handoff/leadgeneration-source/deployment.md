@@ -86,3 +86,11 @@ Published f341ffb to /cases/case-ilvi/ and pinned ILVI first on /leadgeneration/
 ## ILVI confidentiality correction — 2026-09-14
 Published 47faf0a. Removed measurement section, exact financial totals, ROAS and return-calculation graphic from ILVI full page, preview, shared registry/cards and llms.txt. Public result retains only approved approximate headline amounts. Third KPI now six markets; TOC has five sequential sections. The prior publication notes record history and do NOT authorize restoring exact financial details.
 14 tests passed, including ILVI privacy regression; generated NWL HTML unchanged. Five public files updated; previous JS bundle removed. Connected Cloudflare exact-URL purge succeeded (HTTP200) after CLI purge10000. Five current public files match and contain no private financial values (evidence/ilvi/privacy-verification.json). Old bundle deletion is confirmed by rsync output and its URL was included in the successful purge; HTTP readback of that removed URL timed out twice, so no public404 claim is made. User's open local tab reloaded: no measurement link/content or private financial values, no page overflow.
+
+## 2026-09-14 — ILVI creative gallery
+- Source commit: 26443a5. Added seven original portrait creatives (960px thumbnails / 1920px full images), horizontal gallery, accessible native-dialog viewer, three anonymized qualification excerpts.
+- QA: 21 Python tests passed; browser checked at 1440×1000 and 390×844, no horizontal document overflow, all seven images loaded at 9:16, next/previous and wrap-around, Escape/close with restored opener focus, mobile rail scrolling. Temporary viewport reset; existing local preview left open.
+- Publication scoped to 17 files listed in `/tmp/loops-ilvi-gallery-deploy.txt`: ILVI HTML, gallery CSS/JS, 14 JPEGs. Used existing SSH alias and VPS `/var/www/loops`; tar backup succeeded before rsync. No deletion or parallel BioRise/landing changes in this deployment.
+- Cloudflare exact-URL purge succeeded (HTTP 200). All 17 public responses byte-match local committed assets. One thumbnail request initially failed; the focused retry succeeded.
+- No raw chat screenshots, personal phones/avatars/dates/cities shipped. Financial confidentiality and five-section numbering preserved. No Meta reads.
+- Evidence: `evidence/ilvi/gallery-verification.json` and gallery desktop/mobile PNGs.
