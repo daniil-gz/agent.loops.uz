@@ -13,8 +13,8 @@
     "ИИ-квалификация",
     "Передача в продажи"
   ],
-  "cover": "/images/nwl-card.png",
-  "coverAlt": "Обложка проекта NWL Operations",
+  "cover": "/images/nwl-warehouse-2026.png",
+  "coverAlt": "Склад NWL Operations в Ташкенте",
   "metrics": [
     {
       "value": "88",
@@ -144,5 +144,6 @@
       "text": "Расчёт, предложение и переговоры",
       "icon": "person"
     }
-  ]
+  ],
+  "coverRatio": 0.7566666666666667
 }

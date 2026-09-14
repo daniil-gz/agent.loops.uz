@@ -66,3 +66,6 @@ Franklin removed per latest user direction. Backup `/root/backups/loops-www-2026
 
 ## Case format v2 — 2026-09-14
 Published commit 82c77bc. NWL migrated at existing /cases/case-nwl/, direct project links and top-card navigation on /leadgeneration/. Cases generator selects structured v2 content where published; other 8 detail pages verified unchanged. Six renderer tests and deterministic rebuild passed. Dry-run only 6 public files; backup /root/backups/loops-www-20260914-130301.tar.gz. CLI purge returned 10000; exact-URL Cloudflare MCP purge succeeded. All 6 changed public files HTTP 200 and byte-identical; /cases/_content/nwl.json returns 404. Public browser confirmed lower NWL row opens new template, overflow 0; screenshot evidence/case-system-v2/live-nwl-desktop.jpg. No infrastructure or Worker change. Pushed origin/main.
+
+## Preview + infographic deployment — 2026-09-14
+Commit3f16c35 deployed with backup /root/backups/loops-www-20260914-133454.tar.gz. Five changed public files HTTP200 and byte-identical. CLI and connected Cloudflare purge both returned10000; content readback was current regardless. Public browser hit ERR_QUIC_PROTOCOL_ERROR (not a security warning); local scenario and render verified. Superseded immediately by user's supplied NWL warehouse cover below.

@@ -1,0 +1,27 @@
+[
+  {
+    "path": "leadgeneration/index.html",
+    "match": true,
+    "sha256": "ec5837b7bccd238eaab743e04e9eec2df7a64356719204907f07ec981a195a62"
+  },
+  {
+    "path": "leadgeneration/assets/index-BNsqpuzy.css",
+    "match": true,
+    "sha256": "c8be908cd326b1a0455b3dd0956295ac771a7b86c2e4f0e50b622da06129a974"
+  },
+  {
+    "path": "leadgeneration/assets/index-C1SkA6JH.js",
+    "match": true,
+    "sha256": "f8947e9305033e9abba2bc1cde704f7d21b6ddbf370106ba854fbca7c17b290f"
+  },
+  {
+    "path": "cases/case-nwl/index.html",
+    "match": true,
+    "sha256": "8d1d9180f931749414245d946b1b5588ff17a4cbf2899b5bfab6f1d363c47512"
+  },
+  {
+    "path": "cases/format-v2.css",
+    "match": true,
+    "sha256": "7fa39a231ceb26615c417b24d8b829e1e5b5af60d2d78a619d1f94124a5fb4ed"
+  }
+]

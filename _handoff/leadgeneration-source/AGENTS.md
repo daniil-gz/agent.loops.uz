@@ -28,3 +28,5 @@ User moved on to unifying cases and gradually migrating old case/article designs
 
 ## Corrected case interaction and layout — 2026-09-14
 User explicitly requires two steps: clicking a project/card opens its preview; only the preview CTA opens the full case. This supersedes the previous direct-navigation decision. Keep real hrefs for modified clicks/fallback, intercept ordinary clicks with CasePreview native dialog. Full case: shared heading/content grid, aligned metric labels and work-card title/body rows independent of copy length, natural height growth without clipping. Add factual infographics that explain the case (process route and numerical funnel), no invented proof or numbers. Tablet reading layout stacks at 900px to avoid breaking long Russian words.
+
+NWL cover follow-up: user supplied nwl-warehouse-2026.png (681x900) and asked to replace cover while preserving existing overlays. Use it in curated rail, preview, full case and legacy card registry. Preserve original file; full case coverRatio681/900, mobile preview poster height300/top alignment preserves embedded headline.

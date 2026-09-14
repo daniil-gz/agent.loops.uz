@@ -16,6 +16,8 @@ def validate(data, known_ids):
         raise ValueError('Case requires schemaVersion 2 and draft/published status')
     if data.get('id') not in known_ids:
         raise ValueError('Case id must exist in cases/cases.json')
+    if not isinstance(data.get('coverRatio', 1), (int, float)) or not 0.25 <= data.get('coverRatio', 1) <= 4:
+        raise ValueError('Cover ratio must be a number between 0.25 and 4')
     for key in ('headline', 'summary', 'client', 'industry', 'location', 'period', 'cover', 'coverAlt', 'workTitle'):
         if not isinstance(data.get(key), str) or not data[key].strip():
             raise ValueError(f'Missing case field: {key}')
@@ -97,7 +99,7 @@ def render(data, registry, analytics):
 </head><body><a class="skip-link" href="#content">Перейти к кейсу</a>
 <header class="wrap case-header"><a class="wordmark" href="/leadgeneration/" aria-label="Loops — на главную">loops</a><nav aria-label="Основная навигация"><a href="/leadgeneration/#cases">Кейсы</a><a href="/leadgeneration/#services">Услуги</a><a href="/leadgeneration/#about">Обо мне</a></nav><a class="button" href="/leadgeneration/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></header>
 <main id="content"><section class="wrap case-hero"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/leadgeneration/#projects">Все проекты</a><span aria-hidden="true">/</span><span>{esc(data['client'])}</span></nav>
-<div class="hero-grid"><div><span class="eyebrow">{esc(data['client'])} / КЕЙС LOOPS</span><h1>{esc(data['headline'])}</h1><p class="case-summary">{esc(data['summary'])}</p></div><figure class="cover"><img src="{esc(data['cover'])}" alt="{esc(data['coverAlt'])}" width="640" height="640"><figcaption>За цифрами —<br>своя история.</figcaption></figure></div>
+<div class="hero-grid"><div><span class="eyebrow">{esc(data['client'])} / КЕЙС LOOPS</span><h1>{esc(data['headline'])}</h1><p class="case-summary">{esc(data['summary'])}</p></div><figure class="cover" style="--cover-ratio:{data.get('coverRatio', 1)}"><img src="{esc(data['cover'])}" alt="{esc(data['coverAlt'])}" width="640" height="640"><figcaption>За цифрами —<br>своя история.</figcaption></figure></div>
 <div class="metrics" style="--metric-count:{len(data['metrics'])}">{metrics}</div><dl class="case-meta"><div><dt>Бизнес</dt><dd>{esc(data['industry'])}</dd></div><div><dt>География</dt><dd>{esc(data['location'])}</dd></div><div><dt>Инструменты</dt><dd>{esc(' · '.join(data['services']))}</dd></div><div><dt>Период</dt><dd>{esc(data['period'])}</dd></div></dl></section>
 <div class="wrap story-layout"><aside><nav class="toc" aria-label="Содержание кейса"><span class="eyebrow">ВНУТРИ ИСТОРИИ</span>{toc}</nav></aside><article>{''.join(sections)}</article></div>
 <section class="wrap case-cta"><div><span class="eyebrow">ЕСТЬ ПОХОЖАЯ ЗАДАЧА?</span><h2>Разберём ваш<br><span>путь к продаже.</span></h2><p>Посмотрим, что происходит от первого обращения до работы менеджера.</p></div><a class="button button-yellow" href="/leadgeneration/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></section>

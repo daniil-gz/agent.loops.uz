@@ -52,7 +52,7 @@
     },
     {
       id: "nwl",
-      img: "nwl-card.png",
+      img: "nwl-warehouse-2026.png",
       client: "NWL",
       cat: "3PL-логистика",
       niche: ICON.truck,
