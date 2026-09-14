@@ -27,5 +27,6 @@
       "privateValuesFound": false
     }
   ],
-  "oldBundleStatus": "000"
+  "oldBundleStatus": "000",
+  "oldBundleCheck": "HTTP readback timed out twice; deletion confirmed in deploy rsync output; exact-URL purge succeeded"
 }
