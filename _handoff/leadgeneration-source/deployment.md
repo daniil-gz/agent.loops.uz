@@ -54,3 +54,9 @@ Published commit `073b486` to https://loops.uz/leadgeneration/ via the existing 
 CLI purge again returned code 10000; exact-page/assets purge through the connected Cloudflare API returned HTTP 200, success=true. No credential or network settings changed. Live SHA-256 verification passed **83/83** public files, all HTTP 200 (`evidence/polish-v4/live-assets-v4.json`). The five supplied files also match the clipboard originals byte for byte (`original-assets.json`).
 
 Fresh public browser capture: `13-live-grid.png`; original Traffic Legal color selected and loaded at natural width 1100: `14-live-color.png`. Correct new script `index-DbCHFY_a.js`, no broken images, no horizontal overflow, empty error/warning log. The old open IAB tab hit transient ERR_QUIC_PROTOCOL_ERROR; a fresh tab through the standard HTTP→HTTPS redirect loaded the public release successfully. Viewport override reset; working public tab kept as deliverable. GitHub main synced.
+
+## 2026-09-14 — feedback polish
+- Published implementation 913cb36: supplied avatar and final client logo, hero collision fixes, responsive process video, four social links, old about CTA removed. Backup `/root/backups/loops-www-20260914-123647.tar.gz` confirmed OK.
+- Only leadgeneration shipped. CLI purge failed 10000 as before; exact-file Cloudflare MCP purge returned 200/success=true.
+- Full public asset verification: 86/86 files returned 200 and matched local SHA-256 (`evidence/polish-v5/live-assets-v5.json`). This snapshot predates the subsequent user request to remove Franklin.
+- Cases/covers/service pages deferred. YouTube iframe created on interaction; actual playback requires follow-up in a normal visitor browser because verification browser requested sign-in / did not render embed. Direct video fallback available.

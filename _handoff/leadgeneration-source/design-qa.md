@@ -60,3 +60,6 @@ Responsive states inspected: 320×740, 390×844, 768×1024, 1280×720, 1600×900
 
 Visual final result: passed
 Remaining verification: actual YouTube playback in a normal signed-in visitor browser. No unconfirmed claims about sound or full video playback.
+
+### Final steering: remove Franklin
+User explicitly requested keeping only Krabs. Removed the Franklin image element; layout and all other updates preserved. Final desktop evidence: `evidence/polish-v5/hero-final-desktop.jpg`; DOM has zero Franklin and one Krabs. This removal supersedes the earlier character composition in before/after comparisons.

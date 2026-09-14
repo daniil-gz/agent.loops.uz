@@ -20,3 +20,5 @@ User provided Traffic Legal, DM Energy, InterCargo, Burger & Lounge and Pervaya 
 
 ## Confirmed feedback scope — 2026-09-14
 Use the updated leadgeneration design as the source of truth. Old pages are only sources for video functionality and social URLs; do not carry over their visual system or claims. “Fix copy” means resolve text/image collisions, not rewrite wording. New supplied avatar is for the hero. Preserve existing cases/covers and service destinations: selection and other-page work are deferred. Add supplied Korporatsiya Volshebstva logo in the shared frame. Process video: Q-RmwcYpya0, responsive click-to-play with native controls and YouTube fallback. Socials in about: Telegram/Instagram/YouTube/Threads from the old homepage; remove “Больше обо мне” link.
+
+Latest hero decision (2026-09-14): remove Benjamin Franklin entirely; keep only the supplied mirrored Mr Krabs as the hero decorative character.
