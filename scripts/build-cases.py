@@ -9,6 +9,8 @@ Add/edit a case = edit cases/cases.json + cases/_bodies/<id>.html, then run this
 Everything (homepage, cases list, detail page, cross-links) updates from the one registry.
 """
 import json, os, re, html
+from pathlib import Path
+from case_format import validate as validate_case_v2, render as render_case_v2
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CASES = json.load(open(os.path.join(ROOT, "cases/cases.json"), encoding="utf-8"))
@@ -318,11 +320,28 @@ def build_page(c):
 """
 
 def main():
+    content_dir = Path(ROOT) / "cases/_content"
+    structured = {}
+    for path in sorted(content_dir.glob("*.json")):
+        data = json.loads(path.read_text())
+        validate_case_v2(data, {c["id"] for c in CASES})
+        if path.stem != data["id"] or data["id"] in structured:
+            raise ValueError(f"Duplicate/mismatched case id: {path}")
+        if data["status"] == "published":
+            for asset in [data["cover"]] + [e["src"] for e in data.get("evidence", [])]:
+                if not (Path(ROOT) / asset.lstrip("/")).is_file():
+                    raise ValueError(f"Missing case asset: {asset}")
+            structured[data["id"]] = data
+    links_file = Path(ROOT) / "_handoff/leadgeneration-source/src/case-links.json"
+    if links_file.parent.is_dir():
+        links_file.write_text(json.dumps({c["id"]: f'/cases/case-{c["id"]}/' for c in CASES}, indent=2) + "\n")
+    if structured:
+        (Path(ROOT) / "cases/format-v2.css").write_text((Path(ROOT) / "scripts/case-system/style.css").read_text())
     open(os.path.join(ROOT, "cases-data.js"), "w", encoding="utf-8").write(build_cards_js())
     for c in CASES:
         d = os.path.join(ROOT, f"cases/case-{c['id']}")
         os.makedirs(d, exist_ok=True)
-        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(build_page(c))
+        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(render_case_v2(structured[c["id"]], CASES, YM) if c["id"] in structured else build_page(c))
     print(f"Built cases-data.js + {len(CASES)} detail pages:", ", ".join(c["id"] for c in CASES))
 
 if __name__ == "__main__":
