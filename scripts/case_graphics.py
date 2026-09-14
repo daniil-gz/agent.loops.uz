@@ -5,6 +5,17 @@ def esc(s): return html.escape(str(s), quote=True)
 
 def pct(n): return f'{n:.1f}'.replace('.', ',').removesuffix(',0') + '%'
 
+def repeat_visits_diagram(data):
+    if not data: return ''
+    dots = ''.join(f'<i class="{"is-repeat" if i < data["share"] else ""}"></i>' for i in range(100))
+    return f'<figure class="repeat-diagram"><figcaption><span class="eyebrow">ПОСЛЕ ПЕРВОГО ВИЗИТА</span><span class="diagram-note">у истории есть продолжение</span></figcaption><div class="repeat-grid"><div class="repeat-headline"><strong>≈{data["share"]}%</strong><p>пациентов Instagram-сегмента пришли минимум дважды</p></div><div class="repeat-dots" aria-hidden="true">{dots}</div></div><div class="repeat-median"><strong>{data["median"]} визита</strong><span>медиана на пациента за период</span></div><p class="diagram-source">Округлённая доля пациентов с двумя и более завершёнными визитами. Каждая точка — 1 процентный пункт, а не отдельный пациент.</p></figure>'
+
+def growth_diagram(data):
+    if not data: return ''
+    maximum = max(100, *(100 + item['change'] for item in data['items']))
+    rows = ''.join(f'<li><div class="growth-label"><span>{esc(item["label"])}</span><strong>+{item["change"]}%</strong></div><div class="growth-track" aria-hidden="true"><span style="width:{(100+item["change"])/maximum*100:.4f}%"></span><i style="left:{100/maximum*100:.4f}%"></i></div></li>' for item in data['items'])
+    return f'<figure class="growth-diagram"><figcaption><span class="eyebrow">ДИНАМИКА ПРОЕКТА</span><h3>{esc(data["title"])}</h3></figcaption><ul>{rows}</ul><p class="diagram-source">Сравнение двух соседних месяцев. Изменения округлены. Отметка на полосе — исходный уровень каждого показателя, принятый за 100.</p></figure>'
+
 def markets_diagram(data):
     if not data: return ''
     countries = ''.join(f'<li><span aria-hidden="true">↗</span>{esc(c)}</li>' for c in data['countries'])

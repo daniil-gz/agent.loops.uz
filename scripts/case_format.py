@@ -4,7 +4,7 @@ import json
 import re
 import math
 from pathlib import Path
-from case_graphics import flow_diagram, funnel_diagram, markets_diagram, return_diagram
+from case_graphics import flow_diagram, funnel_diagram, markets_diagram, return_diagram, repeat_visits_diagram, growth_diagram
 
 SECTION_KEYS = ('context', 'objective', 'work', 'results', 'measurement', 'takeaway')
 SECTION_LABELS = ('Контекст', 'Задача', 'Что сделали', 'Результаты', 'Как считали', 'Вывод')
@@ -56,6 +56,17 @@ def validate(data, known_ids):
         if not markets.get('origin') or not isinstance(countries, list) or not countries or not all(isinstance(c, str) and c.strip() for c in countries) or len(countries) != len(set(countries)):
             raise ValueError('Markets require an origin and distinct named countries')
     returns = data.get('results', {}).get('return')
+    repeat = data.get('results', {}).get('repeatVisits')
+    if repeat is not None:
+        if type(repeat.get('share')) is not int or not 0 <= repeat['share'] <= 100 or type(repeat.get('median')) not in (int, float) or not math.isfinite(repeat['median']) or repeat['median'] < 1:
+            raise ValueError('Repeat visits require a percentage between 0 and 100 and positive median')
+    growth = data.get('results', {}).get('growth')
+    if growth is not None:
+        if not growth.get('title') or not 1 <= len(growth.get('items', [])) <= 6:
+            raise ValueError('Growth requires a title and 1–6 items')
+        for item in growth['items']:
+            if not item.get('label') or type(item.get('change')) is not int or item['change'] < 0:
+                raise ValueError('Growth diagram requires named non-negative integer percentage changes')
     if returns is not None:
         for key in ('revenue', 'spend'):
             value = returns.get(key)
@@ -98,7 +109,7 @@ def render(data, registry, analytics):
             if key == 'objective':
                 content += flow_diagram(data.get('flow', []))
             if key == 'results':
-                content = funnel_diagram(section.get('funnel', [])) + return_diagram(section.get('return')) + content
+                content = funnel_diagram(section.get('funnel', [])) + return_diagram(section.get('return')) + repeat_visits_diagram(section.get('repeatVisits')) + content + growth_diagram(section.get('growth'))
             if key == 'measurement':
                 content += '<dl class="metric-notes">' + ''.join(f'<div><dt>{esc(m["label"])}</dt><dd>{esc(m["definition"])}</dd></div>' for m in data['metrics']) + '</dl>'
             if key == 'results':

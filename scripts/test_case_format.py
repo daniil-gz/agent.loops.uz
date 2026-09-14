@@ -14,6 +14,29 @@ class CaseFormatTest(unittest.TestCase):
         self.assertIn('05 / Вывод', out)
         self.assertIn('$120 тыс.', out)
         self.assertIn('$5 тыс.', out)
+    def test_biorise_public_copy_and_repeat_diagram(self):
+        data = json.loads((ROOT/'cases/_content/biorise.json').read_text())
+        validate(data, self.ids)
+        out = render(data, self.registry, '')
+        self.assertEqual(out.count('<i class="is-repeat">'), 73)
+        self.assertIn('4 визита', out)
+        self.assertIn('4–6 тысяч', out)
+        for private in ('945,11', '945.11', '11 913', '11913', '152,49', '72,6%', 'Как считали', 'id="measurement"', 'sourceFiles', 'Klientiks'):
+            self.assertNotIn(private, out)
+        self.assertIn('Instagram-сегмента', out)
+    def test_repeat_diagram_rejects_impossible_shares(self):
+        for share in (-1, 101, True, 72.6):
+            self.data['results']['repeatVisits'] = {'share': share, 'median': 4}
+            with self.subTest(share=share), self.assertRaises(ValueError):
+                validate(self.data, self.ids)
+    def test_growth_diagram_uses_common_baseline(self):
+        self.data['results']['growth'] = {'title':'Рост', 'items':[{'label':'Бюджет','change':7},{'label':'Визиты','change':47}]}
+        validate(self.data, self.ids)
+        out = render(self.data, self.registry, '')
+        self.assertIn('width:72.7891%', out)
+        self.assertIn('left:68.0272%', out)
+        self.data['results']['growth']['items'][0]['change'] = -110
+        with self.assertRaises(ValueError): validate(self.data, self.ids)
     def setUp(self):
         self.data = json.loads((ROOT/'cases/_content/nwl.json').read_text())
         self.registry = json.loads((ROOT/'cases/cases.json').read_text())
