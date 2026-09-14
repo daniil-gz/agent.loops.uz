@@ -1,0 +1,31 @@
+{
+  "checks": [
+    {
+      "file": "cases/case-ilvi/index.html",
+      "match": true,
+      "privateValuesFound": false,
+      "measurementFound": false
+    },
+    {
+      "file": "cases-data.js",
+      "match": true,
+      "privateValuesFound": false
+    },
+    {
+      "file": "llms.txt",
+      "match": true,
+      "privateValuesFound": false
+    },
+    {
+      "file": "leadgeneration/index.html",
+      "match": true,
+      "privateValuesFound": false
+    },
+    {
+      "file": "leadgeneration/assets/index-hOFtrVP9.js",
+      "match": true,
+      "privateValuesFound": false
+    }
+  ],
+  "oldBundleStatus": "000"
+}
