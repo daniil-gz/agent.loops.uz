@@ -35,3 +35,23 @@
 @media(max-width:1050px){.case-meta{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:10px}.case-meta>div:nth-child(n+3){margin-top:14px}}
 @media(max-width:900px){.case-cta{grid-template-columns:minmax(0,1fr);gap:24px;padding-block:32px}.case-cta>.eyebrow,.case-cta-copy,.case-cta>.button{grid-column:1}.case-cta>.eyebrow{padding:0}.case-cta h2{font-size:clamp(32px,5.2vw,44px)}.case-cta:before{inset-inline:-16px}}
 @media(max-width:480px){.case-meta{grid-template-columns:minmax(0,1fr);gap:0;padding:8px 0 24px}.case-meta>div{grid-row:auto;grid-template-rows:auto;grid-template-columns:96px minmax(0,1fr);gap:16px;padding:16px 0}.case-meta>div+div{border-top:1px solid var(--line)}.case-meta>div:nth-child(n+3){margin-top:0}.case-meta dt{padding-top:3px;font-size:10px}.case-meta dd{font-size:13px}.case-cta:before{inset-inline:-12px}.case-cta p{font-size:17px}.case-cta>.button{width:100%}}
+
+/* Optional factual case modules. Natural-height content stays on the story grid. */
+.markets-diagram,.return-diagram{margin:32px 0;padding:28px;background:#efefe5;border:1px solid #dedfd3;border-radius:10px}
+.markets-diagram figcaption,.return-diagram figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}
+.markets-origin{display:flex;align-items:center;gap:12px;padding-bottom:22px;border-bottom:1px solid #d7d8cb;font-size:18px;line-height:1.4}
+.markets-origin>span{display:grid;place-items:center;flex:none;width:38px;height:38px;background:#f5e62a;border-radius:50%;font-size:27px}
+.markets-diagram ul{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:22px 0;padding:0}
+.markets-diagram li{display:flex;align-items:center;gap:8px;min-height:48px;padding:10px 12px;background:#fafaf5;border:1px solid #e0e1d6;border-radius:5px;font-size:14px}
+.markets-diagram li>span{color:#858873}
+.return-diagram{background:#252820;color:#fafaf4;border-color:#252820}
+.return-diagram .eyebrow,.return-diagram .diagram-note{color:#e9edcf}
+.return-equation{display:grid;grid-template-columns:minmax(0,.7fr) 44px minmax(0,1.3fr);align-items:center;gap:16px;margin:32px 0}
+.return-equation>div{display:grid;grid-template-rows:subgrid;grid-row:span 2;gap:12px}
+.return-equation strong{font-size:clamp(40px,5.2vw,68px);font-weight:500;line-height:1;letter-spacing:-.055em;color:#f6e727;white-space:nowrap}
+.return-equation>div>span{font-size:14px;line-height:1.45;max-width:230px;color:#e1e4d8}
+.return-arrow{grid-row:span 2;font-size:36px;color:#f6e727}
+.story-body .return-calculation{font-size:17px;color:#f5f5ed;padding-top:22px;border-top:1px solid #525649;margin:0 0 12px;line-height:1.65}
+.story-body .return-diagram .diagram-source{color:#bbc0b2}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:600px){.markets-diagram,.return-diagram{padding:20px}.markets-diagram ul{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.markets-diagram li{font-size:13px;padding:9px}.markets-origin{font-size:16px}.return-equation{gap:8px;grid-template-columns:minmax(0,.7fr) 28px minmax(0,1.3fr)}.return-equation strong{font-size:clamp(32px,8.7vw,48px)}.return-equation>div>span{font-size:12px}.return-arrow{font-size:26px}.story-body .return-calculation{font-size:15px}}

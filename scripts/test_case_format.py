@@ -48,4 +48,19 @@ class CaseFormatTest(unittest.TestCase):
         self.assertIn('69,8% от предыдущего этапа', out)
         self.assertIn('13,5% от всех диалогов', out)
         self.assertIn('width:13.4969%', out)
+    def test_return_uses_exact_totals_not_display_rounding(self):
+        self.data['results']['return'] = {'revenue': 118758, 'spend': 5728}
+        self.data['metrics'][0]['value'] = '$120 тыс.'
+        self.data['metrics'][1]['value'] = '$5 тыс.'
+        out = render(self.data, self.registry, '')
+        self.assertIn('$20,73</strong>', out)
+        self.assertNotIn('$24,00</strong>', out)
+    def test_return_rejects_invalid_denominators(self):
+        for spend in (0, -1, float('nan'), float('inf'), True, '5728'):
+            with self.subTest(spend=spend):
+                self.data['results']['return'] = {'revenue': 118758, 'spend': spend}
+                with self.assertRaises(ValueError): validate(self.data, self.ids)
+    def test_market_count_rejects_duplicates(self):
+        self.data['markets'] = {'origin': 'Стамбул', 'countries': ['Узбекистан', 'Узбекистан']}
+        with self.assertRaises(ValueError): validate(self.data, self.ids)
 if __name__ == '__main__': unittest.main()

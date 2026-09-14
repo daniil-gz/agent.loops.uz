@@ -5,6 +5,18 @@ def esc(s): return html.escape(str(s), quote=True)
 
 def pct(n): return f'{n:.1f}'.replace('.', ',').removesuffix(',0') + '%'
 
+def markets_diagram(data):
+    if not data: return ''
+    countries = ''.join(f'<li><span aria-hidden="true">↗</span>{esc(c)}</li>' for c in data['countries'])
+    return f'<figure class="markets-diagram"><figcaption><span class="eyebrow">ГЕОГРАФИЯ ПРОДВИЖЕНИЯ</span><span class="diagram-note">из Стамбула — к партнёрам</span></figcaption><div class="markets-origin"><span aria-hidden="true">◎</span><strong>{esc(data["origin"])}</strong></div><ul>{countries}</ul><p class="diagram-source">{len(data["countries"])} рынков рекламы. Схема показывает географию работы, а не распределение выручки.</p></figure>'
+
+def return_diagram(data):
+    if not data: return ''
+    ratio = f'{data["revenue"]/data["spend"]:.2f}'.replace('.', ',')
+    revenue = f'{data["revenue"]:,.0f}'.replace(',', ' ')
+    spend = f'{data["spend"]:,.0f}'.replace(',', ' ')
+    return f'<figure class="return-diagram"><figcaption><span class="eyebrow">ОТДАЧА ОТ РЕКЛАМЫ / ROAS</span><span class="diagram-note">считаем по точным суммам</span></figcaption><div class="return-equation"><div><strong>$1</strong><span>рекламного бюджета</span></div><span class="return-arrow" aria-hidden="true">→</span><div><strong>${ratio}</strong><span>выручки от привлечённых клиентов</span></div></div><p class="return-calculation">${revenue} выручки <span aria-hidden="true">÷</span><span class="sr-only">разделить на</span> ${spend} расходов Meta</p><p class="diagram-source">По сводке команды проекта. Отношение выручки к расходам Meta; не показатель чистой прибыли.</p></figure>'
+
 ICON = {
  'ads': '<path d="M4 9h5l10-5v16L9 15H4zM9 15l2 6H7l-2-6M22 8v8"/>',
  'chat': '<path d="M5 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-8l-6 4v-4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zM7 9h10M7 13h7"/>',

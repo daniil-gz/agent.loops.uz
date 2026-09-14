@@ -245,3 +245,12 @@
 @media(max-width:700px){.case-preview{width:calc(100% - 24px);max-height:calc(100dvh - 24px)}.preview-grid{grid-template-columns:minmax(0,1fr)}.preview-image{height:180px;min-height:0}.preview-image>div{left:24px;bottom:22px}.preview-image h2{font-size:32px}.preview-copy{padding:25px 24px}.preview-metrics strong{font-size:33px}.preview-close{right:10px;top:10px}.preview-copy>.button{font-size:13px}}
 
 @media(max-width:700px){.preview-image--poster{height:300px}.preview-image--poster>img{object-position:center top}}
+
+/* A supplied portrait poster keeps its complete artwork in the preview. */
+.preview-image--portrait{min-height:0;align-self:center;aspect-ratio:9/16}
+.preview-image--portrait>img{object-fit:contain}
+.preview-image--portrait:after{background:linear-gradient(#151712a6,transparent 28%)}
+.preview-image--portrait>div{top:28px;bottom:auto}
+@media(max-width:700px){.preview-image--portrait{height:auto;width:100%;max-height:460px;background:#e7e5dd!important}.preview-image--portrait>img{object-position:center}.preview-image--portrait>div{top:24px}.preview-image--portrait:after{background:linear-gradient(#151712b3,transparent 30%)}}
+
+.case-card--portrait .case-shade{background:linear-gradient(#12171377 0%,#12171300 30%,#121713e8 66%,#121713 100%)}

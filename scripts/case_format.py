@@ -2,8 +2,9 @@
 import html
 import json
 import re
+import math
 from pathlib import Path
-from case_graphics import flow_diagram, funnel_diagram
+from case_graphics import flow_diagram, funnel_diagram, markets_diagram, return_diagram
 
 SECTION_KEYS = ('context', 'objective', 'work', 'results', 'measurement', 'takeaway')
 SECTION_LABELS = ('Контекст', 'Задача', 'Что сделали', 'Результаты', 'Как считали', 'Вывод')
@@ -47,6 +48,17 @@ def validate(data, known_ids):
     for step in data.get('flow', []):
         if not step.get('title') or not step.get('text'):
             raise ValueError('Flow steps need title and text')
+    markets = data.get('markets')
+    if markets is not None:
+        countries = markets.get('countries', [])
+        if not markets.get('origin') or not isinstance(countries, list) or not countries or not all(isinstance(c, str) and c.strip() for c in countries) or len(countries) != len(set(countries)):
+            raise ValueError('Markets require an origin and distinct named countries')
+    returns = data.get('results', {}).get('return')
+    if returns is not None:
+        for key in ('revenue', 'spend'):
+            value = returns.get(key)
+            if type(value) not in (int, float) or not math.isfinite(value) or value <= 0:
+                raise ValueError('Return diagram requires positive finite revenue and spend')
     for evidence in data.get('evidence', []):
         if not evidence.get('alt') or not evidence.get('caption') or not re.fullmatch(r'/[A-Za-z0-9_./-]+', evidence.get('src', '')) or '..' in evidence['src']:
             raise ValueError('Evidence requires a local image, alt and caption')
@@ -78,10 +90,12 @@ def render(data, registry, analytics):
         else:
             section = data[key]
             content = paragraphs(section)
+            if key == 'context':
+                content += markets_diagram(data.get('markets'))
             if key == 'objective':
                 content += flow_diagram(data.get('flow', []))
             if key == 'results':
-                content = funnel_diagram(section.get('funnel', [])) + content
+                content = funnel_diagram(section.get('funnel', [])) + return_diagram(section.get('return')) + content
             if key == 'measurement':
                 content += '<dl class="metric-notes">' + ''.join(f'<div><dt>{esc(m["label"])}</dt><dd>{esc(m["definition"])}</dd></div>' for m in data['metrics']) + '</dl>'
             if key == 'results':

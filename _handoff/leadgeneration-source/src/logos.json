@@ -544,5 +544,18 @@
     ],
     "filter": "grayscale(1) contrast(1.4)",
     "background": "#ffffff"
+  },
+  "ilvi": {
+    "file": "ilvi.svg",
+    "width": 162,
+    "height": 116,
+    "crop": [
+      0,
+      0,
+      162,
+      116
+    ],
+    "filter": "brightness(0)",
+    "background": "#24231f"
   }
 }

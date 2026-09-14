@@ -18,6 +18,17 @@
 
   window.LOOPS_CASES = [
     {
+      id: "ilvi",
+      img: "ilvi-premium-2026.jpg",
+      client: "ILVI",
+      cat: "Обувь · B2B",
+      niche: ICON.factory,
+      metric: "$120 тыс.",
+      unit: "выручки · округлённо",
+      tags: ["$5 тыс. на рекламу · округлённо", "ROAS 20,7×"],
+      note: "Точные итоги: $118 758 выручки и $5 728 расходов Meta. Реклама и B2B-скоринг для оптовых покупателей."
+    },
+    {
       id: "viamed",
       img: "viamed-card.png",
       client: "ViaMed",
