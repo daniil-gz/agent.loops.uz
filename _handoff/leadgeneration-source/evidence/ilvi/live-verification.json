@@ -1,0 +1,83 @@
+{
+  "files": [
+    {
+      "file": "cases-data.js",
+      "url": "https://loops.uz/cases-data.js",
+      "ok": true,
+      "match": true,
+      "sha256": "e7a789ab687e4d31053a8717bc652822776acb5807e5682a9469bf475b04ecf0"
+    },
+    {
+      "file": "llms.txt",
+      "url": "https://loops.uz/llms.txt",
+      "ok": true,
+      "match": true,
+      "sha256": "27fbc51c5f8e942a00c51c618ebb6ccc9762b3b792505089bccdcd1d68527255"
+    },
+    {
+      "file": "sitemap.xml",
+      "url": "https://loops.uz/sitemap.xml",
+      "ok": true,
+      "match": true,
+      "sha256": "3868435d87c9bb484657956e33b0b4d85da5728e55794fc38bf282d23bfb29fd"
+    },
+    {
+      "file": "cases/format-v2.css",
+      "url": "https://loops.uz/cases/format-v2.css",
+      "ok": true,
+      "match": true,
+      "sha256": "801acf07327ccfac0768813809d4eec7ff01305d093e47c59094253cea62140a"
+    },
+    {
+      "file": "cases/case-ilvi/index.html",
+      "url": "https://loops.uz/cases/case-ilvi/",
+      "ok": true,
+      "match": true,
+      "sha256": "293c83e3a5a4d4b3b15c96dd10778d082aaf2a3250d89389574bcc5cd7d40713"
+    },
+    {
+      "file": "images/ilvi-premium-2026.jpg",
+      "url": "https://loops.uz/images/ilvi-premium-2026.jpg",
+      "ok": true,
+      "match": true,
+      "sha256": "1c6583a36b97c5dc90ae697801e65296c769069677ad98cd15b365ec81c63006"
+    },
+    {
+      "file": "leadgeneration/index.html",
+      "url": "https://loops.uz/leadgeneration/",
+      "ok": true,
+      "match": true,
+      "sha256": "702093efc64e003d77eb461bd06b1f33fb62acf888b022836db5f2af618c637f"
+    },
+    {
+      "file": "leadgeneration/assets/ilvi-premium-2026.jpg",
+      "url": "https://loops.uz/leadgeneration/assets/ilvi-premium-2026.jpg",
+      "ok": true,
+      "match": true,
+      "sha256": "1c6583a36b97c5dc90ae697801e65296c769069677ad98cd15b365ec81c63006"
+    },
+    {
+      "file": "leadgeneration/assets/index-f1jpnEYX.css",
+      "url": "https://loops.uz/leadgeneration/assets/index-f1jpnEYX.css",
+      "ok": true,
+      "match": true,
+      "sha256": "096e2374f6877faa9db628b6cb17582e6a37cb57c45272700fda5d659a31d19b"
+    },
+    {
+      "file": "leadgeneration/assets/index-fqEYNn1v.js",
+      "url": "https://loops.uz/leadgeneration/assets/index-fqEYNn1v.js",
+      "ok": true,
+      "match": true,
+      "sha256": "7705a03b3bd1e4e8ad05f659eda7259530bb3d6102b71477c549e8242f6cc185"
+    },
+    {
+      "file": "leadgeneration/assets/clients/ilvi.svg",
+      "url": "https://loops.uz/leadgeneration/assets/clients/ilvi.svg",
+      "ok": true,
+      "match": true,
+      "sha256": "7344cd52e252d9dbf18e3ece6f159ab20abb70e094eccc39c350893b689a4918"
+    }
+  ],
+  "privateContentStatus": "404",
+  "allMatch": true
+}
