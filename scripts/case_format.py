@@ -30,6 +30,8 @@ def validate(data, known_ids):
         if not all(metric.get(k) for k in ('value', 'label', 'definition')):
             raise ValueError('Every metric needs a value, label and definition')
     for key in SECTION_KEYS:
+        if key == 'measurement' and key not in data:
+            continue
         if key == 'work':
             if not data.get(key) or not all(s.get('title') and s.get('text') for s in data[key]):
                 raise ValueError('Work requires concrete steps')
@@ -81,9 +83,10 @@ def render(data, registry, analytics):
             {'@type': 'ListItem', 'position': 3, 'name': data['client'], 'item': url}]}]}
     ld = json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c')
     metrics = ''.join(f'<div><strong>{esc(m["value"])}</strong><span>{esc(m["label"])}</span></div>' for m in data['metrics'])
-    toc = ''.join(f'<a href="#{key}"><span>0{i+1}</span>{label}</a>' for i, (key, label) in enumerate(zip(SECTION_KEYS, SECTION_LABELS)))
+    public_sections = [(key, label) for key, label in zip(SECTION_KEYS, SECTION_LABELS) if key != 'measurement' or key in data]
+    toc = ''.join(f'<a href="#{key}"><span>0{i+1}</span>{label}</a>' for i, (key, label) in enumerate(public_sections))
     sections = []
-    for i, key in enumerate(SECTION_KEYS):
+    for i, (key, label) in enumerate(public_sections):
         heading = data['workTitle'] if key == 'work' else data[key]['title']
         if key == 'work':
             content = '<ol class="work-steps">' + ''.join(f'<li><span class="step-index" aria-hidden="true">0{index+1}</span><h3>{esc(step["title"])}</h3><p>{esc(step["text"])}</p></li>' for index, step in enumerate(data[key])) + '</ol>'
@@ -100,7 +103,7 @@ def render(data, registry, analytics):
                 content += '<dl class="metric-notes">' + ''.join(f'<div><dt>{esc(m["label"])}</dt><dd>{esc(m["definition"])}</dd></div>' for m in data['metrics']) + '</dl>'
             if key == 'results':
                 content += ''.join(f'<figure class="evidence"><img src="{esc(e["src"])}" alt="{esc(e["alt"])}" loading="lazy"><figcaption>{esc(e["caption"])}</figcaption></figure>' for e in data.get('evidence', []))
-        sections.append(f'<section class="story-section" id="{key}"><header class="story-heading"><span class="eyebrow">0{i+1} / {SECTION_LABELS[i]}</span><h2>{esc(heading)}</h2></header><div class="story-body">{content}</div></section>')
+        sections.append(f'<section class="story-section" id="{key}"><header class="story-heading"><span class="eyebrow">0{i+1} / {label}</span><h2>{esc(heading)}</h2></header><div class="story-body">{content}</div></section>')
     related = ''.join(f'<a href="/cases/case-{c["id"]}/"><span class="eyebrow">{esc(c["cat"])}</span><h3>{esc(c["client"])}</h3><span class="related-bottom">Открыть кейс <span aria-hidden="true">↗</span></span></a>' for rid in data.get('related', []) for c in registry if c['id'] == rid)
     return f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">

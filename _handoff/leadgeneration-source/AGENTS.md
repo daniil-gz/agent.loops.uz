@@ -33,3 +33,6 @@ NWL cover follow-up: user supplied nwl-warehouse-2026.png (681x900) and asked to
 
 ## ILVI pilot — 2026-09-14
 ILVI is the first newly written v2 case, pinned first in the curated rail and added to Products/Retail projects. Preserve preview → full case. User supplied ILVI.png cover; web encoding keeps artwork intact, portrait preview and full case show it completely. Card values: $120 тыс. revenue and $5 тыс. ad spend, no plus sign, labeled rounded. Exact owner-confirmed totals $118,758/$5,728 drive ROAS 20.73 (not 24 or former 29). Never publish monthly results, best months or internal scoring thresholds. No duplicate Meta extraction: consult cached Adstat sources for future case work, with bounded reads only. Other cases remain deferred.
+
+## ILVI confidentiality correction — 2026-09-14
+Supersedes the earlier ILVI exact-total publication instruction. User explicitly says rounded figures conceal private client numbers. Publish only approximate $120 тыс. revenue / $5 тыс. ad spend; no exact sums, ROAS, arithmetic or “Как считали” section anywhere in public HTML, preview, card data, JSON-LD or llms.txt. Financial definitions and source details are editorial/private. Keep five sections, sequential numbering and preview-first flow. Do not restore precise numbers while polishing copy or doing SEO.

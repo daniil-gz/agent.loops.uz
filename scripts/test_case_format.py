@@ -5,6 +5,15 @@ from pathlib import Path
 from case_format import validate, render
 ROOT = Path(__file__).resolve().parents[1]
 class CaseFormatTest(unittest.TestCase):
+    def test_ilvi_publishes_only_approved_rounded_financials(self):
+        data = json.loads((ROOT/'cases/_content/ilvi.json').read_text())
+        validate(data, self.ids)
+        out = render(data, self.registry, '').replace('\u00a0', ' ')
+        for private in ('118 758', '118758', '5 728', '5728', '20,73', '20,7×', 'Как считали', 'id="measurement"', 'href="#measurement"'):
+            self.assertNotIn(private, out)
+        self.assertIn('05 / Вывод', out)
+        self.assertIn('$120 тыс.', out)
+        self.assertIn('$5 тыс.', out)
     def setUp(self):
         self.data = json.loads((ROOT/'cases/_content/nwl.json').read_text())
         self.registry = json.loads((ROOT/'cases/cases.json').read_text())
