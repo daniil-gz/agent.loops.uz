@@ -126,5 +126,105 @@
       "precise scoring rules or numeric conversion rate",
       "profit or guaranteed repeatable outcome"
     ]
+  },
+  "gallery": {
+    "title": "Как это выглядело для покупателя.",
+    "intro": "Показываем продукт и сразу обозначаем оптовый формат. В креативах — ассортимент, условия и задачи владельца магазина.",
+    "items": [
+      {
+        "src": "/images/ilvi-gallery/ilvi-01.jpg",
+        "thumbnail": "/images/ilvi-gallery/ilvi-01-thumb.jpg",
+        "title": "Ассортимент для магазина",
+        "caption": "Новинки и удобство заказа в одном предложении.",
+        "alt": "Рекламный креатив ILVI — ассортимент для магазина"
+      },
+      {
+        "src": "/images/ilvi-gallery/ilvi-02.jpg",
+        "thumbnail": "/images/ilvi-gallery/ilvi-02-thumb.jpg",
+        "title": "Коллекция для роста продаж",
+        "caption": "Обращение к владельцам обувных магазинов.",
+        "alt": "Рекламный креатив ILVI — коллекция для роста продаж"
+      },
+      {
+        "src": "/images/ilvi-gallery/ilvi-03.jpg",
+        "thumbnail": "/images/ilvi-gallery/ilvi-03-thumb.jpg",
+        "title": "Цена, качество, сезон",
+        "caption": "Два аргумента для формирования ассортимента.",
+        "alt": "Рекламный креатив ILVI — цена, качество, сезон"
+      },
+      {
+        "src": "/images/ilvi-gallery/ilvi-04.jpg",
+        "thumbnail": "/images/ilvi-gallery/ilvi-04-thumb.jpg",
+        "title": "Надёжный поставщик",
+        "caption": "Акцент на поставщике и пополнении коллекции.",
+        "alt": "Рекламный креатив ILVI — надёжный поставщик"
+      },
+      {
+        "src": "/images/ilvi-gallery/ilvi-05.jpg",
+        "thumbnail": "/images/ilvi-gallery/ilvi-05-thumb.jpg",
+        "title": "Премиальная обувь оптом",
+        "caption": "Продукт крупным планом и ценовой ориентир.",
+        "alt": "Рекламный креатив ILVI — премиальная обувь оптом"
+      },
+      {
+        "src": "/images/ilvi-gallery/ilvi-06.jpg",
+        "thumbnail": "/images/ilvi-gallery/ilvi-06-thumb.jpg",
+        "title": "Коллекция для бутика",
+        "caption": "Обувь в центре внимания, оптовый формат — в тексте.",
+        "alt": "Рекламный креатив ILVI — коллекция для бутика"
+      },
+      {
+        "src": "/images/ilvi-gallery/ilvi-07.jpg",
+        "thumbnail": "/images/ilvi-gallery/ilvi-07-thumb.jpg",
+        "title": "Оффер на английском",
+        "caption": "Англоязычная версия оптового предложения.",
+        "alt": "Рекламный креатив ILVI — оффер на английском"
+      }
+    ],
+    "conversations": [
+      {
+        "title": "Уточняем запрос",
+        "messages": [
+          {
+            "role": "assistant",
+            "text": "Подскажите, пожалуйста, Вы рассматриваете оптовую закупку для магазина или покупку для себя?"
+          },
+          {
+            "role": "customer",
+            "text": "здравствуйте да оптом"
+          }
+        ]
+      },
+      {
+        "title": "Проверяем формат бизнеса",
+        "messages": [
+          {
+            "role": "assistant",
+            "text": "Подскажите, пожалуйста, у Вас есть действующий розничный магазин или бутик?"
+          },
+          {
+            "role": "customer",
+            "text": "да есть"
+          }
+        ]
+      },
+      {
+        "title": "Передаём менеджеру",
+        "messages": [
+          {
+            "role": "assistant",
+            "text": "Укажите, пожалуйста, номер телефона или WhatsApp с кодом страны, чтобы менеджер мог связаться с Вами."
+          },
+          {
+            "role": "redacted",
+            "text": "[Контакт скрыт]"
+          },
+          {
+            "role": "assistant",
+            "text": "Передал информацию менеджеру. Он свяжется с Вами в ближайшее время."
+          }
+        ]
+      }
+    ]
   }
 }

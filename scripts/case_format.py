@@ -6,6 +6,8 @@ import math
 from pathlib import Path
 from case_graphics import flow_diagram, funnel_diagram, markets_diagram, return_diagram, repeat_visits_diagram, growth_diagram
 
+from case_gallery import validate_gallery, gallery_markup
+
 SECTION_KEYS = ('context', 'objective', 'work', 'results', 'measurement', 'takeaway')
 SECTION_LABELS = ('Контекст', 'Задача', 'Что сделали', 'Результаты', 'Как считали', 'Вывод')
 
@@ -13,6 +15,7 @@ def esc(value):
     return html.escape(str(value), quote=True)
 
 def validate(data, known_ids):
+    validate_gallery(data)
     if data.get('schemaVersion') != 2 or data.get('status') not in ('draft', 'published'):
         raise ValueError('Case requires schemaVersion 2 and draft/published status')
     if data.get('id') not in known_ids:
@@ -114,13 +117,14 @@ def render(data, registry, analytics):
                 content += '<dl class="metric-notes">' + ''.join(f'<div><dt>{esc(m["label"])}</dt><dd>{esc(m["definition"])}</dd></div>' for m in data['metrics']) + '</dl>'
             if key == 'results':
                 content += ''.join(f'<figure class="evidence"><img src="{esc(e["src"])}" alt="{esc(e["alt"])}" loading="lazy"><figcaption>{esc(e["caption"])}</figcaption></figure>' for e in data.get('evidence', []))
-        sections.append(f'<section class="story-section" id="{key}"><header class="story-heading"><span class="eyebrow">0{i+1} / {label}</span><h2>{esc(heading)}</h2></header><div class="story-body">{content}</div></section>')
+        extra = gallery_markup(data.get('gallery')) if key == 'work' else ''
+        sections.append(f'<section class="story-section" id="{key}"><header class="story-heading"><span class="eyebrow">0{i+1} / {label}</span><h2>{esc(heading)}</h2></header><div class="story-body">{content}</div>{extra}</section>')
     related = ''.join(f'<a href="/cases/case-{c["id"]}/"><span class="eyebrow">{esc(c["cat"])}</span><h3>{esc(c["client"])}</h3><span class="related-bottom">Открыть кейс <span aria-hidden="true">↗</span></span></a>' for rid in data.get('related', []) for c in registry if c['id'] == rid)
     return f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title><meta name="description" content="{esc(data['summary'])}"><link rel="canonical" href="{url}"><meta name="robots" content="index,follow">
 <meta property="og:type" content="article"><meta property="og:site_name" content="Loops"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(data['summary'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="https://loops.uz{esc(data['cover'])}"><meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/leadgeneration/assets/favicon.png"><link rel="stylesheet" href="/leadgeneration/assets/fonts.css"><link rel="stylesheet" href="/cases/format-v2.css">
+<link rel="icon" href="/leadgeneration/assets/favicon.png"><link rel="stylesheet" href="/leadgeneration/assets/fonts.css"><link rel="stylesheet" href="/cases/format-v2.css">{'<link rel="stylesheet" href="/cases/gallery.css"><script src="/cases/gallery.js" defer></script>' if data.get('gallery') else ''}
 <script type="application/ld+json">{ld}</script>
 {analytics}
 <script defer data-website-id="dfid_f3VYRJCEILPpM9zBm2vdN" data-domain="loops.uz" src="https://datafa.st/js/script.js"></script>
