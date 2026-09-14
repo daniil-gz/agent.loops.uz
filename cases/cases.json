@@ -91,7 +91,7 @@
   },
   {
     "id": "viamed",
-    "img": "viamed-card.png",
+    "img": "viamed-cover-2026.jpg",
     "client": "ViaMed",
     "cat": "Клиника",
     "niche": "heart",
@@ -103,7 +103,7 @@
     "note": "Воронка: <b>1000+ заявок → 320 лидов → 150 пациентов.</b>",
     "title": "Кейс ViaMed — 150 пациентов за месяц при бюджете $500 | Loops",
     "desc": "Кейс Loops: запустили новую клинику ViaMed в Ташкенте с нуля и получили 150 пациентов в первый месяц при бюджете $500 ($3.3 за пациента) через связку «таргет + ИИ-агент».",
-    "ogimage": "https://loops.uz/images/viamed-card.png",
+    "ogimage": "https://loops.uz/images/viamed-cover-2026.jpg",
     "h1": "ViaMed: 150&nbsp;пациентов за&nbsp;месяц при&nbsp;бюджете $500",
     "lead": "Запустили новую генетическую клинику в&nbsp;Ташкенте с&nbsp;нуля и&nbsp;за&nbsp;первый месяц привели 150&nbsp;пациентов через связку «таргет&nbsp;+&nbsp;ИИ-агент».",
     "kpis": [
@@ -139,7 +139,7 @@
   },
   {
     "id": "tak",
-    "img": "tak-card.png",
+    "img": "tak-cover-2026.jpg",
     "client": "TAK Fulfillment",
     "cat": "E-comm логистика",
     "niche": "box",
@@ -153,7 +153,7 @@
     "note": "Поток заявок вырос в&nbsp;<b>3 раза</b> — без новых сотрудников.",
     "title": "Кейс TAK Fulfillment — 2 831 диалог и $4.8 за клиента | Loops",
     "desc": "Кейс Loops: для фулфилмент-оператора TAK ИИ-агент обработал 2 831 диалог за месяц и отфильтровал 500 B2B-лидов по $4.8 — без расширения штата.",
-    "ogimage": "https://loops.uz/images/tak-card.png",
+    "ogimage": "https://loops.uz/images/tak-cover-2026.jpg",
     "h1": "TAK Fulfillment: 2&nbsp;831&nbsp;диалог за&nbsp;месяц без&nbsp;расширения штата",
     "lead": "Фулфилмент-оператор тонул во&nbsp;входящем потоке новичков. Мы&nbsp;внедрили связку «таргет&nbsp;+&nbsp;ИИ-агент»: бот обработал 2&nbsp;831&nbsp;диалог и&nbsp;отфильтровал 500&nbsp;квалифицированных B2B-лидов по&nbsp;$4.8 за&nbsp;клиента.",
     "kpis": [
@@ -189,7 +189,7 @@
   },
   {
     "id": "bts",
-    "img": "bts-card.png",
+    "img": "bts-cover-2026.jpg",
     "client": "BTS Group",
     "cat": "B2B · оборудование",
     "niche": "factory",
@@ -202,7 +202,7 @@
     "note": "С нуля подписчиков — до оптовых продаж.",
     "title": "Кейс BTS Group — 58 B2B-лидов за $7 | Loops",
     "desc": "Кейс Loops: вывели дистрибьютора Hitachi и DORS в Ташкенте в онлайн с нуля — 58 квалифицированных B2B-лидов за первый месяц по $7 за клиента.",
-    "ogimage": "https://loops.uz/images/bts-card.png",
+    "ogimage": "https://loops.uz/images/bts-cover-2026.jpg",
     "h1": "BTS Group: 58&nbsp;B2B-лидов за&nbsp;$7 в&nbsp;первый месяц",
     "lead": "Вывели официального дистрибьютора Hitachi и&nbsp;DORS в&nbsp;Ташкенте в&nbsp;онлайн с&nbsp;нуля и&nbsp;за&nbsp;первый месяц получили 58&nbsp;оптовых B2B-лидов через связку «таргет&nbsp;+&nbsp;ИИ-агент».",
     "kpis": [
@@ -334,7 +334,7 @@
   },
   {
     "id": "basalt",
-    "img": "basalt-main.png",
+    "img": "basalt-cover-2026.jpg",
     "client": "Basalt",
     "cat": "Производство · B2B",
     "niche": "factory",
@@ -347,7 +347,7 @@
     "note": "",
     "title": "Кейс Basalt — сделка на 3 млрд сум через LinkedIn | Loops",
     "desc": "Кейс Loops: системный B2B-маркетинг для производственного завода Basalt в Узбекистане — ABM в LinkedIn, 2500+ карточек на маркетплейсах и автоматизация Bitrix24. Одна из сделок — на 3 млрд сум.",
-    "ogimage": "https://loops.uz/images/basalt-main.png",
+    "ogimage": "https://loops.uz/images/basalt-cover-2026.jpg",
     "h1": "Basalt: сделка на&nbsp;3&nbsp;млрд&nbsp;сум через&nbsp;LinkedIn",
     "lead": "Построили системный B2B-маркетинг для производственного завода в&nbsp;Узбекистане: от&nbsp;точечного выхода на&nbsp;ЛПР в&nbsp;LinkedIn до&nbsp;маркетплейсов и&nbsp;автоматизации Bitrix24.",
     "kpis": [
@@ -383,7 +383,7 @@
   },
   {
     "id": "dco",
-    "img": "dco-main.png",
+    "img": "dco-cover-2026.jpg",
     "client": "DCO Euroluxe",
     "cat": "Сантехника · B2B",
     "niche": "box",
@@ -395,7 +395,7 @@
     "note": "",
     "title": "Кейс DCO — 45,9 млн сум выручки при бюджете $200 | Loops",
     "desc": "Кейс Loops: за месяц обучили сотрудника DCO Euroluxe таргету и SMM — он сам запустил рекламу на $200 и принёс 45,9 млн сум выручки. Ташкент.",
-    "ogimage": "https://loops.uz/images/dco-main.png",
+    "ogimage": "https://loops.uz/images/dco-cover-2026.jpg",
     "h1": "DCO Euroluxe: 45,9&nbsp;млн&nbsp;сум выручки при&nbsp;бюджете $200",
     "lead": "За&nbsp;1&nbsp;месяц построили отдел маркетинга внутри компании: обучили сотрудника с&nbsp;нуля, и&nbsp;он&nbsp;самостоятельно запустил рекламу через связку «таргет&nbsp;+&nbsp;ИИ-агент».",
     "kpis": [
@@ -435,7 +435,7 @@
   },
   {
     "id": "feedup",
-    "img": "feedup-main.png",
+    "img": "feedup-cover-2026.jpg",
     "client": "FeedUp",
     "cat": "HoReCa · фастфуд",
     "niche": "box",
@@ -447,7 +447,7 @@
     "note": "",
     "title": "Кейс FeedUp — 100% жалоб закрыто и реакция за 10 минут | Loops",
     "desc": "Кейс Loops: в сети фастфуда FeedUp 70% комментариев были негативными. Построили систему работы с обратной связью (ORM) — закрыли 100% жалоб, реакция за 10 минут, вернули недовольных клиентов.",
-    "ogimage": "https://loops.uz/images/feedup-main.png",
+    "ogimage": "https://loops.uz/images/feedup-cover-2026.jpg",
     "h1": "FeedUp: 70%&nbsp;негатива превратили в&nbsp;лояльность",
     "lead": "В&nbsp;соцсетях сети фастфуда FeedUp 70%&nbsp;комментариев были негативными. Построили систему работы с&nbsp;обратной связью (ORM) и&nbsp;вернули недовольных клиентов через связку «таргет&nbsp;+&nbsp;ИИ-агент».",
     "kpis": [
@@ -483,7 +483,7 @@
   },
   {
     "id": "izzy",
-    "img": "izzy-main.png",
+    "img": "izzy-cover-2026.jpg",
     "client": "IZZY",
     "cat": "Кикшеринг",
     "niche": "car",
@@ -496,7 +496,7 @@
     "note": "",
     "title": "Кейс IZZY — +97% к базе и 100 000+ новых пользователей | Loops",
     "desc": "Кейс Loops: масштабировали кикшеринг IZZY в Ташкенте — +97% к базе (100 000+ пользователей) и +20% к длительности аренды через таргет + ИИ-агент.",
-    "ogimage": "https://loops.uz/images/izzy-main.png",
+    "ogimage": "https://loops.uz/images/izzy-cover-2026.jpg",
     "h1": "IZZY: +97%&nbsp;к&nbsp;базе и&nbsp;100&nbsp;000+&nbsp;новых пользователей",
     "lead": "Масштабировали сервис кикшеринга в&nbsp;Ташкенте&nbsp;— от&nbsp;анализа локаций до&nbsp;геймифицированной автоворонки&nbsp;— через связку «таргет&nbsp;+&nbsp;ИИ-агент».",
     "kpis": [
@@ -527,7 +527,7 @@
         "v": "Масштабирование"
       }
     ],
-    "logo": "/images/izzy-main.png",
+    "logo": "/images/izzy-cover-2026.jpg",
     "crumb": "IZZY"
   }
 ]

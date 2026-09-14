@@ -41,7 +41,7 @@
     },
     {
       id: "viamed",
-      img: "viamed-card.png",
+      img: "viamed-cover-2026.jpg",
       client: "ViaMed",
       cat: "Клиника",
       niche: ICON.heart,
@@ -52,7 +52,7 @@
     },
     {
       id: "tak",
-      img: "tak-card.png",
+      img: "tak-cover-2026.jpg",
       client: "TAK Fulfillment",
       cat: "E-comm логистика",
       niche: ICON.box,
@@ -63,7 +63,7 @@
     },
     {
       id: "bts",
-      img: "bts-card.png",
+      img: "bts-cover-2026.jpg",
       client: "BTS Group",
       cat: "B2B · оборудование",
       niche: ICON.factory,
@@ -96,7 +96,7 @@
     },
     {
       id: "basalt",
-      img: "basalt-main.png",
+      img: "basalt-cover-2026.jpg",
       client: "Basalt",
       cat: "Производство · B2B",
       niche: ICON.factory,
@@ -107,7 +107,7 @@
     },
     {
       id: "dco",
-      img: "dco-main.png",
+      img: "dco-cover-2026.jpg",
       client: "DCO Euroluxe",
       cat: "Сантехника · B2B",
       niche: ICON.box,
@@ -118,7 +118,7 @@
     },
     {
       id: "feedup",
-      img: "feedup-main.png",
+      img: "feedup-cover-2026.jpg",
       client: "FeedUp",
       cat: "HoReCa · фастфуд",
       niche: ICON.box,
@@ -129,7 +129,7 @@
     },
     {
       id: "izzy",
-      img: "izzy-main.png",
+      img: "izzy-cover-2026.jpg",
       client: "IZZY",
       cat: "Кикшеринг",
       niche: ICON.car,
