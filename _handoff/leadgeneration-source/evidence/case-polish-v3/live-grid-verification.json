@@ -1,0 +1,12 @@
+[
+  {
+    "path": "cases/case-nwl/index.html",
+    "match": true,
+    "sha256": "345fb5532ae2af9e409b6e3244ce7727e2f114d2a40feefbd62aa51e6c887014"
+  },
+  {
+    "path": "cases/format-v2.css",
+    "match": true,
+    "sha256": "e9b793865144d4d19c90d86e3c5a72395a6bd380ae7985e8bf9fe02bed5635be"
+  }
+]

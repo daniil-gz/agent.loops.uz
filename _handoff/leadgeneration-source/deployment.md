@@ -69,3 +69,11 @@ Published commit 82c77bc. NWL migrated at existing /cases/case-nwl/, direct proj
 
 ## Preview + infographic deployment — 2026-09-14
 Commit3f16c35 deployed with backup /root/backups/loops-www-20260914-133454.tar.gz. Five changed public files HTTP200 and byte-identical. CLI and connected Cloudflare purge both returned10000; content readback was current regardless. Public browser hit ERR_QUIC_PROTOCOL_ERROR (not a security warning); local scenario and render verified. Superseded immediately by user's supplied NWL warehouse cover below.
+
+## Supplied NWL cover — 2026-09-14
+Commit aa53f9a published. Backup /root/backups/loops-www-20260914-133902.tar.gz. Eight public files byte-identical (live-warehouse-verification.json). User PNG retained unchanged as nwl-warehouse-2026.png, full case keeps 681:900 ratio, mobile preview 300px tall. Existing overlay retained. Public lower-project click opens native dialog with new image; full-page navigation in IAB hit QUIC timeout. Local full-page and modal interactions verified.
+
+## Metadata and closing CTA correction — 2026-09-14
+Commit 8606913 deployed after scoped dry-run (only cases/format-v2.css and cases/case-nwl/index.html). Backup reported OK. CLI purge still returns 10000, no credentials or infrastructure changed. Local 1280px and 390px screenshots and 320px overflow check pass; transparent SVG has no white background. Public IAB full-case load returns ERR_QUIC_PROTOCOL_ERROR; HTTP/1.1 readback is recorded separately.
+
+Final verification: both public files HTTP 200 and byte-identical in live-grid-verification.json. Backup /root/backups/loops-www-20260914-134541.tar.gz. Commit pushed to origin/main.

@@ -1,0 +1,34 @@
+[
+  {
+    "path": "leadgeneration/index.html",
+    "match": true
+  },
+  {
+    "path": "leadgeneration/assets/index-36G2pkWo.css",
+    "match": true
+  },
+  {
+    "path": "leadgeneration/assets/index-DRJKy4ZQ.js",
+    "match": true
+  },
+  {
+    "path": "leadgeneration/assets/nwl-warehouse-2026.png",
+    "match": true
+  },
+  {
+    "path": "images/nwl-warehouse-2026.png",
+    "match": true
+  },
+  {
+    "path": "cases/case-nwl/index.html",
+    "match": true
+  },
+  {
+    "path": "cases/format-v2.css",
+    "match": true
+  },
+  {
+    "path": "cases-data.js",
+    "match": true
+  }
+]
