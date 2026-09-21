@@ -100,5 +100,6 @@
       "text": "Обращение по услуге",
       "icon": "person"
     }
-  ]
+  ],
+  "coverBackdrop": true
 }

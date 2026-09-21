@@ -95,5 +95,6 @@
       "text": "Обращение от аудитории",
       "icon": "person"
     }
-  ]
+  ],
+  "coverBackdrop": true
 }

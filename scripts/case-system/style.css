@@ -80,3 +80,8 @@
 .growth-track>span{display:block;height:100%;background:#859477;border-radius:3px}.growth-diagram li:nth-child(2) .growth-track>span{background:#f0de24}.growth-diagram li:nth-child(3) .growth-track>span{background:#34482e}
 .growth-track>i{position:absolute;top:0;bottom:0;border-left:2px dashed #1b231a99}
 @media(max-width:600px){.repeat-diagram,.growth-diagram{padding:20px}.repeat-grid{gap:20px}.repeat-headline>strong{font-size:clamp(46px,12vw,64px)}.story-body .repeat-headline>p{font-size:13px}.repeat-dots{gap:4px}.repeat-median{gap:20px}.repeat-median strong{font-size:25px}.repeat-median span{font-size:12px}.growth-diagram h3{font-size:23px}}
+
+/* Sharp supplied artwork over its own blurred full-frame backdrop. */
+.cover-media{position:relative;isolation:isolate;overflow:hidden;aspect-ratio:var(--cover-ratio,.8);border-radius:10px;background:#eeefe5}
+.cover-media:before{content:"";position:absolute;inset:-24px;background-image:var(--cover-image);background-size:cover;background-position:center;filter:blur(22px);z-index:-1;pointer-events:none}
+.cover .cover-media>img{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:contain;background:transparent;border-radius:0}

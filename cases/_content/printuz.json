@@ -101,5 +101,6 @@
       "text": "Запрос на изготовление",
       "icon": "person"
     }
-  ]
+  ],
+  "coverBackdrop": true
 }

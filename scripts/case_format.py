@@ -120,6 +120,9 @@ def render(data, registry, analytics):
         extra = gallery_markup(data.get('gallery')) if key == 'work' else ''
         sections.append(f'<section class="story-section" id="{key}"><header class="story-heading"><span class="eyebrow">0{i+1} / {label}</span><h2>{esc(heading)}</h2></header><div class="story-body">{content}</div>{extra}</section>')
     related = ''.join(f'<a href="/cases/case-{c["id"]}/"><span class="eyebrow">{esc(c["cat"])}</span><h3>{esc(c["client"])}</h3><span class="related-bottom">Открыть кейс <span aria-hidden="true">↗</span></span></a>' for rid in data.get('related', []) for c in registry if c['id'] == rid)
+    cover_image = f'<img src="{esc(data["cover"])}" alt="{esc(data["coverAlt"])}" width="640" height="640">'
+    if data.get('coverBackdrop'):
+        cover_image = f'<div class="cover-media" style="--cover-image:url(&quot;{esc(data["cover"])}&quot;)">{cover_image}</div>'
     return f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title><meta name="description" content="{esc(data['summary'])}"><link rel="canonical" href="{url}"><meta name="robots" content="index,follow">
@@ -131,7 +134,7 @@ def render(data, registry, analytics):
 </head><body><a class="skip-link" href="#content">Перейти к кейсу</a>
 <header class="wrap case-header"><a class="wordmark" href="/leadgeneration/" aria-label="Loops — на главную">loops</a><nav aria-label="Основная навигация"><a href="/leadgeneration/#cases">Кейсы</a><a href="/leadgeneration/#services">Услуги</a><a href="/leadgeneration/#about">Обо мне</a></nav><a class="button" href="/leadgeneration/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></header>
 <main id="content"><section class="wrap case-hero"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/leadgeneration/#projects">Все проекты</a><span aria-hidden="true">/</span><span>{esc(data['client'])}</span></nav>
-<div class="hero-grid"><div><span class="eyebrow">{esc(data['client'])} / КЕЙС LOOPS</span><h1>{esc(data['headline'])}</h1><p class="case-summary">{esc(data['summary'])}</p></div><figure class="cover" style="--cover-ratio:{data.get('coverRatio', 1)}"><img src="{esc(data['cover'])}" alt="{esc(data['coverAlt'])}" width="640" height="640"><figcaption>За цифрами —<br>своя история.</figcaption></figure></div>
+<div class="hero-grid"><div><span class="eyebrow">{esc(data['client'])} / КЕЙС LOOPS</span><h1>{esc(data['headline'])}</h1><p class="case-summary">{esc(data['summary'])}</p></div><figure class="cover" style="--cover-ratio:{data.get('coverRatio', 1)}">{cover_image}<figcaption>За цифрами —<br>своя история.</figcaption></figure></div>
 <div class="metrics" style="--metric-count:{len(data['metrics'])}">{metrics}</div><dl class="case-meta"><div><dt>Бизнес</dt><dd>{esc(data['industry'])}</dd></div><div><dt>География</dt><dd>{esc(data['location'])}</dd></div><div><dt>Инструменты</dt><dd>{esc(' · '.join(data['services']))}</dd></div><div><dt>Период</dt><dd>{esc(data['period'])}</dd></div></dl></section>
 <div class="wrap story-layout"><aside><nav class="toc" aria-label="Содержание кейса"><span class="eyebrow">ВНУТРИ ИСТОРИИ</span>{toc}</nav></aside><article>{''.join(sections)}</article></div>
 <section class="wrap case-cta"><span class="eyebrow">ЕСТЬ ПОХОЖАЯ ЗАДАЧА?</span><div class="case-cta-copy"><h2>Разберём ваш<br><span>путь к продаже.</span></h2><p>Посмотрим, что происходит от первого обращения до работы менеджера.</p></div><a class="button button-yellow" href="/leadgeneration/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></section>

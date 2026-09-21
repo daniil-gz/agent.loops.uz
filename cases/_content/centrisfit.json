@@ -100,5 +100,6 @@
       "text": "Контакт для продолжения",
       "icon": "person"
     }
-  ]
+  ],
+  "coverBackdrop": true
 }

@@ -95,5 +95,6 @@
       "text": "Переписка с клубом",
       "icon": "person"
     }
-  ]
+  ],
+  "coverBackdrop": true
 }

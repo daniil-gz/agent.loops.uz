@@ -273,3 +273,8 @@
 .preview-image--supplied{aspect-ratio:4/5;background:#eeefe5!important}
 .case-card{height:auto;aspect-ratio:4/5;align-self:flex-start}
 .case-card--supplied:hover>img{transform:none}
+
+/* Fill unused cover space with a soft copy, preserving the sharp original. */
+.case-card--supplied:before,.preview-image--supplied:before{content:"";position:absolute;inset:-24px;background-image:var(--cover-image);background-size:cover;background-position:center;filter:blur(22px);z-index:-3;pointer-events:none}
+.case-card--supplied:before{filter:grayscale(1) blur(22px);transition:filter .35s ease}
+.case-card--supplied:hover:before,.case-card--supplied:focus-visible:before{filter:grayscale(0) blur(22px)}
