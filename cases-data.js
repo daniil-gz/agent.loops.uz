@@ -140,7 +140,7 @@
     },
     {
       id: "printuz",
-      img: "printuz-case-2026.png",
+      img: "printuz-cover-20260921.webp",
       client: "Print.uz",
       cat: "Полиграфия для бизнеса · B2B",
       niche: ICON.factory,
@@ -151,7 +151,7 @@
     },
     {
       id: "centrismedia",
-      img: "centrismedia-case-2026.png",
+      img: "centrismedia-cover-20260921.png",
       client: "Centris Media",
       cat: "Наружная реклама · B2B",
       niche: ICON.factory,
@@ -162,7 +162,7 @@
     },
     {
       id: "printexpress",
-      img: "printexpress-case-2026.png",
+      img: "printexpress-cover-20260921.webp",
       client: "Print Uz Express",
       cat: "Оперативная полиграфия · B2B",
       niche: ICON.factory,
@@ -184,7 +184,7 @@
     },
     {
       id: "centrisfit",
-      img: "centrisfit-case-2026.png",
+      img: "centrisfit-cover-20260921.jpg",
       client: "Centris Fit",
       cat: "Фитнес-клуб",
       niche: ICON.heart,
@@ -195,7 +195,7 @@
     },
     {
       id: "centrisladies",
-      img: "centrisladies-case-2026.png",
+      img: "centrisladies-cover-20260921.jpg",
       client: "Centris Ladies",
       cat: "Женский фитнес-клуб",
       niche: ICON.heart,
@@ -206,7 +206,7 @@
     },
     {
       id: "gastromarket",
-      img: "gastromarket-case-2026.png",
+      img: "gastromarket-cover-20260921.webp",
       client: "Gastromarket",
       cat: "Поставки продуктов для бизнеса",
       niche: ICON.factory,
@@ -217,7 +217,7 @@
     },
     {
       id: "dolcetta",
-      img: "dolcetta-case-2026.png",
+      img: "dolcetta-cover-20260921.webp",
       client: "Dolcetta",
       cat: "Кафе, десерты и джелато",
       niche: ICON.box,
@@ -239,7 +239,7 @@
     },
     {
       id: "restokids",
-      img: "restokids-case-2026.png",
+      img: "restokids-cover-20260921.png",
       client: "Resto Kids",
       cat: "Семейный ресторан",
       niche: ICON.box,
@@ -250,7 +250,7 @@
     },
     {
       id: "centrisprint",
-      img: "centrisprint-case-2026.png",
+      img: "centrisprint-cover-20260921.webp",
       client: "Centris Print",
       cat: "Упаковка и полиграфия",
       niche: ICON.factory,
@@ -261,7 +261,7 @@
     },
     {
       id: "centriscup",
-      img: "centriscup-case-2026.png",
+      img: "centriscup-cover-20260921.png",
       client: "Centris Print Cup",
       cat: "Бумажные стаканы для бизнеса",
       niche: ICON.factory,
@@ -272,7 +272,7 @@
     },
     {
       id: "blackstar",
-      img: "blackstar-case-2026.png",
+      img: "blackstar-cover-20260921.webp",
       client: "Black Star Car Wash",
       cat: "Автомойка",
       niche: ICON.car,
