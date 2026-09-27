@@ -2,7 +2,7 @@
 """Generate display-sized WebP assets without changing the original artwork."""
 from pathlib import Path
 from PIL import Image
-import json,re
+import json,re,base64
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'_handoff/leadgeneration-source'
 ASSETS=ROOT/'leadgeneration/assets'
@@ -25,5 +25,6 @@ for logo in json.loads((SOURCE/'src/logos.json').read_text()).values():
     result['logos'][name]='clients/'+name if name.endswith('.svg') else scaled('clients/'+name,'clients/thumbs/'+Path(name).stem+'-240.webp',240)
 scaled('marker-hero-loop.webp','marker-hero-loop-740.webp',740)
 scaled('daniil-avatar-2026.webp','daniil-avatar-160.webp',160)
+result['hero']='data:image/webp;base64,'+base64.b64encode((ASSETS/'marker-hero-loop-740.webp').read_bytes()).decode()
 (SOURCE/'src/image-variants.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
 print(f"Prepared {len(result['covers'])} cover and {len(result['logos'])} logo variants.")
