@@ -1,11 +1,12 @@
 import React from 'react';
 import {hydrateRoot,createRoot} from 'react-dom/client';
-import {App} from './App.jsx';
+import {lazy,Suspense} from 'react';
+const App=lazy(()=>import('./App.jsx').then(m=>({default:m.App})));
 import {ServicePage} from './ServicePage.jsx';
 import {services} from './services';
 import './styles.css';
 import './services.css';
 const slug=location.pathname.split('/').filter(Boolean)[0];
-const page=<React.StrictMode>{services[slug]?<ServicePage slug={slug}/>:<App/>}</React.StrictMode>;
+const page=<React.StrictMode>{services[slug]?<ServicePage slug={slug}/>:<Suspense fallback={null}><App/></Suspense>}</React.StrictMode>;
 const root=document.getElementById('root');
 if(root.hasChildNodes())hydrateRoot(root,page);else createRoot(root).render(page);

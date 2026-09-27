@@ -11,8 +11,10 @@
 
 Only pathname and validated case slug are custom parameters. No form values, Telegram query text, phone, email or financial values. Localhost custom goals never transmit; `loops:interaction` is a local QA event. Production analytics can be blocked by the visitor and are not a delivery guarantee.
 
-Metrika requires matching JavaScript-event goals in the account. Account setup/readback is separate from deploying event calls. DataFast records custom goals automatically after genuine interactions. Verify received events in both accounts before using the funnel for decisions. Existing automatic link/page tracking configuration is unchanged.
+The owner chose to keep the existing Metrika automatic goals on 2026-09-27. Do not create additional manual goals. Existing custom event calls remain in code, but should not be represented as configured/received Metrika goals without account readback. DataFast records custom goals automatically after genuine interactions. Verify received events in both accounts before using the funnel for decisions. Existing automatic link/page tracking configuration is unchanged.
 
 Sources: https://yandex.ru/support/metrica/ru/objects/reachgoal and https://datafa.st/docs/custom-goals
 
 Canonical routing: `scripts/canonical-host.py` backs up and tests only the Loops nginx virtual host. Requires Cloudflare SSL Full or Strict; the HTTP visitor protocol is supplied by Cloudflare. Public canonical is https://loops.uz/. 308 preserves request method, path and query.
+
+Local preview: Metrika script/init are disabled outside loops.uz and www.loops.uz in generated marketing, case and editorial pages. DataFast also disables localhost.

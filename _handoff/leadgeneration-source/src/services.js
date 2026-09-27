@@ -1,3 +1,4 @@
+import industries from './industries.json';
 export const services = {
  target: {
   name:'Лидогенерация', number:'01', title:'Лидогенерация и таргетированная реклама в Ташкенте — Loops',
@@ -60,3 +61,5 @@ export const services = {
   cta:'Поймём, что\nприносит результат.', ctaText:'Расскажите, где сейчас живут рекламные и коммерческие данные. Начнём с вопроса, на который вы хотите получить ответ.'
  }
 };
+
+Object.assign(services, industries);

@@ -88,7 +88,7 @@ def render(data, registry, analytics):
     title = f"{data['client']} — {data['headline']} | Loops"
     schema = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'Article', 'headline': data['headline'], 'description': data['summary'],
-         'author': {'@type': 'Person', 'name': 'Даниил Газизов', 'url': 'https://loops.uz/#about'},
+         'author': {'@type': 'Person', 'name': 'Даниил Газизов', '@id': 'https://loops.uz/#daniil', 'url': 'https://loops.uz/about/'},
          'publisher': {'@type': 'Organization', 'name': 'Loops', 'url': 'https://loops.uz/'},
          'image': 'https://loops.uz' + data['cover'], 'mainEntityOfPage': url},
         {'@type': 'BreadcrumbList', 'itemListElement': [
@@ -120,6 +120,10 @@ def render(data, registry, analytics):
         extra = gallery_markup(data.get('gallery')) if key == 'work' else ''
         sections.append(f'<section class="story-section" id="{key}"><header class="story-heading"><span class="eyebrow">0{i+1} / {label}</span><h2>{esc(heading)}</h2></header><div class="story-body">{content}</div>{extra}</section>')
     related = ''.join(f'<a href="/cases/case-{c["id"]}/"><span class="eyebrow">{esc(c["cat"])}</span><h3>{esc(c["client"])}</h3><span class="related-bottom">Открыть кейс <span aria-hidden="true">↗</span></span></a>' for rid in data.get('related', []) for c in registry if c['id'] == rid)
+    sector_map = {'viamed':'clinics','biorise':'clinics','dental':'clinics','nwl':'b2b','tak':'b2b','ilvi':'b2b','bts':'manufacturing','basalt':'manufacturing','centriscup':'manufacturing','centrisprint':'manufacturing','printuz':'manufacturing','printexpress':'manufacturing','chery':'auto','blackstar':'auto','centrisfit':'fitness','centrisladies':'fitness','feedup':'horeca','bscafe':'horeca','dolcetta':'horeca','restokids':'horeca','gastromarket':'b2b'}
+    sector = sector_map.get(cid, 'target')
+    sector_names = {'clinics':'Маркетинг для клиник','b2b':'B2B-лидогенерация','manufacturing':'Маркетинг для производителей','auto':'Реклама для автобизнеса','fitness':'Реклама для фитнес-клубов','horeca':'Маркетинг для ресторанов','target':'Лидогенерация'}
+    service_link = f'<p class="case-service-link">Для похожего бизнеса: <a href="/{sector}/">{sector_names[sector]} ↗</a> · <a href="/articles/">Практические материалы ↗</a></p>'
     cover_image = f'<img src="{esc(data["cover"])}" alt="{esc(data["coverAlt"])}" width="640" height="640">'
     if data.get('coverBackdrop'):
         cover_image = f'<div class="cover-media" style="--cover-image:url(&quot;{esc(data["cover"])}&quot;)">{cover_image}</div>'
@@ -138,5 +142,5 @@ def render(data, registry, analytics):
 <div class="metrics" style="--metric-count:{len(data['metrics'])}">{metrics}</div><dl class="case-meta"><div><dt>Бизнес</dt><dd>{esc(data['industry'])}</dd></div><div><dt>География</dt><dd>{esc(data['location'])}</dd></div><div><dt>Инструменты</dt><dd>{esc(' · '.join(data['services']))}</dd></div><div><dt>Период</dt><dd>{esc(data['period'])}</dd></div></dl></section>
 <div class="wrap story-layout"><aside><nav class="toc" aria-label="Содержание кейса"><span class="eyebrow">ВНУТРИ ИСТОРИИ</span>{toc}</nav></aside><article>{''.join(sections)}</article></div>
 <section class="wrap case-cta"><span class="eyebrow">ЕСТЬ ПОХОЖАЯ ЗАДАЧА?</span><div class="case-cta-copy"><h2>Разберём ваш<br><span>путь к продаже.</span></h2><p>Посмотрим, что происходит от первого обращения до работы менеджера.</p></div><a class="button button-yellow" href="/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></section>
-<section class="wrap related"><div class="section-heading"><h2>Другие истории.</h2><a href="/#cases">Все кейсы ↗</a></div><div class="related-grid">{related}</div></section></main>
-<footer class="wrap case-footer"><span>© 2026 Loops · Даниил Газизов</span><a href="/#projects">Вернуться к проектам ↗</a><a href="https://t.me/dani_gzv" target="_blank" rel="noopener">Telegram ↗</a></footer></body></html>'''
+{service_link}<section class="wrap related"><div class="section-heading"><h2>Другие истории.</h2><a href="/#cases">Все кейсы ↗</a></div><div class="related-grid">{related}</div></section></main>
+<footer class="wrap case-footer"><span>© 2026 Loops · Даниил Газизов</span><a href="/cases.html">Все кейсы ↗</a><a href="/privacy/">Данные и обратная связь</a><a href="https://t.me/dani_gzv" target="_blank" rel="noopener">Telegram ↗</a></footer></body></html>'''

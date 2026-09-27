@@ -23,6 +23,7 @@ EXCLUDES=(
   --exclude='consulting/lab.html' --exclude='consulting/iceberg-lab.html'
   --exclude='consulting/annotate.js' --exclude='.lab-feedback.json'
   --exclude='_recovered/'
+  --exclude='content/'
   --exclude='cases/_bodies/' --exclude='cases/_content/' --exclude='cases/cases.json'
 )
 
