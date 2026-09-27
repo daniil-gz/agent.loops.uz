@@ -285,3 +285,6 @@
 .article-art>span,.article-card:nth-child(2) .article-art>span,.article-card:nth-child(3) .article-art>span{color:#68705b}
 .case-card:before{background-image:none!important}
 .case-card>img.case-blur{object-fit:cover;filter:blur(22px);transform:scale(1.15);z-index:-3}
+
+/* Hand-drawn marks intentionally stretch with their label; decorative backgrounds. */
+.ink-mark>.ink-mark-image{background-size:100% 100%;background-repeat:no-repeat}

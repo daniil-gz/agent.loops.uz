@@ -4,6 +4,7 @@
 - All 24 case pages now use structured `cases/_content/<id>.json` and `scripts/case_format.py`. Run `python3 scripts/build-cases.py`. Approved cover behavior: contain over a blurred version of the same art, not crop. Regular project click opens preview, then full case.
 - Editorial pages, case catalog, author, privacy and 404: `content/articles.json`, `scripts/build-editorial.py`, `editorial.css`, `editorial.js`. Existing article/case URLs preserved. Catalog search and native dialog support keyboard.
 - 50 canonical sitemap URLs. Run `python3 scripts/audit-public.py`, Python case tests and `node scripts/test-site-events.cjs` before release. Sources (`content/`, `_handoff/`, `cases/_content/`) must not be deployed publicly.
+- Display-sized images: `/usr/bin/python3 scripts/build-image-variants.py` (Pillow), then marketing build. Source art is preserved; `src/image-variants.json` maps 24 cover thumbnails and 43 client logos. WOFF2 fonts, inline marketing CSS and homepage hero preload reduce initial loading.
 - Current design: paper/ink/yellow, local fonts. Historical dark-theme/cover-crop/Lighthouse-score notes below are not current validation.
 - Metrika owner decision: retain auto-goals; do not create manual goals. Main form prepares a local Telegram brief, not a received lead. Local preview analytics disabled. See ANALYTICS.md.
 - Public legacy PHP endpoints blocked in prior release; credential rotation is not independently verified. Never print credentials.
