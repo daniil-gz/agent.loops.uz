@@ -18,7 +18,6 @@ block = '''
     location = /leadgeneration { return 301 https://loops.uz/$is_args$args; }
     location = /leadgeneration/ { return 301 https://loops.uz/$is_args$args; }
     location = /leadgeneration/index.html { return 301 https://loops.uz/$is_args$args; }
-    location = /index.html { return 301 https://loops.uz/$is_args$args; }
 '''
 backup = p.with_name('loops.bak-' + datetime.datetime.now().strftime('%Y%m%d-%H%M%S'))
 shutil.copy2(p, backup)
