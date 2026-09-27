@@ -88,12 +88,12 @@ def render(data, registry, analytics):
     title = f"{data['client']} — {data['headline']} | Loops"
     schema = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'Article', 'headline': data['headline'], 'description': data['summary'],
-         'author': {'@type': 'Person', 'name': 'Даниил Газизов', 'url': 'https://loops.uz/leadgeneration/#about'},
+         'author': {'@type': 'Person', 'name': 'Даниил Газизов', 'url': 'https://loops.uz/#about'},
          'publisher': {'@type': 'Organization', 'name': 'Loops', 'url': 'https://loops.uz/'},
          'image': 'https://loops.uz' + data['cover'], 'mainEntityOfPage': url},
         {'@type': 'BreadcrumbList', 'itemListElement': [
-            {'@type': 'ListItem', 'position': 1, 'name': 'Loops', 'item': 'https://loops.uz/leadgeneration/'},
-            {'@type': 'ListItem', 'position': 2, 'name': 'Кейсы', 'item': 'https://loops.uz/leadgeneration/#cases'},
+            {'@type': 'ListItem', 'position': 1, 'name': 'Loops', 'item': 'https://loops.uz/'},
+            {'@type': 'ListItem', 'position': 2, 'name': 'Кейсы', 'item': 'https://loops.uz/#cases'},
             {'@type': 'ListItem', 'position': 3, 'name': data['client'], 'item': url}]}]}
     ld = json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c')
     metrics = ''.join(f'<div><strong>{esc(m["value"])}</strong><span>{esc(m["label"])}</span></div>' for m in data['metrics'])

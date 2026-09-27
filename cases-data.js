@@ -151,7 +151,7 @@
     },
     {
       id: "centrismedia",
-      img: "centrismedia-cover-20260921.png",
+      img: "centrismedia-cover-20260927.webp",
       client: "Centris Media",
       cat: "Наружная реклама · B2B",
       niche: ICON.factory,
@@ -239,7 +239,7 @@
     },
     {
       id: "restokids",
-      img: "restokids-cover-20260921.png",
+      img: "restokids-cover-20260927.webp",
       client: "Resto Kids",
       cat: "Семейный ресторан",
       niche: ICON.box,
@@ -261,7 +261,7 @@
     },
     {
       id: "centriscup",
-      img: "centriscup-cover-20260921.png",
+      img: "centriscup-cover-20260927.webp",
       client: "Centris Print Cup",
       cat: "Бумажные стаканы для бизнеса",
       niche: ICON.factory,

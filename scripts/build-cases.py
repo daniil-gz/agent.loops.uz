@@ -18,7 +18,8 @@ CASES = json.load(open(os.path.join(ROOT, "cases/cases.json"), encoding="utf-8")
 def plain(s):
     return html.unescape(re.sub("<[^>]+>", "", s)).replace("\xa0", " ").strip()
 
-YM = '''<!-- Yandex.Metrika counter -->
+YM = '''<script defer src="/site-events-v1.js"></script>
+<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
         m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
