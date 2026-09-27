@@ -14,3 +14,8 @@
 
 /* Dark copy on the final yellow step meets small-text contrast. */
 .service-visual li:last-child p,.service-visual li:last-child .visual-index{color:#414438}
+/* Share title, description and link tracks across each row despite copy length. */
+@supports(grid-template-rows:subgrid){.industry-links>a{display:grid;grid-template-rows:subgrid;grid-row:span 3}.industry-links span{margin-top:0;align-self:end}}
+
+/* Maintain readable contrast for secondary copy on paper and process backgrounds. */
+h2 em,.about-display h2 em{color:#777d6b}.sector li small,.project-invite>p,.service-number,.timeline-step p{color:#62675a;opacity:1}
