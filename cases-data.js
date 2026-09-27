@@ -19,7 +19,7 @@
   window.LOOPS_CASES = [
     {
       id: "ilvi",
-      img: "ilvi-premium-2026.jpg",
+      img: "ilvi-premium-2026.webp",
       client: "ILVI",
       cat: "Обувь · B2B",
       niche: ICON.factory,
@@ -63,7 +63,7 @@
     },
     {
       id: "bts",
-      img: "bts-cover-2026.jpg",
+      img: "bts-cover-2026.webp",
       client: "BTS Group",
       cat: "B2B · оборудование",
       niche: ICON.factory,
@@ -74,7 +74,7 @@
     },
     {
       id: "nwl",
-      img: "nwl-warehouse-2026.png",
+      img: "nwl-warehouse-2026.webp",
       client: "NWL",
       cat: "3PL-логистика",
       niche: ICON.truck,

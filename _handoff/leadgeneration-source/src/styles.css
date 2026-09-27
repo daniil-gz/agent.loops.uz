@@ -278,3 +278,10 @@
 .case-card--supplied:before,.preview-image--supplied:before{content:"";position:absolute;inset:-24px;background-image:var(--cover-image);background-size:cover;background-position:center;filter:blur(22px);z-index:-3;pointer-events:none}
 .case-card--supplied:before{filter:grayscale(1) blur(22px);transition:filter .35s ease}
 .case-card--supplied:hover:before,.case-card--supplied:focus-visible:before{filter:grayscale(0) blur(22px)}
+
+/* Audit: readable secondary copy and native lazy loading for offscreen cover backgrounds. */
+.client-strip-heading .eyebrow,.rail-caption,.article-body .eyebrow,.article-body p{color:#62675a}
+.home-industries h2 em{color:#777d6b}
+.article-art>span,.article-card:nth-child(2) .article-art>span,.article-card:nth-child(3) .article-art>span{color:#68705b}
+.case-card:before{background-image:none!important}
+.case-card>img.case-blur{object-fit:cover;filter:blur(22px);transform:scale(1.15);z-index:-3}

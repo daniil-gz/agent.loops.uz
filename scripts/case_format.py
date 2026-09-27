@@ -131,7 +131,7 @@ def render(data, registry, analytics):
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title><meta name="description" content="{esc(data['summary'])}"><link rel="canonical" href="{url}"><meta name="robots" content="index,follow">
 <meta property="og:type" content="article"><meta property="og:site_name" content="Loops"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(data['summary'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="https://loops.uz{esc(data['cover'])}"><meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="/leadgeneration/assets/favicon.png"><link rel="stylesheet" href="/leadgeneration/assets/fonts.css"><link rel="stylesheet" href="/cases/format-v2.css">{'<link rel="stylesheet" href="/cases/gallery.css"><script src="/cases/gallery.js" defer></script>' if data.get('gallery') else ''}
+<link rel="icon" href="/leadgeneration/assets/favicon.png"><link rel="stylesheet" href="/leadgeneration/assets/fonts-v2.css"><link rel="stylesheet" href="/cases/format-v2.css">{'<link rel="stylesheet" href="/cases/gallery.css"><script src="/cases/gallery.js" defer></script>' if data.get('gallery') else ''}
 <script type="application/ld+json">{ld}</script>
 {analytics}
 <script defer data-website-id="dfid_f3VYRJCEILPpM9zBm2vdN" data-domain="loops.uz" src="https://datafa.st/js/script.js"></script>

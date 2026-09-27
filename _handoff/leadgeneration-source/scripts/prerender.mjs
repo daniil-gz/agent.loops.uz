@@ -1,7 +1,10 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {render,services} from '../dist/ssr/entry-server.js';
 const base=new URL('../dist/client/',import.meta.url);
-const shell=await readFile(new URL('index.html',base),'utf8');
+let shell=await readFile(new URL('index.html',base),'utf8');
+const cssLink=shell.match(/<link[^>]+href="([^"]+\.css)"[^>]*>/g)||[];
+for(const link of cssLink){const href=link.match(/href="([^"]+)"/)[1];const name=href.split('/').pop();const css=(await readFile(new URL('assets/'+name,base),'utf8')).replace(/url\(([^)]+\.woff2)\)/g,'url(/leadgeneration/assets/$1)');shell=shell.replace(link,'<style>'+css+'</style>');}
+shell=shell.replace('</head>','<link rel="preload" href="/leadgeneration/assets/tiktok-sans-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/leadgeneration/assets/tiktok-sans-500.woff2" as="font" type="font/woff2" crossorigin></head>');
 const title='Loops — лидогенерация, ИИ и продажи в Ташкенте';
 const description='Даниил Газизов и Loops: лидогенерация, ИИ-квалификация, отдел продаж, CRM и сквозная аналитика. Ташкент, Узбекистан. Кейсы и подход к работе.';
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
@@ -19,4 +22,4 @@ for(const slug of ['',...Object.keys(services)]){
  let html=shell.replace(/<title>.*?<\/title>/,`<title>${t}</title>`).replace(/<meta name="description" content="[^"]*"\s*\/?\s*>/,`<meta name="description" content="${escape(d)}">`).replace('noindex,follow','index,follow,max-image-preview:large').replace('</head>',metadata+'</head>').replace('<div id="root"></div>',`<div id="root">${render(slug)}</div>`).replace('</body>',analytics+'</body>');
  const dir=new URL(slug?slug+'/':'',base);await mkdir(dir,{recursive:true});await writeFile(new URL('index.html',dir),html);
 }
-console.log('Prerendered homepage and 4 service pages with indexable HTML.');
+console.log(`Prerendered homepage and ${Object.keys(services).length} service/industry pages with indexable HTML.`);
