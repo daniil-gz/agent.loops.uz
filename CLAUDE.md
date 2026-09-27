@@ -2,6 +2,18 @@
 
 This repo (`~/loops.uz`) is the **single source of truth** for the loops.uz website. Read this before reading, editing, or deploying. Any Claude Code / Cursor / agent session opening this folder should follow it.
 
+## Current marketing architecture — 2026-09-27
+
+The notes below describe the previous site and remain relevant only for unchanged legacy pages. The homepage and `/target/`, `/ai-bot/`, `/consulting/`, `/analytics/` now share the new light Loops design.
+
+- Editable marketing sources: `_handoff/leadgeneration-source/src/`. New files here must be explicitly added with `git add -f` because the parent `_handoff/` is ignored.
+- Build with `python3 scripts/build-marketing.py`. It prerenders full indexable HTML and hydrates React; deploy the generated root/service HTML and referenced hashed assets only.
+- Static assets remain at `/leadgeneration/assets/`. Exact old landing URLs `/leadgeneration`, `/leadgeneration/`, `/leadgeneration/index.html` redirect to `/`; never redirect that entire prefix.
+- Analytics configuration lives in `src/analytics.html`; preserve the existing Yandex and DataFast IDs.
+- Service navigation and modern case navigation point to the new root. Case source/generator workflow remains unchanged.
+- Homepage contact form prepares a Telegram brief locally; it does not submit a lead to the old form API. Service CTAs open a Telegram conversation.
+- Before deployment: browser desktop/mobile QA, `python3 -m unittest discover -s scripts -p 'test_*.py'`, static metadata/link validation, commit, scoped rsync, nginx validation if routing changed, purge and public readback.
+
 ---
 
 ## What this is

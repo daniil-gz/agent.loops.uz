@@ -42,3 +42,6 @@ BioRise is second after ILVI; preserve preview → full case and link its existi
 
 ## ILVI gallery — 2026-09-14
 Use the seven user-supplied portrait creatives intact, with consistent frames and click-to-enlarge. Show source-backed qualification excerpts in the new design, explicitly identified as adapted real excerpts. Never put raw chat screenshots, private phones, avatars, dates or exact cities into public assets or markup. Preserve the approved financial confidentiality and existing section numbering. Instagram profile preview is not supplied and must not be fabricated.
+
+## Root and service migration — 2026-09-27
+Current approved scope: hero avatar and “на связи лично” sit on the left with the name. Homepage is `/`; all four service pages use this light design. `/leadgeneration/` redirects to root, but its assets stay at the same URL. Use `scripts/build-marketing.py` from repository root for prerendered public HTML. Keep two-step case previews and existing cover treatment.
