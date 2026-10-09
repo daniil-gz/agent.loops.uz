@@ -10,7 +10,7 @@ articles=json.loads((R/'content/articles.json').read_text()); registry=json.load
 cases=[json.loads((R/'cases/_content'/f'{c["id"]}.json').read_text()) for c in registry]
 industries=json.loads((R/'_handoff/leadgeneration-source/src/industries.json').read_text())
 analytics=(R/'_handoff/leadgeneration-source/src/analytics.html').read_text()
-links={'target':'Лидогенерация','ai-bot':'ИИ и автоматизация','consulting':'Продажи и CRM','analytics':'Сквозная аналитика',**{k:v['name'] for k,v in industries.items()}}
+links={'target':'Таргет и лидогенерация','ai-bot':'Чат-бот и ИИ-квалификация','consulting':'Продажи и CRM','analytics':'Сквозная аналитика',**{k:v['name'] for k,v in industries.items()}}
 def shell(path,title,desc,body,kind='WebPage',extra=None):
  url=BASE+path;graph=[{'@type':kind,'@id':url+'#page','url':url,'name':title,'headline':title,'description':desc,'inLanguage':'ru','dateModified':DATE,'author':{'@type':'Person','@id':BASE+'/#daniil','name':'Даниил Газизов','url':BASE+'/about/'},'publisher':{'@type':'Organization','@id':BASE+'/#organization','name':'Loops','url':BASE+'/'},'mainEntityOfPage':url},{'@type':'BreadcrumbList','itemListElement':[{'@type':'ListItem','position':1,'name':'Loops','item':BASE+'/'},{'@type':'ListItem','position':2,'name':title,'item':url}]}]
  if extra: graph+=extra
@@ -43,10 +43,12 @@ body='''<section class="wrap editorial-hero"><span class="eyebrow">ДАННЫЕ 
 save('/privacy/',shell('/privacy/','Данные и обратная связь','Как работают бриф, Telegram и аналитика сайта Loops. Контакт по вопросам о данных.',body))
 # Preserve existing URL set, add only genuinely created pages, set real modification dates.
 root=ET.parse(R/'sitemap.xml').getroot();ns='{http://www.sitemaps.org/schemas/sitemap/0.9}'
+lastmods={u.find(ns+'loc').text:u.findtext(ns+'lastmod',DATE) for u in root}
 urls={u.find(ns+'loc').text for u in root};urls.update(BASE+'/'+x+'/' for x in industries);urls.update(BASE+'/articles/'+a['slug']+'/' for a in articles);urls.add(BASE+'/privacy/')
-(R/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>{e(u)}</loc><lastmod>{DATE}</lastmod></url>\n' for u in sorted(urls))+'</urlset>\n')
+(R/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+''.join(f'  <url><loc>{e(u)}</loc><lastmod>{lastmods.get(u,DATE)}</lastmod></url>\n' for u in sorted(urls))+'</urlset>\n')
 llms='# Loops — Даниил Газизов\n\n> Реклама, квалификация обращений, продажи и CRM. Ташкент, Узбекистан. Публичные результаты описаны в контексте отдельных проектов; кейсы не являются прогнозом для другого бизнеса.\n\n## Услуги и направления\n'
-llms+=''.join(f'- [{e(n)}]({BASE}/{k}/): подход, состав работ и кейсы.\n' for k,n in links.items())
+service_summaries={'target':'реклама в Instagram и Facebook в Ташкенте и Узбекистане — 6 млн сум в месяц; вместе с чат-ботом — 12 млн. Рекламный бюджет и платные сторонние сервисы оплачиваются отдельно.', 'ai-bot':'первый диалог, квалификация и передача контактов менеджеру — 6 млн сум в месяц. Платные сторонние сервисы оплачиваются отдельно.'}
+llms+=''.join(f'- [{e(n)}]({BASE}/{k}/): {service_summaries.get(k, "подход, состав работ и кейсы.")}\n' for k,n in links.items())
 llms+='\n## Кейсы\n'+''.join(f'- [{c["client"]}]({BASE}/cases/case-{c["id"]}/): {c["headline"]}.\n' for c in cases)
 llms+='\n## Практические материалы\n'+''.join(f'- [{a["title"]}]({BASE}/articles/{a["slug"]}/): {a["summary"]}\n' for a in articles)
 llms+='\n## Автор и контакт\n- [Даниил Газизов](https://loops.uz/about/): подход к работе и публичные профили.\n- [Обсудить проект](https://t.me/dani_gzv): личный контакт в Telegram.\n'

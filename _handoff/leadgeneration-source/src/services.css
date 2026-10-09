@@ -18,4 +18,5 @@
 @supports(grid-template-rows:subgrid){.industry-links>a{display:grid;grid-template-rows:subgrid;grid-row:span 3}.industry-links span{margin-top:0;align-self:end}}
 
 /* Maintain readable contrast for secondary copy on paper and process backgrounds. */
+.service-page--target h1,.service-page--ai-bot h1{font-size:clamp(32px,4.2vw,56px);overflow-wrap:break-word}
 h2 em,.about-display h2 em{color:#777d6b}.sector li small,.project-invite>p,.service-number,.timeline-step p{color:#62675a;opacity:1}
