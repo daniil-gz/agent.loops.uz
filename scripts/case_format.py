@@ -85,7 +85,8 @@ def paragraphs(section):
 def render(data, registry, analytics):
     cid = data['id']
     url = f'https://loops.uz/cases/case-{cid}/'
-    title = f"{data['client']} — {data['headline']} | Loops"
+    # seoTitle names the niche and service people search for; headline stays the visible H1.
+    title = data.get('seoTitle') or f"{data['client']} — {data['headline']} | Loops"
     schema = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'Article', 'headline': data['headline'], 'description': data['summary'],
          'author': {'@type': 'Person', 'name': 'Даниил Газизов', '@id': 'https://loops.uz/#daniil', 'url': 'https://loops.uz/about/'},

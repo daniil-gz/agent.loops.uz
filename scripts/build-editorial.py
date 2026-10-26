@@ -25,13 +25,17 @@ def save(path,text):
  p=R/path.lstrip('/');p=p/'index.html' if not p.suffix else p;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(text)
 def cta(title='Есть похожая задача?',text='Расскажите о бизнесе и о том, что хотите улучшить. Обсудим следующий шаг лично.'):
  return f'<section class="wrap editorial-cta"><span class="eyebrow">НА СВЯЗИ ЛИЧНО</span><h2>{title}</h2><p>{text}</p><a class="button button-yellow" href="https://t.me/dani_gzv">Написать Даниилу ↗</a><a class="text-link" href="/#contact">Или подготовить короткий бриф →</a></section>'
+def table(t):
+ # Optional data table in an article section: {"caption", "head": [...], "rows": [[...]]}.
+ if not t: return ''
+ return '<div class="table-wrap"><table class="data-table"><caption>'+e(t['caption'])+'</caption><thead><tr>'+''.join(f'<th scope="col">{e(h)}</th>' for h in t['head'])+'</tr></thead><tbody>'+''.join('<tr>'+''.join((f'<th scope="row">{e(c)}</th>' if j==0 else f'<td>{e(c)}</td>') for j,c in enumerate(r))+'</tr>' for r in t['rows'])+'</tbody></table></div>'
 def cards(items):
  return '<div class="reading-grid">'+''.join(f'<a href="/articles/{x["slug"]}/"><span class="eyebrow">{e(x["category"])}</span><h2>{e(x["title"])}</h2><p>{e(x["summary"])}</p><span class="text-link">Читать материал ↗</span></a>' for x in items)+'</div>'
 for a in articles:
  title=a['title']; body=f'<section class="wrap editorial-hero"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span>/</span><a href="/articles/">Материалы</a></nav><span class="eyebrow">{e(a["category"])}</span><h1>{e(title)}</h1><p class="editorial-lead">{e(a["summary"])}</p><div class="byline"><img src="/images/daniil-gazizov.jpg" width="48" height="48" alt="Даниил Газизов"><div><a href="/about/">Даниил Газизов</a><span>Обновлено {russian_date(a["updated"])}</span></div></div></section>'
  toc=''.join(f'<a href="#section-{i}">{e(s["title"])}</a>' for i,s in enumerate(a['sections'],1))
  body+=f'<div class="wrap editorial-layout"><aside><nav aria-label="Содержание статьи"><span class="eyebrow">В МАТЕРИАЛЕ</span>{toc}</nav></aside><article class="editorial-prose">'
- for i,s in enumerate(a['sections'],1):body+=f'<section id="section-{i}"><h2>{e(s["title"])}</h2>'+''.join(f'<p>{e(p)}</p>' for p in s['paragraphs'])+'</section>'
+ for i,s in enumerate(a['sections'],1):body+=f'<section id="section-{i}"><h2>{e(s["title"])}</h2>'+''.join(f'<p>{e(p)}</p>' for p in s['paragraphs'])+table(s.get('table'))+''.join(f'<p>{e(p)}</p>' for p in s.get('after',[]))+'</section>'
  if a['sources']:body+='<section><h2>Официальные источники</h2><ul>'+''.join(f'<li><a href="{e(x["url"])}" rel="noopener">{e(x["title"])} ↗</a></li>' for x in a['sources'])+'</ul><p>Сведения об инструменте сверены при обновлении материала. Доступность и условия могут меняться.</p></section>'
  c=next(x for x in cases if x['id']==a['case']);body+=f'<div class="reading-next"><span class="eyebrow">ОТ МАТЕРИАЛА К ПРАКТИКЕ</span><a href="/{a["service"]}/">{e(links[a["service"]])} ↗</a><a href="/cases/case-{c["id"]}/">Кейс {e(c["client"])}: {e(c["headline"])} ↗</a></div></article></div>'+cta()
  save('/articles/'+a['slug']+'/',shell('/articles/'+a['slug']+'/',title,a['summary'],body,'Article',modified=a['updated']))
