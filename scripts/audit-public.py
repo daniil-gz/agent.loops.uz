@@ -13,7 +13,7 @@ class Doc(HTMLParser):
   if 'id' in a:self.ids.add(a['id'])
 def path_file(path):
  p=R/unquote(path).lstrip('/');return p/'index.html' if p.is_dir() or not p.suffix else p
-urls=[x.text for x in ET.parse(R/'sitemap.xml').getroot().iter() if x.tag.endswith('loc')];errors=[];docs={};rows=[]
+urls=[x.text for x in ET.parse(R/'sitemap.xml').getroot().iter('{http://www.sitemaps.org/schemas/sitemap/0.9}loc')];errors=[];docs={};rows=[]  # page URLs only, not image:loc
 for url in urls:
  p=path_file(urlsplit(url).path)
  if not p.exists():errors.append([url,'missing file']);continue

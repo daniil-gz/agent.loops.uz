@@ -1,0 +1,29 @@
+{
+  "@type": "Person",
+  "@id": "https://loops.uz/#daniil",
+  "name": "Даниил Газизов",
+  "alternateName": ["Daniil Gazizov", "Газизов Даниил", "danii_gzv"],
+  "url": "https://loops.uz/about/",
+  "image": {
+    "@type": "ImageObject",
+    "@id": "https://loops.uz/#daniil-photo",
+    "url": "https://loops.uz/images/daniil-gazizov.jpg",
+    "contentUrl": "https://loops.uz/images/daniil-gazizov.jpg",
+    "width": 640,
+    "height": 640,
+    "caption": "Даниил Газизов — таргетолог, основатель Loops, Ташкент"
+  },
+  "jobTitle": "Таргетолог и маркетолог, основатель Loops",
+  "worksFor": {"@id": "https://loops.uz/#organization"},
+  "homeLocation": {"@type": "City", "name": "Ташкент"},
+  "knowsLanguage": "ru",
+  "knowsAbout": ["Таргетированная реклама", "Meta Ads", "Реклама в Instagram", "Реклама в Facebook", "Лидогенерация", "B2B-лидогенерация", "Чат-боты для бизнеса", "CRM"],
+  "sameAs": [
+    "https://t.me/dani_gzv",
+    "https://t.me/daniil_loops",
+    "https://instagram.com/danii_gzv",
+    "https://www.youtube.com/@dani_gzv",
+    "https://www.threads.net/@danii_gzv",
+    "https://www.linkedin.com/in/daniilgazizov/"
+  ]
+}

@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://loops.uz/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://loops.uz/about/</loc><lastmod>2026-10-09</lastmod></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://loops.uz/</loc><lastmod>2026-10-14</lastmod><image:image><image:loc>https://loops.uz/images/daniil-gazizov.jpg</image:loc></image:image></url>
+  <url><loc>https://loops.uz/about/</loc><lastmod>2026-10-26</lastmod><image:image><image:loc>https://loops.uz/images/daniil-gazizov.jpg</image:loc></image:image></url>
   <url><loc>https://loops.uz/ai-bot/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://loops.uz/analytics/</loc><lastmod>2026-10-14</lastmod></url>
-  <url><loc>https://loops.uz/articles/</loc><lastmod>2026-10-09</lastmod></url>
+  <url><loc>https://loops.uz/articles/</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://loops.uz/articles/antigravity/</loc><lastmod>2026-09-27</lastmod></url>
   <url><loc>https://loops.uz/articles/b2b-lead-scoring/</loc><lastmod>2026-09-27</lastmod></url>
   <url><loc>https://loops.uz/articles/career-dreamer/</loc><lastmod>2026-09-27</lastmod></url>
   <url><loc>https://loops.uz/articles/google-skills/</loc><lastmod>2026-09-27</lastmod></url>
+  <url><loc>https://loops.uz/articles/kak-vybrat-targetologa-tashkent/</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://loops.uz/articles/leady-ne-pacienty/</loc><lastmod>2026-09-27</lastmod></url>
   <url><loc>https://loops.uz/articles/manus/</loc><lastmod>2026-09-27</lastmod></url>
   <url><loc>https://loops.uz/articles/pochemu-pacienty-ne-vozvrashayutsya/</loc><lastmod>2026-09-27</lastmod></url>
@@ -50,5 +51,5 @@
   <url><loc>https://loops.uz/horeca/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://loops.uz/manufacturing/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://loops.uz/privacy/</loc><lastmod>2026-09-27</lastmod></url>
-  <url><loc>https://loops.uz/target/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://loops.uz/target/</loc><lastmod>2026-10-14</lastmod><image:image><image:loc>https://loops.uz/images/daniil-gazizov.jpg</image:loc></image:image></url>
 </urlset>
