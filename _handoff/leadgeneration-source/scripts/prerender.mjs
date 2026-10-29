@@ -1,5 +1,5 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
-import {render,services} from '../dist/ssr/entry-server.js';
+import {render,services,homeFaq} from '../dist/ssr/entry-server.js';
 const base=new URL('../dist/client/',import.meta.url);
 let shell=await readFile(new URL('index.html',base),'utf8');
 const cssLink=shell.match(/<link[^>]+href="([^"]+\.css)"[^>]*>/g)||[];
@@ -21,7 +21,8 @@ for(const slug of ['',...Object.keys(services)]){
  const price=t=>{const m=String(t).match(/(\d+)\s*млн сум/);return m?String(Number(m[1])*1e6):null};
  const offers=(s?.plans||[]).map(([n,t,desc])=>price(t)&&{'@type':'Offer',name:n,description:desc,price:price(t),priceCurrency:'UZS',priceSpecification:{'@type':'UnitPriceSpecification',price:price(t),priceCurrency:'UZS',unitText:'месяц'}}).filter(Boolean);
  if(s)graph.push({'@type':'Service','@id':url+'#service',name:s.name,serviceType:s.title.split(' — ')[0].split(' | ')[0],url,description:d,provider:{'@id':organization['@id']},areaServed:[{'@type':'City',name:'Ташкент'},{'@type':'Country',name:'Узбекистан'},'Worldwide'],availableLanguage:'ru',...(offers.length?{offers}:{})},{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Главная',item:'https://loops.uz/'},{'@type':'ListItem',position:2,name:s.name,item:url}]});
- if(s?.faqs?.length)graph.push({'@type':'FAQPage','@id':url+'#faq',mainEntity:s.faqs.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))});
+ const faqs=s?s.faqs:homeFaq;
+ if(faqs?.length)graph.push({'@type':'FAQPage','@id':url+'#faq',mainEntity:faqs.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))});
  if(!s)graph.push({'@type':'WebPage','@id':url+'#page',url,name:t,description:d,about:{'@id':organization['@id']}});
  const metadata=`<noscript><style>.contact-form{display:none}</style></noscript><link rel="canonical" href="${url}"><meta property="og:type" content="website"><meta property="og:site_name" content="Loops"><meta property="og:title" content="${escape(t)}"><meta property="og:description" content="${escape(d)}"><meta property="og:url" content="${url}"><meta property="og:image" content="${photo}"><meta property="og:image:alt" content="${escape(person.image.caption)}"><meta name="twitter:card" content="summary"><script type="application/ld+json">${JSON.stringify({'@context':'https://schema.org','@graph':graph}).replaceAll('<','\\u003c')}</script>`;
  let html=shell.replace(/<title>.*?<\/title>/,`<title>${t}</title>`).replace(/<meta name="description" content="[^"]*"\s*\/?\s*>/,`<meta name="description" content="${escape(d)}">`).replace('noindex,follow','index,follow,max-image-preview:large').replace('</head>',metadata+'</head>').replace('<div id="root"></div>',`<div id="root">${render(slug)}</div>`).replace('</body>',analytics+'</body>');
