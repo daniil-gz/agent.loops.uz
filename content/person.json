@@ -13,7 +13,7 @@
     "height": 640,
     "caption": "Даниил Газизов — таргетолог, основатель Loops, Ташкент"
   },
-  "jobTitle": "Таргетолог и маркетолог, основатель Loops",
+  "jobTitle": "Таргетолог, основатель и руководитель команды Loops",
   "worksFor": {"@id": "https://loops.uz/#organization"},
   "homeLocation": {"@type": "City", "name": "Ташкент"},
   "knowsLanguage": "ru",
