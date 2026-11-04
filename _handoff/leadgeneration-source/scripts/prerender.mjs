@@ -5,7 +5,7 @@ let shell=await readFile(new URL('index.html',base),'utf8');
 const cssLink=shell.match(/<link[^>]+href="([^"]+\.css)"[^>]*>/g)||[];
 for(const link of cssLink){const href=link.match(/href="([^"]+)"/)[1];const name=href.split('/').pop();const css=(await readFile(new URL('assets/'+name,base),'utf8')).replace(/url\(([^)]+\.woff2)\)/g,'url(/leadgeneration/assets/$1)');shell=shell.replace(link,'<style>'+css+'</style>');}
 shell=shell.replace('</head>','<link rel="preload" href="/leadgeneration/assets/tiktok-sans-400.woff2" as="font" type="font/woff2" crossorigin><link rel="preload" href="/leadgeneration/assets/tiktok-sans-500.woff2" as="font" type="font/woff2" crossorigin></head>');
-const title='Loops — таргетированная реклама, лидогенерация и продажи в Ташкенте';
+const title='Loops — Даниил Газизов: лидогенерация, ИИ-квалификация и продажи в Ташкенте';
 const description='Даниил Газизов и Loops: лидогенерация, ИИ-квалификация, отдел продаж, CRM и сквозная аналитика. Ташкент, Узбекистан и удалённо по всему миру. Работаем на русском.';
 const escape=s=>s.replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;');
 // One person card for every page: same photo, profiles and @id (content/person.json).
