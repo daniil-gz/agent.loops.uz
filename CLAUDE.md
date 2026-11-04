@@ -42,12 +42,12 @@ python3 scripts/release.py               # выкладка (только с mai
 
 ## Инфраструктура
 
-- Сервер: `ssh adstat-deploy` (Cloudflare Tunnel), сайт `/var/www/loops`, nginx `/etc/nginx/sites-available/loops`. Порт 22 напрямую закрыт. Рядом Adstat (`/root/adstat`, Docker) — не трогать.
+- Сервер: `ssh adstat-deploy` (Cloudflare Tunnel), сайт `/var/www/loops`. Рабочий nginx — `/etc/nginx/sites-enabled/loops`: это отдельный файл, не ссылка на `sites-available/loops` (тот не используется). Правка: копия в `/root/backups/`, `nginx -t`, `systemctl reload nginx`. Регулярки с `{}` — в кавычках. Порт 22 напрямую закрыт. Рядом Adstat (`/root/adstat`, Docker) — не трогать.
 - Cloudflare, зона loops.uz `f41fb8f4fbfda243650e27e0f7db5bc8`, SSL Full. Ключ `CF_LOOPS_TOKEN` в `~/.cloudflare-loops.env`: очистка кэша, DNS, настройки зоны. У ключа фильтр IP: ошибка 9109 — Даниил добавляет новый IP. Ключи не выводить.
 - Выключено и не включать: HTTP/3 (ошибка QUIC в Chrome), ECH (провайдер в Узбекистане рвёт соединение → ERR_CONNECTION_RESET).
 - Боты ИИ разрешены (Managed robots.txt выключен) — нужно для ответов ChatGPT и других.
 - `agent.loops.uz` → 301 на `loops.uz`. Всё каноническое — на `loops.uz`.
-- Кэш nginx: CSS/JS — `private, no-cache`; картинки и шрифты — 30 дней `immutable`. Заменил картинку под тем же именем — переименуй файл. Не добавляй `?v=`.
+- Кэш nginx: JS/CSS сборки с хешем в имени (`/leadgeneration/assets/*-xxxxxxxx.js`) — год, `immutable`; остальные CSS/JS — `private, no-cache`; картинки и шрифты — 30 дней `immutable`. `release.py` чистит кэш Cloudflare по изменённым адресам, но браузеры держат старую картинку до 30 дней: новая картинка — новое имя файла. Не добавляй `?v=`.
 - Форма с главной готовит бриф в Telegram локально. `/api/lead` — Cloudflare Worker `loops-lead` (`worker/`, `wrangler.toml`), выкладка отдельно: `npx wrangler deploy` (вход Даниила). Токен бота — только секрет воркера.
 - Аналитика: Метрика 101239870 и DataFast, события — `site-events-v1.js`, см. `ANALYTICS.md`. Вне loops.uz аналитика выключена.
 - Картинки: `/usr/bin/python3 scripts/build-image-variants.py` (Pillow живёт в системном python).

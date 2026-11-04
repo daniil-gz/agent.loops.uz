@@ -26,6 +26,12 @@ def validate(data, known_ids):
     for key in ('headline', 'summary', 'client', 'industry', 'location', 'period', 'cover', 'coverAlt', 'workTitle'):
         if not isinstance(data.get(key), str) or not data[key].strip():
             raise ValueError(f'Missing case field: {key}')
+    if data['status'] == 'published':
+        for key in ('published', 'updated'):
+            if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', str(data.get(key, ''))):
+                raise ValueError(f'Published case needs {key}: YYYY-MM-DD')
+        if data['updated'] < data['published']:
+            raise ValueError('updated is earlier than published')
     if not re.fullmatch(r'/[A-Za-z0-9_./-]+', data['cover']) or '..' in data['cover']:
         raise ValueError('Cover must be a local absolute asset path')
     if not 1 <= len(data.get('metrics', [])) <= 4:
@@ -83,21 +89,33 @@ def validate(data, known_ids):
 def paragraphs(section):
     return ''.join(f'<p>{esc(p)}</p>' for p in section['paragraphs'])
 
+MONTHS = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+
+
+def russian_date(value):
+    y, m, d = (int(x) for x in value.split('-'))
+    return f'{d} {MONTHS[m - 1]} {y}'
+
+
 def render(data, registry, analytics):
     cid = data['id']
     url = f'https://loops.uz/cases/case-{cid}/'
     # seoTitle names the niche and service people search for; headline stays the visible H1.
     title = data.get('seoTitle') or f"{data['client']} — {data['headline']} | Loops"
+    published = data['published']
+    updated = data.get('updated', published)  # set by hand when the story changes
+    dates = f'Опубликовано <time datetime="{published}">{russian_date(published)}</time>' + (
+        f' · Обновлено <time datetime="{updated}">{russian_date(updated)}</time>' if updated != published else '')
     schema = {'@context': 'https://schema.org', '@graph': [
         {'@type': 'Article', 'headline': data['headline'], 'description': data['summary'],
          'author': {'@type': 'Person', 'name': 'Даниил Газизов', '@id': 'https://loops.uz/#daniil', 'url': 'https://loops.uz/about/'},
          'publisher': {'@type': 'Organization', 'name': 'Loops', 'url': 'https://loops.uz/'},
-         'image': 'https://loops.uz' + data['cover'], 'mainEntityOfPage': url},
+         'image': 'https://loops.uz' + data['cover'], 'mainEntityOfPage': url,
+         'datePublished': published, 'dateModified': updated, 'inLanguage': 'ru'},
         {'@type': 'BreadcrumbList', 'itemListElement': [
-            {'@type': 'ListItem', 'position': 1, 'name': 'Loops', 'item': 'https://loops.uz/'},
-            {'@type': 'ListItem', 'position': 2, 'name': 'Кейсы', 'item': 'https://loops.uz/#cases'},
-            {'@type': 'ListItem', 'position': 3, 'name': data['client'], 'item': url}]},
-        offer_block.faq_schema(url)]}
+            {'@type': 'ListItem', 'position': 1, 'name': 'Главная', 'item': 'https://loops.uz/'},
+            {'@type': 'ListItem', 'position': 2, 'name': 'Кейсы', 'item': 'https://loops.uz/cases.html'},
+            {'@type': 'ListItem', 'position': 3, 'name': data['client'], 'item': url}]}]}
     ld = json.dumps(schema, ensure_ascii=False).replace('<', '\\u003c')
     metrics = ''.join(f'<div><strong>{esc(m["value"])}</strong><span>{esc(m["label"])}</span></div>' for m in data['metrics'])
     public_sections = [(key, label) for key, label in zip(SECTION_KEYS, SECTION_LABELS) if key != 'measurement' or key in data]
@@ -135,7 +153,7 @@ def render(data, registry, analytics):
         cover_image = f'<div class="cover-media" style="--cover-image:url(&quot;{esc(data["cover"])}&quot;)">{cover_image}</div>'
     return f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{esc(title)}</title><meta name="description" content="{esc(data['summary'])}"><link rel="canonical" href="{url}"><meta name="robots" content="index,follow">
+<title>{esc(title)}</title><meta name="description" content="{esc(data['summary'])}"><link rel="canonical" href="{url}"><meta name="robots" content="index,follow,max-image-preview:large">
 <meta property="og:type" content="article"><meta property="og:site_name" content="Loops"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(data['summary'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="https://loops.uz{esc(data['cover'])}"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/leadgeneration/assets/favicon.png"><link rel="stylesheet" href="/leadgeneration/assets/fonts-v2.css"><link rel="stylesheet" href="/cases/format-v2.css">{'<link rel="stylesheet" href="/cases/gallery.css"><script src="/cases/gallery.js" defer></script>' if data.get('gallery') else ''}
 <script type="application/ld+json">{ld}</script>
@@ -143,10 +161,10 @@ def render(data, registry, analytics):
 <script defer data-website-id="dfid_f3VYRJCEILPpM9zBm2vdN" data-domain="loops.uz" src="https://datafa.st/js/script.js"></script>
 </head><body><a class="skip-link" href="#content">Перейти к кейсу</a>
 <header class="wrap case-header"><a class="wordmark" href="/" aria-label="Loops — на главную">loops</a><nav aria-label="Основная навигация"><a href="/#cases">Кейсы</a><a href="/#services">Услуги</a><a href="/#about">Обо мне</a></nav><a class="button" href="/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></header>
-<main id="content"><section class="wrap case-hero"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/#projects">Все проекты</a><span aria-hidden="true">/</span><span>{esc(data['client'])}</span></nav>
-<div class="hero-grid"><div><span class="eyebrow">{esc(data['client'])} / КЕЙС LOOPS</span><h1>{esc(data['headline'])}</h1><p class="case-summary">{esc(data['summary'])}</p></div><figure class="cover" style="--cover-ratio:{data.get('coverRatio', 1)}">{cover_image}<figcaption>За цифрами —<br>своя история.</figcaption></figure></div>
+<main id="content"><section class="wrap case-hero"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><a href="/cases.html">Кейсы</a><span aria-hidden="true">/</span><span>{esc(data['client'])}</span></nav>
+<div class="hero-grid"><div><span class="eyebrow">{esc(data['client'])} / КЕЙС LOOPS</span><h1>{esc(data['headline'])}</h1><p class="case-summary">{esc(data['summary'])}</p><p class="case-dates">{dates}</p></div><figure class="cover" style="--cover-ratio:{data.get('coverRatio', 1)}">{cover_image}<figcaption>За цифрами —<br>своя история.</figcaption></figure></div>
 <div class="metrics" style="--metric-count:{len(data['metrics'])}">{metrics}</div><dl class="case-meta"><div><dt>Бизнес</dt><dd>{esc(data['industry'])}</dd></div><div><dt>География</dt><dd>{esc(data['location'])}</dd></div><div><dt>Инструменты</dt><dd>{esc(' · '.join(data['services']))}</dd></div><div><dt>Период</dt><dd>{esc(data['period'])}</dd></div></dl></section>
 <div class="wrap story-layout"><aside><nav class="toc" aria-label="Содержание кейса"><span class="eyebrow">ВНУТРИ ИСТОРИИ</span>{toc}</nav></aside><article>{''.join(sections)}</article></div>
 {offer_html}<section class="wrap case-cta"><span class="eyebrow">ЕСТЬ ПОХОЖАЯ ЗАДАЧА?</span><div class="case-cta-copy"><h2>Разберём ваш<br><span>путь к продаже.</span></h2><p>Посмотрим, что происходит от первого обращения до работы менеджера.</p></div><a class="button button-yellow" href="/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></section>
-{service_link}<section class="wrap related"><div class="section-heading"><h2>Другие истории.</h2><a href="/#cases">Все кейсы ↗</a></div><div class="related-grid">{related}</div></section></main>
+{service_link}<section class="wrap related"><div class="section-heading"><h2>Другие истории.</h2><a href="/cases.html">Все кейсы ↗</a></div><div class="related-grid">{related}</div></section></main>
 <footer class="wrap case-footer"><span>© 2026 Loops · Даниил Газизов</span><a href="/cases.html">Все кейсы ↗</a><a href="/privacy/">Данные и обратная связь</a><a href="https://t.me/dani_gzv" target="_blank" rel="noopener">Telegram ↗</a></footer></body></html>'''
