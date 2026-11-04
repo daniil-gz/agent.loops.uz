@@ -177,4 +177,4 @@ def render(data, registry, analytics):
 <div class="wrap story-layout"><aside><nav class="toc" aria-label="Содержание кейса"><span class="eyebrow">ВНУТРИ ИСТОРИИ</span>{toc}</nav></aside><article>{''.join(sections)}</article></div>
 {offer_html}<section class="wrap case-cta"><span class="eyebrow">ЕСТЬ ПОХОЖАЯ ЗАДАЧА?</span><div class="case-cta-copy"><h2>Разберём ваш<br><span>путь к продаже.</span></h2><p>Посмотрим, что происходит от первого обращения до работы менеджера.</p></div><a class="button button-yellow" href="/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></section>
 {service_link}<section class="wrap related"><div class="section-heading"><h2>Другие истории.</h2><a href="/cases.html">Все кейсы ↗</a></div><div class="related-grid">{related}</div></section></main>
-<footer class="wrap case-footer"><span>© 2026 Loops · Даниил Газизов</span><a href="/cases.html">Все кейсы ↗</a><a href="/privacy/">Данные и обратная связь</a><a href="https://t.me/dani_gzv" target="_blank" rel="noopener">Telegram ↗</a></footer></body></html>'''
+{offer_block.FOOTER}</body></html>'''

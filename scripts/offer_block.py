@@ -109,12 +109,15 @@ def faq_html():
     return f'<div class="offer-faq">{items}</div>'
 
 
-# Header navigation shared by case and editorial pages. Desktop: NAV links. Phone (<=700px): MENU panel.
-NAV = ('<nav class="site-nav" aria-label="Основная навигация"><a href="/#industries">Направления</a>'
-       '<a href="/cases.html">Кейсы</a><a href="/articles/">Материалы</a></nav>')
-MENU_LINKS = [('/agency/', 'Агентство Loops'), ('/target/', 'Таргет и лидогенерация'), ('/audit/', 'Аудит рекламы'), ('/partners/', 'Агентствам: таргет на субподряде'), ('/ai-bot/', 'Чат-бот и ИИ-квалификация'),
-              ('/consulting/', 'Продажи и CRM'), ('/analytics/', 'Сквозная аналитика'),
-              ('/cases.html', 'Кейсы'), ('/articles/', 'Материалы'), ('/about/', 'Обо мне')]
+# Header menu and footer: one source for every page (React reads the same file).
+SITE = json.loads((Path(__file__).resolve().parents[1] / '_handoff/leadgeneration-source/src/site-nav.json').read_text())
+NAV = ('<nav class="site-nav" aria-label="Основная навигация">'
+       + ''.join(f'<a href="{u}">{t}</a>' for u, t in SITE['nav']) + '</nav>')
+MENU_LINKS = SITE['menu']
 MENU = ('<details class="site-menu"><summary aria-label="Открыть меню"><span></span></summary>'
         '<nav aria-label="Меню">' + ''.join(f'<a href="{u}">{t}</a>' for u, t in MENU_LINKS) +
-        '<a class="site-menu-cta" href="https://t.me/dani_gzv">Написать Даниилу в Telegram ↗</a></nav></details>')
+        f'<a class="site-menu-cta" href="{SITE["contact"][0]}">{SITE["contact"][1]} ↗</a></nav></details>')
+FOOTER = ('<footer class="wrap site-footer"><a class="wordmark" href="/">loops</a><span>© 2026 Loops · Даниил Газизов · Ташкент</span>'
+          + ''.join(f'<a href="{u}">{t}</a>' for u, t in SITE['footer'])
+          + '<nav class="footer-seo" aria-label="Услуги и материалы">'
+          + ''.join(f'<a href="{u}">{t}</a>' for u, t in SITE['seo']) + '</nav></footer>')
