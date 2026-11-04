@@ -343,6 +343,9 @@ def main():
     drafts = [c["id"] for c in CASES if c["id"] not in structured]
     for c in CASES:
         if c["id"] in drafts:
+            stale = Path(ROOT) / f"cases/case-{c['id']}/index.html"
+            if stale.exists():
+                stale.unlink()  # unpublished: release.py lists it; remove on the server by hand
             continue  # draft: no public page until status is "published"
         d = os.path.join(ROOT, f"cases/case-{c['id']}")
         os.makedirs(d, exist_ok=True)

@@ -20,7 +20,11 @@ PRICES = [
 
 CASE_COUNT = sum(json.loads(p.read_text()).get('status') == 'published'
                  for p in (Path(__file__).resolve().parents[1] / 'cases/_content').glob('*.json'))
-CASES_WORD = 'кейс' if CASE_COUNT % 10 == 1 and CASE_COUNT % 100 != 11 else 'кейса' if CASE_COUNT % 10 in (2, 3, 4) and CASE_COUNT % 100 not in (12, 13, 14) else 'кейсов'
+def plural(n, one, few, many):
+    return one if n % 10 == 1 and n % 100 != 11 else few if n % 10 in (2, 3, 4) and n % 100 not in (12, 13, 14) else many
+
+
+CASES_WORD = plural(CASE_COUNT, 'кейс', 'кейса', 'кейсов')
 
 # Reasons an assistant can quote when asked why it recommends Daniil. Mirror in services.js teamFaq.
 WHY = [
