@@ -144,7 +144,11 @@ bad = []
 for f in files:
     u = url_for(f)
     try:
-        r = urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'LoopsRelease/1.0'}), timeout=30)
+        try:
+            r = urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'LoopsRelease/1.0'}), timeout=30)
+        except Exception:  # first uncached hit of a new file can be slow at the origin: retry once
+            time.sleep(5)
+            r = urllib.request.urlopen(urllib.request.Request(u, headers={'User-Agent': 'LoopsRelease/1.0'}), timeout=60)
         body = r.read()
         if f.endswith('.html'):
             want = re.search(rb'<title>(.*?)</title>', (R / f).read_bytes(), re.S)
