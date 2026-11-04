@@ -7,7 +7,7 @@ Errors:
 - broken local link/asset, <img> without alt, missing #anchor
 - indexable public page that is not in sitemap.xml (or sitemap page that is not indexable)
 - duplicate title or description across sitemap pages
-- empty list section (a grid with no items)
+- empty list section (a grid with no items); template code leaked into the page
 - case count in text != published cases; price in offer_block.py not found in services.js
 Warnings: title > 70 or description > 170 characters.
 
@@ -79,6 +79,8 @@ for url in urls:
         seen['description'][desc[0]].append(url)
         if len(desc[0]) > 170: warnings.append([url, f'description {len(desc[0])} chars'])
     if re.search(r'class="[^"]*(grid|list)[^"]*"></(div|ul|ol)>', s): errors.append([url, 'empty list section'])
+    leak = re.search(r"offer_block\.|\{esc\(|\{e\(|'\+[a-z_]+[.(]", re.sub(r'<script.*?</script>', '', s, flags=re.S))
+    if leak: errors.append([url, 'template code in page', leak.group(0)])
     rows.append(dict(url=url, bytes=p.stat().st_size, h1=d.h1, schemas=len(schemas)))
 
 for kind, values in seen.items():

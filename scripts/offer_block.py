@@ -107,3 +107,14 @@ def faq_schema(url):
 def faq_html():
     items = ''.join(f'<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for q, a in FAQ)
     return f'<div class="offer-faq">{items}</div>'
+
+
+# Header navigation shared by case and editorial pages. Desktop: NAV links. Phone (<=700px): MENU panel.
+NAV = ('<nav class="site-nav" aria-label="Основная навигация"><a href="/#industries">Направления</a>'
+       '<a href="/cases.html">Кейсы</a><a href="/articles/">Материалы</a></nav>')
+MENU_LINKS = [('/target/', 'Таргет и лидогенерация'), ('/ai-bot/', 'Чат-бот и ИИ-квалификация'),
+              ('/consulting/', 'Продажи и CRM'), ('/analytics/', 'Сквозная аналитика'),
+              ('/cases.html', 'Кейсы'), ('/articles/', 'Материалы'), ('/about/', 'Обо мне')]
+MENU = ('<details class="site-menu"><summary aria-label="Открыть меню"><span></span></summary>'
+        '<nav aria-label="Меню">' + ''.join(f'<a href="{u}">{t}</a>' for u, t in MENU_LINKS) +
+        '<a class="site-menu-cta" href="https://t.me/dani_gzv">Написать Даниилу в Telegram ↗</a></nav></details>')
