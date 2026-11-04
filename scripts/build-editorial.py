@@ -33,7 +33,7 @@ def table(t):
  if not t: return ''
  return '<div class="table-wrap"><table class="data-table"><caption>'+e(t['caption'])+'</caption><thead><tr>'+''.join(f'<th scope="col">{e(h)}</th>' for h in t['head'])+'</tr></thead><tbody>'+''.join('<tr>'+''.join((f'<th scope="row">{e(c)}</th>' if j==0 else f'<td>{e(c)}</td>') for j,c in enumerate(r))+'</tr>' for r in t['rows'])+'</tbody></table></div>'
 def cards(items):
- return '<div class="reading-grid">'+''.join(f'<a href="/articles/{x["slug"]}/"><span class="eyebrow">{e(x["category"])}</span><h2>{e(x["title"])}</h2><p>{e(x["summary"])}</p><span class="text-link">Читать материал ↗</span></a>' for x in items)+'</div>'
+ return '<div class="reading-grid">'+''.join(f'<a href="/articles/{x["slug"]}/">'+(f'<img class="reading-cover" src="{e(x["cover"])}" alt="" width="1200" height="800" loading="lazy">' if x.get('cover') else '')+f'<span class="eyebrow">{e(x["category"])}</span><h2>{e(x["title"])}</h2><p>{e(x["summary"])}</p><span class="text-link">Читать материал ↗</span></a>' for x in items)+'</div>'
 def also(a, n=3):
  # "Read also": same service first, then same case, then the most recently updated.
  others=[x for x in articles if x['slug']!=a['slug']]
