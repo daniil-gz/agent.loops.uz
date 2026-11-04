@@ -268,7 +268,10 @@
     ],
     "sources": [],
     "published": "2026-10-26",
-    "metaDescription": "Много переписок, мало продаж. Пять причин нецелевых заявок из таргета и как отсеять их до менеджера: оффер, креатив, вопросы, чат-бот, обратная связь в Meta."
+    "metaDescription": "Много переписок, мало продаж. Пять причин нецелевых заявок из таргета и как отсеять их до менеджера: оффер, креатив, вопросы, чат-бот, обратная связь в Meta.",
+    "cover": "/images/articles/pochemu-zayavki-necelevye.jpg",
+    "coverOg": "/images/articles/pochemu-zayavki-necelevye-og.jpg",
+    "coverAlt": "Иллюстрация: воронка, через которую проходят только две жёлтые заявки из многих сообщений"
   },
   {
     "slug": "stoimost-targeta-tashkent",
@@ -328,7 +331,10 @@
       }
     ],
     "sources": [],
-    "published": "2026-10-09"
+    "published": "2026-10-09",
+    "cover": "/images/articles/stoimost-targeta-tashkent.jpg",
+    "coverOg": "/images/articles/stoimost-targeta-tashkent-og.jpg",
+    "coverAlt": "Иллюстрация: пачка купюр, монеты, жёлтый стикер и смартфон с лентой рекламы — бюджет на таргет"
   },
   {
     "slug": "kak-vybrat-targetologa-tashkent",

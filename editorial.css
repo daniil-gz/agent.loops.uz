@@ -5,3 +5,5 @@
 .reading-next+.reading-next{margin-top:16px}
 /* Landing pages: space between lead and button (04.11.2026) */
 .editorial-hero .editorial-lead+.button{margin-top:28px}
+/* Article cover under the byline (04.11.2026) */
+.article-cover{margin:36px 0 0}.article-cover img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px;background:#eeeee4}
