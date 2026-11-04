@@ -47,7 +47,8 @@ python3 scripts/release.py               # выкладка (только с mai
 - Выключено и не включать: HTTP/3 (ошибка QUIC в Chrome), ECH (провайдер в Узбекистане рвёт соединение → ERR_CONNECTION_RESET).
 - Боты ИИ разрешены (Managed robots.txt выключен) — нужно для ответов ChatGPT и других.
 - `agent.loops.uz` → 301 на `loops.uz`. Всё каноническое — на `loops.uz`.
-- Кэш nginx: JS/CSS сборки с хешем в имени (`/leadgeneration/assets/*-xxxxxxxx.js`) — год, `immutable`; остальные CSS/JS — `private, no-cache`; картинки и шрифты — 30 дней `immutable`. `release.py` чистит кэш Cloudflare по изменённым адресам, но браузеры держат старую картинку до 30 дней: новая картинка — новое имя файла. Не добавляй `?v=`.
+- Кэш (с 04.11.2026): JS/CSS сборки с хешем в имени — год, `immutable`; остальные CSS/JS — `public, max-age=0, must-revalidate, s-maxage=604800` (Cloudflare хранит 7 дней, браузер сверяется с Cloudflare, `release.py` очищает изменённые адреса); картинки и шрифты — 30 дней `immutable`; HTML — правило кэша Cloudflare. В Cloudflare: Browser Cache TTL = «уважать заголовки сервера», Smart Tiered Cache включён. Новая картинка — новое имя файла (браузеры держат старую до 30 дней). Не добавляй `?v=`.
+- Сеть хостинга теряет ~3% пакетов (04.11): первый запрос нового файла к серверу иногда идёт 30–60 с. Поэтому всё статичное должно храниться в Cloudflare, а не идти на сервер.
 - Форма с главной готовит бриф в Telegram локально. `/api/lead` — Cloudflare Worker `loops-lead` (`worker/`, `wrangler.toml`), выкладка отдельно: `npx wrangler deploy` (вход Даниила). Токен бота — только секрет воркера.
 - Аналитика: Метрика 101239870 и DataFast, события — `site-events-v1.js`, см. `ANALYTICS.md`. Вне loops.uz аналитика выключена.
 - Картинки: `/usr/bin/python3 scripts/build-image-variants.py` (Pillow живёт в системном python).
