@@ -203,7 +203,7 @@ def build_page(c):
         </button>
         <div class="nav-dd-menu">
           <a href="/target/">Лидогенерация + ИИ-агент</a>
-          <a href="/clinics/">Маркетинг для клиник</a>
+          <a href="/clinics/">Таргет для клиник</a>
           <a href="/b2b/">Маркетинг для B2B</a>
           <a href="/manufacturing/">Маркетинг для производителей</a>
           <a href="/consulting/">Построение отделов продаж</a>
@@ -220,7 +220,7 @@ def build_page(c):
   <div class="nav-mobile" aria-label="Мобильное меню">
     <div class="nav-mobile-group">Направления</div>
     <a class="nav-sub" href="/target/">Лидогенерация + ИИ-агент</a>
-    <a class="nav-sub" href="/clinics/">Маркетинг для клиник</a>
+    <a class="nav-sub" href="/clinics/">Таргет для клиник</a>
     <a class="nav-sub" href="/b2b/">Маркетинг для B2B</a>
     <a class="nav-sub" href="/manufacturing/">Маркетинг для производителей</a>
     <a class="nav-sub" href="/consulting/">Построение отделов продаж</a>

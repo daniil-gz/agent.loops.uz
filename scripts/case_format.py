@@ -125,7 +125,7 @@ def render(data, registry, analytics):
     related = ''.join(f'<a href="/cases/case-{c["id"]}/"><span class="eyebrow">{esc(c["cat"])}</span><h3>{esc(c["client"])}</h3><span class="related-bottom">Открыть кейс <span aria-hidden="true">↗</span></span></a>' for rid in data.get('related', []) for c in registry if c['id'] == rid)
     sector_map = {'viamed':'clinics','biorise':'clinics','dental':'clinics','nwl':'b2b','tak':'b2b','ilvi':'b2b','bts':'manufacturing','basalt':'manufacturing','centriscup':'manufacturing','centrisprint':'manufacturing','printuz':'manufacturing','printexpress':'manufacturing','chery':'auto','blackstar':'auto','centrisfit':'fitness','centrisladies':'fitness','feedup':'horeca','bscafe':'horeca','dolcetta':'horeca','restokids':'horeca','gastromarket':'b2b'}
     sector = sector_map.get(cid, 'target')
-    sector_names = {'clinics':'Маркетинг для клиник','b2b':'B2B-лидогенерация','manufacturing':'Маркетинг для производителей','auto':'Реклама для автобизнеса','fitness':'Реклама для фитнес-клубов','horeca':'Маркетинг для ресторанов','target':'Лидогенерация'}
+    sector_names = {'clinics':'Таргет для клиник в Ташкенте','b2b':'B2B-лидогенерация','manufacturing':'Маркетинг для производителей','auto':'Реклама для автобизнеса','fitness':'Реклама для фитнес-клубов','horeca':'Маркетинг для ресторанов','target':'Лидогенерация'}
     service_link = f'<p class="case-service-link">Для похожего бизнеса: <a href="/{sector}/">{sector_names[sector]} ↗</a> · <a href="/articles/">Практические материалы ↗</a></p>'
     same = [x for x in offer_block.SECTOR_CASES.get(sector, offer_block.SECTOR_CASES['target']) if x != cid]
     same = (same + [x for x in offer_block.SECTOR_CASES['target'] if x != cid and x not in same])[:3]
