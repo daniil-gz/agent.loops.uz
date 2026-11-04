@@ -24,3 +24,8 @@ h2 em,.about-display h2 em{color:#777d6b}.sector li small,.project-invite>p,.ser
 .footer-seo{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:12px;color:var(--muted)}.footer-seo a:hover{text-decoration:underline}.service-footer .footer-seo{flex-basis:100%;grid-column:1/-1;border-top:1px solid var(--line);padding-top:18px}.footer .footer-seo{padding-block:14px;color:inherit;opacity:.78}
 
 .service-answer{padding-block:60px 0;display:grid;grid-template-columns:1fr 1.3fr;gap:20px 95px;align-items:start}.service-answer .eyebrow{grid-column:1/-1}.service-answer h2{font-size:clamp(28px,3vw,38px)!important}.service-answer p{font-size:18px;line-height:1.6;max-width:640px}@media(max-width:760px){.service-answer{grid-template-columns:1fr;padding-block:45px 0}.service-answer p{font-size:16px}}
+
+/* Industry cards: illustration on top (04.11.2026) */
+.industry-image{display:block;width:calc(100% + 56px);max-width:none;margin:-28px -28px 0;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px 12px 0 0;background:#f5f4f0}
+@media(max-width:600px){.industry-image{width:calc(100% + 48px);margin:-24px -24px 0}}
+@supports(grid-template-rows:subgrid){.home-industries .industry-links>a{grid-row:span 4}}
