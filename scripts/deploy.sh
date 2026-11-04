@@ -3,6 +3,10 @@
 # Usage: bash scripts/deploy.sh [--dry-run]
 set -euo pipefail
 
+# RETIRED 04.11.2026: --delete-after removes server-only kp/, reports/, razbor/.
+# Use: python3 scripts/release.py --dry-run, then python3 scripts/release.py
+echo 'deploy.sh is retired. Use: python3 scripts/release.py --dry-run' >&2; exit 1
+
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 SERVER="adstat-deploy"            # ~/.ssh/config alias (CF tunnel + service token)
 DEST="/var/www/loops"

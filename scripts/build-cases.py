@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Loops — case generator. SINGLE SOURCE OF TRUTH = cases/cases.json (+ cases/_bodies/<id>.html).
+Loops — case generator. Source: cases/_content/<id>.json (status published) + id registry cases/cases.json. Drafts are not built.
 Run:  python3 scripts/build-cases.py
 Generates:
   - cases-data.js              (card data + renderer; powers homepage preview, /cases.html, "Другие кейсы")
