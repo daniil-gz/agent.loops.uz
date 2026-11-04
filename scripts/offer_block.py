@@ -112,7 +112,7 @@ def faq_html():
 # Header navigation shared by case and editorial pages. Desktop: NAV links. Phone (<=700px): MENU panel.
 NAV = ('<nav class="site-nav" aria-label="Основная навигация"><a href="/#industries">Направления</a>'
        '<a href="/cases.html">Кейсы</a><a href="/articles/">Материалы</a></nav>')
-MENU_LINKS = [('/agency/', 'Агентство Loops'), ('/target/', 'Таргет и лидогенерация'), ('/audit/', 'Аудит рекламы'), ('/ai-bot/', 'Чат-бот и ИИ-квалификация'),
+MENU_LINKS = [('/agency/', 'Агентство Loops'), ('/target/', 'Таргет и лидогенерация'), ('/audit/', 'Аудит рекламы'), ('/partners/', 'Агентствам: таргет на субподряде'), ('/ai-bot/', 'Чат-бот и ИИ-квалификация'),
               ('/consulting/', 'Продажи и CRM'), ('/analytics/', 'Сквозная аналитика'),
               ('/cases.html', 'Кейсы'), ('/articles/', 'Материалы'), ('/about/', 'Обо мне')]
 MENU = ('<details class="site-menu"><summary aria-label="Открыть меню"><span></span></summary>'
