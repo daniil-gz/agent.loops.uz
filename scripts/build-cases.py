@@ -336,15 +336,20 @@ def main():
             structured[data["id"]] = data
     links_file = Path(ROOT) / "_handoff/leadgeneration-source/src/case-links.json"
     if links_file.parent.is_dir():
-        links_file.write_text(json.dumps({c["id"]: f'/cases/case-{c["id"]}/' for c in CASES}, indent=2) + "\n")
+        links_file.write_text(json.dumps({c["id"]: f'/cases/case-{c["id"]}/' for c in CASES if c["id"] in structured}, indent=2) + "\n")
     if structured:
         (Path(ROOT) / "cases/format-v2.css").write_text((Path(ROOT) / "scripts/case-system/style.css").read_text())
     open(os.path.join(ROOT, "cases-data.js"), "w", encoding="utf-8").write(build_cards_js())
+    drafts = [c["id"] for c in CASES if c["id"] not in structured]
     for c in CASES:
+        if c["id"] in drafts:
+            continue  # draft: no public page until status is "published"
         d = os.path.join(ROOT, f"cases/case-{c['id']}")
         os.makedirs(d, exist_ok=True)
-        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(render_case_v2(structured[c["id"]], CASES, YM) if c["id"] in structured else build_page(c))
-    print(f"Built cases-data.js + {len(CASES)} detail pages:", ", ".join(c["id"] for c in CASES))
+        open(os.path.join(d, "index.html"), "w", encoding="utf-8").write(render_case_v2(structured[c["id"]], CASES, YM))
+    print(f"Built cases-data.js + {len(structured)} detail pages:", ", ".join(structured))
+    if drafts:
+        print("Drafts, not built:", ", ".join(drafts))
 
 if __name__ == "__main__":
     main()

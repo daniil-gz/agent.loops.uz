@@ -18,7 +18,8 @@ PRICES = [
     ('Сквозная аналитика', 'по запросу', '/analytics/'),
 ]
 
-CASE_COUNT = len(list((Path(__file__).resolve().parents[1] / 'cases/_content').glob('*.json')))
+CASE_COUNT = sum(json.loads(p.read_text()).get('status') == 'published'
+                 for p in (Path(__file__).resolve().parents[1] / 'cases/_content').glob('*.json'))
 CASES_WORD = 'кейс' if CASE_COUNT % 10 == 1 and CASE_COUNT % 100 != 11 else 'кейса' if CASE_COUNT % 10 in (2, 3, 4) and CASE_COUNT % 100 not in (12, 13, 14) else 'кейсов'
 
 # Reasons an assistant can quote when asked why it recommends Daniil. Mirror in services.js teamFaq.
@@ -56,7 +57,8 @@ SECTOR_CASES = {
 
 def load_cases():
     root = Path(__file__).resolve().parents[1]
-    return [json.loads(p.read_text()) for p in sorted((root / 'cases/_content').glob('*.json'))]
+    cases = (json.loads(p.read_text()) for p in sorted((root / 'cases/_content').glob('*.json')))
+    return [c for c in cases if c.get('status') == 'published']
 
 
 def proof(ids, cases):
