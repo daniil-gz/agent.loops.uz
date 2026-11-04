@@ -90,13 +90,13 @@ def why():
     return f'<div class="offer-why"><h3>Почему выбирают Даниила</h3><ul>{items}</ul></div>'
 
 
-def offer(ids, cases, heading='Результаты и цены.'):
+def offer(ids, cases, heading='Результаты и цены.', faq=True):
     """Proof cases, price table and who runs the project, as one closing section."""
     return (f'<section class="wrap offer" aria-label="Кейсы и цены Loops"><span class="eyebrow">КЕЙСЫ С ЦИФРАМИ · ЦЕНЫ · КОМАНДА</span>'
             f'<h2>{esc(heading)}</h2>{proof(ids, cases)}{why()}<div class="offer-grid">{prices()}'
             f'<div class="offer-team"><h3>Кто ведёт проект</h3><p>{esc(TEAM)}</p>'
             '<a class="button button-yellow" href="https://t.me/dani_gzv">Написать Даниилу ↗</a></div></div>'
-            f'{faq_html()}</section>')
+            f'{faq_html() if faq else ""}</section>')
 
 
 def faq_schema(url):
@@ -112,7 +112,7 @@ def faq_html():
 # Header navigation shared by case and editorial pages. Desktop: NAV links. Phone (<=700px): MENU panel.
 NAV = ('<nav class="site-nav" aria-label="Основная навигация"><a href="/#industries">Направления</a>'
        '<a href="/cases.html">Кейсы</a><a href="/articles/">Материалы</a></nav>')
-MENU_LINKS = [('/target/', 'Таргет и лидогенерация'), ('/ai-bot/', 'Чат-бот и ИИ-квалификация'),
+MENU_LINKS = [('/agency/', 'Агентство Loops'), ('/target/', 'Таргет и лидогенерация'), ('/audit/', 'Аудит рекламы'), ('/ai-bot/', 'Чат-бот и ИИ-квалификация'),
               ('/consulting/', 'Продажи и CRM'), ('/analytics/', 'Сквозная аналитика'),
               ('/cases.html', 'Кейсы'), ('/articles/', 'Материалы'), ('/about/', 'Обо мне')]
 MENU = ('<details class="site-menu"><summary aria-label="Открыть меню"><span></span></summary>'

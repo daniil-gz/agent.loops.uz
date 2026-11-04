@@ -31,7 +31,8 @@ def paths():
     articles = json.loads((R / 'content/articles.json').read_text())
     return (['/'] + [f'/{s}/' for s in SERVICES] + [f'/{k}/' for k in industries]
             + [f'/cases/case-{c}/' for c in published_cases()]
-            + [f'/articles/{a["slug"]}/' for a in articles] + EXTRA)
+            + [f'/articles/{a["slug"]}/' for a in articles]
+            + [f'/{pg["slug"]}/' for pg in json.loads((R / 'content/pages.json').read_text())] + EXTRA)
 
 
 def page_file(path):

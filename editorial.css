@@ -3,3 +3,5 @@
 
 /* Two link boxes in a row (practice + read also), 04.11.2026 */
 .reading-next+.reading-next{margin-top:16px}
+/* Landing pages: space between lead and button (04.11.2026) */
+.editorial-hero .editorial-lead+.button{margin-top:28px}

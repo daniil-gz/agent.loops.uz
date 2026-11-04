@@ -29,6 +29,8 @@ NOT_PUBLIC = ('_handoff/', '_recovered/', 'scripts/', 'content/', 'node_modules/
               'razbor', 'clinic-ads/', 'api/', 'worker/', '.git/', '.claude/', 'cases/_bodies/',
               'cases/_content/', 'consulting/lab.html', 'consulting/iceberg-lab.html',
               'leadgeneration/assets/', 'reports/', 'studio/', 'css/', 'js/')
+# Live on the server but kept outside git (playbooks: /razbor is released by hand).
+SERVER_ONLY = ('/razbor/',)
 
 
 class Doc(HTMLParser):
@@ -102,6 +104,7 @@ for url, (p, s, d) in docs.items():
         if u.scheme in ('mailto', 'tel', 'data', 'javascript') or (u.netloc and u.netloc != 'loops.uz'): continue
         targetpath = u.path or urlsplit(url).path
         if not targetpath.startswith('/'): targetpath = '/' + str((p.parent / targetpath).relative_to(R))
+        if targetpath in SERVER_ONLY: continue
         target = path_file(targetpath)
         if not target.exists(): errors.append([url, 'broken local resource', href]); continue
         if tag == 'img' and 'alt' not in a: errors.append([url, 'missing alt', href])
