@@ -157,7 +157,10 @@
     "sources": [],
     "published": "2026-10-26",
     "seoTitle": "Цена заявки из Instagram в Ташкенте: данные 2026 по 8 нишам",
-    "metaDescription": "Цена переписки, номера и заявки через форму Meta для клиник, B2B, фитнеса, полиграфии, HoReCa и авто. 20 кабинетов, около $64 тыс., январь–октябрь 2026."
+    "metaDescription": "Цена переписки, номера и заявки через форму Meta для клиник, B2B, фитнеса, полиграфии, HoReCa и авто. 20 кабинетов, около $64 тыс., январь–октябрь 2026.",
+    "cover": "/images/articles/cena-zayavki-tashkent-2026.jpg",
+    "coverOg": "/images/articles/cena-zayavki-tashkent-2026-og.jpg",
+    "coverAlt": "Иллюстрация: восемь конвертов-столбиков разной высоты, один жёлтый — цена заявки по нишам"
   },
   {
     "slug": "target-ili-kontekst-tashkent",
@@ -212,7 +215,10 @@
     ],
     "sources": [],
     "published": "2026-10-26",
-    "metaDescription": "Таргет в Instagram находит тех, кто ещё не ищет продукт. Контекст ловит тех, кто уже ищет. Что выбрать клинике, B2B, ресторану и услугам в Узбекистане."
+    "metaDescription": "Таргет в Instagram находит тех, кто ещё не ищет продукт. Контекст ловит тех, кто уже ищет. Что выбрать клинике, B2B, ресторану и услугам в Узбекистане.",
+    "cover": "/images/articles/target-ili-kontekst-tashkent.jpg",
+    "coverOg": "/images/articles/target-ili-kontekst-tashkent-og.jpg",
+    "coverAlt": "Иллюстрация: развилка двух путей — к смартфону с лентой и к лупе поиска"
   },
   {
     "slug": "pochemu-zayavki-necelevye",
@@ -399,7 +405,10 @@
     ],
     "sources": [],
     "published": "2026-10-26",
-    "metaDescription": "Семь вопросов таргетологу до оплаты: опыт в нише, отчёт, доступы, работа с заявками, договор. И признаки слабого специалиста на первом созвоне."
+    "metaDescription": "Семь вопросов таргетологу до оплаты: опыт в нише, отчёт, доступы, работа с заявками, договор. И признаки слабого специалиста на первом созвоне.",
+    "cover": "/images/articles/kak-vybrat-targetologa-tashkent.jpg",
+    "coverOg": "/images/articles/kak-vybrat-targetologa-tashkent-og.jpg",
+    "coverAlt": "Иллюстрация: планшет с чек-листом, смартфон и жёлтый маркер"
   },
   {
     "slug": "b2b-lead-scoring",
@@ -449,7 +458,10 @@
     "sources": [],
     "group": "practice",
     "published": "2026-09-27",
-    "seoTitle": "Как отбирать B2B-заявки, чтобы менеджеры не тратили время"
+    "seoTitle": "Как отбирать B2B-заявки, чтобы менеджеры не тратили время",
+    "cover": "/images/articles/b2b-lead-scoring.jpg",
+    "coverOg": "/images/articles/b2b-lead-scoring-og.jpg",
+    "coverAlt": "Иллюстрация: сито отсеивает заявки, в лоток попадает одна жёлтая карточка"
   },
   {
     "slug": "qualified-lead-cost",
@@ -498,7 +510,10 @@
     ],
     "sources": [],
     "group": "practice",
-    "published": "2026-09-27"
+    "published": "2026-09-27",
+    "cover": "/images/articles/qualified-lead-cost.jpg",
+    "coverOg": "/images/articles/qualified-lead-cost-og.jpg",
+    "coverAlt": "Иллюстрация: весы — монеты на одной чаше, жёлтая карточка на другой"
   },
   {
     "slug": "reklama-crm-losses",
@@ -547,7 +562,10 @@
     ],
     "sources": [],
     "group": "practice",
-    "published": "2026-09-27"
+    "published": "2026-09-27",
+    "cover": "/images/articles/reklama-crm-losses.jpg",
+    "coverOg": "/images/articles/reklama-crm-losses-og.jpg",
+    "coverAlt": "Иллюстрация: труба от смартфона к картотеке, через разрыв выпадают заявки"
   },
   {
     "slug": "reklama-oplata",
@@ -597,7 +615,10 @@
     "sources": [],
     "group": "practice",
     "published": "2026-09-27",
-    "seoTitle": "Как связать рекламу с оплатой и не спутать выручку с прибылью"
+    "seoTitle": "Как связать рекламу с оплатой и не спутать выручку с прибылью",
+    "cover": "/images/articles/reklama-oplata.jpg",
+    "coverOg": "/images/articles/reklama-oplata-og.jpg",
+    "coverAlt": "Иллюстрация: калькулятор, лента чека с жёлтой закладкой и стопки монет"
   },
   {
     "slug": "leady-ne-pacienty",
@@ -646,7 +667,10 @@
     ],
     "sources": [],
     "group": "practice",
-    "published": "2026-06-07"
+    "published": "2026-06-07",
+    "cover": "/images/articles/leady-ne-pacienty.jpg",
+    "coverOg": "/images/articles/leady-ne-pacienty-og.jpg",
+    "coverAlt": "Иллюстрация: сообщения идут к двери клиники, доходит только жёлтое"
   },
   {
     "slug": "stoimost-pacienta-tashkent",
@@ -695,7 +719,10 @@
     ],
     "sources": [],
     "group": "practice",
-    "published": "2026-06-07"
+    "published": "2026-06-07",
+    "cover": "/images/articles/stoimost-pacienta-tashkent.jpg",
+    "coverOg": "/images/articles/stoimost-pacienta-tashkent-og.jpg",
+    "coverAlt": "Иллюстрация: медицинский планшет, стетоскоп, монеты и жёлтая карточка записи"
   },
   {
     "slug": "pochemu-pacienty-ne-vozvrashayutsya",
@@ -745,6 +772,9 @@
     "sources": [],
     "group": "practice",
     "published": "2026-06-07",
-    "seoTitle": "Почему пациенты не возвращаются после первого визита"
+    "seoTitle": "Почему пациенты не возвращаются после первого визита",
+    "cover": "/images/articles/pochemu-pacienty-ne-vozvrashayutsya.jpg",
+    "coverOg": "/images/articles/pochemu-pacienty-ne-vozvrashayutsya-og.jpg",
+    "coverAlt": "Иллюстрация: бумажный самолётик-напоминание летит от смартфона к отмеченному дню в календаре"
   }
 ]
