@@ -97,6 +97,16 @@ def russian_date(value):
     return f'{d} {MONTHS[m - 1]} {y}'
 
 
+def case_h1(data):
+    """H1 names the client: «BioRise: первый визит — только начало.» Headline text stays as approved."""
+    head, client = data['headline'], data['client']
+    if client.lower() in head.lower():
+        return head
+    if len(head) > 1 and head[0].isupper() and head[1].islower() and head[0].isalpha():
+        head = head[0].lower() + head[1:]
+    return f"{client}{' —' if ':' in head else ':'} {head}"  # no double colon
+
+
 def render(data, registry, analytics):
     cid = data['id']
     url = f'https://loops.uz/cases/case-{cid}/'
@@ -107,7 +117,7 @@ def render(data, registry, analytics):
     dates = f'Опубликовано <time datetime="{published}">{russian_date(published)}</time>' + (
         f' · Обновлено <time datetime="{updated}">{russian_date(updated)}</time>' if updated != published else '')
     schema = {'@context': 'https://schema.org', '@graph': [
-        {'@type': 'Article', 'headline': data['headline'], 'description': data['summary'],
+        {'@type': 'Article', 'headline': case_h1(data), 'description': data['summary'],
          'author': {'@type': 'Person', 'name': 'Даниил Газизов', '@id': 'https://loops.uz/#daniil', 'url': 'https://loops.uz/about/'},
          'publisher': {'@type': 'Organization', 'name': 'Loops', 'url': 'https://loops.uz/'},
          'image': 'https://loops.uz' + data['cover'], 'mainEntityOfPage': url,
@@ -162,7 +172,7 @@ def render(data, registry, analytics):
 </head><body><a class="skip-link" href="#content">Перейти к кейсу</a>
 <header class="wrap case-header"><a class="wordmark" href="/" aria-label="Loops — на главную">loops</a><nav aria-label="Основная навигация"><a href="/#cases">Кейсы</a><a href="/#services">Услуги</a><a href="/#about">Обо мне</a></nav><a class="button" href="/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></header>
 <main id="content"><section class="wrap case-hero"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><a href="/cases.html">Кейсы</a><span aria-hidden="true">/</span><span>{esc(data['client'])}</span></nav>
-<div class="hero-grid"><div><span class="eyebrow">{esc(data['client'])} / КЕЙС LOOPS</span><h1>{esc(data['headline'])}</h1><p class="case-summary">{esc(data['summary'])}</p><p class="case-dates">{dates}</p></div><figure class="cover" style="--cover-ratio:{data.get('coverRatio', 1)}">{cover_image}<figcaption>За цифрами —<br>своя история.</figcaption></figure></div>
+<div class="hero-grid"><div><span class="eyebrow">КЕЙС LOOPS</span><h1>{esc(case_h1(data))}</h1><p class="case-summary">{esc(data['summary'])}</p><p class="case-dates">{dates}</p></div><figure class="cover" style="--cover-ratio:{data.get('coverRatio', 1)}">{cover_image}<figcaption>За цифрами —<br>своя история.</figcaption></figure></div>
 <div class="metrics" style="--metric-count:{len(data['metrics'])}">{metrics}</div><dl class="case-meta"><div><dt>Бизнес</dt><dd>{esc(data['industry'])}</dd></div><div><dt>География</dt><dd>{esc(data['location'])}</dd></div><div><dt>Инструменты</dt><dd>{esc(' · '.join(data['services']))}</dd></div><div><dt>Период</dt><dd>{esc(data['period'])}</dd></div></dl></section>
 <div class="wrap story-layout"><aside><nav class="toc" aria-label="Содержание кейса"><span class="eyebrow">ВНУТРИ ИСТОРИИ</span>{toc}</nav></aside><article>{''.join(sections)}</article></div>
 {offer_html}<section class="wrap case-cta"><span class="eyebrow">ЕСТЬ ПОХОЖАЯ ЗАДАЧА?</span><div class="case-cta-copy"><h2>Разберём ваш<br><span>путь к продаже.</span></h2><p>Посмотрим, что происходит от первого обращения до работы менеджера.</p></div><a class="button button-yellow" href="/#contact">Обсудить проект <span aria-hidden="true">↗</span></a></section>
