@@ -1,0 +1,58 @@
+- banner:
+  - button "Главное меню":
+  - link "Google Search Console":
+    - /url: ./search-console?resource_id=sc-domain%3Aloops.uz
+  - search:
+    - button "Поиск":
+  - button "Справка":
+    - generic: help_outline
+  - tooltip: Справка
+  - button "Пользовательские настройки":
+    - generic: manage_accounts
+  - tooltip: Пользовательские настройки
+  - 'button "Непрочитанных сообщений: 4"':
+    - generic: notifications
+  - tooltip: Сообщения
+  - generic: "4"
+  - button "Приложения Google":
+  - 'button "Аккаунт Google: Даниил Газизов (scribble.mgc@gmail.com)"':
+- generic: https://loops.uz/target/
+- navigation "Строки навигации":
+  - heading "Проверка URL" [level=1]
+- button "Проверить страницу на сайте":
+  - generic: Проверить страницу на сайте
+- main:
+  - generic: check_circle
+  - generic: URL есть в индексе Google
+  - text: При отсутствии запросов на удаление и мер, принятых вручную, страница может появляться в результатах поиска Google с любыми подходящими улучшениями.
+  - link "Подробнее":
+    - /url: https://support.google.com/webmasters/answer/9012289#url_on_google
+  - button "Изучить просканированную страницу":
+    - generic: Изучить просканированную страницу
+  - button "Запросить индексированиеЗапросить снова":
+    - generic: Запросить индексирование
+  - button "Индексирование страниц Эта страница проиндексирована":
+    - generic: check_circle
+    - generic: Индексирование страниц
+    - generic: Эта страница проиндексирована
+    - generic: 
+  - generic: Улучшения и удобство для пользователей
+  - link "HTTPS Страница передается через HTTPS":
+    - /url: ./search-console/inspect/https?resource_id=sc-domain%3Aloops.uz&id=8WHaIafGvxA5mxbXem3asA
+    - generic: check_circle
+    - generic: HTTPS
+    - generic: Страница передается через HTTPS
+    - generic: 
+  - link "Строки навигации Обнаружен 1 элемент без ошибок":
+    - /url: ./search-console/inspect/r/breadcrumbs?resource_id=sc-domain%3Aloops.uz&id=8WHaIafGvxA5mxbXem3asA
+    - generic: check_circle
+    - generic: Строки навигации
+    - generic: Обнаружен 1 элемент без ошибок
+    - generic: 
+- generic: 
+- generic: Проверка URL
+- generic: Узнайте, как Google видит вашу страницу при индексировании. Эту информацию можно использовать в случае, если ваша страница не появляется в результатах поиска Google или представлена в них некорректно.
+- generic: Подробнее
+- generic "Подробнее"
+- generic: Закрыть
+- generic "Закрыть"

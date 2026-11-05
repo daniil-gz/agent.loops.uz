@@ -1,0 +1,312 @@
+{
+  "pages": 51,
+  "errors": [],
+  "rows": [
+    {
+      "url": "https://loops.uz/",
+      "bytes": 211100,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/about/",
+      "bytes": 9664,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/ai-bot/",
+      "bytes": 97799,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/analytics/",
+      "bytes": 90910,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/",
+      "bytes": 11998,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/antigravity/",
+      "bytes": 10294,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/b2b-lead-scoring/",
+      "bytes": 11869,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/career-dreamer/",
+      "bytes": 10025,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/google-skills/",
+      "bytes": 10121,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/leady-ne-pacienty/",
+      "bytes": 10454,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/manus/",
+      "bytes": 9892,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/pochemu-pacienty-ne-vozvrashayutsya/",
+      "bytes": 10825,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/qualified-lead-cost/",
+      "bytes": 11333,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/reklama-crm-losses/",
+      "bytes": 10669,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/reklama-oplata/",
+      "bytes": 11031,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/stoimost-pacienta-tashkent/",
+      "bytes": 10622,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/articles/stoimost-targeta-tashkent/",
+      "bytes": 15339,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/auto/",
+      "bytes": 89690,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/b2b/",
+      "bytes": 91417,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases.html",
+      "bytes": 32938,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-basalt/",
+      "bytes": 11275,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-biorise/",
+      "bytes": 21591,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-blackstar/",
+      "bytes": 13313,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-bscafe/",
+      "bytes": 13145,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-bts/",
+      "bytes": 11450,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-centriscup/",
+      "bytes": 13651,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-centrisfit/",
+      "bytes": 12493,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-centrisladies/",
+      "bytes": 12639,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-centrismedia/",
+      "bytes": 12789,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-centrisprint/",
+      "bytes": 13511,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-chery/",
+      "bytes": 10955,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-dco/",
+      "bytes": 11209,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-dental/",
+      "bytes": 14647,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-dolcetta/",
+      "bytes": 13562,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-feedup/",
+      "bytes": 11204,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-gastromarket/",
+      "bytes": 12592,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-ilvi/",
+      "bytes": 26926,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-izzy/",
+      "bytes": 11299,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-nwl/",
+      "bytes": 17467,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-printexpress/",
+      "bytes": 12724,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-printuz/",
+      "bytes": 13548,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-restokids/",
+      "bytes": 13228,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-tak/",
+      "bytes": 11375,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/cases/case-viamed/",
+      "bytes": 11505,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/clinics/",
+      "bytes": 91321,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/consulting/",
+      "bytes": 90252,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/fitness/",
+      "bytes": 89357,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/horeca/",
+      "bytes": 91693,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/manufacturing/",
+      "bytes": 91376,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/privacy/",
+      "bytes": 6972,
+      "h1": 1,
+      "schemas": 1
+    },
+    {
+      "url": "https://loops.uz/target/",
+      "bytes": 97873,
+      "h1": 1,
+      "schemas": 1
+    }
+  ]
+}

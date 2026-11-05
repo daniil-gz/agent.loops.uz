@@ -1,0 +1,18 @@
+- link:
+  - /url: //telegram.org/
+- link "Download for Mac":
+  - /url: //telegram.org/dl?tme=22fcb4519499ddaf98_7185397137771921370
+- link:
+  - /url: tg://resolve?domain=daniil_loops
+- generic: Даниил про цифры
+- generic: 64 subscribers
+- text: Рассказываю о научном подходе в маркетинге
+- text: 🔍 Практические кейсы, отчёты и лайфхаки
+- text: 🤝 Для руководителей, маркетологов и собственников
+- text: Связаться со мной
+- link "@dani_gzv":
+  - /url: https://t.me/dani_gzv
+- link "View in Telegram":
+  - /url: tg://resolve?domain=daniil_loops
+- link "Preview channel":
+  - /url: /s/daniil_loops

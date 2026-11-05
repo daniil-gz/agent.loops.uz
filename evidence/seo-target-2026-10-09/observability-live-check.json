@@ -1,0 +1,59 @@
+{
+  "public_requests": [
+    {
+      "path": "/target/",
+      "status": 200,
+      "ray": "a47afc12ccc1eec2-WAW"
+    },
+    {
+      "path": "/ai-bot/",
+      "status": 200,
+      "ray": "a47afc164e9a0258-WAW"
+    },
+    {
+      "path": "/robots.txt",
+      "status": 200,
+      "ray": "a47afc198802ee49-WAW"
+    },
+    {
+      "path": "/en/?loops_probe=20261009",
+      "status": 404,
+      "ray": "a47afc1b5deabf8a-WAW"
+    }
+  ],
+  "logs": [
+    {
+      "time": "2026-10-09T10:28:55+05:00",
+      "host": "loops.uz",
+      "method": "GET",
+      "path": "/target/",
+      "status": 200,
+      "request_seconds": 0.0,
+      "bytes": 27792,
+      "cf_ray": "a47afc12ccc1eec2-WAW",
+      "port": "443"
+    },
+    {
+      "time": "2026-10-09T10:28:56+05:00",
+      "host": "loops.uz",
+      "method": "GET",
+      "path": "/ai-bot/",
+      "status": 200,
+      "request_seconds": 0.0,
+      "bytes": 27812,
+      "cf_ray": "a47afc164e9a0258-WAW",
+      "port": "443"
+    },
+    {
+      "time": "2026-10-09T10:28:56+05:00",
+      "host": "loops.uz",
+      "method": "GET",
+      "path": "/en/",
+      "status": 404,
+      "request_seconds": 0.0,
+      "bytes": 2205,
+      "cf_ray": "a47afc1b5deabf8a-WAW",
+      "port": "443"
+    }
+  ]
+}

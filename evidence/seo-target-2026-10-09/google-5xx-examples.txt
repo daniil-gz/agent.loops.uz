@@ -1,0 +1,196 @@
+- banner:
+  - button "Главное меню":
+  - link "Google Search Console":
+    - /url: ./search-console?resource_id=sc-domain%3Aloops.uz
+  - search:
+    - textbox [disabled]: Проверка всех URL на ресурсе loops.uz
+    - combobox "Проверка всех URL на ресурсе loops.uz"
+    - button "Поиск":
+  - button "Справка":
+    - generic: help_outline
+  - tooltip: Справка
+  - button "Пользовательские настройки":
+    - generic: manage_accounts
+  - tooltip: Пользовательские настройки
+  - 'button "Непрочитанных сообщений: 4"':
+    - generic: notifications
+  - tooltip: Сообщения
+  - generic: "4"
+  - button "Приложения Google":
+  - 'button "Аккаунт Google: Даниил Газизов (scribble.mgc@gmail.com)"':
+- dialog "navigational drawer":
+  - navigation "Основной":
+    - button "Ресурс":
+      - img "значок сайта"
+      - combobox "loops.uz"
+      - generic: 
+    - link "Обзор":
+      - /url: ./search-console?resource_id=sc-domain%3Aloops.uz
+      - generic: home
+      - generic: Обзор
+    - link "Статистика":
+      - /url: ./search-console/performance/insights?resource_id=sc-domain%3Aloops.uz
+      - generic: lightbulb_2
+      - generic: Статистика
+    - link "Эффективность":
+      - /url: ./search-console/performance/search-analytics?resource_id=sc-domain%3Aloops.uz
+      - generic: trending_up
+      - generic: Эффективность
+    - button "Раздел \"Эффективность\" в отчете":
+      - generic: keyboard_arrow_down
+    - button "Проверка URL":
+      - generic: search
+      - generic: Проверка URL
+    - generic: Индексирование
+    - button "Раздел \"Индексирование\" в отчете" [expanded]:
+      - generic: keyboard_arrow_up
+    - link "Страницы":
+      - /url: ./search-console/index?resource_id=sc-domain%3Aloops.uz
+      - generic: file_copy
+      - generic: Страницы
+    - link "Файлы Sitemap":
+      - /url: ./search-console/sitemaps?resource_id=sc-domain%3Aloops.uz
+      - generic: account_tree
+      - generic: Файлы Sitemap
+    - link "Удаления":
+      - /url: ./search-console/removals?resource_id=sc-domain%3Aloops.uz
+      - generic: visibility_off
+      - generic: Удаления
+    - generic: Качество
+    - button "Раздел \"Качество\" в отчете" [expanded]:
+      - generic: keyboard_arrow_up
+    - link "Core Web Vitals":
+      - /url: ./search-console/core-web-vitals?resource_id=sc-domain%3Aloops.uz
+      - generic: speed
+      - generic: Core Web Vitals
+    - link "HTTPS":
+      - /url: ./search-console/https?resource_id=sc-domain%3Aloops.uz
+      - generic: lock
+      - generic: HTTPS
+    - generic: Улучшения
+    - button "Раздел \"Улучшения\" в отчете" [expanded]:
+      - generic: keyboard_arrow_up
+    - link "Строки навигации":
+      - /url: ./search-console/r/breadcrumbs?resource_id=sc-domain%3Aloops.uz
+      - generic: layers
+      - generic: Строки навигации
+    - generic: Проблемы безопасности и меры, принятые вручную
+    - button "Раздел \"Проблемы безопасности и меры, принятые вручную\" в отчете":
+      - generic: keyboard_arrow_down
+    - link "Отчет о ссылках":
+      - /url: ./search-console/links?resource_id=sc-domain%3Aloops.uz
+      - generic: link_2
+      - generic: Ссылки
+    - link "Достижения":
+      - /url: ./search-console/achievements?resource_id=sc-domain%3Aloops.uz
+      - generic: trophy
+      - generic: Достижения
+    - link "Настройки":
+      - /url: ./search-console/settings?resource_id=sc-domain%3Aloops.uz
+      - generic: settings
+      - generic: Настройки
+    - button "Отправить отзыв":
+      - generic: feedback
+      - generic: Отправить отзыв
+    - button "Общие сведения о Search Console":
+      - generic: info
+      - generic: Общие сведения о Search Console
+    - link "Конфиденциальность":
+      - /url: https://myaccount.google.com/privacypolicy?hl=ru
+    - link "Условия использования":
+      - /url: https://myaccount.google.com/termsofservice?hl=ru
+- navigation "Строки навигации":
+  - link "Настройки":
+    - /url: ./search-console/settings?resource_id=sc-domain%3Aloops.uz
+  - generic: 
+  - link "Статистика сканирования":
+    - /url: ./search-console/settings/crawl-stats?resource_id=sc-domain%3Aloops.uz
+  - generic: 
+  - 'heading "Запросы на сканирование: Ошибка сервера (код статуса: 5XX)" [level=1]'
+- button "ЭКСПОРТИРОВАТЬ":
+  - generic: 
+  - generic: ЭКСПОРТИРОВАТЬ
+- generic: "Последнее обновление: 06.10.2026"
+- main:
+  - button "Всего запросов на сканирование 5":
+    - generic "Всего запросов на сканирование":
+      - generic: 
+      - generic: Всего запросов на сканирование
+    - generic "5"
+  - button "null":
+    - generic: 
+  - button "Общий размер скачивания (в байтах) 39,3 тыс.":
+    - generic "Общий размер скачивания (в байтах)":
+      - generic: Общий размер скачивания (в байтах)
+    - generic "39 262": 39,3 тыс.
+  - button "null":
+    - generic: 
+  - button "Среднее время ответа (мс) 27,6 тыс.":
+    - generic "Среднее время ответа (мс)":
+      - generic: Среднее время ответа (мс)
+    - generic "27 619": 27,6 тыс.
+  - button "null":
+    - generic: 
+  - generic: Запросы на сканирование
+  - generic: Примеры
+  - button "null":
+    - generic: 
+  - button "Фильтрация по строкам таблицы":
+    - generic: 
+  - table:
+    - rowgroup:
+      - row "Время URL Ответ HTTP":
+        - columnheader "Время":
+          - generic: Время
+        - columnheader "URL":
+          - generic: URL
+        - columnheader "Ответ HTTP":
+          - generic: Ответ HTTP
+    - rowgroup:
+      - 'row "03.10.2026, 22:48 https://loops.uz/leadgeneration/assets/clients/thumbs/biorise-240.webp Ошибка сервера (код статуса: 5XX)"':
+        - cell "03.10.2026, 22:48":
+          - generic: 03.10.2026, 22:48
+        - cell "https://loops.uz/leadgeneration/assets/clients/thumbs/biorise-240.webp":
+          - generic "https://loops.uz/leadgeneration/assets/clients/thumbs/biorise-240.webp"
+        - 'cell "Ошибка сервера (код статуса: 5XX)"':
+          - generic: "Ошибка сервера (код статуса: 5XX)"
+      - 'row "03.10.2026, 22:48 https://loops.uz/leadgeneration/assets/clients/thumbs/bscafe-240.webp Ошибка сервера (код статуса: 5XX)"':
+        - cell "03.10.2026, 22:48":
+          - generic: 03.10.2026, 22:48
+        - cell "https://loops.uz/leadgeneration/assets/clients/thumbs/bscafe-240.webp":
+          - generic "https://loops.uz/leadgeneration/assets/clients/thumbs/bscafe-240.webp"
+        - 'cell "Ошибка сервера (код статуса: 5XX)"':
+          - generic: "Ошибка сервера (код статуса: 5XX)"
+      - 'row "02.10.2026, 12:41 https://loops.uz/ Ошибка сервера (код статуса: 5XX)"':
+        - cell "02.10.2026, 12:41":
+          - generic: 02.10.2026, 12:41
+        - cell "https://loops.uz/":
+          - generic "https://loops.uz/"
+        - 'cell "Ошибка сервера (код статуса: 5XX)"':
+          - generic: "Ошибка сервера (код статуса: 5XX)"
+      - 'row "02.10.2026, 09:46 https://loops.uz/articles/ Ошибка сервера (код статуса: 5XX)"':
+        - cell "02.10.2026, 09:46":
+          - generic: 02.10.2026, 09:46
+        - cell "https://loops.uz/articles/":
+          - generic "https://loops.uz/articles/"
+        - 'cell "Ошибка сервера (код статуса: 5XX)"':
+          - generic: "Ошибка сервера (код статуса: 5XX)"
+      - 'row "02.10.2026, 09:21 https://loops.uz/cases.html Ошибка сервера (код статуса: 5XX)"':
+        - cell "02.10.2026, 09:21":
+          - generic: 02.10.2026, 09:21
+        - cell "https://loops.uz/cases.html":
+          - generic "https://loops.uz/cases.html"
+        - 'cell "Ошибка сервера (код статуса: 5XX)"':
+          - generic: "Ошибка сервера (код статуса: 5XX)"
+  - generic: "Строк на странице:"
+  - listbox "Количество строк на страницу":
+    - option "5"
+    - option "10" [selected]
+    - option "25"
+    - option "50"
+    - option "100"
+    - option "250"
+    - option "500"
+  - generic: 1–5 из 5
+  - generic: 
+  - generic: 

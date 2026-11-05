@@ -1,0 +1,31 @@
+Configure AI bot policies
+Configure AI bot policies
+
+Control how different types of AI bots can access your site.
+
+Configurations
+Set recommended defaults
+Search
+
+Bots that scan your site to help it appear in search engine results.
+
+Allow (do not block)
+Recommended
+Agent
+
+Bots that pull information from your site to provide responses to user questions.
+
+Allow (do not block)
+Recommended
+Training
+
+Crawlers that crawl content to train AI models.
+
+Disallow
+Enable Bot Preference Sync
+
+Bot Preference Sync prepends your robots.txt with your configured Cloudflare settings.
+Learn more
+
+Cancel
+Save

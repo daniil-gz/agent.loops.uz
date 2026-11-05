@@ -1,0 +1,51 @@
+b2b лидогенерация ташкент | loops: 3 | ads: - | AIO: yes | top5: b2b-creative.ru, wunder-digital.uz, loops.uz, kadiagency.uz, tashkent.hh.uz
+b2b лидогенерация узбекистан | loops: >29 | ads: - | AIO: yes | top5: b2b-creative.ru, metla.by, smter.uz, wunder-digital.uz, instagram.com
+meta ads ташкент | loops: >24 | ads: www.google.com | AIO: yes | top5: pickles.team, instagram.com, olx.uz, premium.uz, wunder-digital.uz
+лидогенерация ташкент | loops: >19 | ads: www.google.com,www.google.com,www.google.com | AIO: yes | top5: wunder-digital.uz, kadiagency.uz, b2b-creative.ru, lerna.uz, tashkent.hh.uz
+маркетинг для клиник ташкент | loops: >29 | ads: www.google.com | AIO: yes | top5: instagram.com, youtube.com, medmarketing.ua, facebook.com, instagram.com
+настройка рекламы instagram узбекистан | loops: >29 | ads: www.google.com,www.google.com | AIO: yes | top5: wunder-digital.uz, ru-ru.facebook.com, olx.uz, impulse-design.com.ua, tilda.education
+настройка таргетированной рекламы ташкент | loops: >29 | ads: www.google.com | AIO: yes | top5: conura.uz, ratingruneta.ru, webnow.uz, yandex.ru, megagroup.uz
+реклама в инстаграм ташкент | loops: >29 | ads: - | AIO: yes | top5: wunder-digital.uz, instagram.com, webgo.uz, olx.uz, instagram.com
+реклама для производства ташкент | loops: >29 | ads: - | AIO: yes | top5: ru.wikipedia.org, business.google.com, play.google.com, reddit.com, help.openai.com
+реклама для стоматологии ташкент | loops: >29 | ads: www.google.com | AIO: yes | top5: 32top.uz, demokrat-fr.com, shmargun.ru, top.uz, med-agency.com
+рекламное агентство ташкент таргет | loops: >29 | ads: www.google.com,www.google.com | AIO: yes | top5: summitagency.uz, ratingruneta.ru, instagram.com, b2b-creative.ru, kyoday.uz
+сколько стоит таргет в ташкенте | loops: >29 | ads: - | AIO: yes | top5: wunder-digital.uz, kyoday.uz, webgo.uz, b2b-creative.ru, ratingruneta.ru
+стоимость таргетолога ташкент | loops: >29 | ads: www.google.com | AIO: yes | top5: instagram.com, skillbox.uz, wunder-digital.uz, uslugi.yandex.ru, olx.uz
+таргет ташкент | loops: >29 | ads: - | AIO: yes | top5: targetschool.uz, olx.uz, yandex.ru, goldenpages.uz, instagram.com
+таргетированная реклама b2b | loops: >29 | ads: - | AIO: yes | top5: pitcher.agency, byyd.me, kokoc.com, sostav.ru, 1ps.ru
+таргетированная реклама для клиники ташкент | loops: >24 | ads: - | AIO: yes | top5: medsprint.ru, almond-medical.ru, new-point.bz, raketadigital.com, sostav.ru
+таргетированная реклама для производства | loops: >29 | ads: - | AIO: yes | top5: wezom.com.ua, pitcher.agency, webcom.academy, ru-ru.facebook.com, uprav.ru
+таргетированная реклама ташкент | loops: >29 | ads: www.google.com | AIO: yes | top5: webnow.uz, olx.uz, wunder-digital.uz, ratingruneta.ru, b2b-creative.ru
+таргетированная реклама узбекистан | loops: >29 | ads: www.google.com,www.google.com | AIO: yes | top5: webnow.uz, wunder-digital.uz, kyoday.uz, ratingruneta.ru, adwservice.com.ua
+таргетолог для клиники | loops: >29 | ads: www.google.com,www.google.com | AIO: yes | top5: medsprint.ru, marketing-jungle.com, instagram.com, advertmed.com, belberry.net
+таргетолог ташкент | loops: >29 | ads: www.google.com | AIO: - | top5: instagram.com, olx.uz, tashkent.hh.uz, ishkop.uz, instagram.com
+таргетолог узбекистан | loops: >29 | ads: - | AIO: yes | top5: olx.uz, instagram.com, hh.uz, uzbekistan.gorodrabot.uz, tipa.uz
+услуги таргетолога ташкент | loops: >29 | ads: www.google.com | AIO: yes | top5: olx.uz, tipa.uz, uslugi.yandex.ru, instagram.com, webnow.uz
+чат-бот для бизнеса ташкент | loops: >29 | ads: - | AIO: yes | top5: innosoft.uz, life-style.uz, olx.uz, itspace.uz, mediasolutions.uz
+
+TOP DOMAINS (top10 count):
+23 instagram.com
+15 olx.uz
+12 wunder-digital.uz
+10 b2b-creative.ru
+10 webnow.uz
+6 ratingruneta.ru
+5 youtube.com
+5 hh.uz
+4 tashkent.hh.uz
+4 uslugi.yandex.ru
+4 facebook.com
+4 oe.uz
+4 sostav.ru
+4 kyoday.uz
+4 ishkop.uz
+3 kadiagency.uz
+3 metla.by
+3 conura.uz
+3 ru-ru.facebook.com
+3 workspace.ru
+3 tipa.uz
+2 lerna.uz
+2 aksanov.digital
+2 ba-it.uz
+2 advertmed.com

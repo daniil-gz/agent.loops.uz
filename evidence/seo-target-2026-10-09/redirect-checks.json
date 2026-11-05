@@ -1,0 +1,32 @@
+[
+  {
+    "url": "https://loops.uz/cases/case-dco.html?utm_source=seo-check",
+    "status": 301,
+    "location": "https://loops.uz/cases/case-dco/?utm_source=seo-check"
+  },
+  {
+    "url": "https://loops.uz/cases/case-dco/",
+    "status": 200,
+    "location": null
+  },
+  {
+    "url": "https://www.loops.uz/robots.txt",
+    "status": 308,
+    "location": "https://loops.uz/robots.txt"
+  },
+  {
+    "url": "https://loops.uz/robots.txt",
+    "status": 200,
+    "location": null
+  },
+  {
+    "url": "https://loops.uz/en/",
+    "status": 404,
+    "location": null
+  },
+  {
+    "url": "https://loops.uz/cases/case-%7Bid%7D/",
+    "status": 404,
+    "location": null
+  }
+]

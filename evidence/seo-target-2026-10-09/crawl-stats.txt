@@ -1,0 +1,307 @@
+- banner:
+  - button "Главное меню":
+  - link "Google Search Console":
+    - /url: ./search-console?resource_id=sc-domain%3Aloops.uz
+  - search:
+    - textbox [disabled]: Проверка всех URL на ресурсе loops.uz
+    - combobox "Проверка всех URL на ресурсе loops.uz"
+    - button "Поиск":
+  - button "Справка":
+    - generic: help_outline
+  - tooltip: Справка
+  - button "Пользовательские настройки":
+    - generic: manage_accounts
+  - tooltip: Пользовательские настройки
+  - 'button "Непрочитанных сообщений: 4"':
+    - generic: notifications
+  - tooltip: Сообщения
+  - generic: "4"
+  - button "Приложения Google":
+  - 'button "Аккаунт Google: Даниил Газизов (scribble.mgc@gmail.com)"':
+- dialog "navigational drawer":
+  - navigation "Основной":
+    - button "Ресурс":
+      - img "значок сайта"
+      - combobox "loops.uz"
+      - generic: 
+    - link "Обзор":
+      - /url: ./search-console?resource_id=sc-domain%3Aloops.uz
+      - generic: home
+      - generic: Обзор
+    - link "Статистика":
+      - /url: ./search-console/performance/insights?resource_id=sc-domain%3Aloops.uz
+      - generic: lightbulb_2
+      - generic: Статистика
+    - link "Эффективность":
+      - /url: ./search-console/performance/search-analytics?resource_id=sc-domain%3Aloops.uz
+      - generic: trending_up
+      - generic: Эффективность
+    - button "Раздел \"Эффективность\" в отчете":
+      - generic: keyboard_arrow_down
+    - button "Проверка URL":
+      - generic: search
+      - generic: Проверка URL
+    - generic: Индексирование
+    - button "Раздел \"Индексирование\" в отчете" [expanded]:
+      - generic: keyboard_arrow_up
+    - link "Страницы":
+      - /url: ./search-console/index?resource_id=sc-domain%3Aloops.uz
+      - generic: file_copy
+      - generic: Страницы
+    - link "Файлы Sitemap":
+      - /url: ./search-console/sitemaps?resource_id=sc-domain%3Aloops.uz
+      - generic: account_tree
+      - generic: Файлы Sitemap
+    - link "Удаления":
+      - /url: ./search-console/removals?resource_id=sc-domain%3Aloops.uz
+      - generic: visibility_off
+      - generic: Удаления
+    - generic: Качество
+    - button "Раздел \"Качество\" в отчете" [expanded]:
+      - generic: keyboard_arrow_up
+    - link "Core Web Vitals":
+      - /url: ./search-console/core-web-vitals?resource_id=sc-domain%3Aloops.uz
+      - generic: speed
+      - generic: Core Web Vitals
+    - link "HTTPS":
+      - /url: ./search-console/https?resource_id=sc-domain%3Aloops.uz
+      - generic: lock
+      - generic: HTTPS
+    - generic: Улучшения
+    - button "Раздел \"Улучшения\" в отчете" [expanded]:
+      - generic: keyboard_arrow_up
+    - link "Строки навигации":
+      - /url: ./search-console/r/breadcrumbs?resource_id=sc-domain%3Aloops.uz
+      - generic: layers
+      - generic: Строки навигации
+    - generic: Проблемы безопасности и меры, принятые вручную
+    - button "Раздел \"Проблемы безопасности и меры, принятые вручную\" в отчете":
+      - generic: keyboard_arrow_down
+    - link "Отчет о ссылках":
+      - /url: ./search-console/links?resource_id=sc-domain%3Aloops.uz
+      - generic: link_2
+      - generic: Ссылки
+    - link "Достижения":
+      - /url: ./search-console/achievements?resource_id=sc-domain%3Aloops.uz
+      - generic: trophy
+      - generic: Достижения
+    - link "Настройки":
+      - /url: ./search-console/settings?resource_id=sc-domain%3Aloops.uz
+      - generic: settings
+      - generic: Настройки
+    - button "Отправить отзыв":
+      - generic: feedback
+      - generic: Отправить отзыв
+    - button "Общие сведения о Search Console":
+      - generic: info
+      - generic: Общие сведения о Search Console
+    - link "Конфиденциальность":
+      - /url: https://myaccount.google.com/privacypolicy?hl=ru
+    - link "Условия использования":
+      - /url: https://myaccount.google.com/termsofservice?hl=ru
+- navigation "Строки навигации":
+  - link "Настройки":
+    - /url: ./search-console/settings?resource_id=sc-domain%3Aloops.uz
+  - generic: 
+  - heading "Статистика сканирования" [level=1]
+- button "ЭКСПОРТИРОВАТЬ":
+  - generic: 
+  - generic: ЭКСПОРТИРОВАТЬ
+- generic: Обновлено 06.10.2026
+- main:
+  - button "Всего запросов на сканирование 123":
+    - generic "Всего запросов на сканирование":
+      - generic: 
+      - generic: Всего запросов на сканирование
+    - generic "123"
+  - button "null":
+    - generic: 
+  - button "Общий размер скачивания (в байтах) 4,14 млн":
+    - generic "Общий размер скачивания (в байтах)":
+      - generic: Общий размер скачивания (в байтах)
+    - generic "4 137 882": 4,14 млн
+  - button "null":
+    - generic: 
+  - button "Среднее время ответа (мс) 2 тыс.":
+    - generic "Среднее время ответа (мс)":
+      - generic: Среднее время ответа (мс)
+    - generic "2 005": 2 тыс.
+  - button "null":
+    - generic: 
+  - generic: Запросы на сканирование
+  - generic: Хосты
+  - button "null":
+    - generic: 
+  - button "Фильтрация по строкам таблицы":
+    - generic: 
+  - table:
+    - rowgroup:
+      - row "Хост Запросы на сканирование Тенденция Статус":
+        - columnheader "Хост":
+          - generic: Хост
+        - columnheader "Запросы на сканирование":
+          - generic: Запросы на сканирование
+        - columnheader "Тенденция":
+          - generic: Тенденция
+        - columnheader "Статус":
+          - generic: Статус
+    - rowgroup:
+      - row "loops.uz 119 Ранее наблюдались проблемы":
+        - cell "loops.uz":
+          - generic "loops.uz"
+        - cell "119":
+          - generic: "119"
+        - cell:
+        - cell "Ранее наблюдались проблемы":
+          - generic: 
+          - text: Ранее наблюдались проблемы
+      - row "www.loops.uz 4 Ранее наблюдались проблемы":
+        - cell "www.loops.uz":
+          - generic "www.loops.uz"
+        - cell "4":
+          - generic: "4"
+        - cell:
+        - cell "Ранее наблюдались проблемы":
+          - generic: 
+          - text: Ранее наблюдались проблемы
+  - generic: "Строк на странице:"
+  - listbox "Количество строк на страницу":
+    - option "5" [selected]
+    - option "10"
+    - option "25"
+    - option "50"
+    - option "100"
+    - option "250"
+    - option "500"
+  - generic: 1–2 из 2
+  - generic: 
+  - generic: 
+  - generic: Распределение запросов на сканирование
+  - generic: По ответу
+  - table:
+    - rowgroup:
+      - row "Файл получен (200) 80 %":
+        - cell "Файл получен (200)"
+        - cell "80 %"
+        - cell:
+      - 'row "Перемещено навсегда (код статуса: 301) 8 %"':
+        - 'cell "Перемещено навсегда (код статуса: 301)"'
+        - cell "8 %"
+        - cell:
+      - 'row "Другая ошибка клиента (код статуса: 4XX) 5 %"':
+        - 'cell "Другая ошибка клиента (код статуса: 4XX)"'
+        - cell "5 %"
+        - cell:
+      - 'row "Ошибка сервера (код статуса: 5XX) 4 %"':
+        - 'cell "Ошибка сервера (код статуса: 5XX)"'
+        - cell "4 %"
+        - cell:
+      - row "Не найдено (404) 2 %":
+        - cell "Не найдено (404)"
+        - cell "2 %"
+        - cell:
+  - generic: "Строк на странице:"
+  - listbox "Количество строк на страницу":
+    - option "5" [selected]
+    - option "10"
+    - option "25"
+    - option "50"
+    - option "100"
+    - option "250"
+    - option "500"
+  - generic: 1–5 из 6
+  - generic: 
+  - generic: 
+  - generic: По цели
+  - table:
+    - rowgroup:
+      - row "Обновление 92 %":
+        - cell "Обновление"
+        - cell "92 %"
+        - cell:
+      - row "Как обнаружено 8 %":
+        - cell "Как обнаружено"
+        - cell "8 %"
+        - cell:
+  - generic: "Строк на странице:"
+  - listbox "Количество строк на страницу":
+    - option "5" [selected]
+    - option "10"
+    - option "25"
+    - option "50"
+    - option "100"
+    - option "250"
+    - option "500"
+  - generic: 1–2 из 2
+  - generic: 
+  - generic: 
+  - generic: По типу файла
+  - table:
+    - rowgroup:
+      - row "Изображение 50 %":
+        - cell "Изображение"
+        - cell "50 %"
+        - cell:
+      - row "HTML 16 %":
+        - cell "HTML"
+        - cell "16 %"
+        - cell:
+      - row "JavaScript 11 %":
+        - cell "JavaScript"
+        - cell "11 %"
+        - cell:
+      - row "Другой тип файла 8 %":
+        - cell "Другой тип файла"
+        - cell "8 %"
+        - cell:
+      - row "CSS 3 %":
+        - cell "CSS"
+        - cell "3 %"
+        - cell:
+  - generic: "Строк на странице:"
+  - listbox "Количество строк на страницу":
+    - option "5" [selected]
+    - option "10"
+    - option "25"
+    - option "50"
+    - option "100"
+    - option "250"
+    - option "500"
+  - generic: 1–5 из 6
+  - generic: 
+  - generic: 
+  - generic: По типу робота Googlebot
+  - table:
+    - rowgroup:
+      - row "Изображение 50 %":
+        - cell "Изображение"
+        - cell "50 %"
+        - cell:
+      - row "Смартфоны 22 %":
+        - cell "Смартфоны"
+        - cell "22 %"
+        - cell:
+      - row "Загрузка объектов страницы 16 %":
+        - cell "Загрузка объектов страницы"
+        - cell "16 %"
+        - cell:
+      - row "ПК 6 %":
+        - cell "ПК"
+        - cell "6 %"
+        - cell:
+      - row "Агент другого типа 5 %":
+        - cell "Агент другого типа"
+        - cell "5 %"
+        - cell:
+  - generic: "Строк на странице:"
+  - listbox "Количество строк на страницу":
+    - option "5" [selected]
+    - option "10"
+    - option "25"
+    - option "50"
+    - option "100"
+    - option "250"
+    - option "500"
+  - generic: 1–5 из 6
+  - generic: 
+  - generic: 

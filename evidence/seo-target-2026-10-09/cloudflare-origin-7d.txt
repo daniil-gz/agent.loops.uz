@@ -1,0 +1,262 @@
+Origin Analytics
+
+Monitor how the servers that host your content connect and respond to Cloudflare. Use to diagnose errors and identify slow endpoints.
+
+Add filter
+1
+Filters:
+Hostname = loops.uz
+Clear all
+Last 7 days GMT+5
+
+Origin requested
+
+99.7%
+0.1pp
+
+Connection success rate
+
+99.7%
+0.1pp
+
+Response time (P95)
+
+661ms
+65ms
+
+Error rate
+
+0%
+0pp
+Status code breakdown
+2XX
+3XX
+4XX
+5XX
+
+No data for the selected time range.
+
+Code class distribution
+None
+2k
+4xx
+11k
+3xx
+4.4k
+2xx
+3.2k
+Origin response time
+P50
+143ms
+P75
+205ms
+P95
+657ms
+P99
+670ms
+TCP/TLS connection breakdown
+TCP Handshake
+363ms
+TLS Handshake
+259ms
+Response Wait
+254ms
+Top endpoints
+Search top paths
+	
+Path
+-
+	
+Hostname
+-
+	
+Colo
+-
+	
+Response time (P95)
+-
+	4xx rate
+	5xx rate
+	TCP failure rate
+	
+Requests
+
+
+	
+/
+	loops.uz	
+
+WAW
+
+	
+0ms
+	
+0%
+	
+0%
+	
+1%
+	
+93
+
+
+	
+/dejavu.php
+	loops.uz	
+
+SYD
+
+	
+0ms
+	
+2%
+	
+0%
+	
+0%
+	
+82
+
+
+	
+/chosen.php
+	loops.uz	
+
+ICN
+
+	
+0ms
+	
+37%
+	
+0%
+	
+0%
+	
+75
+
+
+	
+/
+	loops.uz	
+
+AMS
+
+	
+0ms
+	
+0%
+	
+0%
+	
+0%
+	
+58
+
+
+	
+/adminfuns.php
+	loops.uz	
+
+ICN
+
+	
+0ms
+	
+68%
+	
+0%
+	
+0%
+	
+47
+
+
+	
+/wp-content/plugins/hellopress/wp_filemanager.php
+	loops.uz	
+
+ICN
+
+	
+0ms
+	
+60%
+	
+0%
+	
+0%
+	
+43
+
+
+	
+/
+	loops.uz	
+
+FRA
+
+	
+0ms
+	
+0%
+	
+0%
+	
+10%
+	
+41
+
+
+	
+/
+	loops.uz	
+
+LHR
+
+	
+0ms
+	
+0%
+	
+0%
+	
+0%
+	
+41
+
+
+	
+/this_is_a_new_hello_world.php
+	loops.uz	
+
+ICN
+
+	
+0ms
+	
+67%
+	
+0%
+	
+0%
+	
+36
+
+
+	
+/alfa.php
+	loops.uz	
+
+BOM
+
+	
+0ms
+	
+72%
+	
+0%
+	
+0%
+	
+32

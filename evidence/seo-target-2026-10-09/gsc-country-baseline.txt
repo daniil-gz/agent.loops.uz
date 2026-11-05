@@ -1,0 +1,169 @@
+- banner:
+  - button "Главное меню":
+  - search:
+    - button "Поиск":
+  - button "Справка":
+    - generic: help_outline
+  - tooltip: Справка
+  - button "Пользовательские настройки":
+    - generic: manage_accounts
+  - tooltip: Пользовательские настройки
+  - 'button "Непрочитанных сообщений: 4"':
+    - generic: notifications
+  - tooltip: Сообщения
+  - generic: "4"
+  - button "Приложения Google":
+  - 'button "Аккаунт Google: Даниил Газизов (scribble.mgc@gmail.com)"':
+- navigation "Строки навигации":
+  - heading "Эффективность" [level=1]
+- button "ЭКСПОРТИРОВАТЬ":
+  - generic: 
+  - generic: ЭКСПОРТИРОВАТЬ
+- radiogroup "Select time range":
+  - radio "24 часа":
+    - generic: 24 часа
+  - radio "7 дней":
+    - generic: 7 дней
+  - radio "28 дней":
+    - generic: 28 дней
+  - radio "3 месяца" [checked]:
+    - generic: 3 месяца
+- button "More time ranges":
+  - generic: Дополнительно
+  - generic: arrow_drop_down
+- list:
+  - 'button "Тип поиска: Веб"':
+    - generic: "Тип поиска: Веб"
+    - generic: arrow_drop_down
+  - tooltip: "Тип поиска: Веб"
+  - button "Добавить фильтр":
+    - generic: add
+    - generic: Добавить фильтр
+  - tooltip: Добавить фильтр
+  - button "Настройте отчет об эффективности с помощью ИИ":
+    - generic: filter_list_spark
+  - tooltip: Настройте отчет об эффективности с помощью ИИ
+- generic: Обновлено 15 часов назад
+- main:
+  - button "Всего кликов 6":
+    - generic "Всего кликов":
+      - generic: 
+      - generic: Всего кликов
+    - generic "6"
+  - button "null":
+    - generic: 
+  - button "Всего показов 31":
+    - generic "Всего показов":
+      - generic: 
+      - generic: Всего показов
+    - generic "31"
+  - button "null":
+    - generic: 
+  - button "Средний CTR 19,4 %":
+    - generic "Средний CTR":
+      - generic: Средний CTR
+    - generic "19,4 %"
+  - button "null":
+    - generic: 
+  - button "Средняя позиция 4,8":
+    - generic "Средняя позиция":
+      - generic: Средняя позиция
+    - generic "4,8"
+  - button "null":
+    - generic: 
+  - 'button "Выбранный уровень детализации: Ежедневно"':
+    - generic: Ежедневно
+  - generic: Kлики
+  - generic: Показы
+  - application "chart":
+    - generic: Диаграмма, показано количество (Всего кликов, Всего показов, Средний CTR и Средняя позиция) с 26 сентября 2026 г. по 6 октября 2026 г.
+  - generic: Отчет о генеративном ИИ
+  - generic: chevron_forward
+  - link "Открыть отчет об эффективности функций на основе генеративного ИИ в Google Поиске.":
+    - /url: ./search-console/performance/search-analytics/ai?resource_id=sc-domain%3Aloops.uz
+  - tablist:
+    - tab "Запросы":
+      - generic: Запросы
+    - tab "Страницы":
+      - generic: Страницы
+    - tab "Страны" [active] [selected]:
+      - generic: Страны
+    - tab "Устройства":
+      - generic: Устройства
+    - tab "Вид в поиске":
+      - generic: Вид в поиске
+    - tab "Дни":
+      - generic: Дни
+  - generic: 
+  - tabpanel:
+    - button "Фильтрация по строкам таблицы":
+      - generic: 
+    - table:
+      - rowgroup:
+        - row "Страна Упорядочить столбец \"Страна\" Упорядочить столбец \"Kлики\" Kлики Упорядочить столбец \"Показы\" Показы":
+          - columnheader "Страна Упорядочить столбец \"Страна\"":
+            - generic: Страна
+            - button "Упорядочить столбец \"Страна\"":
+          - columnheader "Упорядочить столбец \"Kлики\" Kлики":
+            - button "Упорядочить столбец \"Kлики\"":
+            - generic: Kлики
+          - columnheader "Упорядочить столбец \"Показы\" Показы":
+            - button "Упорядочить столбец \"Показы\"":
+            - generic: Показы
+      - rowgroup:
+        - row "Узбекистан 4 20":
+          - cell "Узбекистан":
+            - generic: Узбекистан
+          - cell "4":
+            - generic: "4"
+          - cell "20":
+            - generic: "20"
+        - row "Россия 1 5":
+          - cell "Россия":
+            - generic: Россия
+          - cell "1":
+            - generic: "1"
+          - cell "5":
+            - generic: "5"
+        - row "Таджикистан 1 1":
+          - cell "Таджикистан":
+            - generic: Таджикистан
+          - cell "1":
+            - generic: "1"
+          - cell "1":
+            - generic: "1"
+        - row "Украина 0 3":
+          - cell "Украина":
+            - generic: Украина
+          - cell "0":
+            - generic: "0"
+          - cell "3":
+            - generic: "3"
+        - row "Казахстан 0 1":
+          - cell "Казахстан":
+            - generic: Казахстан
+          - cell "0":
+            - generic: "0"
+          - cell "1":
+            - generic: "1"
+        - row "Румыния 0 1":
+          - cell "Румыния":
+            - generic: Румыния
+          - cell "0":
+            - generic: "0"
+          - cell "1":
+            - generic: "1"
+    - generic: "Строк на странице:"
+    - listbox "Количество строк на страницу":
+      - option "5"
+      - option "10" [selected]
+      - option "25"
+      - option "50"
+      - option "100"
+      - option "250"
+      - option "500"
+    - generic: 1–6 из 6
+    - button "Предыдущая страница" [disabled]:
+    - tooltip: Предыдущая страница
+    - button "Следующая страница" [disabled]:
+    - tooltip: Следующая страница

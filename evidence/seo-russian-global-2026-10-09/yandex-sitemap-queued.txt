@@ -1,0 +1,71 @@
+- link "Logo":
+  - /url: /sites/
+- list:
+  - combobox "https://loops.uz"
+  - link:
+    - /url: /sites/add/
+  - textbox "Поиск"
+- list:
+  - link "Сводка":
+    - /url: /site/https:loops.uz:443/dashboard/?_from=menu
+    - generic: Сводка
+  - button "Оптимизация сайта":
+    - generic: Оптимизация сайта
+  - button "Эффективность":
+    - generic: Эффективность
+  - button "Индексирование":
+    - generic: Индексирование
+  - button "Инструменты":
+    - generic: Инструменты
+  - button "Представление в поиске":
+    - generic: Представление в поиске
+  - button "Услуги и предложения в поиске":
+    - generic: Услуги и предложения в поиске
+  - button "Ссылки":
+    - generic: Ссылки
+  - link "Обучение":
+    - /url: /site/https:loops.uz:443/education/?_from=menu
+    - generic: Обучение
+  - button "Полезные сервисы":
+    - generic: Полезные сервисы
+  - button "Нейровебмастер":
+    - generic: Нейровебмастер
+- button
+- button "Ваш профиль":
+  - generic: 99+
+- button
+- link "70":
+  - /url: /notifications/
+  - generic: "70"
+- button:
+- button:
+- heading "Добавить файл Sitemap" [level=2]:
+  - text: Добавить файл Sitemap
+- textbox
+- button "Добавить" [disabled]:
+  - generic: Добавить
+- generic: Очередь на обработку
+- generic: Sitemap был добавлен в очередь на обработку. Когда он будет обработан, данные обновятся автоматически. Процесс занимает до 1-2 недель. Если в Диагностике отображается предупреждение об отсутствии обработанных файлов, оно также исчезнет после завершения обработки
+- generic: https://loops.uz/sitemap.xml
+- button:
+- generic: 09.10.2026
+- link "Блог":
+  - /url: https://webmaster.yandex.ru/blog/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_indexing_sitemap
+- link "Пользовательское соглашение":
+  - /url: https://yandex.ru/legal/webmaster_termsofuse/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_indexing_sitemap
+- link "Политика конфиденциальности":
+  - /url: https://yandex.ru/legal/confidential/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_indexing_sitemap
+- link "Правила рекомендаций":
+  - /url: https://yandex.ru/legal/recommendations/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_indexing_sitemap#index__webmaster
+- link "ru":
+  - /url: https://yandex.ru/portal/set/lang/?intl=ru&retpath=https%3A%2F%2Fwebmaster.yandex.ru%2Fsite%2Fhttps%3Aloops.uz%3A443%2Findexing%2Fsitemap%2F%3F_from%3Dmenu&sk=u5b6642f389735bf21cde5b13692cf81a
+  - generic: ru
+- link "en":
+  - /url: https://yandex.ru/portal/set/lang/?intl=en&retpath=https%3A%2F%2Fwebmaster.yandex.ru%2Fsite%2Fhttps%3Aloops.uz%3A443%2Findexing%2Fsitemap%2F%3F_from%3Dmenu&sk=u5b6642f389735bf21cde5b13692cf81a
+  - generic: en
+- generic: © 2004–2026
+- link "ООО «Яндекс»":
+  - /url: https://ya.ru
+- iframe:
+- button "Отзыв о Вебмастере":
+  - text: Отзыв о Вебмастере

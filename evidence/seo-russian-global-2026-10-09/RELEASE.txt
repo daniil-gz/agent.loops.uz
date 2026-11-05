@@ -1,0 +1,16 @@
+Loops release 00838d1 — 9 October 2026
+
+Published 23 scoped files; backup /root/backups/loops-www-20261009-russian-global.tar.gz. Origin matched expected pre-release state before deployment. Assets first, no delete. Public readback: 23/23 HTTP200 and local-content matches after stripping Cloudflare-injected beacon. Cloudflare Custom Purge for 23 exact URLs completed; original dialog closed. No nginx/DNS/security settings changed in this release.
+
+Validation: marketing build; 51-page metadata/link/schema audit with zero errors; 23 Python tests; site-events tests; diff check; assertions for article date and category split; IAB mobile article320/390, target remote section320, chatbot390 FAQ, desktop1280. Live article DOM and screenshot confirmed after initial navigation timeout. Local8765 cached old editorial CSS; clean local8766 confirmed updated CSS and no overflow at320. Temporary device emulation and cache bypass reset after QA.
+
+Google URL inspection now confirms /target/ and /ai-bot/ are indexed (screenshots and DOM saved). New cost-guide article was unknown at initial inspection; indexing request accepted into priority queue. Its actual indexing remains pending.
+
+Yandex Webmaster: added HTTPS loops.uz in existing authenticated account, ownership via public root HTML verification file confirmed on09.10.2026. No user or third-party delegate added. Sitemap /sitemap.xml accepted into processing queue; processing and search-index inclusion are pending. Prioritized reindex request submitted for root,target,ai-bot,about,clinics,b2b,cost guide; status verified separately in evidence.
+
+Read-only profile audit: Telegram channel and Instagram visible descriptions inspected. Website link not visible in public view; prepared PROFILE-COPY.txt, not published. Baseline, query map, measurement definitions and priorities in SEO-WORKPLAN.txt.
+
+Case-catalog currency wording drift from pre-existing source was excluded; current public cases.html preserved. /clinic-ads/ noindex, case preview behavior, analytics IDs and Metrika owner auto-goal decision preserved. No test leads or external messages sent.
+
+Yandex regionality: no region was assigned initially. Submitted Uzbekistan (country) with https://loops.uz/about/ as evidence, matching owner primary market. UI confirmed application accepted, review within7days. Region remains unassigned until approval; do not report approved yet. No physical business listing created.
+GitHub main push confirmed: d737f76..00838d1. Backup verified present,54MB.

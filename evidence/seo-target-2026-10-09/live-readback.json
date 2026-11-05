@@ -1,0 +1,92 @@
+[
+  {
+    "path": "leadgeneration/assets/index-CZVJ0tKo.css",
+    "status": 200,
+    "sha256_matches": true
+  },
+  {
+    "path": "leadgeneration/assets/App-B7AofeK0.js",
+    "status": 200,
+    "sha256_matches": true
+  },
+  {
+    "path": "leadgeneration/assets/index-BlAt_lpV.js",
+    "status": 200,
+    "sha256_matches": true
+  },
+  {
+    "path": "leadgeneration/assets/fonts.css",
+    "status": 200,
+    "sha256_matches": true
+  },
+  {
+    "path": "leadgeneration/assets/fonts-v2.css",
+    "status": 200,
+    "sha256_matches": true
+  },
+  {
+    "path": "index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "target/index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "ai-bot/index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "analytics/index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "consulting/index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "clinics/index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "b2b/index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "manufacturing/index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "auto/index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "fitness/index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "horeca/index.html",
+    "status": 200,
+    "sha256_matches": false
+  },
+  {
+    "path": "llms.txt",
+    "status": 200,
+    "sha256_matches": true
+  },
+  {
+    "path": "sitemap.xml",
+    "status": 200,
+    "sha256_matches": true
+  }
+]

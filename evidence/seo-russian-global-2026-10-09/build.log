@@ -1,0 +1,23 @@
+
+> loops-landing-lab@0.0.0 build
+> vite build && vite build --ssr src/entry-server.jsx --outDir dist/ssr && node scripts/prerender.mjs && node scripts/prepare-sites-build.mjs
+
+vite v6.4.2 building for production...
+transforming...
+✓ 4582 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/client/index.html                   0.84 kB │ gzip:  0.52 kB
+dist/client/assets/index-CZVJ0tKo.css   66.92 kB │ gzip: 14.14 kB
+dist/client/assets/App-BaNDr1v1.js     121.77 kB │ gzip: 58.51 kB
+dist/client/assets/index-CclfwBQz.js   307.36 kB │ gzip: 88.19 kB
+✓ built in 2.62s
+vite v6.4.2 building SSR bundle for production...
+transforming...
+✓ 11 modules transformed.
+rendering chunks...
+dist/ssr/entry-server.js  224.93 kB
+✓ built in 238ms
+Prerendered homepage and 10 service/industry pages with indexable HTML.
+Prepared Sites build: dist/server/index.js and dist/.openai/hosting.json
+Updated root, 10 service/industry pages, hashed assets and legacy redirect fallback.

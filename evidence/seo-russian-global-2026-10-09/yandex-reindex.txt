@@ -1,0 +1,161 @@
+- link "Logo":
+  - /url: /sites/
+- list:
+  - combobox "https://loops.uz"
+  - link:
+    - /url: /sites/add/
+  - textbox "Поиск"
+- list:
+  - link "Сводка":
+    - /url: /site/https:loops.uz:443/dashboard/?_from=menu
+    - generic: Сводка
+  - button "Оптимизация сайта":
+    - generic: Оптимизация сайта
+  - button "Эффективность":
+    - generic: Эффективность
+  - button "Индексирование":
+    - generic: Индексирование
+  - button "Инструменты":
+    - generic: Инструменты
+  - button "Представление в поиске":
+    - generic: Представление в поиске
+  - button "Услуги и предложения в поиске":
+    - generic: Услуги и предложения в поиске
+  - button "Ссылки":
+    - generic: Ссылки
+  - link "Обучение":
+    - /url: /site/https:loops.uz:443/education/?_from=menu
+    - generic: Обучение
+  - button "Полезные сервисы":
+    - generic: Полезные сервисы
+  - button "Нейровебмастер":
+    - generic: Нейровебмастер
+- button
+- button "Ваш профиль":
+  - generic: 99+
+- button
+- link "70":
+  - /url: /notifications/
+  - generic: "70"
+- button:
+- button:
+- heading "Переобход страниц" [level=2]
+- text: Добавьте URL
+- link "в список важных страниц":
+  - /url: /site/https:loops.uz:443/indexing/url-tracker/
+- text: ", чтобы отслеживать индексирование и получать уведомления об изменении его статуса в поиске."
+- link "Подробнее":
+  - /url: https://yandex.ru/support/webmaster/service/tracking-url.html
+- textbox "Введите адреса страниц, которые нужно проиндексировать в приоритетном порядке"
+- generic: Дневной лимит — 150 адресов для сайта (включая основной домен и все поддомены).
+- generic: Сегодня можно отправить еще 143 адреса.
+- button "Отправить" [disabled]:
+  - generic: Отправить
+- heading "Отправленные страницы" [level=2]
+- generic: Обновление происходит не сразу, а через несколько обновлений базы
+- button:
+- button:
+- table:
+  - rowgroup:
+    - row "Адрес страницы Статус Отправлена":
+      - columnheader "Адрес страницы":
+        - generic: Адрес страницы
+      - columnheader "Статус":
+        - generic: Статус
+      - columnheader "Отправлена":
+        - generic: Отправлена
+      - columnheader
+  - rowgroup:
+    - row "https://loops.uz/ В очереди 09.10.2026 10:47 Отслеживать":
+      - cell "https://loops.uz/":
+        - link "https://loops.uz/":
+          - /url: https://loops.uz/
+      - cell "В очереди":
+        - generic: В очереди
+      - cell "09.10.2026 10:47"
+      - cell "Отслеживать":
+        - button "Отслеживать":
+          - generic: Отслеживать
+    - row "https://loops.uz/target/ В очереди 09.10.2026 10:47 Отслеживать":
+      - cell "https://loops.uz/target/":
+        - link "https://loops.uz/target/":
+          - /url: https://loops.uz/target/
+      - cell "В очереди":
+        - generic: В очереди
+      - cell "09.10.2026 10:47"
+      - cell "Отслеживать":
+        - button "Отслеживать":
+          - generic: Отслеживать
+    - row "https://loops.uz/ai-bot/ В очереди 09.10.2026 10:47 Отслеживать":
+      - cell "https://loops.uz/ai-bot/":
+        - link "https://loops.uz/ai-bot/":
+          - /url: https://loops.uz/ai-bot/
+      - cell "В очереди":
+        - generic: В очереди
+      - cell "09.10.2026 10:47"
+      - cell "Отслеживать":
+        - button "Отслеживать":
+          - generic: Отслеживать
+    - row "https://loops.uz/about/ В очереди 09.10.2026 10:47 Отслеживать":
+      - cell "https://loops.uz/about/":
+        - link "https://loops.uz/about/":
+          - /url: https://loops.uz/about/
+      - cell "В очереди":
+        - generic: В очереди
+      - cell "09.10.2026 10:47"
+      - cell "Отслеживать":
+        - button "Отслеживать":
+          - generic: Отслеживать
+    - row "https://loops.uz/clinics/ В очереди 09.10.2026 10:47 Отслеживать":
+      - cell "https://loops.uz/clinics/":
+        - link "https://loops.uz/clinics/":
+          - /url: https://loops.uz/clinics/
+      - cell "В очереди":
+        - generic: В очереди
+      - cell "09.10.2026 10:47"
+      - cell "Отслеживать":
+        - button "Отслеживать":
+          - generic: Отслеживать
+    - row "https://loops.uz/b2b/ В очереди 09.10.2026 10:47 Отслеживать":
+      - cell "https://loops.uz/b2b/":
+        - link "https://loops.uz/b2b/":
+          - /url: https://loops.uz/b2b/
+      - cell "В очереди":
+        - generic: В очереди
+      - cell "09.10.2026 10:47"
+      - cell "Отслеживать":
+        - button "Отслеживать":
+          - generic: Отслеживать
+    - row "https://loops.uz/articles/stoimost-targeta-tashkent/ В очереди 09.10.2026 10:47 Отслеживать":
+      - cell "https://loops.uz/articles/stoimost-targeta-tashkent/":
+        - link "https://loops.uz/articles/stoimost-targeta-tashkent/":
+          - /url: https://loops.uz/articles/stoimost-targeta-tashkent/
+      - cell "В очереди":
+        - generic: В очереди
+      - cell "09.10.2026 10:47"
+      - cell "Отслеживать":
+        - button "Отслеживать":
+          - generic: Отслеживать
+  - rowgroup:
+    - row:
+      - cell
+- link "Блог":
+  - /url: https://webmaster.yandex.ru/blog/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_indexing_reindex
+- link "Пользовательское соглашение":
+  - /url: https://yandex.ru/legal/webmaster_termsofuse/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_indexing_reindex
+- link "Политика конфиденциальности":
+  - /url: https://yandex.ru/legal/confidential/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_indexing_reindex
+- link "Правила рекомендаций":
+  - /url: https://yandex.ru/legal/recommendations/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_indexing_reindex#index__webmaster
+- link "ru":
+  - /url: https://yandex.ru/portal/set/lang/?intl=ru&retpath=https%3A%2F%2Fwebmaster.yandex.ru%2Fsite%2Fhttps%3Aloops.uz%3A443%2Findexing%2Freindex%2F%3F_from%3Dmenu&sk=u5b6642f389735bf21cde5b13692cf81a
+  - generic: ru
+- link "en":
+  - /url: https://yandex.ru/portal/set/lang/?intl=en&retpath=https%3A%2F%2Fwebmaster.yandex.ru%2Fsite%2Fhttps%3Aloops.uz%3A443%2Findexing%2Freindex%2F%3F_from%3Dmenu&sk=u5b6642f389735bf21cde5b13692cf81a
+  - generic: en
+- generic: © 2004–2026
+- link "ООО «Яндекс»":
+  - /url: https://ya.ru
+- iframe
+- button "Отзыв о Вебмастере":
+  - text: Отзыв о Вебмастере

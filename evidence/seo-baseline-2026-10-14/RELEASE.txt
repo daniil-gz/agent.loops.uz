@@ -1,0 +1,8 @@
+Loops SEO release 4346206 — 14 October 2026 (Claude)
+
+Baseline (before release): Apify google-search-scraper, google.co.uz, hl=ru, 24 queries x 3 pages, run cCc52HLedHeowzKxA. loops.uz found in top ~30 only for "b2b лидогенерация ташкент" (#3). Not found for "таргетолог ташкент", "таргетированная реклама ташкент", clinic/manufacturing/b2b targeting queries. AI Overview shown on 23/24 queries; loops.uz not among sources. Details: summary.txt, serp-google-uz-ru.json.
+
+Changes: six industry pages retitled and H1 to "Таргетированная реклама / Таргет для <ниша>", intros start with targeting service, targeting FAQs with owner-approved price 6 млн сум (12 с чат-ботом). /target/ +4 FAQs (platforms, niches, owner, difference). Homepage title now includes "таргетированная реклама". Schema: FAQPage on service pages, Service.serviceType, Offers in UZS, Organization+ProfessionalService with Tashkent locality (no street address), Person knowsAbout/worksFor. sitemap lastmod 2026-10-14 for 11 pages; llms.txt descriptions. IndexNow key file at root.
+
+Deploy: backup /root/backups/loops-www-20261014-seo-target-niches.tar.gz; rsync assets first, then 14 files; no delete. HTML/sitemap/llms cf-cache-status DYNAMIC, live readback titles OK. CF API purge token returned Authentication error (not needed: DYNAMIC). IndexNow: api.indexnow.org 202, bing.com 202; yandex.com unreachable from this host. GSC reindex request not made: browser not signed in.
+Validation: build OK, audit-public 0 errors, 23 Python tests, site-events tests, visual check clinics desktop / manufacturing 375px.

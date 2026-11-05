@@ -1,0 +1,146 @@
+- link:
+  - /url: /
+- link:
+  - /url: /accounts/login/?next=%2Fdanii_gzv&source=desktop_nav
+  - text: Войти
+- link:
+  - /url: /accounts/emailsignup/
+  - text: Зарегистрироваться
+- main:
+  - link:
+    - /url: /danii_gzv/
+  - heading [level=2]:
+    - generic: danii_gzv
+  - list:
+    - link:
+      - /url: "#"
+      - generic: 1 428
+      - text: подписчиков
+    - link:
+      - /url: "#"
+      - generic: "400"
+      - text: подписок
+  - generic: Газизов Даниил | Лиды для бизнеса | Консультации
+  - link:
+    - /url: https://www.threads.com/@danii_gzv?xmt=AQG0mjk1LoUaMQ9qAhNm4bCe535SwXOTUFIrxFgqnt1jj48
+    - generic: danii_gzv
+  - button:
+    - generic: 💸 Стабильный клиентопоток ❇️ Заявки из рекламы которые доходят до оплат ⚙️ Meta Ads + AI + CRM
+  - menu:
+    - list:
+      - link:
+        - /url: /stories/highlights/18110867113510462/
+        - button:
+          - button:
+          - generic: АвтоБиз
+      - link:
+        - /url: /stories/highlights/18051136481139799/
+        - button:
+          - button:
+          - generic: Производство
+      - link:
+        - /url: /stories/highlights/17962275470948213/
+        - button:
+          - button:
+          - generic: Кейсы
+  - tablist:
+    - link:
+      - /url: /danii_gzv/
+    - link:
+      - /url: "#"
+    - link:
+      - /url: "#"
+  - link:
+    - /url: /danii_gzv/p/DLCylWyOcBc/
+  - link:
+    - /url: /danii_gzv/reel/DG_SGD6M8Di/
+  - link:
+    - /url: /danii_gzv/reel/DeMIqaYtqCP/
+  - link:
+    - /url: /danii_gzv/p/Ddy0Al2ja5V/
+  - link:
+    - /url: /danii_gzv/p/DdluQPpFjzg/
+  - link:
+    - /url: /danii_gzv/reel/DToFiVGDdsl/
+  - link:
+    - /url: /danii_gzv/reel/DToDuYXDV-k/
+  - link:
+    - /url: /danii_gzv/reel/DTnnkgrjfdo/
+  - link:
+    - /url: /danii_gzv/p/DToBPkmDYoR/
+  - link:
+    - /url: /danii_gzv/reel/DTkAhC2jfIK/
+  - link:
+    - /url: /danii_gzv/reel/DTiwg0xjUrv/
+  - link:
+    - /url: /danii_gzv/p/DTkFl0xjioy/
+  - button:
+    - generic: Ещё публикации от danii_gzv
+- contentinfo:
+  - link:
+    - /url: https://about.meta.com/
+    - generic: Meta
+  - link:
+    - /url: https://about.instagram.com/
+    - generic: Информация
+  - link:
+    - /url: https://about.instagram.com/blog/
+    - generic: Блог
+  - link:
+    - /url: https://about.instagram.com/about-us/careers
+    - generic: Вакансии
+  - link:
+    - /url: https://help.instagram.com/
+    - generic: Помощь
+  - link:
+    - /url: https://developers.facebook.com/docs/instagram
+    - generic: API
+  - link:
+    - /url: /legal/privacy/
+    - generic: Конфиденциальность
+  - link:
+    - /url: /legal/terms/
+    - generic: Условия
+  - link:
+    - /url: /explore/locations/
+    - generic: Места
+  - link:
+    - /url: /popular/
+    - generic: Популярное
+  - link:
+    - /url: /web/lite/
+    - generic: Instagram Lite
+  - link:
+    - /url: https://www.meta.ai/?utm_source=foa_web_footer
+    - generic: Meta AI
+  - link:
+    - /url: https://muse.ai/
+    - generic: Muse
+  - link:
+    - /url: https://www.threads.com/
+    - generic: Threads
+  - link:
+    - /url: https://www.facebook.com/help/instagram/261704639352628
+    - generic: Загрузка контактов и лица, не являющиеся пользователями
+  - link:
+    - /url: /accounts/meta_verified/?entrypoint=web_footer
+    - generic: Meta Verified
+  - generic: Русский
+  - combobox
+  - generic: © 2026 Instagram from Meta
+- dialog:
+  - button "Закрыть" [active]:
+    - img "Закрыть"
+  - link "Фото профиля danii_gzv":
+    - img "Фото профиля danii_gzv"
+  - generic: Смотрите фото, видео и другой контент от danii_gzv
+  - generic: Зарегистрируйтесь, чтобы не пропустить новые публикации danii_gzv.
+  - text: Продолжая, вы принимаете
+  - link "Условия использования":
+    - /url: https://help.instagram.com/581066165581870/?locale=ru_RU
+  - text: и
+  - link "Политике конфиденциальности":
+    - /url: https://privacycenter.instagram.com/policy/
+  - text: Instagram.
+  - button "Зарегистрироваться"
+  - button "Войти"

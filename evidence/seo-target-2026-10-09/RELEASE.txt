@@ -1,0 +1,28 @@
+Loops SEO release — 9 October 2026
+Published and pushed commit e202422 (main).
+
+Owner-approved pricing: target 6m UZS/month; chatbot 6m UZS/month; combined 12m UZS/month.
+Updated existing /target/ and /ai-bot/ pages, title/description/body/FAQ, main-page service introduction, llms descriptions. Target page focuses on Daniil Gazizov, targeting Instagram/Facebook, Tashkent and Uzbekistan. Advertising budget and paid third-party tools are separate.
+Sitemap retains unchanged lastmod dates; root and two services updated to 2026-10-09. Static HTML is prerendered, pages have their own canonical URLs.
+Legacy /cases/case-dco.html now 301 to /cases/case-dco/, preserving query. /en/ and literal /cases/case-{id}/ remain honest 404.
+
+Validation: marketing build succeeded, static audit 50 pages zero errors, Python 23 tests passed, site-events tests passed, diff check passed. IAB desktop/mobile QA at 1280/390/320, menus/FAQ/case preview checked. Public target and chatbot content confirmed. All 18 published files match after removing Cloudflare-injected analytics beacon; HTML cache DYNAMIC, scripts BYPASS. Default Python UA received 403 while release UA/browser received expected statuses; do not interpret either as a verified Googlebot request.
+
+Backup: /root/backups/loops-www-20261009-seo-target.tar.gz
+Nginx backup: /etc/nginx/sites-available/loops.bak-20261009-050423-dco-redirect
+Scoped rsync assets first, no delete. Nginx config test and reload successful; unrelated Adstat duplicate server-name warnings were left untouched.
+
+Search Console: target live test 9 Oct 09:59 succeeded: URL available to Google and indexable. Target and ai-bot indexing requests accepted, each confirmation explicitly says priority crawl queue. Neither request proves indexing or a ranking. Before requests both service URLs were discovered/not indexed without a prior crawl.
+WWW HTTPS robots: last recorded 2 Oct 08:56 failure 5xx. Root HTTPS robots received 8 Oct 12:49. Current WWW 308 to root200. WWW robots recrawl request accepted.
+Google generative AI search use is allowed (default radio checked), no change needed.
+Crawl report updated6Oct:123 requests, average2005ms; 5 server-error requests. Examples: root2Oct12:41, articles2Oct09:46, cases.html2Oct09:21, biorise/bscafe image thumbs3Oct22:48. This is historical evidence, not proof of current permanent outage; root cause remains unconfirmed.
+
+Cloudflare API purge using local token returned401. User opened authenticated IAB Cloudflare account. Custom Purge submitted for 19 exact URLs (18 published files and legacy DCO), dialog completed and addresses appeared under Recently Purged. Post-purge public target/ai-bot/root/articles/cases and two formerly failing image URLs all return200. Current tool inventory exposes Cloudflare docs MCP only, no account-management MCP. No credentials changed or security controls disabled.
+All browser interaction used Codex IAB, no Chrome/Arc access.
+
+Cloudflare Origin Analytics, hostname exactly loops.uz, last7days: connection success99.7%, origin response error0%, no5xx response-series data, P95661ms. Connection failures are distinct from received origin5xx and remain an unresolved reliability issue. Zone-wide data includes unrelated subdomains and must not be used as Loops-only metrics.
+
+Last24h Cloudflare loops.uz: connection success99.6%, origin5xx response error0%, P95720ms. Small connection failure share persists; do not report reliability issue resolved.
+
+Cloudflare AI policy verified in UI: Search Allow, Agent Allow, Training Disallow, Bot Preference Sync off. Google AI search allowed. No settings changed.
+Late IAB attempt to reopen target failed with ERR_QUIC_PROTOCOL_ERROR after earlier successful browser/readback tests. Do not equate this browser error with origin TCP metrics; relation unconfirmed.

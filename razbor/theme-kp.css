@@ -1,0 +1,86 @@
+/* Версия B: фирменный стиль КП Loops 2026 — графит, лайм, заголовки капсом с лаймовой плашкой, фото с обводкой. */
+:root{--ink:#2e2e2e;--ink-2:#383838;--yellow:#def123;--leak:#ff5a36;--paper:#f6f6f1;--paper-2:#ecece4}
+body{background:var(--paper)}
+.top{background:rgba(46,46,46,.92);color:var(--paper)}
+.top.scrolled{border-bottom-color:#444}
+.brand img{height:34px}
+.top-cta{border-color:var(--yellow);color:var(--yellow)}
+.top-cta:hover{background:var(--yellow);color:var(--ink)}
+.btn-main{background:var(--yellow);color:var(--ink);box-shadow:none}
+.btn-main:hover{box-shadow:0 10px 26px -10px rgba(222,241,35,.7)}
+.form .btn-main{background:var(--ink);color:var(--yellow)}
+h1,h2{text-transform:uppercase;letter-spacing:-.02em;font-weight:700}
+h2{font-size:clamp(28px,7.6vw,46px);line-height:1.02}
+/* первый экран на графите */
+.hero{background:var(--ink);color:var(--paper);padding-top:22px;position:relative;overflow:hidden}
+.hero-title{font-size:clamp(38px,11vw,78px);line-height:1;text-transform:uppercase}
+.hero .mark{background:var(--yellow);color:var(--ink);padding:.02em .14em;line-height:1.18;animation:none;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.hero-sub{color:#cfcfc6}
+.hero-meta{color:#a9a9a0}.hero-meta b{color:var(--yellow)}
+.hero-photo{display:block;margin:30px 0 0;padding:0 var(--gut-r) 0 var(--gut)}
+.hero-photo img{width:min(78%,420px);margin-left:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.35))}
+.flow{margin-top:0;border-radius:0;border-top:1px solid #444}
+.flow-stages li:last-child b{color:var(--yellow)}
+.note{color:var(--leak)}
+/* светлые блоки как слайды КП */
+.path{background:#262626}
+.steps::before{background:linear-gradient(var(--paper) 0 18%,var(--leak) 18% 100%)}
+.slip{border-radius:24px}
+.tick{background:var(--yellow)}
+.loop{background:var(--paper)}
+.lp-n{background:var(--ink);color:var(--yellow)}
+.lp:last-child .lp-n{background:var(--yellow);color:var(--ink)}
+.mock{border:1px solid #e3e3da;box-shadow:none}
+.b.out{background:var(--ink)}
+.score{background:#fbfde6;border-color:#e6f27a}.score em{background:var(--ink);color:var(--yellow)}
+.bant span{background:var(--ink);color:var(--yellow)}
+.bar-row.hot i{background:var(--yellow)}
+.loop-back{color:var(--ink)}
+.case{background:var(--ink)}
+.case-tag{background:var(--yellow)}
+.case-stats div{border-color:rgba(222,241,35,.45)}
+.case-stats dd{color:var(--yellow)}
+blockquote::before{color:var(--yellow);-webkit-text-stroke:1.5px var(--ink)}
+.stats div{border-top-color:var(--yellow);border-top-width:4px}
+.price{border:1px solid #e3e3da}
+.price-main{background:var(--yellow);border-color:var(--yellow)}
+.form-sec{background:var(--ink)}
+.form{border-radius:24px}
+.chip input:checked+span{background:var(--ink);color:var(--yellow);border-color:var(--ink)}
+.form input:not([type=radio]):focus{box-shadow:0 0 0 4px rgba(222,241,35,.6)}
+.done-ico{background:var(--yellow)}
+.dock{background:var(--yellow);box-shadow:0 12px 30px -8px rgba(0,0,0,.5)}
+.faq summary::after{background-color:var(--yellow)}
+@media (min-width:1040px){
+  .hero{display:grid;grid-template-columns:1.1fr .9fr;grid-template-areas:"text photo" "flow flow";max-width:none;padding:56px max(var(--gut),calc((100vw - 1140px)/2)) 0}
+  .hero .wrap{grid-area:text;padding:0 24px 0 0}
+  .hero-photo{grid-area:photo;margin:0;padding:0;align-self:end}
+  .hero-photo img{width:100%;max-width:440px}
+  .flow{grid-area:flow;margin:40px 0 0;border-radius:28px 28px 0 0}
+}
+@media (max-width:1039px){
+  .hero{display:flex;flex-direction:column}
+  .hero .wrap{order:1}
+  .hero-photo{order:2;margin-top:18px}
+  .hero-photo img{width:72%;max-width:360px;margin:0 auto 0 auto}
+  .flow{order:3}
+}
+
+.cases{background:var(--paper)}
+.plan-main{background:var(--ink)}
+.cs-btn:hover{background:var(--yellow)}
+
+/* Кнопка «Спросите ChatGPT»: внешнее подтверждение, на графите */
+.ask-gpt{display:flex;align-items:center;gap:14px;margin-top:22px;max-width:460px;padding:12px 16px 12px 12px;border:1px solid #4a4a46;border-radius:20px;background:rgba(255,255,255,.04);color:var(--paper);text-decoration:none;transition:border-color .2s,background .2s,transform .2s}
+.ask-gpt:hover{border-color:var(--yellow);background:rgba(222,241,35,.07);transform:translateY(-2px)}
+.ask-gpt:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.ask-gpt-ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:var(--yellow)}
+.ask-gpt-ico svg{width:22px;height:22px;fill:var(--ink)}
+.ask-gpt-txt{flex:1;font-size:16px;line-height:1.3;font-weight:600}
+.ask-gpt-txt small{display:block;margin-bottom:2px;font-size:13px;font-weight:500;color:#a9a9a0}
+.ask-gpt-arr{flex:none;font-size:20px;color:var(--yellow);transition:transform .2s}
+.ask-gpt:hover .ask-gpt-arr{transform:translate(2px,-2px)}
+.form-sec .ask-gpt{margin-top:26px}
+
+/* Keyboard focus visible on light and dark blocks (04.11.2026): dark line + yellow halo */
+:focus-visible{outline:2px solid #20201e!important;outline-offset:2px;box-shadow:0 0 0 5px var(--yellow,#def123)!important}

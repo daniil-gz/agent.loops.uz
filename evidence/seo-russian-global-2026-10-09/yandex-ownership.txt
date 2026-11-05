@@ -1,0 +1,100 @@
+- link "Logo":
+  - /url: /sites/
+- list:
+  - combobox "https://loops.uz"
+  - link:
+    - /url: /sites/add/
+  - textbox "Поиск"
+- list:
+  - link "Сводка":
+    - /url: /site/https:loops.uz:443/dashboard/?_from=menu
+    - generic: Сводка
+  - button "Оптимизация сайта":
+    - generic: Оптимизация сайта
+  - button "Эффективность":
+    - generic: Эффективность
+  - button "Индексирование":
+    - generic: Индексирование
+  - button "Инструменты":
+    - generic: Инструменты
+  - button "Представление в поиске":
+    - generic: Представление в поиске
+  - button "Услуги и предложения в поиске":
+    - generic: Услуги и предложения в поиске
+  - button "Ссылки":
+    - generic: Ссылки
+  - link "Обучение":
+    - /url: /site/https:loops.uz:443/education/?_from=menu
+    - generic: Обучение
+  - button "Полезные сервисы":
+    - generic: Полезные сервисы
+  - button "Нейровебмастер":
+    - generic: Нейровебмастер
+- button
+- button "Ваш профиль":
+  - generic: 99+
+- button
+- link "70":
+  - /url: /notifications/
+  - generic: "70"
+- button:
+- button:
+- heading "Управление доступом" [level=2]
+- link "Справка":
+  - /url: https://yandex.ru/support/webmaster/service/rights.html?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_settings_access
+  - generic: Справка
+- generic: Для работы с сайтом
+- link "https://loops.uz":
+  - /url: https://loops.uz
+- generic: Список пользователей
+- button "Добавить":
+  - generic: Добавить
+- table:
+  - rowgroup:
+    - row "Логин Метод проверки и код Роль Дата проверки":
+      - columnheader "Логин":
+        - text: Логин
+      - columnheader "Метод проверки и код":
+        - text: Метод проверки и код
+      - columnheader "Роль":
+        - text: Роль
+      - columnheader "Дата проверки":
+        - text: Дата проверки
+  - rowgroup:
+    - row "koreana99's avatar koreana99 Файл в корневом каталоге 1e2b40538e391133 Владелец 09.10.2026":
+      - cell "koreana99's avatar koreana99":
+        - img "koreana99's avatar"
+        - generic: koreana99
+      - cell "Файл в корневом каталоге 1e2b40538e391133":
+        - generic: Файл в корневом каталоге
+        - generic: 1e2b40538e391133
+      - cell "Владелец":
+        - button "Владелец":
+          - generic: Владелец
+      - cell "09.10.2026"
+  - rowgroup:
+    - row "Чтобы получить роль «Владелец» пользователь должен подтвердить права на сайт. Как это сделать?":
+      - columnheader "Чтобы получить роль «Владелец» пользователь должен подтвердить права на сайт. Как это сделать?":
+        - text: Чтобы получить роль «Владелец» пользователь должен подтвердить права на сайт.
+        - link "Как это сделать?":
+          - /url: https://yandex.ru/support/webmaster/ru/service/rights#how-to
+- link "Блог":
+  - /url: https://webmaster.yandex.ru/blog/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_settings_access
+- link "Пользовательское соглашение":
+  - /url: https://yandex.ru/legal/webmaster_termsofuse/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_settings_access
+- link "Политика конфиденциальности":
+  - /url: https://yandex.ru/legal/confidential/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_settings_access
+- link "Правила рекомендаций":
+  - /url: https://yandex.ru/legal/recommendations/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_settings_access#index__webmaster
+- link "ru":
+  - /url: https://yandex.ru/portal/set/lang/?intl=ru&retpath=https%3A%2F%2Fwebmaster.yandex.ru%2Fsite%2Fhttps%3Aloops.uz%3A443%2Fsettings%2Faccess%2F&sk=u5b6642f389735bf21cde5b13692cf81a
+  - generic: ru
+- link "en":
+  - /url: https://yandex.ru/portal/set/lang/?intl=en&retpath=https%3A%2F%2Fwebmaster.yandex.ru%2Fsite%2Fhttps%3Aloops.uz%3A443%2Fsettings%2Faccess%2F&sk=u5b6642f389735bf21cde5b13692cf81a
+  - generic: en
+- generic: © 2004–2026
+- link "ООО «Яндекс»":
+  - /url: https://ya.ru
+- iframe:
+- button "Отзыв о Вебмастере":
+  - text: Отзыв о Вебмастере

@@ -1,0 +1,262 @@
+Origin Analytics
+
+Monitor how the servers that host your content connect and respond to Cloudflare. Use to diagnose errors and identify slow endpoints.
+
+Add filter
+1
+Filters:
+Hostname = loops.uz
+Clear all
+Last 24 hours GMT+5
+
+Origin requested
+
+99.5%
+0.2pp
+
+Connection success rate
+
+99.6%
+0.2pp
+
+Response time (P95)
+
+720ms
+42ms
+
+Error rate
+
+0%
+0pp
+Status code breakdown
+2XX
+3XX
+4XX
+5XX
+
+No data for the selected time range.
+
+Code class distribution
+None
+732
+4xx
+1.7k
+3xx
+405
+2xx
+651
+Origin response time
+P50
+143ms
+P75
+205ms
+P95
+657ms
+P99
+670ms
+TCP/TLS connection breakdown
+TCP Handshake
+338ms
+TLS Handshake
+193ms
+Response Wait
+192ms
+Top endpoints
+Search top paths
+	
+Path
+-
+	
+Hostname
+-
+	
+Colo
+-
+	
+Response time (P95)
+-
+	4xx rate
+	5xx rate
+	TCP failure rate
+	
+Requests
+
+
+	
+/
+	loops.uz	
+
+AMS
+
+	
+0ms
+	
+0%
+	
+0%
+	
+0%
+	
+24
+
+
+	
+/.dockerenv
+	loops.uz	
+
+AMS
+
+	
+0ms
+	
+100%
+	
+0%
+	
+0%
+	
+24
+
+
+	
+/
+	loops.uz	
+
+WAW
+
+	
+0ms
+	
+0%
+	
+0%
+	
+0%
+	
+22
+
+
+	
+/google-services.json
+	loops.uz	
+
+AMS
+
+	
+0ms
+	
+100%
+	
+0%
+	
+0%
+	
+21
+
+
+	
+/api/config
+	loops.uz	
+
+AMS
+
+	
+0ms
+	
+100%
+	
+0%
+	
+0%
+	
+21
+
+
+	
+/@fs/var/run/secrets/kubernetes.io/serviceaccount/token
+	loops.uz	
+
+AMS
+
+	
+0ms
+	
+100%
+	
+0%
+	
+0%
+	
+21
+
+
+	
+/ai-bot/
+	loops.uz	
+
+AMS
+
+	
+0ms
+	
+0%
+	
+0%
+	
+0%
+	
+21
+
+
+	
+/.env.prod
+	loops.uz	
+
+AMS
+
+	
+0ms
+	
+100%
+	
+0%
+	
+0%
+	
+21
+
+
+	
+/public/admin.json
+	loops.uz	
+
+AMS
+
+	
+0ms
+	
+100%
+	
+0%
+	
+0%
+	
+21
+
+
+	
+/credentials
+	loops.uz	
+
+CDG
+
+	
+0ms
+	
+100%
+	
+0%
+	
+0%
+	
+18

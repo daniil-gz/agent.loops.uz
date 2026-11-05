@@ -1,0 +1,543 @@
+- link "Перейти к основному контенту"
+- link "Справка по использованию специальных возможностей":
+  - /url: https://support.google.com/websearch/answer/181196?hl=ru-UZ
+- search:
+  - link "Главная страница Google":
+    - /url: https://www.google.com/webhp?hl=ru&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQPHoECAYQBA
+  - combobox "Найти": таргетолог Ташкент таргетолог Ташкент
+  - button "Очистить":
+  - button "Экранная клавиатура":
+  - button "Голосовой поиск":
+  - button "Поиск по картинке":
+- button "Отправить":
+- button "Приложения Google":
+- 'button "Аккаунт Google: Даниил Газизов (scribble.mgc@gmail.com)"':
+- navigation:
+  - list:
+    - link "Режим ИИ":
+      - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&udm=50&fbs=ABfTbFWgnFHONIVUY2_FI1XmLOwBVsJpL9TnhwBuWCI0w_eaLWQ-xaDJACg_Dgx9n1K_-BwMMrkM6Q0msoEOobuwkLjHoU4gi_aCLlkdX4IFkETRzRXZ1L8qYNd5yyWokvNCUP8MQFws9ovw6lGhweSdQ2U3WPTkDVRZmS6eTdCfqaIgHhUbWK08v8KxfyGbeDbsaKch1Ish7QRZA8uP4tzFXaVug6TokiSBI9wHjSQMzbLxXcyHxIw&vsint=&aep=1&ntc=1&cs=0&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ2J8OegQIDBAD
+      - generic: Режим ИИ
+    - link "Все" [disabled]:
+      - generic: Все
+    - link "Картинки":
+      - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&udm=2&fbs=ABfTbFWgnFHONIVUY2_FI1XmLOwBVsJpL9TnhwBuWCI0w_eaLWQ-xaDJACg_Dgx9n1K_-BwMMrkM6Q0msoEOobuwkLjHoU4gi_aCLlkdX4IFkETRzRXZ1L8qYNd5yyWokvNCUP8MQFws9ovw6lGhweSdQ2U3WPTkDVRZmS6eTdCfqaIgHhUbWK08v8KxfyGbeDbsaKch1Ish7QRZA8uP4tzFXaVug6TokiSBI9wHjSQMzbLxXcyHxIw&q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQtKgLegQIGxAB
+      - generic: Картинки
+    - link "Новости":
+      - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&tbm=nws&source=lnms&fbs=ABfTbFWgnFHONIVUY2_FI1XmLOwBVsJpL9TnhwBuWCI0w_eaLWQ-xaDJACg_Dgx9n1K_-BwMMrkM6Q0msoEOobuwkLjHoU4gi_aCLlkdX4IFkETRzRXZ1L8qYNd5yyWokvNCUP8MQFws9ovw6lGhweSdQ2U3WPTkDVRZmS6eTdCfqaIgHhUbWK08v8KxfyGbeDbsaKch1Ish7QRZA8uP4tzFXaVug6TokiSBI9wHjSQMzbLxXcyHxIw&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ0pQJegQIGhAB
+      - generic: Новости
+    - link "Видео":
+      - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&udm=vids&fbs=ABfTbFWgnFHONIVUY2_FI1XmLOwBVsJpL9TnhwBuWCI0w_eaLWQ-xaDJACg_Dgx9n1K_-BwMMrkM6Q0msoEOobuwkLjHoU4gi_aCLlkdX4IFkETRzRXZ1L8qYNd5yyWokvNCUP8MQFws9ovw6lGhweSdQ2U3WPTkDVRZmS6eTdCfqaIgHhUbWK08v8KxfyGbeDbsaKch1Ish7QRZA8uP4tzFXaVug6TokiSBI9wHjSQMzbLxXcyHxIw&q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQtKgLegQIGRAB
+      - generic: Видео
+    - link "Короткие видео":
+      - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&udm=39&fbs=ABfTbFWgnFHONIVUY2_FI1XmLOwBVsJpL9TnhwBuWCI0w_eaLWQ-xaDJACg_Dgx9n1K_-BwMMrkM6Q0msoEOobuwkLjHoU4gi_aCLlkdX4IFkETRzRXZ1L8qYNd5yyWokvNCUP8MQFws9ovw6lGhweSdQ2U3WPTkDVRZmS6eTdCfqaIgHhUbWK08v8KxfyGbeDbsaKch1Ish7QRZA8uP4tzFXaVug6TokiSBI9wHjSQMzbLxXcyHxIw&q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQs6gLegQIFxAB
+      - generic: Короткие видео
+    - link "Книги":
+      - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&udm=36&source=lnms&fbs=ABfTbFWgnFHONIVUY2_FI1XmLOwBVsJpL9TnhwBuWCI0w_eaLWQ-xaDJACg_Dgx9n1K_-BwMMrkM6Q0msoEOobuwkLjHoU4gi_aCLlkdX4IFkETRzRXZ1L8qYNd5yyWokvNCUP8MQFws9ovw6lGhweSdQ2U3WPTkDVRZmS6eTdCfqaIgHhUbWK08v8KxfyGbeDbsaKch1Ish7QRZA8uP4tzFXaVug6TokiSBI9wHjSQMzbLxXcyHxIw&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ0pQJegQIExAB
+      - generic: Книги
+    - button "Ещё фильтры":
+      - generic "Ещё фильтры":
+        - generic: Ещё
+  - button "Инструменты":
+    - generic: Инструменты
+- heading "Результаты поиска" [level=1]
+- main:
+  - region "Реклама":
+    - heading "Реклама" [level=2]
+    - link "Поток клиентов под ключ - Маркетинговое агентство brandon.uz http://www.brandon.uz › marketing":
+      - /url: https://brandon.uz/
+      - heading "Поток клиентов под ключ - Маркетинговое агентство" [level=3]
+      - generic: brandon.uz
+      - generic: http://www.brandon.uz › marketing
+    - button "Почему мне показано это объявление?":
+    - generic: Прозрачная аналитика и отчётность. Платите за результат, а не за просмотры.
+    - link "Маркетинг под ключ Бесплатная диагностика маркетинга - покажем точки роста и план на 30 дней.":
+      - /url: /aclk?sa=L&pf=1&ai=DChsSEwjb45C-mayXAxU0mYMHHabiEOwYACICCAEQBhoCZWY&co=1&ase=2&gclid=CjwKCAjw_pzWBhAkEiwAwDCi1WYsjXCslOmv7PjxrwkuSgEh3qLLhoPGPhfroe2HeArNEyIo00X5whoC_7UQAvD_BwE&cid=CAASugHkaH8RHsjzpU_T4W4nMFO1Xl9N7CtaP7TFj33anJIq3btEjiFO9r0TI-HW5TDOy3LOf7F7kwDC_JyEopjfrpz8yYEoGBT7OgB0jBrHqPN3seT5axVrewFR25SIBNm28f0zEMhJcJErsQsLGUQCWH1XgDZlcQUTHquIYGV80RdHgonTzWxFg5Rb58tTJm4FTKWgNeadlHuUyhTyInrxyGZYuk18F4urds1c1n0nRfknYtZR23_YonOUtcY&cce=2&category=acrcp_v1_32&sig=AOD64_0iXBvOdS5gY-GdWQiiNmaNsK5pRQ&adurl=http://brandon.uz%3Fgad_source%3D1%26gad_campaignid%3D23984086984%26gbraid%3D0AAAABCwfaBgbDxMe4P4yoqteHsV7Zb4cn%26gclid%3DCjwKCAjw_pzWBhAkEiwAwDCi1WYsjXCslOmv7PjxrwkuSgEh3qLLhoPGPhfroe2HeArNEyIo00X5whoC_7UQAvD_BwE&q=
+      - generic: Маркетинг под ключ
+      - generic: Бесплатная диагностика маркетинга - покажем точки роста и план на 30 дней.
+    - link "5000+ лидов клиенту - Маркетинговое агентство xmediagroup.uz https://www.xmediagroup.uz › smm › tashkent":
+      - /url: https://xmediagroup.uz/
+      - heading "5000+ лидов клиенту - Маркетинговое агентство" [level=3]
+      - generic: xmediagroup.uz
+      - generic: https://www.xmediagroup.uz › smm › tashkent
+    - button "Почему мне показано это объявление?":
+    - generic: "Разработаем маркетинговую стратегию и SMM-кампанию с нуля под ваш бизнес. SMM-продвижение в Ташкенте: контент, таргет..."
+    - button "Позвонить":
+      - generic: Позвонить
+    - link "Приведём клиентов из соцсетей | Профессиональная... goldenminds.uz https://www.goldenminds.uz › маркетинговое › агентство":
+      - /url: https://goldenminds.uz/
+      - heading "Приведём клиентов из соцсетей | Профессиональная..." [level=3]
+      - generic: goldenminds.uz
+      - generic: https://www.goldenminds.uz › маркетинговое › агентство
+    - button "Почему мне показано это объявление?":
+    - generic: Профессиональный SMM в Ташкенте. Создаём контент, который продаёт. Посмотрите наши кейсы!
+    - text: ‎
+    - link "Таргетированная реклама":
+      - /url: https://goldenminds.uz/service/internet-marketing#2
+    - text: · ‎
+    - link "Студия видео-продакшн":
+      - /url: https://goldenminds.uz/service/internet-marketing#1
+    - text: · ‎
+    - link "SMM агентство Golden Minds":
+      - /url: /aclk?sa=L&ai=DChsSEwjb45C-mayXAxU0mYMHHabiEOwYACICCAEQCRoCZWY&co=1&ase=2&gclid=CjwKCAjw_pzWBhAkEiwAwDCi1WwdzQqHNaPNbNzRhj7y5zVkt90_WymoEfP9QdS47t2KyUJGuIgPfxoC_BUQAvD_BwE&cid=CAASugHkaH8RHsjzpU_T4W4nMFO1Xl9N7CtaP7TFj33anJIq3btEjiFO9r0TI-HW5TDOy3LOf7F7kwDC_JyEopjfrpz8yYEoGBT7OgB0jBrHqPN3seT5axVrewFR25SIBNm28f0zEMhJcJErsQsLGUQCWH1XgDZlcQUTHquIYGV80RdHgonTzWxFg5Rb58tTJm4FTKWgNeadlHuUyhTyInrxyGZYuk18F4urds1c1n0nRfknYtZR23_YonOUtcY&cce=2&category=acrcp_v1_32&sig=AOD64_2jl8gugalsYfu8_5Hgn-vMrhgKVg&adurl=&q=
+    - text: · ‎
+    - link "О НАС":
+      - /url: https://goldenminds.uz/about
+    - link "Таргет от $400 в месяц epicmedia.uz https://www.epicmedia.uz › реклама › таргет":
+      - /url: https://epicmedia.uz/pricing/
+      - heading "Таргет от $400 в месяц" [level=3]
+      - generic: epicmedia.uz
+      - generic: https://www.epicmedia.uz › реклама › таргет
+    - button "Почему мне показано это объявление?":
+    - generic: Ответ за 1 рабочий день — До 15 креативов в месяц, A/B-тесты и отчёты раз в две недели на тарифе «Рост». Тариф...
+    - button "Скрыть рекламу":
+      - separator
+      - generic: Скрыть рекламу
+  - heading "Результаты поиска" [level=2]
+  - link "таргетолог в Ташкент OLX Uzbekistan https://m.olx.uz › Ташкентская область":
+    - /url: https://m.olx.uz/tashkent/q-%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3/
+    - heading "таргетолог в Ташкент" [level=3]
+    - generic: OLX Uzbekistan
+    - generic: https://m.olx.uz › Ташкентская область
+  - button "Об этом результате":
+  - emphasis: OLX - сервис объявлений Ташкент - таргетолог
+  - text: . Показать полностью. Мы нашли 189 объявлений. ГалереяСписок Плитка. Смм менеджер керак (факат кизлар)СРОЧНО!
+  - 'link "Азиз Муталипов Таргет/Digital Marketing (@mutalipov_pr) Instagram · mutalipov_pr Подписчиков: более 9,4 тыс."':
+    - /url: https://www.instagram.com/mutalipov_pr/
+    - heading "Азиз Муталипов Таргет/Digital Marketing (@mutalipov_pr)" [level=3]
+    - generic: Instagram · mutalipov_pr
+    - generic: "Подписчиков: более 9,4 тыс."
+  - button "Об этом результате":
+  - generic: ▪️Практик без инфоцыганства ▪️Имею сертификаты Meta 10 летний опыт. Даю клиентам результат, а не статистику. Обучил и дал проект 300+ ученикам ‍ .
+  - link "Работа таргетологом от прямых работодателей в Ташкенте hh.uz https://tashkent.hh.uz › ... › таргетолог":
+    - /url: https://tashkent.hh.uz/vacancies/targetolog/ot_pryamih_rabotodateley
+    - heading "Работа таргетологом от прямых работодателей в Ташкенте" [level=3]
+    - generic: hh.uz
+    - generic: https://tashkent.hh.uz › ... › таргетолог
+  - button "Об этом результате":
+  - emphasis: Работа таргетологом от прямых работодателей в Ташкенте
+  - text: . , 49 вакансий. SMM-менеджер. 800 – 1 500 $ за месяц, на руки. Опыт 1-3 года.
+  - link "таргетолог - Бизнес и услуги в Ташкент OLX Uzbekistan https://m.olx.uz › ... › Ташкентская область":
+    - /url: https://m.olx.uz/uslugi/tashkent/q-%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3/
+    - heading "таргетолог - Бизнес и услуги в Ташкент" [level=3]
+    - generic: OLX Uzbekistan
+    - generic: https://m.olx.uz › ... › Ташкентская область
+  - button "Об этом результате":
+  - emphasis: Оказание услуг Ташкент - таргетолог
+  - text: . Показать полностью. Мы нашли 84 объявления. ГалереяСписок Плитка. Таргетолог с бухгалтерской точностью.
+  - heading "Обзор от ИИ" [level=2]:
+    - strong: Обзор от ИИ
+  - text: Таргетолог в Ташкенте — это
+  - mark: специалист, который настраивает платную рекламу в социальных сетях и мессенджерах (Meta Ads/Instagram/Facebook, Telegram Ads, YouTube) для привлечения клиентов в бизнес
+  - text: .
+  - link "gorodrabot.uz":
+    - /url: https://tashkent.gorodrabot.uz/%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3
+  - button "gorodrabot.uz и ещё 1. Похожие результаты.":
+    - generic: gorodrabot.uz
+    - generic: "+1"
+  - heading "Основные задачи таргетолога" [level=3]
+  - list:
+    - strong: "Анализ:"
+    - text: изучение целевой аудитории, конкурентов и ниши бизнеса.
+    - strong: "Настройка:"
+    - text: запуск рекламных кампаний через Meta Business Suite и другие рекламные кабинеты.
+    - strong: "Креативы:"
+    - text: создание или техническое задание на тексты, баннеры и видеоролики (Reels).
+    - strong: "Оптимизация:"
+    - text: тестирование гипотез, снижение стоимости клика или заявки (CPO/CPA).
+    - strong: "Отчетность:"
+    - text: анализ статистики через веб-аналитику и регулярные отчеты для клиента.
+    - link:
+      - /url: https://tashkent.gorodrabot.uz/%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3
+    - button:
+      - generic: gorodrabot.uz
+      - generic: "+1"
+  - heading [level=3]: Где найти таргетолога в Ташкенте
+  - list:
+    - strong: "Платформы по поиску работы и услуг:"
+    - text: свежие вакансии и специалистов можно найти на
+    - link:
+      - /url: https://hh.uz/vacancies/targetolog
+      - text: hh.uz
+    - text: или через объявления на
+    - link:
+      - /url: https://www.olx.uz/uslugi/tashkent/q-%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3/
+      - text: OLX Узбекистан
+    - text: .
+    - strong: "Маркетинговые агентства:"
+    - text: в Ташкенте работают агентства, предоставляющие комплексный SMM и таргет (например,
+    - emphasis: OTRYAD
+    - text: ","
+    - emphasis: IAC Agency
+    - text: или
+    - emphasis: IPIMM Group
+    - text: ).
+    - strong: "Частные специалисты:"
+    - text: многие эксперты ведут страницы в соцсетях (например, специалист
+    - link:
+      - /url: https://www.instagram.com/mutalipov_pr/
+      - text: Азиз Муталипов
+    - text: или
+    - link:
+      - /url: https://www.instagram.com/target_dianak/
+      - text: Диана
+    - text: ).
+    - link:
+      - /url: https://www.instagram.com/mutalipov_pr/
+    - button:
+      - generic: Instagram
+      - generic: ·mutalipov_pr
+      - generic: "+4"
+  - heading [level=3]: Уровни зарплат и стоимость услуг в Ташкенте
+  - list:
+    - strong: "Начинающий специалист (Junior):"
+    - text: от 3 000 000 до 5 000 000 сум в месяц (или за проект).
+    - strong: "Средний уровень (Middle):"
+    - text: от 8 000 000 до 18 000 000 сум в месяц.
+    - strong: "Опытный специалист / Team Lead (Senior):"
+    - text: от 20 000 000 до 28 000 000+ сум в месяц плюс KPI-бонусы.
+    - link:
+      - /url: https://tashkent.hh.uz/vacancies/targetolog/ot_pryamih_rabotodateley
+    - button:
+      - generic: hh.uz
+      - generic: "+2"
+  - heading [level=3]: Где обучиться на таргетолога
+  - list:
+    - strong: "Онлайн-школы с офисом в Ташкенте:"
+    - link:
+      - /url: https://skillbox.uz/ru/?utm_source=pr&utm_medium=partners&utm_campaign=all_all_pr_partners_all_all_uz_all_skillbox&utm_term=google
+      - text: Skillbox Узбекистан
+    - text: и платформа
+    - link:
+      - /url: https://www.lerna.uz/courses/profession-targetologist/
+      - text: Lerna.uz
+    - text: .
+    - strong: "Локальные школы:"
+    - emphasis: TEHNIKUM School
+    - text: и школа интернет-маркетинга
+    - emphasis: Top expert
+    - text: .
+    - link:
+      - /url: https://www.lerna.uz/courses/profession-targetologist/
+    - button:
+      - generic: LERNA Узбекистан
+      - generic: "+3"
+  - text: Ищете таргетолога
+  - strong: для своего бизнеса
+  - text: или хотите
+  - strong: научиться этой профессии сам
+  - text: "? Напишите вашу задачу, и я подскажу, с чего лучше начать."
+  - list:
+    - link "таргетолог - Бизнес и услуги в Ташкент - OLX.uz. Откроется в новой вкладке.":
+      - /url: https://www.olx.uz/uslugi/tashkent/q-%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3/
+    - generic: OLX Uzbekistan
+    - button "Об этом результате":
+    - generic: таргетолог - Бизнес и услуги в Ташкент - OLX.uz
+    - generic: Оказание услуг Ташкент - таргетолог. Показать полностью. Мы нашли 84 объявления. ГалереяСписок Плитка. Таргетолог с бухгалтерской ...
+    - link "Азиз Муталипов Таргет/Digital Marketing (@mutalipov_pr) · Tashkent. Откроется в новой вкладке.":
+      - /url: https://www.instagram.com/mutalipov_pr/
+    - text: Instagram
+    - generic: ·mutalipov_pr
+    - button "Об этом результате":
+    - generic: Азиз Муталипов Таргет/Digital Marketing (@mutalipov_pr) · Tashkent
+    - generic: "* Entity: Азиз Муталипов (Tashkent, 10 yrs exp, Meta certified) * Metrics: 9.4k+ followers, 300+ students trained, 100+ club membe..."
+    - link "Работа таргетологом от прямых работодателей в Ташкенте. Поиск свежих вакансий таргетолога на tashkent.hh.uz. Откроется в новой вкладке.":
+      - /url: https://tashkent.hh.uz/vacancies/targetolog/ot_pryamih_rabotodateley
+    - generic: hh.uz
+    - button "Об этом результате":
+    - generic: Работа таргетологом от прямых работодателей в Ташкенте. Поиск свежих вакансий таргетолога на tashkent.hh.uz
+    - generic: "Location: Tashkent Source: tashkent.hh.uz Total Vacancies: 41 Roles: Targetologist, Marketing/SMM Manager, Digital/Internet Market..."
+    - link "Таргетолог Ташкент/ Диана (@target_dianak) - Instagram. Откроется в новой вкладке.":
+      - /url: https://www.instagram.com/target_dianak/
+    - text: Instagram
+    - generic: ·target_dianak
+    - button "Об этом результате":
+    - generic: Таргетолог Ташкент/ Диана (@target_dianak) - Instagram
+    - generic: Создание сайтов и чат-ботов. Опыт работы более 30 ниш. Настраиваю рекламу, провожу консультации · Я очень долго собиралась с мысля...
+    - 'link "Работа таргетологом в Узбекистане: свежие вакансии на .... Откроется в новой вкладке."':
+      - /url: https://hh.uz/vacancies/targetolog
+    - generic: hh.uz
+    - button "Об этом результате":
+    - generic: "Работа таргетологом в Узбекистане: свежие вакансии на ..."
+    - generic: Маркетолог / контент-продюсер. до 20 000 000 so'm за месяц, на руки · ООО Medicalka ; Таргетолог в маркетинговое агентство OTRYAD.
+    - link "Работа таргетологом — вакансии в Ташкенте. Откроется в новой вкладке.":
+      - /url: https://tashkent.gorodrabot.uz/%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3
+    - generic: gorodrabot.uz
+    - button "Об этом результате":
+    - generic: Работа таргетологом — вакансии в Ташкенте
+    - generic: Работа таргетологом в Ташкенте — 43 свежие вакансии от прямых работодателей — Поиск работы с ГородРабот. uz. ... Работа таргетолог...
+    - link "Онлайн-курсы Таргетолог в Узбекистане. Откроется в новой вкладке.":
+      - /url: https://www.lerna.uz/courses/profession-targetologist/
+    - generic: LERNA Узбекистан
+    - button "Об этом результате":
+    - generic: Онлайн-курсы Таргетолог в Узбекистане
+    - generic: "База онлайн-курсов обучения профессии Таргетолог 2025: Ташкент и все города Узбекистана ... Ташкент, Мирзо-Улугбекский район, Прос..."
+    - link "Онлайн курсы Skillbox Узбекистан. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhRMVkyeHVYM2cyGAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: Онлайн курсы Skillbox Узбекистан
+    - generic: Образовательная платформа №1 по качеству обучения. Вы получите знания, которые помогут вам освоить профессию мечты и изменить жизн...
+    - link "Marketolog | TARGETOLOG. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhwNGFITnJlV3QyGAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: Marketolog | TARGETOLOG
+    - generic: "- Регистрация аккаунтов в социальных сетях - Оформление и заполнение аккаунтов в социальных сетях - Таргетинговая реклама на (Face..."
+    - link "Онлайн курсы Skillbox Узбекистан. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhRMVkyeHVYM2cyGAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: Онлайн курсы Skillbox Узбекистан
+    - generic: Образовательная платформа №1 по качеству обучения. Вы получите знания, которые помогут вам освоить профессию мечты и изменить жизн...
+    - link "TEHNIKUM School. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhFNE0zcGZkMk54GAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: TEHNIKUM School
+    - generic: Tehnikum - это уникальное место, где можно получить новые знания, навыки и даже профессию. Обучение, Курсы программирования, Backe...
+    - link "TEHNIKUM School. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhFNE0zcGZkMk54GAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: TEHNIKUM School
+    - generic: Tehnikum - это уникальное место, где можно получить новые знания, навыки и даже профессию. Обучение, Курсы программирования, Backe...
+    - link "TargetologRasuljonovna. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhwa2VEZHFhbmg1GAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: TargetologRasuljonovna
+    - generic: Axangaran, 110300, Tashkent
+    - link "СММ менеджер, Таргетолог. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhCNmVUbHhjMmgyGAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: СММ менеджер, Таргетолог
+    - generic: 76XQ+797, Тоshkent, Toshkent
+    - link "ООО NEOTECH GROUP. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdjeU16TjVaRFJtGAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: ООО NEOTECH GROUP
+    - generic: "ООО «NEOTECH GROUP» является официальным представителем в Узбекистане таких компаний, как: ООО «Инкотекс-СК», Российская Федераци..."
+    - link "Top expert. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdneU4yNHpaekp5GAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: Top expert
+    - generic: Школа практического интернет-маркетинга, основанная на многолетнем опыте преподавателей-экспертов и настоящих кейсах. У нас вы по...
+    - link "Lerna Узбекистан. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhNME1tNDBNbU55GAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: Lerna Узбекистан
+    - generic: LERNA - Ed-Tech платформа, объединяющая в себе курсы проверенных школ на одной платформе. Эксклюзивный представитель Skillbox, Gee...
+    - link "MediaBaza. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdaeFkzQnphSEJ4GAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: MediaBaza
+    - generic: MediaBaza - рекламное агентство, которая занимается размещением наружной рекламы на конструкциях различного типа,включая LED-экран...
+    - link "FreeStudy. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVdNMmRsOTNiREppGAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: FreeStudy
+    - generic: 86FQ+398, Тоshkent, Toshkent
+    - link "SMM TARGET. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhad2NITnpjM2hmGAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: SMM TARGET
+    - generic: Тошкент ш. Bunyodkor 7G, 110200, Tashkent
+    - link "web designer. Откроется в новой вкладке.":
+      - /url: https://www.google.com/searchviewer/10?svid=CAwSHRIbCgNwdnESFENnMHZaeTh4TVhCNmVYWnRlbkl4GAo
+    - generic: Google
+    - button "Об этом результате":
+    - generic: web designer
+    - generic: web-designer, smm manager, targeting
+  - button:
+  - status
+  - button:
+  - button:
+  - button:
+  - button:
+  - button:
+  - button "Развернуть краткий пересказ от ИИ":
+    - generic: Развернуть
+  - heading "Реклама" [level=2]
+  - link "Заявки, а не просмотры | Маркетинг под ключ brandon.uz http://www.brandon.uz › marketing":
+    - /url: https://brandon.uz/
+    - heading "Заявки, а не просмотры | Маркетинг под ключ" [level=3]
+    - generic: brandon.uz
+    - generic: http://www.brandon.uz › marketing
+  - button "Почему мне показано это объявление?":
+  - generic: "Прозрачная аналитика и отчётность. Платите за результат, а не за просмотры. Собираем маркетинг в систему: стратегия, контент, реклама и воронка."
+  - link "Таргет в Instagram Ташкент - Прозрачная смета pro-motion.uz https://www.pro-motion.uz › таргет › instagram":
+    - /url: https://pro-motion.uz/uslugi/smm-prodvizhenie
+    - heading "Таргет в Instagram Ташкент - Прозрачная смета" [level=3]
+    - generic: pro-motion.uz
+    - generic: https://www.pro-motion.uz › таргет › instagram
+  - button "Почему мне показано это объявление?":
+  - generic: Настроим аудитории, сделаем креативы и тексты, запустим и будем вести. Еженедельный отчёт по заявкам и цене каждой. Всё прозрачно. Ответ в Telegram. Работаем по всему УЗ.
+  - text: ‎
+  - link "О нас":
+    - /url: https://pro-motion.uz/o-nas
+  - text: · ‎
+  - link "Связаться":
+    - /url: https://pro-motion.uz/zayavka
+  - text: · ‎
+  - link "Наши услуги":
+    - /url: https://pro-motion.uz/uslugi
+  - text: · ‎
+  - link "Портфолио":
+    - /url: https://pro-motion.uz/keysy
+  - button "Скрыть рекламу":
+    - separator
+    - generic: Скрыть рекламу
+  - heading "Результаты поиска" [level=2]
+  - link "Результаты по запросу «Таргетолог» в Ташкенте Яндекс Исполнители https://uslugi.yandex.ru › Ташкент › Все услуги":
+    - /url: https://uslugi.yandex.ru/10335-tashkent/category?text=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3
+    - heading "Результаты по запросу «Таргетолог» в Ташкенте" [level=3]
+    - generic: Яндекс Исполнители
+    - generic: https://uslugi.yandex.ru › Ташкент › Все услуги
+  - button "Об этом результате":
+  - text: Здравствуйте! Меня зовут Азамат,я профессиональный смм специалист,
+  - emphasis: таргетолог
+  - text: "и копирайтер,мой опыт работы: 3 года. Сотрудничаю с международными компаниями!"
+  - heading "Вопросы по теме" [level=2]
+  - button "Кто такой таргетолог и что он делает?":
+    - generic: Кто такой таргетолог и что он делает?
+  - button "Какая самая высокооплачиваемая работа в Ташкенте?":
+    - generic: Какая самая высокооплачиваемая работа в Ташкенте?
+  - button "Какая зарплата у таргетолога?":
+    - generic: Какая зарплата у таргетолога?
+  - button "На чем зарабатывает таргетолог?":
+    - generic: На чем зарабатывает таргетолог?
+  - heading "Результаты поиска" [level=2]
+  - 'link "Таргетолог Ташкент/ Диана (@target_dianak) Instagram · target_dianak Подписчиков: более 620"':
+    - /url: https://www.instagram.com/target_dianak/
+    - heading "Таргетолог Ташкент/ Диана (@target_dianak)" [level=3]
+    - generic: Instagram · target_dianak
+    - generic: "Подписчиков: более 620"
+  - button "Об этом результате":
+  - emphasis: Создание сайтов и чат-ботов
+  - text: . Опыт работы более 30 ниш. Настраиваю рекламу, провожу консультации · Я очень долго собиралась с мыслями перед тем, как написать ...
+  - link "Работа Таргетологом в Ташкенте | 20+ вакансий Ishkop.uz https://ishkop.uz › Работа в Ташкенте › Таргетолог":
+    - /url: https://ishkop.uz/%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D0%B8/%D0%A2%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3/%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82
+    - heading "Работа Таргетологом в Ташкенте | 20+ вакансий" [level=3]
+    - generic: Ishkop.uz
+    - generic: https://ishkop.uz › Работа в Ташкенте › Таргетолог
+  - button "Об этом результате":
+  - text: "О роли:"
+  - emphasis: Ищем таргетолога с опытом самостоятельного ведения рекламных кампаний в Meta Ads и Telegram Ads
+  - text: . Важно, чтобы вы сами запускали и оптимизировали рекламу ...
+  - 'link "Работа таргетологом в Узбекистане: свежие вакансии ... hh.uz https://hh.uz › вакансии в Узбекистане"':
+    - /url: https://hh.uz/vacancies/targetolog
+    - 'heading "Работа таргетологом в Узбекистане: свежие вакансии ..." [level=3]'
+    - generic: hh.uz
+    - generic: https://hh.uz › вакансии в Узбекистане
+  - button "Об этом результате":
+  - text: Маркетолог / контент-продюсер. до 20 000 000 so'm за месяц, на руки · ООО Medicalka ;
+  - emphasis: Таргетолог
+  - text: в маркетинговое агентство OTRYAD. 8 000 000 – 18 000 000 so'm за ...
+  - heading "Картинки" [level=2]
+  - 'link "Таргетолог в Ташкенте: реклама в Instagram | Samandar Samandar"':
+    - /url: https://samandarmarketing.uz/ru/uslugi/targetolog/
+  - 'button "Таргетолог в Ташкенте: реклама в Instagram | Samandar"':
+    - 'img "Таргетолог в Ташкенте: реклама в Instagram | Samandar"'
+  - generic: "Таргетолог в Ташкенте: реклама в Instagram | Samandar"
+  - generic: Samandar
+  - button "Об этом результате":
+  - link "Диля Таргетолог Ташкент | Tashkent Facebook":
+    - /url: https://www.facebook.com/DilyaTargetTashkent/
+  - button "Диля Таргетолог Ташкент | Tashkent":
+    - img "Диля Таргетолог Ташкент | Tashkent"
+  - generic: Диля Таргетолог Ташкент | Tashkent
+  - generic: Facebook
+  - button "Об этом результате":
+  - link "Таргетолог Ташкент/ Диана (@target_dianak) • Instagram ... Instagram":
+    - /url: https://www.instagram.com/target_dianak/
+  - button "Таргетолог Ташкент/ Диана (@target_dianak) • Instagram ...":
+    - img "Таргетолог Ташкент/ Диана (@target_dianak) • Instagram ..."
+  - generic: Таргетолог Ташкент/ Диана (@target_dianak) • Instagram ...
+  - generic: Instagram
+  - button "Об этом результате":
+  - button "Другие изображения":
+    - separator
+    - generic: Другие изображения
+  - heading "Другие также ищут" [level=2]
+  - link "Таргетолог вакансии Ташкент":
+    - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&q=%D0%A2%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D0%B8+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ1QJ6BAgvEAE
+    - generic: Таргетолог вакансии Ташкент
+  - link "Таргетолог это":
+    - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&q=%D0%A2%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D1%8D%D1%82%D0%BE&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ1QJ6BAgxEAE
+    - generic: Таргетолог это
+  - link "Таргетолог обучение":
+    - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&q=%D0%A2%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ1QJ6BAgzEAE
+    - generic: Таргетолог обучение
+  - link "Вакансия таргетолог без опыта":
+    - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&q=%D0%92%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D1%8F+%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%B1%D0%B5%D0%B7+%D0%BE%D0%BF%D1%8B%D1%82%D0%B0&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ1QJ6BAgyEAE
+    - generic: Вакансия таргетолог без опыта
+  - link "Нужен таргетолог":
+    - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&q=%D0%9D%D1%83%D0%B6%D0%B5%D0%BD+%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ1QJ6BAgwEAE
+    - generic: Нужен таргетолог
+  - link "Таргетолог вакансии работы":
+    - /url: /search?sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&q=%D0%A2%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%B2%D0%B0%D0%BA%D0%B0%D0%BD%D1%81%D0%B8%D0%B8+%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%8B&sa=X&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ1QJ6BAguEAE
+    - generic: Таргетолог вакансии работы
+  - navigation:
+    - heading "Навигация по страницам" [level=1]
+    - text: "1"
+    - link "Page 2":
+      - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&ei=D3vIasfOIpOL7NYP2-aY2AU&start=10&sa=N&sstk=AS6-VmI0OaGWSPAibHaN6CQaSojYJflPyuguJRAzq6FUKpvfXnEuDeDPkXJoXu0RHfWokm4e2oYzqmC_ocRXVqH4VVZUhroQRp_lrA&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ8tMDegQILBAE
+      - text: "2"
+    - link "Page 3":
+      - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&ei=D3vIasfOIpOL7NYP2-aY2AU&start=20&sa=N&sstk=AS6-VmI0OaGWSPAibHaN6CQaSojYJflPyuguJRAzq6FUKpvfXnEuDeDPkXJoXu0RHfWokm4e2oYzqmC_ocRXVqH4VVZUhroQRp_lrA&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ8tMDegQILBAG
+      - text: "3"
+    - link "Page 4":
+      - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&ei=D3vIasfOIpOL7NYP2-aY2AU&start=30&sa=N&sstk=AS6-VmI0OaGWSPAibHaN6CQaSojYJflPyuguJRAzq6FUKpvfXnEuDeDPkXJoXu0RHfWokm4e2oYzqmC_ocRXVqH4VVZUhroQRp_lrA&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ8tMDegQILBAI
+      - text: "4"
+    - link "Page 5":
+      - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&ei=D3vIasfOIpOL7NYP2-aY2AU&start=40&sa=N&sstk=AS6-VmI0OaGWSPAibHaN6CQaSojYJflPyuguJRAzq6FUKpvfXnEuDeDPkXJoXu0RHfWokm4e2oYzqmC_ocRXVqH4VVZUhroQRp_lrA&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ8tMDegQILBAK
+      - text: "5"
+    - link "Page 6":
+      - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&ei=D3vIasfOIpOL7NYP2-aY2AU&start=50&sa=N&sstk=AS6-VmI0OaGWSPAibHaN6CQaSojYJflPyuguJRAzq6FUKpvfXnEuDeDPkXJoXu0RHfWokm4e2oYzqmC_ocRXVqH4VVZUhroQRp_lrA&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ8tMDegQILBAM
+      - text: "6"
+    - link "Page 7":
+      - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&ei=D3vIasfOIpOL7NYP2-aY2AU&start=60&sa=N&sstk=AS6-VmI0OaGWSPAibHaN6CQaSojYJflPyuguJRAzq6FUKpvfXnEuDeDPkXJoXu0RHfWokm4e2oYzqmC_ocRXVqH4VVZUhroQRp_lrA&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ8tMDegQILBAO
+      - text: "7"
+    - link "Page 8":
+      - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&ei=D3vIasfOIpOL7NYP2-aY2AU&start=70&sa=N&sstk=AS6-VmI0OaGWSPAibHaN6CQaSojYJflPyuguJRAzq6FUKpvfXnEuDeDPkXJoXu0RHfWokm4e2oYzqmC_ocRXVqH4VVZUhroQRp_lrA&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ8tMDegQILBAQ
+      - text: "8"
+    - link "Page 9":
+      - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&ei=D3vIasfOIpOL7NYP2-aY2AU&start=80&sa=N&sstk=AS6-VmI0OaGWSPAibHaN6CQaSojYJflPyuguJRAzq6FUKpvfXnEuDeDPkXJoXu0RHfWokm4e2oYzqmC_ocRXVqH4VVZUhroQRp_lrA&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ8tMDegQILBAS
+      - text: "9"
+    - link "Page 10":
+      - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&ei=D3vIasfOIpOL7NYP2-aY2AU&start=90&sa=N&sstk=AS6-VmI0OaGWSPAibHaN6CQaSojYJflPyuguJRAzq6FUKpvfXnEuDeDPkXJoXu0RHfWokm4e2oYzqmC_ocRXVqH4VVZUhroQRp_lrA&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ8tMDegQILBAU
+      - text: "10"
+    - heading "Следующая" [level=2]:
+      - link "Следующая":
+        - /url: /search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&sca_esv=afb89ae158309890&hl=ru&gl=uz&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577&ei=D3vIasfOIpOL7NYP2-aY2AU&start=10&sa=N&sstk=AS6-VmI0OaGWSPAibHaN6CQaSojYJflPyuguJRAzq6FUKpvfXnEuDeDPkXJoXu0RHfWokm4e2oYzqmC_ocRXVqH4VVZUhroQRp_lrA&ved=2ahUKEwiHkom-mayXAxWTBdsEHVszBlsQ8NMDegQILBAW
+        - generic: Следующая
+  - navigation
+- contentinfo:
+  - heading "Ссылки в нижнем колонтитуле" [level=1]
+  - generic: Результаты персонализированы
+  - generic: "-"
+  - link "Попробовать без персонализации":
+    - /url: https://www.google.com/search?q=%D1%82%D0%B0%D1%80%D0%B3%D0%B5%D1%82%D0%BE%D0%BB%D0%BE%D0%B3+%D0%A2%D0%B0%D1%88%D0%BA%D0%B5%D0%BD%D1%82&hl=ru&gl=uz&peek_pws=0&sxsrf=APpeQnsZDCEwfAKuSy64Q4d0_xsWyQYEFQ:1791523599577
+    - generic: Попробовать без персонализации
+  - text: Узбекистан
+  - button "Мирзо-Улугбекский район, Ташкент - На основе ваших предыдущих действий":
+    - generic: Мирзо-Улугбекский район, Ташкент
+    - text: "-"
+    - generic: На основе ваших предыдущих действий
+  - text: "-"
+  - button "Обновить": Обновить
+  - link "Справка":
+    - /url: https://support.google.com/websearch/?p=ws_results_help&hl=ru-UZ&fg=1
+  - link "Отправить отзыв":
+    - /url: "#"
+  - link "Конфиденциальность":
+    - /url: https://policies.google.com/privacy?hl=ru-UZ&fg=1
+  - link "Условия":
+    - /url: https://policies.google.com/terms?hl=ru-UZ&fg=1

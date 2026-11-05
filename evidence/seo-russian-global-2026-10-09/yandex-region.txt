@@ -1,0 +1,94 @@
+- link "Logo":
+  - /url: /sites/
+- list:
+  - combobox "https://loops.uz"
+  - link:
+    - /url: /sites/add/
+  - textbox "Поиск"
+- list:
+  - link "Сводка":
+    - /url: /site/https:loops.uz:443/dashboard/?_from=menu
+    - generic: Сводка
+  - button "Оптимизация сайта":
+    - generic: Оптимизация сайта
+  - button "Эффективность":
+    - generic: Эффективность
+  - button "Индексирование":
+    - generic: Индексирование
+  - button "Инструменты":
+    - generic: Инструменты
+  - button "Представление в поиске":
+    - generic: Представление в поиске
+  - button "Услуги и предложения в поиске":
+    - generic: Услуги и предложения в поиске
+  - button "Ссылки":
+    - generic: Ссылки
+  - link "Обучение":
+    - /url: /site/https:loops.uz:443/education/?_from=menu
+    - generic: Обучение
+  - button "Полезные сервисы":
+    - generic: Полезные сервисы
+  - button "Нейровебмастер":
+    - generic: Нейровебмастер
+- button
+- button "Ваш профиль":
+  - generic: 99+
+- button
+- link "70":
+  - /url: /notifications/
+  - generic: "70"
+- button:
+- button:
+- generic: Заявка принята в обработку
+- generic: Заявка на изменение региона на «Узбекистан» будет проверена в течение 7 дней
+- button "Отмена":
+  - generic: Отмена
+- heading "Настройка регионов сайта" [level=2]:
+  - generic: Настройка регионов сайта
+- text: Региональность сайта может учитываться при отображении результатов поиска по запросам, которые относятся к определенному региону. Например, если пользователь из Москвы ищет информацию об автосервисе по запросу [автосервис ремонт], скорее всего, он хочет найти ближайший к себе автосервис. Напротив, по информационным запросам (например, [рецепт сырников]) пользователям из любых регионов хорошо подойдёт сайт с рецептами.
+- text: Если сайт не связан с каким-то конкретным регионом, это не является ошибкой.
+- text: Если сайт связан с компанией и предлагает товары или услуги, рекомендуем добавить организацию в
+- link "Яндекс Бизнес":
+  - /url: https://business.yandex.ru/
+- text: . Это бесплатно, пользователи смогут найти вашу организацию в Яндекс Картах, а в Поиске сайт будет автоматически связан с регионами, в которых работает компания. Обычно данные из Яндекс Бизнеса обновляются в Яндекс Вебмастере в течение суток после изменения.
+- generic: Яндекс Бизнес
+- generic: Данные о регионах позволяют указать местоположение вашей компании в картах, а также сформировать крупный сниппет с отзывами, адресом, фотографиями и другими важными характеристиками. Сразу из поиска пользователи смогут узнать о вашей организации и найти адрес в Яндекс Картах.
+- list:
+  - listitem: регион сайта не задан
+- link "Добавьте вашу организацию":
+  - /url: https://yandex.ru/sprav/add?utm_source=webmaster&utm_medium=regions&utm_campaign=site
+  - generic: Добавьте вашу организацию
+- generic: Вебмастер
+- text: Здесь вы можете указать регионы работы вашего сайта. Данные могут учитываться при формировании результатов выдачи по запросам пользователей, которые ищут товары и услуги в определенном месте. Это позволит вам привлекать больше целевых клиентов. Если ваш сайт не ориентирован на пользователей конкретных регионов, то указывать их не нужно. Регион, который был определен автоматически или задан в Вебмастере.
+- text: Вы можете указать 1 регион.
+- list:
+  - listitem: регион сайта не задан
+- button "Добавить регион" [disabled]:
+  - generic: Добавить регион
+- generic: "Частые вопросы:"
+- generic: Как правильно указать регион для сайта организации?
+- generic: Нужно ли указывать регион для сайта организации в Яндекс Вебмастере?
+- generic: Нужно ли указывать регион для информационного сайта (с новостями, статьями, блогом, и т.д.), востребованного пользователями конкретного региона?
+- generic: Нужно ли указывать регион для информационного сайта, востребованного пользователями любых регионов?
+- link "Подробнее":
+  - /url: https://yandex.ru/support/webmaster/site-geography/site-region.html
+- link "Блог":
+  - /url: https://webmaster.yandex.ru/blog/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_serp-snippets_regions
+- link "Пользовательское соглашение":
+  - /url: https://yandex.ru/legal/webmaster_termsofuse/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_serp-snippets_regions
+- link "Политика конфиденциальности":
+  - /url: https://yandex.ru/legal/confidential/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_serp-snippets_regions
+- link "Правила рекомендаций":
+  - /url: https://yandex.ru/legal/recommendations/?utm_source=webmaster&utm_medium=interface&utm_campaign=footer&utm_content=site_serp-snippets_regions#index__webmaster
+- link "ru":
+  - /url: https://yandex.ru/portal/set/lang/?intl=ru&retpath=https%3A%2F%2Fwebmaster.yandex.ru%2Fsite%2Fhttps%3Aloops.uz%3A443%2Fserp-snippets%2Fregions%2F%3F_from%3Dmenu&sk=u5b6642f389735bf21cde5b13692cf81a
+  - generic: ru
+- link "en":
+  - /url: https://yandex.ru/portal/set/lang/?intl=en&retpath=https%3A%2F%2Fwebmaster.yandex.ru%2Fsite%2Fhttps%3Aloops.uz%3A443%2Fserp-snippets%2Fregions%2F%3F_from%3Dmenu&sk=u5b6642f389735bf21cde5b13692cf81a
+  - generic: en
+- generic: © 2004–2026
+- link "ООО «Яндекс»":
+  - /url: https://ya.ru
+- iframe:
+- button "Отзыв о Вебмастере":
+  - text: Отзыв о Вебмастере

@@ -1,0 +1,110 @@
+[
+  {
+    "path": "leadgeneration/assets/index-CZVJ0tKo.css",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "BYPASS"
+  },
+  {
+    "path": "leadgeneration/assets/App-B7AofeK0.js",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "BYPASS"
+  },
+  {
+    "path": "leadgeneration/assets/index-BlAt_lpV.js",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "BYPASS"
+  },
+  {
+    "path": "leadgeneration/assets/fonts.css",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "BYPASS"
+  },
+  {
+    "path": "leadgeneration/assets/fonts-v2.css",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "BYPASS"
+  },
+  {
+    "path": "index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "target/index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "ai-bot/index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "analytics/index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "consulting/index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "clinics/index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "b2b/index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "manufacturing/index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "auto/index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "fitness/index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "horeca/index.html",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "llms.txt",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  },
+  {
+    "path": "sitemap.xml",
+    "status": 200,
+    "matches_after_removing_cf_beacon": true,
+    "cache": "DYNAMIC"
+  }
+]
