@@ -23,7 +23,7 @@ python3 scripts/release.py               # выкладка (только с mai
 
 | Страницы | Источник | Сборщик |
 |---|---|---|
-| `/`, `/target/`, `/ai-bot/`, `/consulting/`, `/analytics/` | `_handoff/leadgeneration-source/src/services.js`, `App.jsx`, `ServicePage.jsx`, `data.js` | `scripts/build-marketing.py` (React + пререндер, разметка — `_handoff/leadgeneration-source/scripts/prerender.mjs`) |
+| `/`, `/target/`, `/ai-bot/`, `/consulting/`, `/analytics/` | `_handoff/leadgeneration-source/src/services.js`, `App.jsx`, `ServicePage.jsx`, `data.js`. Блок «По делу.» на главной — из `content/articles.json` (6 свежих с обложкой, файл `src/home-articles.json` пишет `build-marketing.py`; руками не правь) | `scripts/build-marketing.py` (React + пререндер, разметка — `_handoff/leadgeneration-source/scripts/prerender.mjs`) |
 | `/b2b/ /clinics/ /manufacturing/ /auto/ /horeca/ /fitness/` | `_handoff/leadgeneration-source/src/industries.json` | то же |
 | `/cases/case-<id>/` | `cases/_content/<id>.json` + id в `cases/cases.json`. Формат — `cases/FORMAT.md` | `scripts/build-cases.py` (шаблон `scripts/case_format.py`) |
 | `/articles/…`, `/cases.html`, `/about/`, `/privacy/`, `/404.html` | `content/articles.json`, тексты в `scripts/build-editorial.py`, общий блок цен и FAQ — `scripts/offer_block.py` | `scripts/build-editorial.py` |
@@ -35,7 +35,7 @@ python3 scripts/release.py               # выкладка (только с mai
 
 ## Публикация
 
-- Статья: запись в `content/articles.json` → `build-all` → `release`. Порядок и SEO — `~/loops-seo/playbooks/publish-article.md`.
+- Статья: запись в `content/articles.json` → `build-all` → `release`. После выкладки статья должна быть видна на https://loops.uz/articles/ и на главной («По делу.»). «PURGE FAILED» — очисти кэш вручную (`~/loops-seo/playbooks/deploy.md`). Порядок и SEO — `~/loops-seo/playbooks/publish-article.md`.
 - Кейс: `cases/_content/<id>.json` со `status: "draft"` → согласование с Даниилом → `"published"` → `build-all` → `release`. Черновик не попадает ни на одну страницу, в sitemap и llms.txt. Подробно — `~/loops-seo/playbooks/publish-case.md`.
 - Цены живут в нескольких местах (`services.js`, `industries.json`, `offer_block.py`, `prerender.mjs`, `build-editorial.py`, `articles.json`). Меняешь цену — `grep -rn "млн сум" _handoff/leadgeneration-source/src scripts content`. Аудит сверяет `offer_block.PRICES` с `services.js` и число кейсов в текстах.
 - Цифры кейсов — только из опубликованных кейсов. Не придумывай сроки, цены, результаты.
