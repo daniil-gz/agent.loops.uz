@@ -32,3 +32,5 @@ h2 em,.about-display h2 em{color:#777d6b}.sector li small,.project-invite>p,.ser
 
 .service-trust{margin-top:30px}.service-trust .eyebrow{display:block;font-size:12px;color:#96978c;margin-bottom:12px}.service-trust-logos{display:flex;flex-wrap:wrap;gap:8px}.service-trust-logo{--logo-w:84px;--logo-h:46px;--logo-inset:9px}.service-trust-logo:hover{background:var(--logo-color-bg);border-color:#bfc4b3}.service-trust-logo:hover .brand-crop{mix-blend-mode:normal}.service-trust-logo:hover .brand-crop img{filter:none;opacity:1}
 @media(max-width:760px){.service-trust{margin-top:24px}.service-trust-logo{--logo-w:74px;--logo-h:42px;--logo-inset:8px}}
+.service-lead strong{display:block;color:var(--ink);font-weight:500;font-size:1.12em;line-height:1.4;margin-bottom:8px}.service-intro-more{font-size:15px;margin-top:26px}
+@media(max-width:760px){.service-intro-more{font-size:14px;margin-top:22px}}
