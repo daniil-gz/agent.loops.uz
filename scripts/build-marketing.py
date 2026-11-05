@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """Publishable static output; /leadgeneration/assets remains the stable asset base."""
 from pathlib import Path
-import subprocess,re,shutil
+import subprocess,re,shutil,json
 ROOT=Path(__file__).resolve().parents[1]
 SOURCE=ROOT/'_handoff/leadgeneration-source'
+# Homepage "По делу." rail: newest articles from content/articles.json, so every new article appears there.
+HOME_ARTICLES=6
+_arts=[a for a in json.loads((ROOT/'content/articles.json').read_text()) if a.get('cover')]
+_arts.sort(key=lambda a:(a.get('published',''),a.get('updated','')),reverse=True)
+(SOURCE/'src/home-articles.json').write_text(json.dumps([{k:a[k] for k in ('slug','category','title','summary','cover')} for a in _arts[:HOME_ARTICLES]],ensure_ascii=False,indent=1)+'\n')
 subprocess.run(['npm','run','build','--prefix',str(SOURCE)],check=True)
 DIST=SOURCE/'dist/client'
 import json
