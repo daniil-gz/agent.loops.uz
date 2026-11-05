@@ -7,7 +7,7 @@ import {homeFaq} from './services';
 import caseLinks from './case-links.json';
 import {NavLinks, FooterLinks, SeoLinks} from './SiteNav';
 import {CasePreview} from './CasePreview';
-import logos from './logos.json';
+import {logoStyle, LogoArt} from './Logos';
 import homeArticles from './home-articles.json';
 
 const scrollBehavior=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth';
@@ -43,12 +43,7 @@ function Button({children, href, className='', ...props}) { const Tag=href?'a':'
 function Note({children,className=''}) {return <div className={`hand-note ${className}`}>{children}</div>}
 function Mark({children,kind='underline'}) {return <span className={`ink-mark ink-mark--${kind}`}>{children}<span className="ink-mark-image" style={{backgroundImage:`url(${A}marker-${kind}-v2.webp)`}} aria-hidden="true"/></span>}
 function Reveal({children,className='',...props}) {const ref=useRef(); useEffect(()=>{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return; const el=ref.current; el.classList.add('will-reveal'); const o=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');o.unobserve(e.target)}}),{threshold:.08});o.observe(el);return()=>o.disconnect()},[]); return <div ref={ref} className={className} {...props}>{children}</div>}
-// Keep original artwork intact; only the source canvas margins are compensated.
-function logoStyle(id){const logo=logos[id];return {'--logo-mono':logo.filter,'--logo-color-bg':logo.background};}
-function LogoArt({id,lazy=false}){
- const {file,width,height,crop:[x,y,w,h]}=logos[id];
- return <span className="brand-art" aria-hidden="true"><span className="brand-crop" style={{'--logo-ratio':w/h}}><img src={A+imageVariants.logos[file]} alt="" loading={lazy?'lazy':'eager'} draggable="false" style={{width:`${width/w*100}%`,height:`${height/h*100}%`,left:`${-x/w*100}%`,top:`${-y/h*100}%`}}/></span></span>;
-}
+
 function ProjectLogo({id,name}) {
  const [color,setColor]=useState(false);
  if(!id)return <span className="project-logo logo-unavailable" aria-hidden="true"/>;

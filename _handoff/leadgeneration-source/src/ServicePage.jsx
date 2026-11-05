@@ -4,7 +4,11 @@ import {services} from './services';
 import {cases} from './data';
 import {CasePreview} from './CasePreview';
 import {NavLinks, FooterLinks, SeoLinks} from './SiteNav';
+import {logoStyle, LogoArt} from './Logos';
+import caseLinks from './case-links.json';
 const A='/leadgeneration/assets/';
+const TRUST=[['chery','Chery'],['basalt','Basalt'],['biorise','BioRise'],['feedup','FeedUp'],['ilvi','ILVI'],['dental','Dental’s Kingdom'],['tak','TAK'],['centrisfit','Centris Fit']];
+const AUDIT=new Set(['target','b2b','clinics']);
 function LinkButton({href,children,light=false}){return <a className={`button ${light?'button-yellow':''}`} href={href}>{children}<ArrowUpRight size={19}/></a>}
 export function ServicePage({slug}){
  const s=services[slug];const [menu,setMenu]=useState(false),[preview,setPreview]=useState(null);
@@ -15,7 +19,7 @@ export function ServicePage({slug}){
  <header className="header wrap"><a className="small-logo" href="/" aria-label="Loops — на главную">loops</a><nav className={menu?'nav is-open':'nav'} aria-label="Основная навигация"><NavLinks onClick={()=>setMenu(false)}/></nav><LinkButton href="#contact">Обсудить проект</LinkButton><button className="menu-button icon-button" aria-label={menu?'Закрыть меню':'Открыть меню'} aria-expanded={menu} onClick={()=>setMenu(!menu)}>{menu?<X size={25}/>:<List size={25}/>}</button></header>
  <main id="content">
  <section className="service-hero wrap"><nav className="service-breadcrumb" aria-label="Хлебные крошки"><a href="/">Главная</a><span>/</span><a href={s.kind==='industry'?'/#industries':'/#services'}>{s.kind==='industry'?'Направления':'Услуги'}</a><span>/</span><span>{s.name}</span></nav>
- <div className="service-hero-grid"><div><span className="eyebrow">{s.number} / {s.name} · LOOPS</span><h1>{s.heading}<br/><em className="service-underline">{s.accent}</em></h1><p className="service-intro">{s.intro}</p><div className="service-hero-actions"><LinkButton href="#contact">Обсудить задачу</LinkButton><a href="#work" className="text-link">Как работаем <ArrowRight size={17}/></a></div></div>
+ <div className="service-hero-grid"><div><span className="eyebrow">{s.number} / {s.name} · LOOPS</span><h1>{s.heading}<br/><em className="service-underline">{s.accent}</em></h1><p className="service-intro">{s.intro}</p><div className="service-hero-actions"><LinkButton href="#contact">Обсудить задачу</LinkButton>{(AUDIT.has(slug)||s.kind==='industry')?<a href="/audit/" className="text-link" onClick={()=>window.loopsTrack?.('audit_link',slug)}>Бесплатный разбор рекламы <ArrowRight size={17}/></a>:<a href="#work" className="text-link">Как работаем <ArrowRight size={17}/></a>}</div><div className="service-trust"><span className="eyebrow">КЛИЕНТЫ LOOPS · ОТКРОЙТЕ КЕЙС</span><div className="service-trust-logos">{TRUST.filter(([id])=>caseLinks[id]).map(([id,name])=><a key={id} className="service-trust-logo logo-frame" style={logoStyle(id)} href={caseLinks[id]} aria-label={`Кейс ${name}`}><LogoArt id={id}/></a>)}</div></div></div>
  <figure className={'service-visual service-visual--'+s.visual}><figcaption className="eyebrow">{s.label}</figcaption><ol>{s.stages.map(([title,text],i)=><li key={title}><span className="visual-index">0{i+1}</span><div><strong>{title}</strong><p>{text}</p></div>{i<3&&<span className="visual-connector" aria-hidden="true">↓</span>}</li>)}</ol><span className="hand-note">{s.note.split('\n').map((line,i)=><React.Fragment key={i}>{line}<br/></React.Fragment>)}</span></figure></div>
  <div className="service-facts"><span>Даниил Газизов и команда Loops · на связи лично</span><span>Ташкент · онлайн по всему миру · на русском</span><span>Реклама → люди → процессы</span></div></section>
  {s.answer&&<section className="wrap service-answer" id="answer"><span className="eyebrow">КОРОТКО</span><h2>{s.answer[0]}</h2><p>{s.answer[1]}</p></section>}

@@ -29,3 +29,6 @@ h2 em,.about-display h2 em{color:#777d6b}.sector li small,.project-invite>p,.ser
 .industry-image{display:block;width:calc(100% + 56px);max-width:none;margin:-28px -28px 0;height:auto;aspect-ratio:3/2;object-fit:cover;border-radius:12px 12px 0 0;background:#f5f4f0}
 @media(max-width:600px){.industry-image{width:calc(100% + 48px);margin:-24px -24px 0}}
 @supports(grid-template-rows:subgrid){.home-industries .industry-links>a{grid-row:span 4}}
+
+.service-trust{margin-top:30px}.service-trust .eyebrow{display:block;font-size:12px;color:#96978c;margin-bottom:12px}.service-trust-logos{display:flex;flex-wrap:wrap;gap:8px}.service-trust-logo{--logo-w:84px;--logo-h:46px;--logo-inset:9px}.service-trust-logo:hover{background:var(--logo-color-bg);border-color:#bfc4b3}.service-trust-logo:hover .brand-crop{mix-blend-mode:normal}.service-trust-logo:hover .brand-crop img{filter:none;opacity:1}
+@media(max-width:760px){.service-trust{margin-top:24px}.service-trust-logo{--logo-w:74px;--logo-h:42px;--logo-inset:8px}}
