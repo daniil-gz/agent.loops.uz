@@ -1,6 +1,6 @@
 # Website interaction measurement
 
-`site-events-v1.js` is shared by all sitemap pages. It sends goals to Metrika 101239870 (reachGoal) and Google Analytics 4 G-BCDRRJZBWF (gtag event). DataFast removed 2026-11-06 (owner).
+`site-events-v2.js` is shared by all sitemap pages. It sends goals to Metrika 101239870 (reachGoal) and Google Analytics 4 G-BCDRRJZBWF (gtag event). DataFast removed 2026-11-06 (owner).
 
 | Goal | Meaning |
 |---|---|

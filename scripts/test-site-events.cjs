@@ -1,5 +1,5 @@
 const vm=require('node:vm'),assert=require('node:assert/strict'),fs=require('node:fs');
-const code=fs.readFileSync(require('node:path').join(__dirname,'../site-events-v1.js'),'utf8');
+const code=fs.readFileSync(require('node:path').join(__dirname,'../site-events-v2.js'),'utf8');
 function harness(host='loops.uz'){
  const sent=[],observed=[],listeners={};const w={ym:(...a)=>sent.push(['ym',...a]),gtag:(...a)=>sent.push(['ga',...a]),dispatchEvent:e=>observed.push(e.detail)};
  vm.runInNewContext(code,{window:w,document:{addEventListener:(name,f)=>listeners[name]=f},location:{hostname:host,pathname:'/target/',origin:`https://${host}`,href:`https://${host}/target/?secret=private`},CustomEvent:function(n,o){this.detail=o.detail},Set,URL});
