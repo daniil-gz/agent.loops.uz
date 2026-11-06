@@ -168,7 +168,6 @@ def render(data, registry, analytics):
 <link rel="icon" href="/leadgeneration/assets/favicon.png"><link rel="stylesheet" href="/leadgeneration/assets/fonts-v2.css"><link rel="stylesheet" href="/cases/format-v2.css">{'<link rel="stylesheet" href="/cases/gallery.css"><script src="/cases/gallery.js" defer></script>' if data.get('gallery') else ''}
 <script type="application/ld+json">{ld}</script>
 {analytics}
-<script defer data-website-id="dfid_f3VYRJCEILPpM9zBm2vdN" data-domain="loops.uz" src="https://datafa.st/js/script.js"></script>
 </head><body><a class="skip-link" href="#content">Перейти к кейсу</a>
 <header class="wrap case-header"><a class="wordmark" href="/" aria-label="Loops — на главную">loops</a>{offer_block.NAV}<a class="button" href="/#contact">Обсудить проект <span aria-hidden="true">↗</span></a>{offer_block.MENU}</header>
 <main id="content"><section class="wrap case-hero"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span aria-hidden="true">/</span><a href="/cases.html">Кейсы</a><span aria-hidden="true">/</span><span>{esc(data['client'])}</span></nav>

@@ -2,11 +2,8 @@
 (function () {
   'use strict';
   if (window.loopsTrack) return;
-  var allowed = new Set(['contact_click', 'brief_prepared', 'case_preview_open', 'case_full_open']);
+  var allowed = new Set(['contact_click', 'brief_prepared', 'case_preview_open', 'case_full_open', 'audit_link']);
   var production = /^(www\.)?loops\.uz$/.test(location.hostname);
-  if (production) {
-    window.datafast = window.datafast || function () { (window.datafast.q = window.datafast.q || []).push(arguments); };
-  }
   window.loopsTrack = function (name, caseId) {
     if (!allowed.has(name)) return;
     var params = {page: location.pathname};
@@ -15,7 +12,7 @@
     window.dispatchEvent(new CustomEvent('loops:interaction', {detail: {name: name, params: params}}));
     if (!production) return;
     try { if (typeof window.ym === 'function') window.ym(101239870, 'reachGoal', name, params); } catch (_) {}
-    try { if (typeof window.datafast === 'function') window.datafast(name, params); } catch (_) {}
+    try { if (typeof window.gtag === 'function') window.gtag('event', name, params); } catch (_) {}
   };
   document.addEventListener('click', function (event) {
     var link = event.target.closest && event.target.closest('a[href]');
