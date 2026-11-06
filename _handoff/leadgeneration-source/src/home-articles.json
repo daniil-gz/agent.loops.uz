@@ -1,5 +1,12 @@
 [
  {
+  "slug": "proverit-otchet-targetologa",
+  "category": "РЕКЛАМА · ОТЧЁТ",
+  "title": "Как проверить отчёт таргетолога: 7 вопросов к цифрам",
+  "summary": "Охваты, клики и дешёвые заявки ещё не значат продажи. 7 вопросов, которые покажут, честный ли отчёт по рекламе и что просить у таргетолога.",
+  "cover": "/images/articles/proverit-otchet-targetologa.jpg"
+ },
+ {
   "slug": "reklama-v-instagram-tashkent",
   "category": "РЕКЛАМА · ЗАПУСК",
   "title": "Реклама в Instagram в Ташкенте: как запустить в 2026 году",
@@ -33,12 +40,5 @@
   "title": "Какой бюджет на рекламу нужен бизнесу в Ташкенте",
   "summary": "Рекламный бюджет считают от цели: продажи, конверсия, число заявок, цена заявки. Пример расчёта, тест на первый месяц и две ошибки, которые съедают бюджет.",
   "cover": "/images/articles/byudzhet-na-reklamu-tashkent.jpg"
- },
- {
-  "slug": "prodvizhenie-ili-reklama-instagram",
-  "category": "РЕКЛАМА · ПРОДВИЖЕНИЕ",
-  "title": "Продвижение в Instagram или реклама: что даёт заявки",
-  "summary": "Органика, кнопка «Продвигать» и реклама через Ads Manager дают разный результат. Сравниваем три способа и объясняем, какой приводит заявки.",
-  "cover": "/images/articles/prodvizhenie-ili-reklama-instagram.jpg"
  }
 ]
