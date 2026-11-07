@@ -163,6 +163,14 @@
             "Как проверить отчёт таргетолога: 7 вопросов к цифрам"
           ],
           [
+            "/articles/proverka-reklamnogo-kabineta-meta/",
+            "Чек-лист: как проверить рекламный кабинет Meta перед запуском"
+          ],
+          [
+            "/articles/smena-podryadchika-po-reklame/",
+            "Почему смена подрядчика по рекламе не решает проблему с продажами"
+          ],
+          [
             "/articles/pochemu-zayavki-necelevye/",
             "Почему заявки из Instagram нецелевые"
           ],
@@ -215,7 +223,7 @@
       "nwl"
     ],
     "service": "target",
-    "updated": "2026-11-04"
+    "updated": "2026-11-07"
   },
   {
     "slug": "abroad",
