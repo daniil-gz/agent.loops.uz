@@ -28,17 +28,17 @@
   "cover": "/images/articles/kak-ponyat-rabotaet-li-reklama.jpg"
  },
  {
-  "slug": "proverka-reklamnogo-kabineta-meta",
-  "category": "РЕКЛАМА · ПРОВЕРКА",
-  "title": "Чек-лист: как проверить рекламный кабинет Meta перед запуском",
-  "summary": "12 пунктов, которые стоит проверить в кабинете Meta до запуска рекламы: доступы, оплата, пиксель, цели, аудитории, креативы и путь заявки.",
-  "cover": "/images/articles/proverka-reklamnogo-kabineta-meta.jpg"
- },
- {
   "slug": "smena-podryadchika-po-reklame",
   "category": "РЕКЛАМА · ПОДРЯДЧИК",
   "title": "Почему смена подрядчика по рекламе не решает проблему с продажами",
   "summary": "Новый таргетолог не исправит продажи, если клиенты теряются после заявки. Как понять, где проблема, до смены подрядчика, и как сменить его без потерь.",
   "cover": "/images/articles/smena-podryadchika-po-reklame.jpg"
+ },
+ {
+  "slug": "proverka-reklamnogo-kabineta-meta",
+  "category": "РЕКЛАМА · ПРОВЕРКА",
+  "title": "Чек-лист: как проверить рекламный кабинет Meta перед запуском",
+  "summary": "12 пунктов, которые стоит проверить в кабинете Meta до запуска рекламы: доступы, оплата, пиксель, цели, аудитории, креативы и путь заявки.",
+  "cover": "/images/articles/proverka-reklamnogo-kabineta-meta.jpg"
  }
 ]
