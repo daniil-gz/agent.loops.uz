@@ -19,6 +19,7 @@ def plain(s):
     return html.unescape(re.sub("<[^>]+>", "", s)).replace("\xa0", " ").strip()
 
 YM = '''<script defer src="/site-events-v2.js"></script>
+<script defer src="/lead-form.js"></script>
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">
     (function(m,e,t,r,i,k,a){

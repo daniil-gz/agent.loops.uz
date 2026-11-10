@@ -1,0 +1,35 @@
+/* Форма заявки loops.uz (lead-form.js). Светлая — статьи и кейсы, тёмная (data-theme="dark") — главная и услуги. */
+.lf{container-type:inline-size;--lf-bg:#fff;--lf-ink:#20201e;--lf-line:#d9d9d0;--lf-muted:#686862;--lf-focus:#9b8810;--lf-err:#b3261e;--lf-state:#f7f7f2;width:100%;max-width:640px;font-family:'TikTok Sans',Arial,sans-serif}
+.lf--dark{--lf-bg:#343a2b;--lf-ink:#f6f8f0;--lf-line:#59614a;--lf-muted:#9fa88f;--lf-focus:#f2df35;--lf-err:#ffb4a8;--lf-state:#303728}
+.lf-form{display:grid;gap:18px}
+.lf-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.lf-field{display:flex;flex-direction:column;gap:9px;font-size:12px;line-height:1.3;color:var(--lf-muted);letter-spacing:.01em}
+.lf--dark .lf-field{color:#e2e7d7}
+.lf input,.lf textarea{width:100%;box-sizing:border-box;font:inherit;font-size:16px;line-height:1.4;padding:13px 14px;min-height:50px;background:var(--lf-bg);color:var(--lf-ink);border:1px solid var(--lf-line);border-radius:0;outline:none;transition:border-color .2s}
+.lf textarea{min-height:96px;resize:vertical}
+.lf input::placeholder,.lf textarea::placeholder{color:var(--lf-muted);opacity:.8}
+.lf input:focus-visible,.lf textarea:focus-visible{border-color:var(--lf-focus);box-shadow:0 0 0 1px var(--lf-focus)}
+.lf input[aria-invalid=true]{border-color:var(--lf-err)}
+.lf .lf-error{margin:-6px 0 0;font-size:13px;line-height:1.45;color:var(--lf-err)}
+.lf-error[hidden]{display:none}
+.lf-trap{position:absolute!important;left:-9999px!important;width:1px;height:1px;overflow:hidden}
+.lf-submit{display:flex;align-items:center;justify-content:center;width:100%;min-height:54px;padding:16px 22px;border:0;border-radius:0;background:#f2df35;color:#20201e;font:inherit;font-size:15px;font-weight:600;cursor:pointer;text-decoration:none;transition:background .2s}
+.lf-submit:hover{background:#e6d22a}
+.lf-submit:focus-visible,.lf-again:focus-visible{outline:3px solid var(--lf-focus);outline-offset:3px}
+.lf-submit:disabled{opacity:.6;cursor:progress}
+.lf .lf-helper{margin:-4px 0 0;font-size:12px;line-height:1.45;color:var(--lf-muted)}
+.lf-state{padding:28px;background:var(--lf-state);border:1px solid var(--lf-line);color:var(--lf-ink)}
+.lf .lf-state h3{margin:0;font-size:30px;line-height:1.15;letter-spacing:-.02em}
+.lf .lf-state p{margin:12px 0 0;font-size:15px;line-height:1.5;color:var(--lf-muted)}
+.lf-state pre{margin:20px 0;padding:14px;white-space:pre-wrap;overflow-wrap:anywhere;font:13px/1.5 'TikTok Sans',Arial,sans-serif;background:var(--lf-bg);border:1px solid var(--lf-line)}
+.lf-again{margin-top:14px;padding:0;border:0;background:none;color:var(--lf-ink);font:inherit;font-size:14px;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.lf-fallback a{text-decoration:underline;text-underline-offset:4px}
+/* Блок с формой в статьях и кейсах */
+.lead-block{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:56px;align-items:start}
+.lead-block h2{margin-top:22px}
+.lead-block .lead-alt{display:inline-block;margin-top:22px;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:800px){.lead-block{grid-template-columns:1fr;gap:28px}}
+@container (max-width:520px){.lf-row{grid-template-columns:1fr}}
+@media(max-width:560px){.lf-row{grid-template-columns:1fr}.lf-state{padding:22px}.lf .lf-state h3{font-size:26px}}
+@media(prefers-reduced-motion:reduce){.lf input,.lf textarea,.lf-submit{transition:none}}
+.service-contact-alt{display:inline-block;margin-top:18px;font-size:14px;color:#d7d8cb;text-decoration:underline;text-underline-offset:4px}
