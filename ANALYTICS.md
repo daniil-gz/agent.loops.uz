@@ -5,7 +5,8 @@
 | Goal | Meaning |
 |---|---|
 | contact_click | Click on the personal Telegram link; NOT a received lead |
-| brief_prepared | Valid local brief prepared; NOT submitted to a backend |
+| lead_sent | Homepage form delivered to /api/lead (worker answered ok) — a real lead in Telegram |
+| brief_prepared | Form could not be sent; fallback brief shown with a Telegram button |
 | case_preview_open | Preview opened through normal homepage/service click |
 | case_full_open | Click that navigates to a full case, including modified clicks |
 | audit_link | Click on «Бесплатный разбор рекламы» on a service page |

@@ -299,3 +299,4 @@
 /* Footer links: wrap whole links, no broken words (04.11.2026) */
 .footer-links{flex-wrap:wrap;justify-content:flex-start;gap:14px 26px}.footer-links>*{white-space:nowrap}.footer-links>a[href="#top"]{margin-left:auto}
 @media(max-width:760px){.footer-links{display:flex}.footer-links>a[href="#top"]{margin-left:0}}
+.form-error{font-size:12px;line-height:1.4;color:#ffb4a8}.contact-form input[aria-invalid=true]{border-color:#ff8a78}.contact-form .button:disabled{opacity:.7;cursor:progress}

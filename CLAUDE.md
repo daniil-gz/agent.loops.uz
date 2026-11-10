@@ -49,7 +49,7 @@ python3 scripts/release.py               # выкладка (только с mai
 - `agent.loops.uz` → 301 на `loops.uz`. Всё каноническое — на `loops.uz`.
 - Кэш (с 04.11.2026): JS/CSS сборки с хешем в имени — год, `immutable`; остальные CSS/JS — `public, max-age=0, must-revalidate, s-maxage=604800` (Cloudflare хранит 7 дней, браузер сверяется с Cloudflare, `release.py` очищает изменённые адреса); картинки и шрифты — 30 дней `immutable`; HTML — правило кэша Cloudflare. В Cloudflare: Browser Cache TTL = «уважать заголовки сервера», Smart Tiered Cache включён. Новая картинка — новое имя файла (браузеры держат старую до 30 дней). Не добавляй `?v=`.
 - Сеть хостинга теряет ~3% пакетов (04.11): первый запрос нового файла к серверу иногда идёт 30–60 с. Поэтому всё статичное должно храниться в Cloudflare, а не идти на сервер.
-- Форма с главной готовит бриф в Telegram локально. `/api/lead` — Cloudflare Worker `loops-lead` (`worker/`, `wrangler.toml`), выкладка отдельно: `npx wrangler deploy` (вход Даниила). Токен бота — только секрет воркера.
+- Форма с главной шлёт заявку в `/api/lead` (телефон или Telegram — обязательно, проверка в форме и в воркере, `normalizeContact`). Ошибка отправки → бриф с кнопкой Telegram. Бизнес — поле `business`: `company` в воркере — ловушка для ботов. `/api/lead` — Cloudflare Worker `loops-lead` (`worker/`, `wrangler.toml`), выкладка отдельно: `npx wrangler deploy` (вход Даниила). Токен бота — только секрет воркера.
 - Аналитика: Метрика 101239870 и Google Analytics 4 G-BCDRRJZBWF (DataFast убран 06.11), события — `site-events-v2.js`, см. `ANALYTICS.md`. Вне loops.uz аналитика выключена.
 - Картинки: `/usr/bin/python3 scripts/build-image-variants.py` (Pillow живёт в системном python).
 
