@@ -1,5 +1,19 @@
 [
  {
+  "slug": "knopka-prodvigat-ili-ads-manager",
+  "category": "РЕКЛАМА · ИНСТРУМЕНТЫ",
+  "title": "Кнопка «Продвигать» или Ads Manager: что выбрать бизнесу",
+  "summary": "Продвигать пост из Instagram быстро, но настроек мало. Сравниваем кнопку «Продвигать» и Ads Manager: цели, аудитория, отчёты и когда что брать.",
+  "cover": "/images/articles/knopka-prodvigat-ili-ads-manager.jpg"
+ },
+ {
+  "slug": "reklamnyj-akkaunt-otklyuchen",
+  "category": "РЕКЛАМА · ДИАГНОСТИКА",
+  "title": "Рекламный аккаунт отключён: что делать по шагам",
+  "summary": "Meta отключила рекламный аккаунт или ограничила рекламу. Как найти причину, запросить проверку за 180 дней и не потерять страницу и Instagram.",
+  "cover": "/images/articles/reklamnyj-akkaunt-otklyuchen.jpg"
+ },
+ {
   "slug": "obrabotka-zayavki-za-10-minut",
   "category": "ПРОДАЖИ · ЗАЯВКИ",
   "title": "Как обрабатывать заявки с рекламы: первые 10 минут",
@@ -26,19 +40,5 @@
   "title": "Как понять, работает ли реклама: проверка по этапам пути клиента",
   "summary": "Реклама работает, если окупается продажами, а не показами. 5 этапов проверки, одна цифра на каждый, формула стоимости продажи и частые ошибки учёта.",
   "cover": "/images/articles/kak-ponyat-rabotaet-li-reklama.jpg"
- },
- {
-  "slug": "smena-podryadchika-po-reklame",
-  "category": "РЕКЛАМА · ПОДРЯДЧИК",
-  "title": "Почему смена подрядчика по рекламе не решает проблему с продажами",
-  "summary": "Новый таргетолог не исправит продажи, если клиенты теряются после заявки. Как понять, где проблема, до смены подрядчика, и как сменить его без потерь.",
-  "cover": "/images/articles/smena-podryadchika-po-reklame.jpg"
- },
- {
-  "slug": "proverka-reklamnogo-kabineta-meta",
-  "category": "РЕКЛАМА · ПРОВЕРКА",
-  "title": "Чек-лист: как проверить рекламный кабинет Meta перед запуском",
-  "summary": "12 пунктов, которые стоит проверить в кабинете Meta до запуска рекламы: доступы, оплата, пиксель, цели, аудитории, креативы и путь заявки.",
-  "cover": "/images/articles/proverka-reklamnogo-kabineta-meta.jpg"
  }
 ]
