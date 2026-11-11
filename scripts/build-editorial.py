@@ -85,17 +85,20 @@ pages=json.loads((R/'content/pages.json').read_text())
 def landing(pg):
  path='/'+pg['slug']+'/'
  def block(sec):
-  out=f'<section><h2>{e(sec["title"])}</h2>'+''.join(f'<p>{e(x)}</p>' for x in sec.get('paragraphs',[]))
-  if sec.get('list'):out+='<ul>'+''.join(f'<li>{e(x)}</li>' for x in sec['list'])+'</ul>'
+  # Paragraphs and list items accept [anchor](/path/) links; optional table (same format as articles).
+  out=f'<section><h2>{e(sec["title"])}</h2>'+''.join(f'<p>{para(x)}</p>' for x in sec.get('paragraphs',[]))
+  if sec.get('list'):out+='<ul>'+''.join(f'<li>{para(x)}</li>' for x in sec['list'])+'</ul>'
+  out+=table(sec.get('table'))+''.join(f'<p>{para(x)}</p>' for x in sec.get('after',[]))
   if sec.get('links'):out+='<div class="reading-next">'+''.join(f'<a href="{e(u)}">{e(t)} ↗</a>' for u,t in sec['links'])+'</div>'
   return out+'</section>'
  q,a=pg['answer']
  body=(f'<section class="wrap editorial-hero"><nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="/">Главная</a><span>/</span><span>{e(pg["h1"])}</span></nav>'
   f'<span class="eyebrow">{e(pg["eyebrow"])}</span><h1>{e(pg["h1"])}<br><em>{e(pg["accent"])}</em></h1><p class="editorial-lead">{e(pg["lead"])}</p>'
+  +(f'<div class="byline"><img src="/images/daniil-gazizov.jpg" width="48" height="48" alt="Даниил Газизов"><div><a href="/about/">Даниил Газизов</a><span>Обновлено <time datetime="{pg["updated"]}">{russian_date(pg["updated"])}</time></span></div></div>' if pg.get('showUpdated') else '')+
   '<a class="button button-yellow" href="https://t.me/dani_gzv">Обсудить задачу ↗</a></section>'
   '<div class="wrap editorial-layout"><aside><nav aria-label="Содержание страницы"><span class="eyebrow">НА СТРАНИЦЕ</span>'
   +''.join(f'<a href="#s{i}">{e(x["title"])}</a>' for i,x in enumerate(pg['sections'],1))+'<a href="#faq">Вопросы</a></nav></aside><article class="editorial-prose">'
-  f'<section id="answer"><span class="eyebrow">КОРОТКО</span><h2>{e(q)}</h2><p>{e(a)}</p></section>'
+  f'<section id="answer"><span class="eyebrow">КОРОТКО</span><h2>{e(q)}</h2><p>{para(a)}</p></section>'
   +''.join(block(x).replace('<section>',f'<section id="s{i}">',1) for i,x in enumerate(pg['sections'],1))
   +'<section id="faq"><h2>Вопросы.</h2><div class="offer-faq">'+''.join(f'<details><summary>{e(fq)}</summary><p>{e(fa)}</p></details>' for fq,fa in pg['faq'])+'</div></section>'
   '</article></div>'+offer_block.offer(pg['cases'],cases,'Результаты и цены.',faq=False)+cta())

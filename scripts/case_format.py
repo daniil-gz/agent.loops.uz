@@ -163,8 +163,8 @@ def render(data, registry, analytics):
         cover_image = f'<div class="cover-media" style="--cover-image:url(&quot;{esc(data["cover"])}&quot;)">{cover_image}</div>'
     return f'''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>{esc(title)}</title><meta name="description" content="{esc(data['summary'])}"><link rel="canonical" href="{url}"><meta name="robots" content="index,follow,max-image-preview:large">
-<meta property="og:type" content="article"><meta property="og:site_name" content="Loops"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(data['summary'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="https://loops.uz{esc(data['cover'])}"><meta name="twitter:card" content="summary_large_image">
+<title>{esc(title)}</title><meta name="description" content="{esc(data.get('metaDescription') or data['summary'])}"><link rel="canonical" href="{url}"><meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Loops"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(data.get('metaDescription') or data['summary'])}"><meta property="og:url" content="{url}"><meta property="og:image" content="https://loops.uz{esc(data['cover'])}"><meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/leadgeneration/assets/favicon.png"><link rel="stylesheet" href="/leadgeneration/assets/fonts-v2.css"><link rel="stylesheet" href="/cases/format-v2.css"><link rel="stylesheet" href="/lead-form.css">{'<link rel="stylesheet" href="/cases/gallery.css"><script src="/cases/gallery.js" defer></script>' if data.get('gallery') else ''}
 <script type="application/ld+json">{ld}</script>
 {analytics}
