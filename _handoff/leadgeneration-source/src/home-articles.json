@@ -1,5 +1,19 @@
 [
  {
+  "slug": "reklama-vygoraet",
+  "category": "РЕКЛАМА · КРЕАТИВЫ",
+  "title": "Реклама перестала работать через 2–3 недели: что делать",
+  "summary": "Объявление хорошо работало, а через 2–3 недели заявки подорожали. Обычно аудитория уже видела креатив. Как это проверить и чем заменить объявление.",
+  "cover": "/images/articles/reklama-vygoraet.jpg"
+ },
+ {
+  "slug": "vernut-klientov-po-baze",
+  "category": "ПРОДАЖИ · БАЗА",
+  "title": "Как вернуть клиентов по своей базе до новой рекламы",
+  "summary": "Клиенты записались и не пришли, ушли подумать или давно не покупали. Как вернуть их звонком и сообщением, что сказать и что записать в CRM.",
+  "cover": "/images/articles/vernut-klientov-po-baze.jpg"
+ },
+ {
   "slug": "reklama-akcii-kogda-zapuskat",
   "category": "РЕКЛАМА · АКЦИИ",
   "title": "Реклама акции в Instagram: когда запускать и сколько тратить",
@@ -26,19 +40,5 @@
   "title": "Кнопка «Продвигать» или Ads Manager: что выбрать бизнесу",
   "summary": "Продвигать пост из Instagram быстро, но настроек мало. Сравниваем кнопку «Продвигать» и Ads Manager: цели, аудитория, отчёты и когда что брать.",
   "cover": "/images/articles/knopka-prodvigat-ili-ads-manager.jpg"
- },
- {
-  "slug": "reklamnyj-akkaunt-otklyuchen",
-  "category": "РЕКЛАМА · ДИАГНОСТИКА",
-  "title": "Рекламный аккаунт отключён: что делать по шагам",
-  "summary": "Meta отключила рекламный аккаунт или ограничила рекламу. Как найти причину, запросить проверку за 180 дней и не потерять страницу и Instagram.",
-  "cover": "/images/articles/reklamnyj-akkaunt-otklyuchen.jpg"
- },
- {
-  "slug": "obrabotka-zayavki-za-10-minut",
-  "category": "ПРОДАЖИ · ЗАЯВКИ",
-  "title": "Как обрабатывать заявки с рекламы: первые 10 минут",
-  "summary": "Заявка с рекламы остывает, пока ей не ответили. Порядок первых 10 минут: кто отвечает, что спросить, куда записать и когда написать снова.",
-  "cover": "/images/articles/obrabotka-zayavki-za-10-minut.jpg"
  }
 ]
