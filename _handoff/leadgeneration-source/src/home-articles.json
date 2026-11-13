@@ -1,5 +1,19 @@
 [
  {
+  "slug": "zayavki-iz-regionov",
+  "category": "РЕКЛАМА · НАСТРОЙКА",
+  "title": "Заявки из регионов вместо Ташкента: как исправить рекламу",
+  "summary": "Реклама на Ташкент, а пишут из Самарканда и Ферганы. Шесть причин, почему показы уходят в регионы, как это проверить в Ads Manager и как отсеять чужие заявки.",
+  "cover": "/images/articles/zayavki-iz-regionov.jpg"
+ },
+ {
+  "slug": "reklama-podorozhala",
+  "category": "РЕКЛАМА · БЮДЖЕТ",
+  "title": "Почему подорожала реклама в Instagram и что проверить",
+  "summary": "Заявка стоила дешевле, а теперь дороже. Как понять, что выросло: цена показа, клика или заявки. Сезон, выгорание, качество объявления, правки кампании и курс.",
+  "cover": "/images/articles/reklama-podorozhala.jpg"
+ },
+ {
   "slug": "reklama-vygoraet",
   "category": "РЕКЛАМА · КРЕАТИВЫ",
   "title": "Реклама перестала работать через 2–3 недели: что делать",
@@ -26,19 +40,5 @@
   "title": "Таргет по району Ташкента: узкая аудитория или весь город",
   "summary": "Узкий район кажется точным, но часто дорожает и не набирает показов. Когда реклама на район оправдана, а когда лучше весь Ташкент и адрес в объявлении.",
   "cover": "/images/articles/target-po-rajonam-tashkenta.jpg"
- },
- {
-  "slug": "oplata-reklamy-meta-uzbekistan",
-  "category": "РЕКЛАМА · ОПЛАТА",
-  "title": "Как оплатить рекламу в Instagram и Facebook из Узбекистана",
-  "summary": "Какая карта подходит для рекламы Meta, как привязать её к кабинету, когда списываются деньги и что делать, если оплата не проходит.",
-  "cover": "/images/articles/oplata-reklamy-meta-uzbekistan.jpg"
- },
- {
-  "slug": "knopka-prodvigat-ili-ads-manager",
-  "category": "РЕКЛАМА · ИНСТРУМЕНТЫ",
-  "title": "Кнопка «Продвигать» или Ads Manager: что выбрать бизнесу",
-  "summary": "Продвигать пост из Instagram быстро, но настроек мало. Сравниваем кнопку «Продвигать» и Ads Manager: цели, аудитория, отчёты и когда что брать.",
-  "cover": "/images/articles/knopka-prodvigat-ili-ads-manager.jpg"
  }
 ]
