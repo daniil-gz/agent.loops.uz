@@ -5,7 +5,7 @@
 | Goal | Meaning |
 |---|---|
 | contact_click | Click on the personal Telegram link; NOT a received lead |
-| lead_sent | Homepage form delivered to /api/lead (worker answered ok) — a real lead in Telegram |
+| lead_sent | Site form delivered to /api/razbor (form: "site"; server answered ok) — a real lead in the LeadGen group |
 | brief_prepared | Form could not be sent; fallback brief shown with a Telegram button |
 | case_preview_open | Preview opened through normal homepage/service click |
 | case_full_open | Click that navigates to a full case, including modified clicks |

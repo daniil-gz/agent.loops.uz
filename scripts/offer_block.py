@@ -51,9 +51,9 @@ FAQ = [
 
 # Three cases with the strongest numbers for each service or niche.
 SECTOR_CASES = {
-    'target': ['ilvi', 'viamed', 'chery'], 'ai-bot': ['tak', 'nwl', 'viamed'],
+    'target': ['ilvi', 'biorise', 'chery'], 'ai-bot': ['tak', 'nwl', 'biorise'],
     'consulting': ['ilvi', 'biorise', 'tak'], 'analytics': ['biorise', 'ilvi', 'chery'],
-    'clinics': ['biorise', 'viamed', 'dental'], 'b2b': ['ilvi', 'nwl', 'centrismedia'],
+    'clinics': ['biorise', 'dental', 'viamed'], 'b2b': ['ilvi', 'nwl', 'centrismedia'],
     'manufacturing': ['basalt', 'printuz', 'bts'], 'auto': ['chery', 'blackstar', 'ilvi'],
     'fitness': ['centrisfit', 'centrisladies', 'dental'], 'horeca': ['dolcetta', 'bscafe', 'restokids'],
 }
