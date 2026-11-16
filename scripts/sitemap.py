@@ -3,7 +3,9 @@
 
 Pages: root, 4 services, industries (industries.json), published cases (cases/_content),
 articles (content/articles.json), /articles/, /cases.html, /about/, /privacy/.
-lastmod: last git commit of the page file; today if the file differs from HEAD.
+lastmod: content date, not build date (16.11.2026): articles and cases — their updated/published;
+pages.json — updated if set; React pages (root, services, industries) — last commit of their sources;
+the rest — last commit of the page file.
 Run by build-editorial.py; can also run alone: python3 scripts/sitemap.py
 """
 from pathlib import Path
@@ -44,9 +46,28 @@ def git(*args):
     return subprocess.run(['git', '-C', str(R), *args], capture_output=True, text=True)
 
 
-def lastmod(path):
-    rel = str(page_file(path).relative_to(R))
-    changed = git('status', '--porcelain', '--', rel).stdout.strip()
+def content_dates():
+    out = {}
+    for a in json.loads((R / 'content/articles.json').read_text()):
+        out[f'/articles/{a["slug"]}/'] = a.get('updated') or a.get('published')
+    for p in sorted((R / 'cases/_content').glob('*.json')):
+        d = json.loads(p.read_text())
+        out[f'/cases/case-{d["id"]}/'] = d.get('updated') or d.get('published')
+    for pg in json.loads((R / 'content/pages.json').read_text()):
+        if pg.get('updated'):
+            out[f'/{pg["slug"]}/'] = pg['updated']
+    return {k: v for k, v in out.items() if v}
+
+
+REACT_SOURCES = ['_handoff/leadgeneration-source/src']
+
+
+def lastmod(path, dates):
+    if path in dates:
+        return dates[path][:10]
+    react = path == '/' or path.strip('/') in SERVICES or (R / '_handoff/leadgeneration-source/src/industries.json').read_text().count(f'"{path.strip("/")}"')
+    rel = REACT_SOURCES[0] if react else str(page_file(path).relative_to(R))
+    changed = git('status', '--porcelain', '--untracked-files=no', '--', rel).stdout.strip()
     committed = git('log', '-1', '--format=%cs', '--', rel).stdout.strip()
     return date.today().isoformat() if changed or not committed else committed
 
@@ -58,9 +79,10 @@ def build(photo_url):
         raise SystemExit(f'sitemap: no page file for {missing}')
     if len(set(ps)) != len(ps):
         raise SystemExit('sitemap: duplicate paths')
+    dates = content_dates()
     img = f'<image:image><image:loc>{html.escape(photo_url)}</image:loc></image:image>'
     rows = ''.join(
-        f'  <url><loc>{BASE}{p}</loc><lastmod>{lastmod(p)}</lastmod>{img if p in PHOTO_PAGES else ""}</url>\n'
+        f'  <url><loc>{BASE}{p}</loc><lastmod>{lastmod(p, dates)}</lastmod>{img if p in PHOTO_PAGES else ""}</url>\n'
         for p in sorted(ps))
     (R / 'sitemap.xml').write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'

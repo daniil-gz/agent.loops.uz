@@ -33,6 +33,20 @@ def inline_cta(lead=''):
 def cta(title='Есть похожая задача?',text='Бесплатный созвон без обязательств: обсудим вашу ситуацию и задачи. Оставьте контакт — Даниил напишет сам.'):
  # Форма заявки — одна на весь сайт (lead-form.js, Даниил 10.11.2026): заявка уходит Даниилу, в Notion и таблицу.
  return f'<section class="wrap editorial-cta lead-block" id="contact"><div><span class="eyebrow">НА СВЯЗИ ЛИЧНО</span><h2>{title}</h2><p>{text}</p><a class="lead-alt" href="https://t.me/dani_gzv">Или написать в Telegram ↗</a></div><div data-lead-form><p class="lf-fallback"><a href="https://t.me/dani_gzv">Написать Даниилу в Telegram ↗</a></p></div></section>'
+def paras(items):
+ # Шаги «1. …», «2. …» подряд — нумерованный список: поиску и ИИ проще взять пошаговый ответ (16.11.2026).
+ out,run=[],[]
+ def flush():
+  if len(run)>=2: out.append('<ol>'+''.join(f'<li>{para(re.sub(r"^\d+[.)]\s+","",x))}</li>' for x in run)+'</ol>')
+  else: out.extend(f'<p>{para(x)}</p>' for x in run)
+  run.clear()
+ for x in items:
+  if re.match(r'^\d+[.)]\s+\S',x) and (not run or int(re.match(r'^(\d+)',x).group(1))==len(run)+1): run.append(x); continue
+  flush()
+  if re.match(r'^1[.)]\s+\S',x): run.append(x)
+  else: out.append(f'<p>{para(x)}</p>')
+ flush()
+ return ''.join(out)
 def para(p):
  # Paragraph text with internal links written as [anchor](/path/). Only site-relative paths are linked.
  return re.sub(r'\[([^\]]+)\]\((/[a-z0-9/#.-]*)\)',r'<a href="\2">\1</a>',e(p))
@@ -53,7 +67,7 @@ for a in articles:
  body+=f'<div class="wrap editorial-layout"><aside><nav aria-label="Содержание статьи"><span class="eyebrow">В МАТЕРИАЛЕ</span>{toc}</nav></aside><article class="editorial-prose">'
  mid=max(3,len(a['sections'])//2+1)
  for i,s in enumerate(a['sections'],1):
-  body+=f'<section id="section-{i}"><h2>{e(s["title"])}</h2>'+''.join(f'<p>{para(p)}</p>' for p in s['paragraphs'])+table(s.get('table'))+''.join(f'<p>{para(p)}</p>' for p in s.get('after',[]))+'</section>'
+  body+=f'<section id="section-{i}"><h2>{e(s["title"])}</h2>'+paras(s['paragraphs'])+table(s.get('table'))+''.join(f'<p>{para(p)}</p>' for p in s.get('after',[]))+'</section>'
   if i==1 or (i==mid and i<len(a['sections'])):body+=inline_cta(a.get('ctaLead',''))
  if a['sources']:body+='<section><h2>Официальные источники</h2><ul>'+''.join(f'<li><a href="{e(x["url"])}" rel="noopener">{e(x["title"])} ↗</a></li>' for x in a['sources'])+'</ul><p>Сведения об инструменте сверены при обновлении материала. Доступность и условия могут меняться.</p></section>'
  c=next(x for x in cases if x['id']==a['case']);body+=f'<div class="reading-next"><span class="eyebrow">ОТ МАТЕРИАЛА К ПРАКТИКЕ</span><a href="/{a["service"]}/">{e(links[a["service"]])} ↗</a><a href="/cases/case-{c["id"]}/">Кейс {e(c["client"])}: {e(c["headline"])} ↗</a></div>'+also(a)+'</article></div>'+offer_block.offer(offer_block.SECTOR_CASES.get(a['service'],offer_block.SECTOR_CASES['target']),cases)+cta()
@@ -93,7 +107,7 @@ def landing(pg):
  path='/'+pg['slug']+'/'
  def block(sec):
   # Paragraphs and list items accept [anchor](/path/) links; optional table (same format as articles).
-  out=f'<section><h2>{e(sec["title"])}</h2>'+''.join(f'<p>{para(x)}</p>' for x in sec.get('paragraphs',[]))
+  out=f'<section><h2>{e(sec["title"])}</h2>'+paras(sec.get('paragraphs',[]))
   if sec.get('list'):out+='<ul>'+''.join(f'<li>{para(x)}</li>' for x in sec['list'])+'</ul>'
   out+=table(sec.get('table'))+''.join(f'<p>{para(x)}</p>' for x in sec.get('after',[]))
   if sec.get('links'):out+='<div class="reading-next">'+''.join(f'<a href="{e(u)}">{e(t)} ↗</a>' for u,t in sec['links'])+'</div>'
@@ -111,6 +125,17 @@ def landing(pg):
   '</article></div>'+offer_block.offer(pg['cases'],cases,'Результаты и цены.',faq=False)+cta())
  faq={'@type':'FAQPage','@id':BASE+path+'#faq','mainEntity':[{'@type':'Question','name':fq,'acceptedAnswer':{'@type':'Answer','text':fa}} for fq,fa in pg['faq']]}
  svc={'@type':'Service','@id':BASE+path+'#service','name':pg['h1']+' '+pg['accent'].rstrip('.'),'description':pg['description'],'provider':{'@id':BASE+'/#organization'},'areaServed':['Ташкент','Узбекистан','Весь мир'],'url':BASE+path}
+ if pg['slug']=='prices':
+  # Цены в разметке: тот же список, что в блоке цен (offer_block.PRICES), без «по запросу» (16.11.2026).
+  def offer(name,price,href):
+   n=re.search(r'(\d+(?:[.,]\d+)?)\s*млн',price)
+   if not n: return None
+   v=int(float(n.group(1).replace(',','.'))*1_000_000)
+   spec={'@type':'UnitPriceSpecification','priceCurrency':'UZS'}
+   spec.update({'minPrice':v} if price.startswith('от') else {'price':v})
+   if 'месяц' in price: spec['unitText']='месяц'
+   return {'@type':'Offer','name':name,'url':BASE+href,'priceSpecification':spec}
+  svc['hasOfferCatalog']={'@type':'OfferCatalog','name':'Цены Loops','itemListElement':[o for o in (offer(*x) for x in offer_block.PRICES) if o]}
  save(path,shell(path,pg['title'].replace(' — Loops','').replace(', Ташкент',', Ташкент'),pg['description'],body,'WebPage',[faq,svc],modified=pg.get('updated',DATE)))
 for pg in pages: landing(pg)
 # Last: sitemap from sources, after every page above is written.

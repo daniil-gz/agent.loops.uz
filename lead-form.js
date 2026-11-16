@@ -2,7 +2,7 @@
    Страница ставит место: <div data-lead-form data-service="Консалтинг" data-theme="dark"></div>.
    Скрипт рисует форму и шлёт заявку в /api/razbor (сервер loops-lead) с form=site и адресом страницы.
    Дальше: группа «LeadGen. Заявки», Notion, таблица. Человеку автоматически никто не пишет.
-   Ответ no_telegram — просим проверить номер. Другая ошибка — кнопка Telegram с готовым текстом.
+   Ответ no_telegram с saved — заявка принята, номера нет в Telegram: показываем успех и просим написать самим. Другая ошибка — кнопка Telegram с готовым текстом.
    Поле company — ловушка для ботов: человек его не видит, и мы его не шлём, если оно пустое. */
 (function () {
   'use strict';
@@ -45,9 +45,12 @@
       '</form>';
   }
 
-  function doneHtml() {
-    return '<div class="lf-state" role="status"><h3>Заявка отправлена.</h3>' +
-      '<p>Даниил получил её и свяжется с вами по контакту, который вы указали.</p></div>';
+  function doneHtml(noTg) {
+    if (noTg) return '<div class="lf-state" role="status"><h3>Заявка у меня.</h3>' +
+      '<p>Ваш номер не нашёлся в Telegram, поэтому свяжусь по телефону. Удобнее Telegram — напишите мне сами.</p>' +
+      '<a class="lf-submit" href="' + TG + '" target="_blank" rel="noopener">Написать в Telegram ↗</a></div>';
+    return '<div class="lf-state" role="status"><h3>Заявка у меня.</h3>' +
+      '<p>Уже пишу вам в Telegram — проверьте сообщения.</p></div>';
   }
 
   function briefHtml(text) {
@@ -71,12 +74,12 @@
     if (host.getAttribute('data-ready')) return;
     host.setAttribute('data-ready', '1');
     host.classList.add('lf', host.getAttribute('data-theme') === 'dark' ? 'lf--dark' : 'lf--light');
-    var id = 'lf' + (++uid), draft = {}, view = 'form', brief = '';
+    var id = 'lf' + (++uid), draft = {}, view = 'form', brief = '', noTg = false;
     var service = host.getAttribute('data-service') || '';
 
     /* Рисует текущее состояние. React при гидратации может стереть содержимое места — тогда рисуем заново. */
     function render() {
-      if (view === 'done') { host.innerHTML = doneHtml(); return; }
+      if (view === 'done') { host.innerHTML = doneHtml(noTg); return; }
       if (view === 'brief') {
         host.innerHTML = briefHtml(brief);
         host.querySelector('.lf-again').addEventListener('click', showForm);
@@ -127,11 +130,11 @@
       fetch('/api/razbor', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
         .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { r: r, j: j }; }); })
         .then(function (res) {
-          if (res.j && res.j.error === 'no_telegram') {
-            btn.disabled = false;
-            btn.textContent = 'Отправить заявку';
-            setError(form, 'Этот номер не нашли в Telegram. Проверьте номер или укажите @username — так Даниил сможет вам написать.');
-            form.contact.focus();
+          // Сервер сохранил и передал заявку, но номера нет в Telegram: для человека это успех (16.11.2026).
+          if (res.j && res.j.error === 'no_telegram' && res.j.saved) {
+            if (window.loopsTrack) window.loopsTrack('lead_sent');
+            view = 'done'; noTg = true;
+            render();
             return;
           }
           if (!res.r.ok || !res.j.ok) throw new Error(res.j.error || 'send');

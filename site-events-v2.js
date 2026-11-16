@@ -2,7 +2,7 @@
 (function () {
   'use strict';
   if (window.loopsTrack) return;
-  var allowed = new Set(['contact_click', 'lead_sent', 'brief_prepared', 'case_preview_open', 'case_full_open', 'audit_link', 'popup_shown', 'popup_click']);
+  var allowed = new Set(['contact_click', 'lead_sent', 'brief_prepared', 'case_preview_open', 'case_full_open', 'audit_link', 'popup_shown', 'popup_click', 'popup_close']);
   var production = /^(www\.)?loops\.uz$/.test(location.hostname);
   window.loopsTrack = function (name, caseId) {
     if (!allowed.has(name)) return;

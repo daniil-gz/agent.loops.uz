@@ -101,8 +101,9 @@
     track('popup_shown');
     box.querySelector('.lp-tg').addEventListener('click', function () { track('popup_click'); quiet(30); close(); });
     box.querySelector('.lp-form').addEventListener('click', function () { track('popup_click'); quiet(30); close(); });
-    box.querySelector('.lp-later').addEventListener('click', close);
-    box.querySelector('.lp-x').addEventListener('click', close);
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+    function dismiss() { if (box) { track('popup_close'); close(); } }
+    box.querySelector('.lp-later').addEventListener('click', dismiss);
+    box.querySelector('.lp-x').addEventListener('click', dismiss);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') dismiss(); });
   }
 })();
