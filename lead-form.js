@@ -41,7 +41,7 @@
       '<label class="lf-field">Задача<textarea name="message" rows="3" placeholder="Что сейчас происходит и какой результат нужен?" maxlength="1500"></textarea></label>' +
       '<label class="lf-trap" aria-hidden="true">Компания<input name="company" tabindex="-1" autocomplete="off"></label>' +
       '<button class="lf-submit" type="submit">Отправить заявку</button>' +
-      '<p class="lf-helper">Заявка придёт Даниилу. Он ответит по телефону или в Telegram.</p>' +
+      '<p class="lf-helper">Заявка придёт мне. Отвечу по телефону или в Telegram.</p>' +
       '</form>';
   }
 
@@ -55,7 +55,7 @@
 
   function briefHtml(text) {
     return '<div class="lf-state" role="status"><h3>Не получилось отправить.</h3>' +
-      '<p>Текст заявки готов. Отправьте его Даниилу в Telegram — это одна кнопка.</p>' +
+      '<p>Текст заявки готов. Отправьте его мне в Telegram — это одна кнопка.</p>' +
       '<pre>' + esc(text) + '</pre>' +
       '<a class="lf-submit" href="' + TG + '?text=' + encodeURIComponent(text) + '" target="_blank" rel="noopener">Открыть Telegram ↗</a>' +
       '<button class="lf-again" type="button">Изменить заявку</button></div>';

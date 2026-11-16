@@ -32,7 +32,7 @@ function ProcessVideo(){
  </div>;
 }
 function SocialLinks(){
- return <nav className="about-socials" aria-label="Социальные сети Даниила">{[
+ return <nav className="about-socials" aria-label="Мои социальные сети">{[
   ['Telegram','https://t.me/dani_gzv',TelegramLogo],
   ['Instagram','https://instagram.com/danii_gzv',InstagramLogo],
   ['YouTube','https://www.youtube.com/@dani_gzv',YoutubeLogo],
@@ -57,7 +57,7 @@ function ClientStrip(){
 }
 
 /* Форма заявки — общая для всего сайта: /lead-form.js рисует её в [data-lead-form] (Даниил 10.11.2026). React не трогает содержимое. */
-const LEAD_FALLBACK='<p class="lf-fallback"><a href="https://t.me/dani_gzv">Написать Даниилу в Telegram ↗</a></p>';
+const LEAD_FALLBACK='<p class="lf-fallback"><a href="https://t.me/dani_gzv">Написать мне в Telegram ↗</a></p>';
 export function App(){
  const[preview,setPreview]=useState(null);
  const openPreview=(event,id)=>{const data=cases.find(c=>c.id===id);if(data&&!event.metaKey&&!event.ctrlKey&&!event.shiftKey&&!event.altKey&&event.button===0){event.preventDefault();setPreview(data);window.loopsTrack?.('case_preview_open',id);}};
@@ -101,7 +101,7 @@ export function App(){
  <section className="faq-section section wrap"><Reveal className="section-intro"><div><span className="eyebrow">ПЕРЕД СТАРТОМ</span><h2>Хорошие вопросы.</h2></div><Note>и прямые ответы</Note></Reveal><div className="faq-list">{homeFaq.map(([q,a],i)=><div className="faq-item" key={q}><h3><button onClick={()=>setFaq(faq===i?null:i)} aria-expanded={faq===i} aria-controls={`faq-${i}`}>{q}{faq===i?<Minus size={22}/>:<Plus size={22}/>}</button></h3><div id={`faq-${i}`} className={`faq-answer ${faq===i?'open':''}`} inert={faq!==i?true:undefined}><div><p>{a}</p></div></div></div>)}</div></section>
  <section className="articles-section section wrap" id="articles"><div className="rail-heading"><h2>По делу.</h2><div className="rail-controls"><button className="icon-button" onClick={()=>articleRail.current.scrollBy({left:-400,behavior:scrollBehavior()})} disabled={!articleArrows.prev} aria-label="Предыдущие материалы"><ArrowLeft/></button><button className="icon-button" onClick={()=>articleRail.current.scrollBy({left:400,behavior:scrollBehavior()})} disabled={!articleArrows.next} aria-label="Следующие материалы"><ArrowRight/></button></div></div><div className="article-rail" ref={articleRail}>{homeArticles.map(({slug,category:c,title:t,summary:d,cover})=><a href={`/articles/${slug}/`} key={slug} className="article-card"><div className="article-art article-art--cover"><img src={cover} alt="" width="1200" height="800" loading="lazy" decoding="async"/></div><div className="article-body"><span className="eyebrow">{c}</span><h3>{t}</h3><p>{d}</p><span className="text-link">Читать материал <ArrowUpRight size={18}/></span></div></a>)}</div></section>
  </main>
- <footer className="footer"><div className="wrap footer-top"><div><span className="eyebrow">СЛЕДУЮЩАЯ ИСТОРИЯ — ВАША</span><h2>Начнём с разговора.</h2></div><Button href={TG} className="button-yellow" target="_blank" rel="noreferrer">Написать Даниилу</Button></div><div className="wrap footer-links"><span>© 2026 Loops · Даниил Газизов</span><span>Ташкент · онлайн по всему миру</span><FooterLinks/><a href="#top">Наверх <ArrowUpRight size={15}/></a></div><SeoLinks className="wrap footer-links footer-seo"/><div className="footer-word" aria-hidden="true">loops</div></footer>
+ <footer className="footer"><div className="wrap footer-top"><div><span className="eyebrow">СЛЕДУЮЩАЯ ИСТОРИЯ — ВАША</span><h2>Начнём с разговора.</h2></div><Button href={TG} className="button-yellow" target="_blank" rel="noreferrer">Написать мне</Button></div><div className="wrap footer-links"><span>© 2026 Loops · Даниил Газизов</span><span>Ташкент · онлайн по всему миру</span><FooterLinks/><a href="#top">Наверх <ArrowUpRight size={15}/></a></div><SeoLinks className="wrap footer-links footer-seo"/><div className="footer-word" aria-hidden="true">loops</div></footer>
  {preview&&<CasePreview data={preview} onClose={()=>setPreview(null)}/>}
  </>;
 }
