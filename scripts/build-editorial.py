@@ -47,6 +47,20 @@ def paras(items):
   else: out.append(f'<p>{para(x)}</p>')
  flush()
  return ''.join(out)
+def video_block(v):
+ # Видео YouTube в статье: обложка и кнопка, плеер грузится только по нажатию (editorial.js). Главы — таймкоды (16.11.2026).
+ vid=e(v['id']);watch=f'https://www.youtube.com/watch?v={vid}'
+ chapters=''.join(f'<li><a href="{watch}&amp;t={c["t"]}s" rel="noopener">{c["t"]//60}:{c["t"]%60:02d}</a> — {e(c["title"])}</li>' for c in v.get('chapters',[]))
+ return (f'<figure class="article-video"><a class="video-facade" href="{watch}" data-yt="{vid}" rel="noopener" aria-label="Смотреть видео: {e(v["title"])}">'
+  f'<img src="https://i.ytimg.com/vi/{vid}/hqdefault.jpg" width="480" height="360" alt="Кадр из видео «{e(v["title"])}»" loading="lazy"><span class="video-play">▶ Смотреть видео · {e(v["length"])}</span></a>'
+  f'<figcaption>Видео Даниила Газизова на YouTube: «{e(v["title"])}».</figcaption>'+(f'<ul class="video-chapters">{chapters}</ul>' if chapters else '')+'</figure>')
+def video_schema(v,url):
+ watch='https://www.youtube.com/watch?v='+v['id']
+ o={'@type':'VideoObject','@id':url+'#video','name':v['title'],'description':v['description'],'thumbnailUrl':f'https://i.ytimg.com/vi/{v["id"]}/hqdefault.jpg','uploadDate':v['uploadDate'],'duration':v['duration'],'contentUrl':watch,'embedUrl':'https://www.youtube-nocookie.com/embed/'+v['id'],'inLanguage':'ru','author':{'@id':BASE+'/#daniil'}}
+ if v.get('chapters'):
+  ts=[c['t'] for c in v['chapters']]+[v['seconds']]
+  o['hasPart']=[{'@type':'Clip','name':c['title'],'startOffset':c['t'],'endOffset':ts[i+1],'url':f'{watch}&t={c["t"]}s'} for i,c in enumerate(v['chapters'])]
+ return o
 def para(p):
  # Paragraph text with internal links written as [anchor](/path/). Only site-relative paths are linked.
  return re.sub(r'\[([^\]]+)\]\((/[a-z0-9/#.-]*)\)',r'<a href="\2">\1</a>',e(p))
@@ -68,10 +82,11 @@ for a in articles:
  mid=max(3,len(a['sections'])//2+1)
  for i,s in enumerate(a['sections'],1):
   body+=f'<section id="section-{i}"><h2>{e(s["title"])}</h2>'+paras(s['paragraphs'])+table(s.get('table'))+''.join(f'<p>{para(p)}</p>' for p in s.get('after',[]))+'</section>'
+  if i==1 and a.get('video'):body+=video_block(a['video'])
   if i==1 or (i==mid and i<len(a['sections'])):body+=inline_cta(a.get('ctaLead',''))
  if a['sources']:body+='<section><h2>Официальные источники</h2><ul>'+''.join(f'<li><a href="{e(x["url"])}" rel="noopener">{e(x["title"])} ↗</a></li>' for x in a['sources'])+'</ul><p>Сведения об инструменте сверены при обновлении материала. Доступность и условия могут меняться.</p></section>'
  c=next(x for x in cases if x['id']==a['case']);body+=f'<div class="reading-next"><span class="eyebrow">ОТ МАТЕРИАЛА К ПРАКТИКЕ</span><a href="/{a["service"]}/">{e(links[a["service"]])} ↗</a><a href="/cases/case-{c["id"]}/">Кейс {e(c["client"])}: {e(c["headline"])} ↗</a></div>'+also(a)+'</article></div>'+offer_block.offer(offer_block.SECTOR_CASES.get(a['service'],offer_block.SECTOR_CASES['target']),cases)+cta()
- save('/articles/'+a['slug']+'/',shell('/articles/'+a['slug']+'/',a.get('seoTitle',title),a.get('metaDescription',a['summary']),body,'Article',modified=a['updated'],published=a.get('published'),image=a.get('coverOg'),image_alt=a.get('coverAlt')))
+ save('/articles/'+a['slug']+'/',shell('/articles/'+a['slug']+'/',a.get('seoTitle',title),a.get('metaDescription',a['summary']),body,'Article',extra=[video_schema(a['video'],BASE+'/articles/'+a['slug']+'/')] if a.get('video') else None,modified=a['updated'],published=a.get('published'),image=a.get('coverOg'),image_alt=a.get('coverAlt')))
 body='<section class="wrap editorial-hero"><span class="eyebrow">ПРАКТИКА LOOPS</span><h1>Разобраться.<br><em>И сделать лучше.</em></h1><p class="editorial-lead">Материалы о рекламе, квалификации заявок и продажах. С понятными определениями, примерами и следующими шагами.</p></section><section class="wrap editorial-list">'+cards([a for a in articles if a.get('group')!='tools'])+'</section>'+(lambda tools:f'<section class="wrap editorial-list"><h2 class="list-heading">Инструменты и развитие команды.</h2>{cards(tools)}</section>' if tools else '')([a for a in articles if a.get('group')=='tools'])+offer_block.offer(offer_block.SECTOR_CASES['target'],cases)+cta()
 save('/articles/',shell('/articles/','Материалы о маркетинге, B2B-лидогенерации и аналитике','Практические материалы Loops: квалификация заявок, стоимость лида, CRM, маркетинг клиник и применение ИИ.',body,'CollectionPage',modified=max(a['updated'] for a in articles)))
 # Static searchable case catalog; ordinary click opens a dialog before the full story.
