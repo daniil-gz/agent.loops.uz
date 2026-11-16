@@ -30,7 +30,7 @@
   function prefillTelegram() {
     if (typeof document.querySelector !== 'function' || typeof document.querySelectorAll !== 'function') return;
     var h1 = document.querySelector('h1');
-    var name = ((h1 && h1.innerText) || document.title || '').replace(/\s+/g, ' ').replace(/ — Loops$/, '').trim().slice(0, 90);
+    var name = ((h1 && h1.innerText) || document.title || '').replace(/\s+/g, ' ').replace(/ — Loops$/, '').trim().replace(/[.\s]+$/, '').slice(0, 90);
     var text = 'Здравствуйте! Я с сайта loops.uz' + (location.pathname === '/' ? '' : ', страница «' + name + '»') + '. Хочу обсудить задачу на бесплатном созвоне.';
     document.querySelectorAll('a[href^="https://t.me/dani_gzv"]').forEach(function (a) {
       try {
