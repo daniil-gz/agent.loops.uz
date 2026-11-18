@@ -131,6 +131,7 @@ def landing(pg):
   out=f'<section><h2>{e(sec["title"])}</h2>'+paras(sec.get('paragraphs',[]))
   if sec.get('image'):im=sec['image'];out+=f'<figure class="editorial-figure"><img src="{e(im["src"])}" width="{im["w"]}" height="{im["h"]}" loading="lazy" alt="{e(im["alt"])}"><figcaption>{e(im.get("caption",""))}</figcaption></figure>'
   if sec.get('list'):out+='<ul>'+''.join(f'<li>{para(x)}</li>' for x in sec['list'])+'</ul>'
+  if sec.get('videoFrom'):out+=video_block(next(a for a in articles if a['slug']==sec['videoFrom'])['video'])
   out+=table(sec.get('table'))+''.join(f'<p>{para(x)}</p>' for x in sec.get('after',[]))
   if sec.get('links'):out+='<div class="reading-next">'+''.join(f'<a href="{e(u)}">{e(t)} ↗</a>' for u,t in sec['links'])+'</div>'
   return out+'</section>'
@@ -160,9 +161,11 @@ def landing(pg):
   svc['hasOfferCatalog']={'@type':'OfferCatalog','name':'Цены Loops','itemListElement':[o for o in (offer(*x) for x in offer_block.PRICES) if o]}
  extra=[faq,svc]
  # Прошедшие выступления Даниила — Event с performer (страница /speaker/, 18.11.2026).
- for x in pg.get('events',[]):
+ for i,x in enumerate(pg.get('events',[]),1):
   loc={'@type':'VirtualLocation','url':BASE+path} if x.get('mode')=='online' else {'@type':'Place','name':x['place'],'address':{'@type':'PostalAddress','addressLocality':x.get('city','Ташкент'),'addressCountry':'UZ'}}
-  extra.append({'@type':'Event','name':x['name'],'startDate':x['date'],'eventStatus':'https://schema.org/EventScheduled','eventAttendanceMode':'https://schema.org/'+('OnlineEventAttendanceMode' if x.get('mode')=='online' else 'OfflineEventAttendanceMode'),'location':loc,'organizer':{'@type':'Organization','name':x['organizer']},'performer':{'@id':BASE+'/#daniil'},'inLanguage':'ru'})
+  extra.append({'@type':'Event','name':x['name'],'startDate':x['date'],'eventStatus':'https://schema.org/EventScheduled','eventAttendanceMode':'https://schema.org/'+('OnlineEventAttendanceMode' if x.get('mode')=='online' else 'OfflineEventAttendanceMode'),'location':loc,'organizer':{'@type':'Organization','name':x['organizer']},'performer':{'@id':BASE+'/#daniil'},'inLanguage':'ru','@id':BASE+path+f'#event-{i}'})
+  if x.get('videoFrom'):
+   vo=video_schema(next(a for a in articles if a['slug']==x['videoFrom'])['video'],BASE+path);vo['recordedAt']={'@id':BASE+path+f'#event-{i}'};extra[-1]['recordedIn']={'@id':vo['@id']};extra.append(vo)
  save(path,shell(path,pg['title'].replace(' — Loops','').replace(', Ташкент',', Ташкент'),pg['description'],body,'WebPage',extra,modified=pg.get('updated',DATE)))
 for pg in pages: landing(pg)
 # Last: sitemap from sources, after every page above is written.

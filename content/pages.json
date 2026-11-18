@@ -430,7 +430,7 @@
           ]
         },
         "after": [
-          "Запись и разбор доклада о CRM-маркетинге — в статье [«CRM-маркетинг при долгой сделке»](/articles/crm-marketing-dlinnaya-sdelka/)."
+          "Выше — запись моего доклада на CRM People, 30 минут. Разбор по главам — в статье [«CRM-маркетинг при долгой сделке»](/articles/crm-marketing-dlinnaya-sdelka/)."
         ],
         "image": {
           "src": "/images/daniil-gazizov-stage.jpg",
@@ -438,7 +438,8 @@
           "h": 640,
           "alt": "Даниил Газизов выступает на сцене с микрофоном",
           "caption": "Выступление на конференции."
-        }
+        },
+        "videoFrom": "crm-marketing-dlinnaya-sdelka"
       },
       {
         "title": "Форматы.",
@@ -510,7 +511,8 @@
         "place": "Конференция CRM People",
         "city": "Ташкент",
         "mode": "offline",
-        "organizer": "CRM People"
+        "organizer": "CRM People",
+        "videoFrom": "crm-marketing-dlinnaya-sdelka"
       },
       {
         "name": "Как стартапам продавать в Instagram в 2026",
