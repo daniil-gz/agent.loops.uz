@@ -1,5 +1,12 @@
 [
  {
+  "slug": "reklama-zimoj-ostanavlivat-li",
+  "category": "РЕКЛАМА · БЮДЖЕТ",
+  "title": "Останавливать ли рекламу в декабре и январе",
+  "summary": "Зимой реклама дороже, а спрос ниже. Почему не стоит выключать её полностью, что происходит с декабря по март и чем занять январь, чтобы весной получить заявки.",
+  "cover": "/images/articles/reklama-zimoj-ostanavlivat-li.jpg"
+ },
+ {
   "slug": "crm-marketing-dlinnaya-sdelka",
   "category": "CRM · ЗАЯВКИ",
   "title": "CRM-маркетинг: как не терять заявки из Instagram при долгой сделке",
@@ -33,12 +40,5 @@
   "title": "Алгоритм Meta Andromeda: почему креативы важнее аудитории",
   "summary": "Andromeda — система Meta, которая отбирает объявления для показа. Объясняем, почему настройки аудитории теперь работают не всегда и что дают новые креативы.",
   "cover": "/images/articles/andromeda-algoritm-meta.jpg"
- },
- {
-  "slug": "obuchit-meta-kachestvennye-zayavki",
-  "category": "РЕКЛАМА · КАЧЕСТВО ЗАЯВОК",
-  "title": "Как научить Meta приводить качественные заявки",
-  "summary": "Meta ищет людей, похожих на тех, кого вы считаете результатом. Три ступени обучения рекламы: без данных, таблица с отметкой «квал» и статусы из CRM.",
-  "cover": "/images/articles/obuchit-meta-kachestvennye-zayavki.jpg"
  }
 ]
