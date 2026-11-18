@@ -1,5 +1,12 @@
 [
  {
+  "slug": "crm-dlya-otdela-prodazh",
+  "category": "ПРОЦЕССЫ · CRM",
+  "title": "CRM для отдела продаж в Ташкенте: как выбрать и внедрить",
+  "summary": "CRM выбирают под процесс продаж, а не по списку функций. Как выбрать между Bitrix24 и amoCRM, что настроить первым и почему CRM не приживается.",
+  "cover": "/images/articles/crm-dlya-otdela-prodazh.jpg"
+ },
+ {
   "slug": "reklama-zimoj-ostanavlivat-li",
   "category": "РЕКЛАМА · БЮДЖЕТ",
   "title": "Останавливать ли рекламу в декабре и январе",
@@ -14,6 +21,13 @@
   "cover": "/images/articles/crm-marketing-dlinnaya-sdelka.jpg"
  },
  {
+  "slug": "nuzhen-li-chat-bot",
+  "category": "ЧАТ-БОТ · ЗАЯВКИ",
+  "title": "Нужен ли бизнесу чат-бот в Instagram и сколько он стоит",
+  "summary": "Когда бизнесу в Ташкенте нужен чат-бот в Instagram, а когда хватит менеджера. Что делает ИИ-агент в Direct, чего он не делает и сколько стоит.",
+  "cover": "/images/articles/nuzhen-li-chat-bot.jpg"
+ },
+ {
   "slug": "marketing-eto-cifry",
   "category": "МАРКЕТИНГ · АНАЛИТИКА",
   "title": "Маркетинг — это цифры, а не охваты: урок из B2B",
@@ -26,19 +40,5 @@
   "title": "Как мы ведём таргет: 4 этапа от медиаплана до роста",
   "summary": "Стратегия и медиаплан, бот и CRM, креативы и тесты, ежедневная аналитика. Как мы ведём рекламу в Instagram и Facebook — с видео на 5 минут.",
   "cover": "/images/articles/etapy-raboty-target.jpg"
- },
- {
-  "slug": "kogda-okupaetsya-reklama",
-  "category": "РЕКЛАМА · ОКУПАЕМОСТЬ",
-  "title": "Когда окупается реклама: что происходит в первые 4 месяца",
-  "summary": "Реклама редко окупается в первый месяц. Схема на 4 месяца: от возврата бюджета до прибыли, почему не сразу, как наращивать бюджет и что считать каждый месяц.",
-  "cover": "/images/articles/kogda-okupaetsya-reklama.jpg"
- },
- {
-  "slug": "andromeda-algoritm-meta",
-  "category": "РЕКЛАМА · КРЕАТИВЫ",
-  "title": "Алгоритм Meta Andromeda: почему креативы важнее аудитории",
-  "summary": "Andromeda — система Meta, которая отбирает объявления для показа. Объясняем, почему настройки аудитории теперь работают не всегда и что дают новые креативы.",
-  "cover": "/images/articles/andromeda-algoritm-meta.jpg"
  }
 ]
