@@ -14,6 +14,13 @@
   "cover": "/images/articles/reklama-zimoj-ostanavlivat-li.jpg"
  },
  {
+  "slug": "kak-vybrat-marketologa-tashkent",
+  "category": "МАРКЕТИНГ · ВЫБОР ПОДРЯДЧИКА",
+  "title": "Как выбрать маркетолога в Ташкенте",
+  "summary": "Как понять, что маркетолог приведёт продажи, а не отчёт об охватах: штат, фрилансер или агентство, 7 вопросов до оплаты и признаки слабого специалиста.",
+  "cover": "/images/articles/kak-vybrat-marketologa-tashkent.jpg"
+ },
+ {
   "slug": "crm-marketing-dlinnaya-sdelka",
   "category": "CRM · ЗАЯВКИ",
   "title": "CRM-маркетинг: как не терять заявки из Instagram при долгой сделке",
@@ -33,12 +40,5 @@
   "title": "Маркетинг — это цифры, а не охваты: урок из B2B",
   "summary": "Почему миллионы просмотров не равны продажам и как управлять маркетингом по показателям. Моя история: от креативного агентства к заводу.",
   "cover": "/images/articles/marketing-eto-cifry.jpg"
- },
- {
-  "slug": "etapy-raboty-target",
-  "category": "ТАРГЕТ · ПРОЦЕСС",
-  "title": "Как мы ведём таргет: 4 этапа от медиаплана до роста",
-  "summary": "Стратегия и медиаплан, бот и CRM, креативы и тесты, ежедневная аналитика. Как мы ведём рекламу в Instagram и Facebook — с видео на 5 минут.",
-  "cover": "/images/articles/etapy-raboty-target.jpg"
  }
 ]

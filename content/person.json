@@ -2,7 +2,11 @@
   "@type": "Person",
   "@id": "https://loops.uz/#daniil",
   "name": "Даниил Газизов",
-  "alternateName": ["Daniil Gazizov", "Газизов Даниил", "danii_gzv"],
+  "alternateName": [
+    "Daniil Gazizov",
+    "Газизов Даниил",
+    "danii_gzv"
+  ],
   "url": "https://loops.uz/about/",
   "image": {
     "@type": "ImageObject",
@@ -11,13 +15,34 @@
     "contentUrl": "https://loops.uz/images/daniil-gazizov.jpg",
     "width": 640,
     "height": 640,
-    "caption": "Даниил Газизов — таргетолог, основатель Loops, Ташкент"
+    "caption": "Даниил Газизов — маркетолог и таргетолог, основатель Loops, Ташкент"
   },
-  "jobTitle": "Таргетолог, основатель и руководитель команды Loops",
-  "worksFor": {"@id": "https://loops.uz/#organization"},
-  "homeLocation": {"@type": "City", "name": "Ташкент"},
+  "jobTitle": "Маркетолог и таргетолог, основатель и руководитель команды Loops",
+  "description": "Маркетолог и таргетолог из Ташкента, основатель агентства Loops. Спикер и консультант по рекламе, заявкам и продажам.",
+  "worksFor": {
+    "@id": "https://loops.uz/#organization"
+  },
+  "homeLocation": {
+    "@type": "City",
+    "name": "Ташкент"
+  },
   "knowsLanguage": "ru",
-  "knowsAbout": ["Таргетированная реклама", "Meta Ads", "Реклама в Instagram", "Реклама в Facebook", "Лидогенерация", "B2B-лидогенерация", "Чат-боты для бизнеса", "CRM"],
+  "knowsAbout": [
+    "Таргетированная реклама",
+    "Meta Ads",
+    "Реклама в Instagram",
+    "Реклама в Facebook",
+    "Лидогенерация",
+    "B2B-лидогенерация",
+    "Чат-боты для бизнеса",
+    "CRM",
+    "Маркетинг",
+    "Интернет-маркетинг",
+    "Отдел продаж",
+    "ИИ в продажах",
+    "Экспертные продажи",
+    "CRM-маркетинг"
+  ],
   "sameAs": [
     "https://t.me/dani_gzv",
     "https://t.me/daniil_loops",
