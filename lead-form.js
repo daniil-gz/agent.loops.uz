@@ -70,6 +70,37 @@
     return out;
   }
 
+  /* Первый вход за 30 дней (аудит 18.11.2026): откуда пришёл человек и на какую страницу.
+     Без меток в адресе заявка иначе теряет источник, если человек пришёл из ChatGPT или Google на одну страницу, а форму отправил на другой.
+     Хранится только сайт-источник, страница входа и метки — без личных данных. */
+  var FT = 'loops_first_touch';
+  function readFirst() {
+    try { var s = JSON.parse(localStorage.getItem(FT) || 'null'); if (s && Date.now() - s.t < 30 * 864e5) return s; } catch (e) {}
+    return null;
+  }
+  (function rememberFirst() {
+    var ref = '';
+    try { ref = document.referrer ? new URL(document.referrer).hostname.replace(/^www\./, '') : ''; } catch (e) {}
+    if (/(^|\.)loops\.uz$/.test(ref)) return;  // переход внутри сайта — не новый вход
+    var cur = utm();
+    if (readFirst() && !cur.source) return;     // первый вход уже есть, новых меток нет
+    try { localStorage.setItem(FT, JSON.stringify({ t: Date.now(), ref: ref, landing: location.pathname, utm: cur })); } catch (e) {}
+  })();
+  function sourceUtm() {
+    var cur = utm();
+    if (cur.source) return cur;
+    var f = readFirst();
+    if (!f) return cur;
+    var u = f.utm || {};
+    return {
+      source: (u.source || f.ref || '(direct)').slice(0, 120),
+      medium: (u.medium || (f.ref ? 'referral' : 'none')).slice(0, 120),
+      campaign: (u.campaign || '').slice(0, 120),
+      content: ('вход ' + f.landing).slice(0, 120),
+      term: (u.term || '').slice(0, 120)
+    };
+  }
+
   function mount(host) {
     if (host.getAttribute('data-ready')) return;
     host.setAttribute('data-ready', '1');
@@ -121,7 +152,7 @@
         (draft.message ? '\nЗадача: ' + draft.message : '') + '\nСтраница: ' + location.host + location.pathname;
       var body = {
         form: 'site', page: location.origin + location.pathname, name: draft.name, contact: contact,
-        business: draft.business, service: service, message: draft.message, utm: utm(),
+        business: draft.business, service: service, message: draft.message, utm: sourceUtm(),
         event_id: 'site-' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8)
       };
       if (form.company.value) body.company = form.company.value;  // ловушка: только бот заполняет
