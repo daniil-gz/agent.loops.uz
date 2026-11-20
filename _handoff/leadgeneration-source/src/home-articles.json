@@ -1,5 +1,12 @@
 [
  {
+  "slug": "obyavlenie-otkloneno-meta",
+  "category": "РЕКЛАМА · ДИАГНОСТИКА",
+  "title": "Объявление отклонено модерацией Meta: как исправить",
+  "summary": "Meta отклонила рекламу в Instagram или Facebook? Где увидеть причину, как переписать текст и картинку и когда просить повторную проверку.",
+  "cover": "/images/articles/obyavlenie-otkloneno-meta.jpg"
+ },
+ {
   "slug": "crm-dlya-otdela-prodazh",
   "category": "ПРОЦЕССЫ · CRM",
   "title": "CRM для отдела продаж в Ташкенте: как выбрать и внедрить",
@@ -33,12 +40,5 @@
   "title": "Нужен ли бизнесу чат-бот в Instagram и сколько он стоит",
   "summary": "Когда бизнесу в Ташкенте нужен чат-бот в Instagram, а когда хватит менеджера. Что делает ИИ-агент в Direct, чего он не делает и сколько стоит.",
   "cover": "/images/articles/nuzhen-li-chat-bot.jpg"
- },
- {
-  "slug": "marketing-eto-cifry",
-  "category": "МАРКЕТИНГ · АНАЛИТИКА",
-  "title": "Маркетинг — это цифры, а не охваты: урок из B2B",
-  "summary": "Почему миллионы просмотров не равны продажам и как управлять маркетингом по показателям. Моя история: от креативного агентства к заводу.",
-  "cover": "/images/articles/marketing-eto-cifry.jpg"
  }
 ]
