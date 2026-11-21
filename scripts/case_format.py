@@ -146,8 +146,7 @@ def render(data, registry, analytics):
                 content = funnel_diagram(section.get('funnel', [])) + return_diagram(section.get('return')) + repeat_visits_diagram(section.get('repeatVisits')) + content + growth_diagram(section.get('growth'))
             if key == 'measurement':
                 content += '<dl class="metric-notes">' + ''.join(f'<div><dt>{esc(m["label"])}</dt><dd>{esc(m["definition"])}</dd></div>' for m in data['metrics']) + '</dl>'
-            if key == 'results':
-                content += ''.join(f'<figure class="evidence"><img src="{esc(e["src"])}" alt="{esc(e["alt"])}" loading="lazy"><figcaption>{esc(e["caption"])}</figcaption></figure>' for e in data.get('evidence', []))
+        content += ''.join(f'<figure class="evidence"><img src="{esc(e["src"])}" alt="{esc(e["alt"])}" loading="lazy"><figcaption>{esc(e["caption"])}</figcaption></figure>' for e in data.get('evidence', []) if e.get('section', 'results') == key)
         extra = gallery_markup(data.get('gallery')) if key == 'work' else ''
         sections.append(f'<section class="story-section" id="{key}"><header class="story-heading"><span class="eyebrow">0{i+1} / {label}</span><h2>{esc(heading)}</h2></header><div class="story-body">{content}</div>{extra}</section>')
     related = ''.join(f'<a href="/cases/case-{c["id"]}/"><span class="eyebrow">{esc(c["cat"])}</span><h3>{esc(c["client"])}</h3><span class="related-bottom">Открыть кейс <span aria-hidden="true">↗</span></span></a>' for rid in data.get('related', []) for c in registry if c['id'] == rid)
