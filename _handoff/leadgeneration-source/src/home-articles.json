@@ -1,5 +1,12 @@
 [
  {
+  "slug": "oplata-targetologa-za-rezultat",
+  "category": "РЕКЛАМА · ПОДРЯДЧИК",
+  "title": "Оплата таргетолога за результат: что должен обеспечить бизнес",
+  "summary": "Оплата за лид, процент от продаж или фикс с бонусом: как работает каждая модель, что бизнес должен дать таргетологу и о чём договориться до старта.",
+  "cover": "/images/articles/oplata-targetologa-za-rezultat.jpg"
+ },
+ {
   "slug": "obyavlenie-otkloneno-meta",
   "category": "РЕКЛАМА · ДИАГНОСТИКА",
   "title": "Объявление отклонено модерацией Meta: как исправить",
@@ -33,12 +40,5 @@
   "title": "CRM-маркетинг: как не терять заявки из Instagram при долгой сделке",
   "summary": "Как держать связь с клиентом от первого сообщения в Instagram до покупки: бот 24/7, отбор заявок, повторные касания. Разбор моего выступления с видео.",
   "cover": "/images/articles/crm-marketing-dlinnaya-sdelka.jpg"
- },
- {
-  "slug": "nuzhen-li-chat-bot",
-  "category": "ЧАТ-БОТ · ЗАЯВКИ",
-  "title": "Нужен ли бизнесу чат-бот в Instagram и сколько он стоит",
-  "summary": "Когда бизнесу в Ташкенте нужен чат-бот в Instagram, а когда хватит менеджера. Что делает ИИ-агент в Direct, чего он не делает и сколько стоит.",
-  "cover": "/images/articles/nuzhen-li-chat-bot.jpg"
  }
 ]
