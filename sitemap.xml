@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://loops.uz/</loc><lastmod>2026-11-23</lastmod><image:image><image:loc>https://loops.uz/images/daniil-gazizov.jpg</image:loc></image:image></url>
+  <url><loc>https://loops.uz/</loc><lastmod>2026-11-24</lastmod><image:image><image:loc>https://loops.uz/images/daniil-gazizov.jpg</image:loc></image:image></url>
   <url><loc>https://loops.uz/about/</loc><lastmod>2026-11-18</lastmod><image:image><image:loc>https://loops.uz/images/daniil-gazizov.jpg</image:loc></image:image></url>
   <url><loc>https://loops.uz/abroad/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://loops.uz/agency/</loc><lastmod>2026-11-11</lastmod></url>
-  <url><loc>https://loops.uz/ai-bot/</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://loops.uz/analytics/</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://loops.uz/articles/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://loops.uz/ai-bot/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://loops.uz/analytics/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://loops.uz/articles/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://loops.uz/articles/andromeda-algoritm-meta/</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://loops.uz/articles/arbitrazh-ili-target/</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://loops.uz/articles/b2b-lead-scoring/</loc><lastmod>2026-11-18</lastmod></url>
@@ -29,7 +29,7 @@
   <url><loc>https://loops.uz/articles/obuchit-meta-kachestvennye-zayavki/</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://loops.uz/articles/obyavlenie-otkloneno-meta/</loc><lastmod>2026-11-20</lastmod></url>
   <url><loc>https://loops.uz/articles/oplata-reklamnogo-byudzheta/</loc><lastmod>2026-11-16</lastmod></url>
-  <url><loc>https://loops.uz/articles/oplata-reklamy-meta-uzbekistan/</loc><lastmod>2026-11-11</lastmod></url>
+  <url><loc>https://loops.uz/articles/oplata-reklamy-meta-uzbekistan/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://loops.uz/articles/oplata-targetologa-za-rezultat/</loc><lastmod>2026-11-23</lastmod></url>
   <url><loc>https://loops.uz/articles/pochemu-pacienty-ne-vozvrashayutsya/</loc><lastmod>2026-11-12</lastmod></url>
   <url><loc>https://loops.uz/articles/pochemu-zayavki-necelevye/</loc><lastmod>2026-11-19</lastmod></url>
@@ -69,8 +69,8 @@
   <url><loc>https://loops.uz/articles/vremya-zayavok-s-reklamy/</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://loops.uz/articles/zayavki-iz-regionov/</loc><lastmod>2026-11-13</lastmod></url>
   <url><loc>https://loops.uz/audit/</loc><lastmod>2026-11-07</lastmod></url>
-  <url><loc>https://loops.uz/auto/</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://loops.uz/b2b/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://loops.uz/auto/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://loops.uz/b2b/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://loops.uz/cases.html</loc><lastmod>2026-11-21</lastmod></url>
   <url><loc>https://loops.uz/cases/case-basalt/</loc><lastmod>2026-11-18</lastmod></url>
   <url><loc>https://loops.uz/cases/case-biorise/</loc><lastmod>2026-11-04</lastmod></url>
@@ -96,15 +96,15 @@
   <url><loc>https://loops.uz/cases/case-restokids/</loc><lastmod>2026-10-26</lastmod></url>
   <url><loc>https://loops.uz/cases/case-tak/</loc><lastmod>2026-11-18</lastmod></url>
   <url><loc>https://loops.uz/cases/case-viamed/</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://loops.uz/clinics/</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://loops.uz/consulting/</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://loops.uz/fitness/</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://loops.uz/horeca/</loc><lastmod>2026-11-23</lastmod></url>
-  <url><loc>https://loops.uz/manufacturing/</loc><lastmod>2026-11-23</lastmod></url>
+  <url><loc>https://loops.uz/clinics/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://loops.uz/consulting/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://loops.uz/fitness/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://loops.uz/horeca/</loc><lastmod>2026-11-24</lastmod></url>
+  <url><loc>https://loops.uz/manufacturing/</loc><lastmod>2026-11-24</lastmod></url>
   <url><loc>https://loops.uz/marketolog/</loc><lastmod>2026-11-18</lastmod></url>
   <url><loc>https://loops.uz/partners/</loc><lastmod>2026-11-04</lastmod></url>
   <url><loc>https://loops.uz/prices/</loc><lastmod>2026-11-16</lastmod></url>
   <url><loc>https://loops.uz/privacy/</loc><lastmod>2026-11-18</lastmod></url>
   <url><loc>https://loops.uz/speaker/</loc><lastmod>2026-11-18</lastmod></url>
-  <url><loc>https://loops.uz/target/</loc><lastmod>2026-11-23</lastmod><image:image><image:loc>https://loops.uz/images/daniil-gazizov.jpg</image:loc></image:image></url>
+  <url><loc>https://loops.uz/target/</loc><lastmod>2026-11-24</lastmod><image:image><image:loc>https://loops.uz/images/daniil-gazizov.jpg</image:loc></image:image></url>
 </urlset>
