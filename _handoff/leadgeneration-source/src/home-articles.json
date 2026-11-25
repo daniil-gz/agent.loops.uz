@@ -1,5 +1,12 @@
 [
  {
+  "slug": "nedozvon-po-zayavke-lid-forma",
+  "category": "ПРОДАЖИ · ЗАЯВКИ",
+  "title": "Недозвон по заявке из лид-формы: почему не берут трубку",
+  "summary": "Человек оставил заявку в форме Instagram и не берёт трубку. Разбираю 5 причин недозвона и порядок связи на 48 часов, который возвращает часть заявок.",
+  "cover": "/images/articles/nedozvon-po-zayavke-lid-forma.jpg"
+ },
+ {
   "slug": "oplata-targetologa-za-rezultat",
   "category": "РЕКЛАМА · ПОДРЯДЧИК",
   "title": "Оплата таргетолога за результат: что должен обеспечить бизнес",
@@ -33,12 +40,5 @@
   "title": "Как выбрать маркетолога в Ташкенте",
   "summary": "Как понять, что маркетолог приведёт продажи, а не отчёт об охватах: штат, фрилансер или агентство, 7 вопросов до оплаты и признаки слабого специалиста.",
   "cover": "/images/articles/kak-vybrat-marketologa-tashkent.jpg"
- },
- {
-  "slug": "crm-marketing-dlinnaya-sdelka",
-  "category": "CRM · ЗАЯВКИ",
-  "title": "CRM-маркетинг: как не терять заявки из Instagram при долгой сделке",
-  "summary": "Как держать связь с клиентом от первого сообщения в Instagram до покупки: бот 24/7, отбор заявок, повторные касания. Разбор моего выступления с видео.",
-  "cover": "/images/articles/crm-marketing-dlinnaya-sdelka.jpg"
  }
 ]
