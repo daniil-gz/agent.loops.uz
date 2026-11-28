@@ -1,5 +1,12 @@
 [
  {
+  "slug": "meta-ads-spravochnik",
+  "category": "META ADS · СПРАВОЧНИК",
+  "title": "Справочник Meta Ads: ответы на частые проблемы с рекламой",
+  "summary": "Ответы на частые вопросы о рекламе в Instagram и Facebook: блокировки, оплата из Узбекистана, отклонённые объявления, доступы и заявки. Собрано по темам.",
+  "cover": "/images/articles/meta-ads-spravochnik.jpg"
+ },
+ {
   "slug": "reklamnyj-kabinet-u-podryadchika",
   "category": "РЕКЛАМА · ДОСТУПЫ",
   "title": "Рекламный кабинет оформлен на подрядчика: как вернуть доступ",
@@ -33,12 +40,5 @@
   "title": "CRM для отдела продаж в Ташкенте: как выбрать и внедрить",
   "summary": "CRM выбирают под процесс продаж, а не по списку функций. Как выбрать между Bitrix24 и amoCRM, что настроить первым и почему CRM не приживается.",
   "cover": "/images/articles/crm-dlya-otdela-prodazh.jpg"
- },
- {
-  "slug": "reklama-zimoj-ostanavlivat-li",
-  "category": "РЕКЛАМА · БЮДЖЕТ",
-  "title": "Останавливать ли рекламу в декабре и январе",
-  "summary": "Зимой реклама дороже, а спрос ниже. Почему не стоит выключать её полностью, что происходит с декабря по март и чем занять январь, чтобы весной получить заявки.",
-  "cover": "/images/articles/reklama-zimoj-ostanavlivat-li.jpg"
  }
 ]
